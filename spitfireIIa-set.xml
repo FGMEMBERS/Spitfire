@@ -11,6 +11,7 @@ Aug 2004 Vivian Meazza, vivian.meazza at lineone.net
   <PropertyList> 
     <sim> 
       <description>Spitfire IIa</description>
+      <author>Vivian Meazza</author>
       <status>beta</status>
       <flight-model>yasim</flight-model>
       <aero>spitfireIIa</aero>
