@@ -1,0 +1,304 @@
+<?xml version="1.0"?>
+  <!--
+************************************************************************
+Spitfire IIasimulation config. This files ties together all the components
+used by FGFS to represent the aircraft. Components include the flight data 
+model, instrument panel, and external 3D model.
+
+March 2004 Vivian Meazza, vivian.meazza at lineone.net
+************************************************************************
+-->
+  <PropertyList> 
+    <sim> 
+      <description>Spitfire IIa</description>
+      <flight-model>yasim</flight-model>
+      <aero>spitfireIIa</aero>
+      <fuel-fraction>1</fuel-fraction>
+      <systems> 
+        <electrical> 
+          <path>Aircraft/Generic/generic-electrical.xml</path>
+        </electrical>
+      </systems>
+      <virtual-cockpit archive="y">true</virtual-cockpit>
+      <allow-toggle-cockpit archive="y">true</allow-toggle-cockpit>
+      <sound> 
+        <audible>true</audible>
+        <path>Aircraft/Spitfire/spitfire-sound.xml</path>
+      </sound>
+      <panel> 
+        <path>Aircraft/c172/Panels/c172-vfr-panel.xml</path>
+        <visibility>false</visibility>
+      </panel>
+      <model> 
+        <path>Aircraft/Spitfire/Models/spitfire_model.xml</path>
+      </model>
+      <view n="0"> 
+        <internal archive="y">true</internal>
+        <config> 
+          <x-offset-m archive="y" type="double">0.0</x-offset-m>
+          <y-offset-m archive="y" type="double">0.6</y-offset-m>
+          <z-offset-m archive="y" type="double">3.83</z-offset-m>
+          <pitch-offset-deg>-15</pitch-offset-deg>
+        </config>
+      </view>
+      <view n="1"> 
+        <config> 
+          <target-z-offset-m archive="y" type="double">2.7</target-z-offset-m>
+        </config>
+      </view>
+      <view n="2"> 
+        <config> 
+          <target-z-offset-m archive="y" type="double">2.7</target-z-offset-m>
+        </config>
+      </view>
+      <view n="3"> 
+        <config> 
+          <target-z-offset-m archive="y" type="double">2.7</target-z-offset-m>
+        </config>
+      </view>
+      <view n="4"> 
+        <config> 
+          <target-z-offset-m archive="y" type="double">2.7</target-z-offset-m>
+        </config>
+      </view>
+      <view n="5"> 
+        <config> 
+          <target-z-offset-m archive="y" type="double">2.7</target-z-offset-m>
+        </config>
+      </view>
+      <autopilot> 
+        <config> 
+          <min-climb-speed-kt type="float">70.0</min-climb-speed-kt>
+          <best-climb-speed-kt type="float">75.0</best-climb-speed-kt>
+          <target-climb-rate-fpm type="float">500.0</target-climb-rate-fpm>
+          <target-descent-rate-fpm type="float">1000.0</target-descent-rate-fpm>
+          <elevator-adj-factor type="float">4000.0</elevator-adj-factor>
+          <integral-contribution type="float">0.01</integral-contribution>
+          <zero-pitch-throttle type="float">0.45</zero-pitch-throttle>
+          <zero-pitch-trim-full-throttle type="float">0.14</zero-pitch-trim-full-throttle>
+        </config>
+      </autopilot>
+      <hud> 
+        <enable3d>false</enable3d>
+      </hud>
+      <flaps> 
+        <setting>0.00</setting>
+        <setting>1.00</setting>
+      </flaps>
+    </sim>
+    <engines> 
+      <engine> 
+        <rpm type="double">600</rpm>
+       </engine>
+    </engines>
+    <consumables> 
+      <fuel> 
+        <tank n="0"> 
+          <level-gal_us>57</level-gal_us>
+        </tank>
+        <tank n="1"> 
+          <level-gal_us>44</level-gal_us>
+        </tank>
+      </fuel>
+    </consumables>
+    
+    <!-- set up control properties for YASim... -->
+    <controls> 
+      <engines> 
+        <engine n="0">
+		  <magneto-switch type="bool">1</magneto-switch>
+       <!--   <magneto-switch type="bool">1</magneto-switch> -->
+          <magnetos>3</magnetos>
+        </engine>
+      </engines>
+      <gear> 
+        <brake-parking>1</brake-parking>
+        <tailwheel-lock>false</tailwheel-lock>
+        <gear-warn type="bool">0</gear-warn>
+        <canopy> 
+          <position-norm type="double">0</position-norm>
+        </canopy>
+      </gear>
+      <flight> 
+        <flaps-alternate-extension type="double">1</flaps-alternate-extension>
+        <elevator-trim>-0.055000</elevator-trim>
+        <door-position-norm type="double">0</door-position-norm>
+      </flight>
+    </controls>
+    <!-- map keyboard -->
+    <input> 
+      <keyboard> 
+        <!--map keys for door open -->
+        <key n="68"> 
+          <name>D</name>
+          <desc>Door Fold Down.</desc>
+          <binding> 
+            <condition> 
+              <equal> 
+                <property>/gear/canopy/position-norm</property>
+                <value>1</value>
+              </equal>
+            </condition>
+            <command>property-assign</command>
+            <property>/controls/flight/door-position-norm</property>
+            <value type="double">0.015</value>
+          </binding>
+        </key>
+        <key n="100"> 
+          <name>d</name>
+          <desc>Door Fold Up.</desc>
+          <binding> 
+            <condition> 
+              <equal> 
+                <property>/gear/canopy/position-norm</property>
+                <value>1</value>
+              </equal>
+            </condition>
+            <command>property-assign</command>
+            <property>/controls/flight/door-position-norm</property>
+            <value type="double">0.0</value>
+          </binding>
+        </key>
+        <key n="4"> 
+          <name>CTRL D</name>
+          <desc>Door Fold Toggle.</desc>
+          <binding> 
+            <condition> 
+              <equal> 
+                <property>/gear/canopy/position-norm</property>
+                <value>1</value>
+              </equal>
+            </condition>
+            <command>property-toggle</command>
+            <property>/controls/flight/door-position-norm</property>
+          </binding>
+        </key>
+        <!--map keys for wing fold - used for canopy control -->
+        <key n="70"> 
+          <name>F</name>
+          <desc>Wing Fold Down.</desc>
+          <binding> 
+            <condition> 
+              <equal> 
+                <property>/controls/flight/door-position-norm</property>
+                <value>0</value>
+              </equal>
+            </condition>
+            <command>property-assign</command>
+            <property>/controls/flight/wing-fold</property>
+            <value type="bool">1</value>
+          </binding>
+        </key>
+        <key n="102"> 
+          <name>f</name>
+          <desc>Wing Fold Up.</desc>
+          <binding> 
+            <condition> 
+              <equal> 
+                <property>/controls/flight/door-position-norm</property>
+                <value>0</value>
+              </equal>
+            </condition>
+            <command>property-assign</command>
+            <property>/controls/flight/wing-fold</property>
+            <value type="bool">0</value>
+          </binding>
+        </key>
+        <!-- map keys for radiator flap -->
+        <key n="72"> 
+          <name>H</name>
+          <desc>Flap down.</desc>
+          <binding> 
+            <command>property-assign</command>
+            <property>controls/engines/engine/cowl-flaps-norm</property>
+            <value type="double">0.334</value>
+          </binding>
+        </key>
+        <key n="104"> 
+          <name>h</name>
+          <desc>Flap Up.</desc>
+          <binding> 
+            <command>property-assign</command>
+            <property>controls/engines/engine/cowl-flaps-norm</property>
+            <value type="double">0.0</value>
+          </binding>
+        </key>
+        <!-- map keys for cancel gear warning  -->
+        <key n="107"> 
+          <name>k</name>
+          <desc>Gear Warn.</desc>
+          <binding> 
+            <command>property-toggle</command>
+            <property>controls/gear/gear-warn</property>
+          </binding>
+        </key>
+        <key n="75"> 
+          <name>K</name>
+          <desc>Gear Warn.</desc>
+          <binding> 
+            <command>property-toggle</command>
+            <property>controls/gear/gear-warn</property>
+          </binding>
+        </key>
+        <!-- map keys for Mixture Control -->
+        <key n="77"> 
+          <name>M</name>
+          <desc>Mixture Weak.</desc>
+          <binding> 
+            <command>property-assign</command>
+            <property>/controls/engines/engine/mixture</property>
+            <value type="double">0.0</value>
+          </binding>
+        </key>
+        <key n="109"> 
+          <name>m</name>
+          <desc>Mixture Rich.</desc>
+          <binding> 
+            <command>property-assign</command>
+            <property>/controls/engines/engine/mixture</property>
+            <value type="double">1.0</value>
+          </binding>
+        </key>
+        <!-- map keys for Propeller Control -->
+        <key n="78"> 
+          <name>N</name>
+          <desc>Propeller Course.</desc>
+          <binding> 
+            <command>property-adjust</command>
+            <property>/controls/engines/engine/propeller-pitch</property>
+            <step type="double">-0.1</step>
+            <min type="double">-1</min>
+            <max type="double">1</max>
+          </binding>
+        </key>
+        <key n="110"> 
+          <name>n</name>
+          <desc>Propeller Fine.</desc>
+          <binding> 
+            <command>property-adjust</command>
+            <property>/controls/engines/engine/propeller-pitch</property>
+            <step type="double">0.1</step>
+            <min type="double">-1</min>
+            <max type="double">1</max>
+          </binding>
+        </key>
+        <!-- map keys for no action  -->
+        <key n="108"> 
+          <name>l</name>
+          <desc>Seat Up.</desc>
+          <binding> 
+            <command>nasal</command>
+            <script>
+				props.dump(props.globals.getNode("/controls/flight"));
+			    </script>
+          </binding>
+        </key>
+      </keyboard>
+    </input>
+    <!-- pilot, with parachute -->
+    <yasim> 
+      <spitfire> 
+        <pilot-lb type="double">180</pilot-lb>
+      </spitfire>
+    </yasim>
+  </PropertyList>

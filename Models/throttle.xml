@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+ <path>throttle.ac</path>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>Throttle</object-name>
+  <property>controls/engines/engine[0]/throttle</property>
+  <interpolation>
+   <entry>
+    <ind>0.0</ind>
+    <dep>-45</dep>
+   </entry>
+   <entry>
+    <ind>1.0</ind>
+    <dep>45</dep>
+   </entry>
+  </interpolation>
+  <axis>
+   <x>0</x>
+   <y>-1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ 
+
+ <animation>
+  <type>rotate</type>
+  <object-name>Prop</object-name>
+  <property>controls/engines/engine[0]/propeller-pitch</property>
+  <interpolation>
+   <entry>
+    <ind>0.0</ind>
+    <dep>-45</dep>
+   </entry>
+   <entry>
+    <ind>1.0</ind>
+    <dep>45</dep>
+   </entry>
+  </interpolation>
+  <axis>
+   <x>0</x>
+   <y>-1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>Mixture</object-name>
+  <property>controls/engines/engine[0]/mixture</property>
+  <interpolation>
+   <entry>
+    <ind>0.0</ind>
+    <dep>-45</dep>
+   </entry>
+   <entry>
+    <ind>1.0</ind>
+    <dep>45</dep>
+   </entry>
+  </interpolation>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+</PropertyList>
+
+
