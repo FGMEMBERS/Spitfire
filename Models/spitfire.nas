@@ -43,14 +43,14 @@ startCof = func{
         primer = getprop("controls/engines/engine/primer");
         setprop("controls/engines/engine/coffman-starter/starter-push-norm",1);
         if (getprop(j) ) {                            # if cartridge hasn't been fired  
-            setMixture(primer);                                # set the mixture
+            primerMixture(primer);                            # set the mixture
             setprop("controls/engines/engine/starter",1);     # starter runs
             setprop(j,0);                                    # fire this cartridge
-            setprop("controls/engines/engine/primer", 0);    # set primer back to zero
         }    
     }else{
         setprop("controls/engines/engine/starter",0);
-        setprop("controls/engines/engine/coffman-starter/starter-push-norm",0)
+        setprop("controls/engines/engine/coffman-starter/starter-push-norm",0);
+        setprop("controls/engines/engine/primer", 0);    # set primer back to zero
     }
             
 } # end function
@@ -75,20 +75,17 @@ pumpPrimer = func{
 
 } # end function
 
-setMixture = func{
-
+primerMixture = func{
+    
+	mixture = 0;
     primer = arg[0];
     
-    if(primer >= 0 and primer <=3) {
-        setprop("controls/engines/engine/mixture", 0);
-        }
-    elsif(primer >3 and primer <7) {
-        setprop("controls/engines/engine/mixture", 1);
-        }
-    else {
-        setprop("controls/engines/engine/mixture", 0);
+    if(primer >3 and primer <7) {
+        mixture = 1;
     }
     
+    return mixture;
+	   
 } # end function
 
 # ================================== end priming pump stuff =================================

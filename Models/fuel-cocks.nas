@@ -130,10 +130,18 @@ fuelUpdate = func {
     
     # we use the mixture to control the engines, so set the mixture
     cutoff = getprop("controls/engines/engine/cutoff");
+	starter = getprop("controls/engines/engine/starter");
     #print ("cutoff: " , cutoff);
-    if ( outOfFuel or !cutoff ) {
+    if ( outOfFuel or !cutoff ) { 
         mixture = 0;
-    } else {
+    } 
+	elsif( starter ) { # mixture is controlled by priming pump
+	    mixture = 1;
+		primer = getprop("controls/engines/engine/primer");
+        mixture = ( spitfire.primerMixture(primer) );
+        #print( "calling primerMixture, mixture: ", mixture);
+	}
+	else { # mixture ia controlled by G force
         mixture = 1;
         mixture = ( spitfire.negGCutoff() );
         #print( "calling negG, mixture: ", mixture);
