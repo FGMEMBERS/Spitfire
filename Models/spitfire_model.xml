@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-  <!-- P-51D Mustang by Jim Wilson -->
+  <!-- Spitfire IIa by Vivisn Meazza -->
   <PropertyList> 
     <path>spitfireIIa.ac</path>
     <!-- Front hotspots -->
@@ -71,8 +71,25 @@
         <z-m>0.18</z-m>
       </offsets>
     </model>
-	<!-- end blind flying instruments -->
-	<!-- engine instruments -->
+    <!-- end blind flying instruments -->
+    <!-- main panel -->
+    <model> 
+      <path>Aircraft/Spitfire/Models/rgs-main-switch.xml</path>
+      <offsets> 
+        <x-m>3.265</x-m>
+        <y-m>-0.09</y-m>
+        <z-m>0.38</z-m>
+      </offsets>
+    </model>
+    <model> 
+      <path>Aircraft/Spitfire/Models/rgs-dimmer-switch.xml</path>
+      <offsets> 
+        <x-m>3.265</x-m>
+        <y-m>-0.055</y-m>
+        <z-m>0.38</z-m>
+      </offsets>
+    </model>
+    <!-- engine instruments -->
     <model> 
       <path>Aircraft/Spitfire/Models/rpm.xml</path>
       <offsets> 
@@ -81,8 +98,7 @@
         <z-m>0.32</z-m>
       </offsets>
     </model>
-	
-	<model> 
+    <model> 
       <path>Aircraft/Spitfire/Models/boost.xml</path>
       <offsets> 
         <x-m>3.265</x-m>
@@ -90,18 +106,16 @@
         <z-m>0.23</z-m>
       </offsets>
     </model>
-	
-	<model> 
+    <model> 
       <path>Aircraft/Spitfire/Models/oil-pressure.xml</path>
       <offsets> 
-	  <x-m>3.265</x-m>
+        <x-m>3.265</x-m>
         <y-m>0.17</y-m>
         <z-m>0.15</z-m>
-        
       </offsets>
     </model>
-	<!---->
-	<model> 
+    <!---->
+    <model> 
       <path>Aircraft/Spitfire/Models/fuel.xml</path>
       <offsets> 
         <x-m>3.265</x-m>
@@ -109,8 +123,7 @@
         <z-m>0.08</z-m>
       </offsets>
     </model>
-	
-	<model> 
+    <model> 
       <path>Aircraft/Spitfire/Models/fuel-pressure.xml</path>
       <offsets> 
         <x-m>3.265</x-m>
@@ -118,8 +131,7 @@
         <z-m>0.23</z-m>
       </offsets>
     </model>
-	
-	<model> 
+    <model> 
       <path>Aircraft/Spitfire/Models/starter.xml</path>
       <offsets> 
         <x-m>3.265</x-m>
@@ -127,8 +139,7 @@
         <z-m>0.05</z-m>
       </offsets>
     </model>
-	
-	<model> 
+    <model> 
       <path>Aircraft/Spitfire/Models/ring-pull.xml</path>
       <offsets> 
         <x-m>3.265</x-m>
@@ -136,8 +147,7 @@
         <z-m>0.08</z-m>
       </offsets>
     </model>
-	
-	<model> 
+    <model> 
       <path>Aircraft/Spitfire/Models/cut-off.xml</path>
       <offsets> 
         <x-m>3.265</x-m>
@@ -145,8 +155,7 @@
         <z-m>-0.05</z-m>
       </offsets>
     </model>
-	
-	<model> 
+    <model> 
       <path>Aircraft/Spitfire/Models/primer.xml</path>
       <offsets> 
         <x-m>3.265</x-m>
@@ -154,8 +163,7 @@
         <z-m>-0.06</z-m>
       </offsets>
     </model>
-	
-	<model> 
+    <model> 
       <path>Aircraft/Spitfire/Models/fuel-cocks.xml</path>
       <offsets> 
         <x-m>3.265</x-m>
@@ -163,9 +171,9 @@
         <z-m>-0.08</z-m>
       </offsets>
     </model>
- <!--    end engine instruments -->
-	<!-- miscellaneous (left panel) instruments -->
-	<model> 
+    <!--    end engine instruments -->
+    <!-- miscellaneous (left panel) instruments -->
+    <model> 
       <path>Aircraft/Spitfire/Models/clock.xml</path>
       <offsets> 
         <x-m>3.265</x-m>
@@ -173,8 +181,7 @@
         <z-m>0.19</z-m>
       </offsets>
     </model>
-	
-	<model> 
+    <model> 
       <path>Aircraft/Spitfire/Models/trim.xml</path>
       <offsets> 
         <x-m>3.265</x-m>
@@ -182,8 +189,7 @@
         <z-m>0.13</z-m>
       </offsets>
     </model>
-
-	<model> 
+    <model> 
       <path>Aircraft/Spitfire/Models/triple.xml</path>
       <offsets> 
         <x-m>3.265</x-m>
@@ -191,34 +197,31 @@
         <z-m>0.05</z-m>
       </offsets>
     </model>
-	
- <model>
-  <path>Aircraft/Spitfire/Models/magneto.xml</path>
-  <offsets>
-   <x-m>3.265</x-m>
-   <y-m>-0.32</y-m>
-   <z-m>0.08</z-m>
-  </offsets>
- </model>
-
- <model>
-  <path>Aircraft/Spitfire/Models/flaps.xml</path>
-  <offsets>
-   <x-m>3.265</x-m>
-   <y-m>-0.19</y-m>
-   <z-m>0.34</z-m>
-  </offsets>
- </model>
- 
- <model>
-  <path>Aircraft/Spitfire/Models/undercarriage-up-down.xml</path>
-  <offsets>
-   <x-m>3.265</x-m>
-   <y-m>-0.20</y-m>
-   <z-m>0.22</z-m>
-  </offsets>
- </model>
-<!--
+    <model> 
+      <path>Aircraft/Spitfire/Models/magneto.xml</path>
+      <offsets> 
+        <x-m>3.265</x-m>
+        <y-m>-0.32</y-m>
+        <z-m>0.08</z-m>
+      </offsets>
+    </model>
+    <model> 
+      <path>Aircraft/Spitfire/Models/flaps.xml</path>
+      <offsets> 
+        <x-m>3.265</x-m>
+        <y-m>-0.19</y-m>
+        <z-m>0.34</z-m>
+      </offsets>
+    </model>
+    <model> 
+      <path>Aircraft/Spitfire/Models/undercarriage-up-down.xml</path>
+      <offsets> 
+        <x-m>3.265</x-m>
+        <y-m>-0.20</y-m>
+        <z-m>0.22</z-m>
+      </offsets>
+    </model>
+    <!--
  <model>
   <path>Aircraft/p51d/Models/p51d-jw-clock.xml</path>
   <offsets>
@@ -256,40 +259,11 @@
   </offsets>
  </model>
 -->
-    <!-- non-panel models 
-
- <model>
-  <path>Aircraft/p51d/Models/p51d-jw-trimknobaileron.xml</path>
-  <offsets>
-   <x-m>3.955</x-m>
-   <y-m>-0.34</y-m>
-   <z-m>0.067</z-m>
-   <pitch-deg>15.0</pitch-deg>
-  </offsets>
- </model>
-
- <model>
-  <path>Aircraft/p51d/Models/p51d-jw-trimknobrudder.xml</path>
-  <offsets>
-   <x-m>4.085</x-m>
-   <y-m>-0.34</y-m>
-   <z-m>0.047</z-m>
-  </offsets>
- </model>
-
- <model>
-  <path>Aircraft/p51d/Models/p51d-jw-trimwheelelevator.xml</path>
-  <offsets>
-   <x-m>3.995</x-m>
-   <y-m>-0.30</y-m>
-   <z-m>-0.067</z-m>
-  </offsets>
- </model>
--->
+    <!-- non-panel models -->
     <model> 
       <path>Aircraft/Spitfire/Models/throttle.xml</path>
       <offsets> 
-        <x-m>3.5</x-m>
+        <x-m>3.40</x-m>
         <y-m>-0.39</y-m>
         <z-m>-0.10</z-m>
       </offsets>
@@ -302,16 +276,30 @@
         <z-m>-0.80</z-m>
       </offsets>
     </model>
-    <!--
- <model>
-  <path>Aircraft/p51d/Models/p51d-jw-gunsight.ac</path>
-  <offsets>
-   <x-m>3.875</x-m>
-   <y-m>0.0</y-m>
-   <z-m>0.60</z-m>
-  </offsets>
- </model>
--->
+    <model> 
+      <path>Aircraft/Spitfire/Models/trim-wheel-elev.xml</path>
+      <offsets> 
+        <x-m>3.52</x-m>
+        <y-m>-0.375</y-m>
+        <z-m>-0.135</z-m>
+      </offsets>
+    </model>
+    <model> 
+      <path>Aircraft/Spitfire/Models/trim-knob-rudder.xml</path>
+      <offsets> 
+        <x-m>3.64</x-m>
+        <y-m>-0.375</y-m>
+        <z-m>-0.16</z-m>
+      </offsets>
+    </model>
+    <model> 
+      <path>Aircraft/Spitfire/Models/rgs.xml</path>
+      <offsets> 
+        <x-m>3.33</x-m>
+        <y-m>-0.0</y-m>
+        <z-m>0.53</z-m>
+      </offsets>
+    </model>
     <!-- hide all of the model not visible from the cockpit -->
     <animation> 
       <type>select</type>
@@ -351,7 +339,9 @@
       <object-name>Oil-Cooler</object-name>
       <object-name>Radiator</object-name>
       <object-name>Carburettor-Air-Intake</object-name>
-      <object-name>Head</object-name>
+      <!--<object-name>Head</object-name>
+      <object-name>Cover-Upper-Tank</object-name>
+      <object-name>Cover-Engine-T</object-name>-->
       <condition> 
         <not> 
           <equals> 
@@ -360,6 +350,44 @@
           </equals>
         </not>
       </condition>
+    </animation>
+    <!-- make sure that all the rest of the aircraft is visible
+     -->
+    <animation> 
+      <type>select</type>
+      <object-name>Pilot</object-name>
+      <condition> 
+        <greater-than-equals> 
+          <property>/sim/current-view/view-number</property>
+          <value>0</value>
+        </greater-than-equals>
+      </condition>
+    </animation>
+    <!-- **************************** Pilot ******************************* -->
+    <!--  conceal Pilot Head etc in Cockpit View-->
+    <animation> 
+      <type>select</type>
+      <object-name>Head</object-name>
+      <condition> 
+        <not> 
+          <equals> 
+            <property>sim/current-view/view-number</property>
+            <value>0</value>
+          </equals>
+        </not>
+      </condition>
+    </animation>
+    <!-- seat height -->
+    <animation> 
+      <type>translate</type>
+      <object-name>Pilot</object-name>
+      <object-name>Seat</object-name>
+      <property>controls/seat/vertical-adjust</property>
+      <axis> 
+        <x>0</x>
+        <y>0</y>
+        <z>1</z>
+      </axis>
     </animation>
     <!-- ***************** Flight Surfaces ************** -->
     <!-- ailerons -->
@@ -514,7 +542,7 @@
         <z-m>0.0</z-m>
       </center>
       <axis> 
-        <x>1.0</x>
+        <x>-1.0</x>
         <y>0.0</y>
         <z>0.0</z>
       </axis>
@@ -530,7 +558,7 @@
         <z-m>0.0</z-m>
       </center>
       <axis> 
-        <x>1.0</x>
+        <x>-1.0</x>
         <y>0.0</y>
         <z>0.0</z>
       </axis>
@@ -685,8 +713,7 @@
       </axis>
     </animation>
     <!-- ***************** Canopy *********************** -->
-    
-	  <animation> 
+    <animation> 
       <type>translate</type>
       <object-name>Canopy-Main</object-name>
       <object-name>Frame-Main</object-name>
@@ -698,12 +725,11 @@
         <z>0</z>
       </axis>
     </animation>
-      
-	<!-- ***************** Door *********************** -->
+    <!-- ***************** Door *********************** -->
     <animation> 
       <type>rotate</type>
       <object-name>Door</object-name>
-	  <property>controls/flight/door-position-norm</property>
+      <property>controls/flight/door-position-norm</property>
       <interpolation> 
         <entry> 
           <ind>0</ind>
@@ -723,12 +749,11 @@
         <z2-m>-0.050</z2-m>
       </axis>
     </animation>
-    
-	<!-- ***************** Radiator Flap*********************** -->
+    <!-- ***************** Radiator Flap*********************** -->
     <animation> 
       <type>rotate</type>
       <object-name>Lever-Rad-Flap</object-name>
-	  <property>controls/engines/engine/cowl-flaps-norm</property>
+      <property>controls/engines/engine/cowl-flaps-norm</property>
       <interpolation> 
         <entry> 
           <ind>0</ind>
@@ -748,7 +773,7 @@
         <z2-m>-0.80</z2-m>
       </axis>
     </animation>
-<!-- 
+    <!-- 
 <animation>
   <type>select</type>
   <object-name>TailNavLightOn</object-name>

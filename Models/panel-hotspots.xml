@@ -246,7 +246,7 @@
               <binding> 
                 <command>nasal</command>
                 <script>
-				spitfire.setleftMagswitch(0);
+				spitfire.setleftMagswitch(1);
 				</script>
               </binding>
             </action>
@@ -260,7 +260,7 @@
               <binding> 
                 <command>nasal</command>
                 <script>
-				spitfire.setleftMagswitch(1);
+				spitfire.setleftMagswitch(0);
 			  </script>
               </binding>
             </action>
@@ -274,7 +274,7 @@
               <binding> 
                 <command>nasal</command>
                 <script>
-				spitfire.setrightMagswitch(0);
+				spitfire.setrightMagswitch(1);
 			    </script>
               </binding>
             </action>
@@ -288,7 +288,7 @@
               <binding> 
                 <command>nasal</command>
                 <script>
-				spitfire.setrightMagswitch(1);
+				spitfire.setrightMagswitch(0);
 				</script>
               </binding>
             </action>
@@ -367,7 +367,7 @@
               <h>75</h>
               <binding> 
                 <command>nasal</command>
-                <script>controls.stepFlaps(1)</script>
+                <script>spitfire.flapLever(1)</script>
               </binding>
             </action>
             <action> 
@@ -379,7 +379,7 @@
               <h>75</h>
               <binding> 
                 <command>nasal</command>
-                <script>controls.stepFlaps(-1)</script>
+                <script>spitfire.flapLever(0)</script>
               </binding>
             </action>
             <!-- starter cartridge indexer ring-pull -->
@@ -555,7 +555,98 @@
                 </binding>
               </mod-up>
             </action>
-          </actions>
+            <!-- gunsight switches -->
+            <action> 
+              <name>gun sight main up</name>
+              <button>0</button>
+              <x>-130</x>
+              <y>310</y>
+              <w>35</w>
+              <h>30</h>
+              <binding> 
+                <command>property-assign</command>
+                <property>/controls/switches/gun-sight-main</property>
+                <value type="bool">1</value>
+              </binding>
+            </action>
+            <action> 
+              <name>gun sight main down</name>
+              <button>0</button>
+              <x>-130</x>
+              <y>280</y>
+              <w>35</w>
+              <h>30</h>
+              <binding> 
+                <command>property-assign</command>
+                <property>/controls/switches/gun-sight-main</property>
+                <value type="bool">0</value>
+              </binding>
+            </action>
+			<action> 
+              <name>dimmer up fine</name>
+              <button>0</button>
+              <x>-90</x>
+              <y>280</y>
+              <w>20</w>
+              <h>50</h>
+              <binding> 
+                <command>property-adjust</command>
+                <property>/controls/switches/gun-sight-dimmer</property>
+                <step>0.10</step>
+                <min>0</min>
+                <max>0.9</max>
+                <wrap>false</wrap>
+              </binding>
+            </action>
+            <action> 
+              <name>dimmer up coarse</name>
+              <button>1</button>
+              <x>-90</x>
+              <y>280</y>
+              <w>20</w>
+              <h>50</h>
+              <binding> 
+                <command>property-adjust</command>
+                <property>/controls/switches/gun-sight-dimmer</property>
+                <step>0.20</step>
+                <min>0</min>
+                <max>0.9</max>
+                <wrap>false</wrap>
+              </binding>
+            </action>
+            <action> 
+              <name>dimmer down fine</name>
+              <button>0</button>
+              <x>-70</x>
+              <y>280</y>
+              <w>20</w>
+              <h>50</h>
+              <binding> 
+                <command>property-adjust</command>
+                <property>/controls/switches/gun-sight-dimmer</property>
+                <step>-0.10</step>
+                <min>0</min>
+                <max>0.9</max>
+                <wrap>false</wrap>
+              </binding>
+            </action>
+            <action> 
+              <name>dimmer down coarse</name>
+              <button>1</button>
+              <x>-70</x>
+              <y>-280</y>
+              <w>20</w>
+              <h>50</h>
+              <binding> 
+                <command>property-adjust</command>
+                <property>/controls/switches/gun-sight-dimmer</property>
+                <step>-0.20</step>
+                <min>0</min>
+                <max>0.9</max>
+                <wrap>false</wrap>
+              </binding>
+            </action>
+           </actions>
         </instrument>
       </instruments>
     </PropertyList>

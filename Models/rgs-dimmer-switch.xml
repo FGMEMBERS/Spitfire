@@ -1,30 +1,20 @@
 <?xml version="1.0"?>
-  <!-- trim indicator -->
   <PropertyList> 
-    <path>trim.ac</path>
+    <path>rgs-dimmer-switch.ac</path>
     <animation> 
       <type>rotate</type>
-      <object-name>trim-Needle1</object-name>
-      <property>controls/flight/elevator-trim</property>
+      <object-name>Knob</object-name>
+      <property>controls/switches/gun-sight-dimmer</property>
       <interpolation> 
         <entry> 
-          <ind>-1</ind>
-          <dep>-105</dep>
-        </entry>
-        <entry> 
           <ind>0</ind>
-          <dep>0</dep>
+          <dep>-135</dep>
         </entry>
         <entry> 
           <ind>1</ind>
-          <dep>105</dep>
+          <dep>135</dep>
         </entry>
       </interpolation>
-      <center> 
-        <x-m>0</x-m>
-        <y-m>0</y-m>
-        <z-m>0</z-m>
-      </center>
       <axis> 
         <x>-1</x>
         <y>0</y>
@@ -32,7 +22,7 @@
       </axis>
     </animation>
     
-	<!-- *** LoD *** -->
+    <!-- *** LoD *** -->
     <animation> 
       <type>range</type>
       <min-m>0</min-m>

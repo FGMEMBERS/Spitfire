@@ -383,5 +383,27 @@
           <factor>1.0</factor>
         </volume>
       </click>
+	  <click> 
+        <name>rgs main click down</name>
+        <path>Aircraft/Spitfire/Sounds/click.wav</path>
+        <condition> 
+          <property>controls/switches/gun-sight-main</property>
+        </condition>
+        <volume> 
+          <factor>1.0</factor>
+        </volume>
+      </click>
+      <click> 
+        <name>rgs main click up</name>
+        <path>Aircraft/Spitfire/Sounds/click.wav</path>
+        <condition> 
+          <not> 
+            <property>controls/switches/gun-sight-main</property>
+          </not>
+        </condition>
+        <volume> 
+          <factor>1.0</factor>
+        </volume>
+      </click>
     </fx>
   </PropertyList>

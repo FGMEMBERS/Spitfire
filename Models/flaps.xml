@@ -4,7 +4,7 @@
     <animation> 
       <type>rotate</type>
       <object-name>Handle</object-name>
-      <property>controls/flight/flaps</property>
+      <property>controls/flight/flaps-lever</property>
       <interpolation> 
         <entry> 
           <ind>0</ind>

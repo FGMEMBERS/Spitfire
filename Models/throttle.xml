@@ -50,7 +50,7 @@
  <animation>
   <type>rotate</type>
   <object-name>Mixture</object-name>
-  <property>controls/engines/engine[0]/mixture</property>
+  <property>controls/engines/engine[0]/mixture-lever</property>
   <interpolation>
    <entry>
     <ind>0.8</ind>

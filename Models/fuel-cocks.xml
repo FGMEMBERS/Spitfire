@@ -4,7 +4,7 @@
     <animation> 
       <type>rotate</type>
       <object-name>lever-upper</object-name>
-      <property>controls/engines/engine/fuel-cock/lever-norm[0]</property>
+      <property>consumables/fuel/tank[0]/selected</property>
       <interpolation> 
         <entry> 
           <ind>0.0</ind>
@@ -29,7 +29,7 @@
     <animation> 
       <type>rotate</type>
       <object-name>lever-lower</object-name>
-      <property>controls/engines/engine/fuel-cock/lever-norm[1]</property>
+      <property>consumables/fuel/tank[1]/selected</property>
       <interpolation> 
         <entry> 
           <ind>0.0</ind>
@@ -51,4 +51,5 @@
         <z>0</z>
       </axis>
     </animation>
+	
   </PropertyList>
