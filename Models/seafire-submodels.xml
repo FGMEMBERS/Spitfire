@@ -1,119 +1,27 @@
 <?xml version="1.0"?>
-  <!--  Submodels are objects which can be dropped or launched from the user aircraft.
-      The trigger is a boolean property, which you define, which when "true" causes
-      the submodel to be released/launched. 
-      A submodel will create an AIBallistic object which will follow a ballistic path.
-      By default one submodel will be released when the corresponding trigger is "true".
-      The initial conditions (IC) define the object's starting point (relative to the
-      user aircraft's "reported position"), and its initial speed and direction
-      (relative to the user aircraft).  If you want to release many similar objects
-      with similar IC, then you may use the <repeat>, <delay> and <count> properties
-      to define this.  The allowed properties are:
-
-      <name>         The name of the submodel.
-      <model>        The path to the visual model.
-      <trigger>      The property which will act as the trigger. 
-      <speed>        Initial speed, in feet/sec, relative to user aircraft.
-      <repeat>       Set "true" if you want multiple releases of this submodel.
-      <delay>        Time, in seconds, between repeated releases.
-      <count>        Number of submodels available for multiple release.
-      <x-offset>     Submodel's initial fore/aft position relative to user aircraft.  
-                     Fore is positive.
-      <y-offset>     Submodel's initial left/right position relative to user aircraft.  
-                     Right is positive.
-      <z-offset>     Submodel's initial up/down position relative to user aircraft.  
-                     Up is positive.
-      <yaw-offset>   Submodel's initial azimuth, in degrees, relative to user aircraft's
-                     nose.  Right is positive.
-      <pitch-offset> Submodel's initial elevation, in degrees, relative to user aircraft's
-                     pitch.  Up is positive.
-	<buoyancy>     Submodel's upward acceleration (fps) due to buoyancy in air. 32 is neutral
-	               (contrails),  > 32 exhaust gas, smoke. 
-      <wind>	   If true, Submodel is affected by local wind. Defaults to false.
-	<cd>           The Coeffient of Drag. Varies with submodel shape - 0.295 for a bullet, 
-	               0.045 for an airfoil. Enter an appropriate value. Defaults to 0.295.
-	<eda>          Effective drag area (sq ft). Usually the cross-sectional area of the 
-                     submodel normal to the airflow.
-      <weight>       The weight of the submodel (lbs). Defaults to 0.25	 
--->
+<!-- data for the guns represents the .303 Browning -->
   <PropertyList> 
     <submodel> 
-      <name>Browning L inner</name>
-      <model>Models/Geometry/tracer.ac</model>
-      <trigger>systems/submodels/trigger</trigger>
-      	<speed>2444.2</speed>
-      <repeat>true</repeat>
-      <delay>0.0526</delay>
-      <count>300</count>
-      <x-offset>-5.80</x-offset>
-      <y-offset>-6.06</y-offset>
-      <z-offset>-1.77</z-offset>
-      <yaw-offset>1.5</yaw-offset>
-      <pitch-offset>1.8</pitch-offset>
-	  <cd>0.193</cd>
-	  <weight>0.0249122356</weight>
-	  <eda>0.000500740417</eda>
-	  <life>5</life>
-	<life>3</life>
-    </submodel>
-	<submodel> 
-      <name>browning L inner smoke</name>
-      <model>Aircraft/Spitfire/Models/smoke.xml</model>
-      <trigger>systems/submodels/trigger</trigger>
-      <speed>10</speed>
-      <repeat>true</repeat>
-      <delay>0.052631579</delay>
-      <count>300</count>
-      <x-offset>-5.80</x-offset>
-      <y-offset>-6.06</y-offset>
-      <z-offset>-1.77</z-offset>
-      <yaw-offset>1.5</yaw-offset>
-      <pitch-offset>1.8</pitch-offset>
-	  <eda>10</eda>
-      <wind>true</wind>
-	  <buoyancy>33</buoyancy>
-	  <life>5</life>
-    </submodel>
-    <submodel> 
-      <name>Browning R inner</name>
+      <name>browning l inner</name>
       <model>Models/Geometry/tracer.ac</model>
       <trigger>systems/submodels/trigger</trigger>
       <speed>2444.2</speed>
       <repeat>true</repeat>
-      <delay>0.0526</delay>
-      <count>300</count>
-      <x-offset>-5.80</x-offset>
-      <y-offset>6.06</y-offset>
-      <z-offset>-1.77</z-offset>
-      <yaw-offset>-1.5</yaw-offset>
-      <pitch-offset>1.8</pitch-offset>
+      <delay>0.263157895</delay>
+      <count>60</count>
+      <x-offset>-5.87</x-offset>
+      <y-offset>-10.17 </y-offset>
+      <z-offset>-1.476</z-offset>
+      <yaw-offset>1.5</yaw-offset>
+      <pitch-offset>1.75</pitch-offset>
+	  <eda>0.000500740417</eda>
       <wind>false</wind>
 	  <cd>0.193</cd>
 	  <weight>0.0249122356</weight>
-	  <eda>0.000500740417</eda>
 	  <life>5</life>
     </submodel>
 	<submodel> 
-      <name>Browning R inner smoke</name>
-      <model>Aircraft/Spitfire/Models/smoke.xml</model>
-      <trigger>systems/submodels/trigger</trigger>
-      <speed>10</speed>
-      <repeat>true</repeat>
-      <delay>0.052631579</delay>
-      <count>300</count>
-      <x-offset>-5.80</x-offset>
-      <y-offset>6.06</y-offset>
-      <z-offset>-1.77</z-offset>
-      <yaw-offset>-1.5</yaw-offset>
-      <pitch-offset>1.8</pitch-offset>
-      <wind>true</wind>
-	  <eda>10</eda>
-      <wind>true</wind>
-	  <buoyancy>33</buoyancy>
-	  <life>5</life>
-    </submodel>
-    <submodel> 
-      <name>browning L centre outer smoke</name>
+      <name>browning l inner smoke</name>
       <model>Aircraft/Spitfire/Models/smoke.xml</model>
       <trigger>systems/submodels/trigger</trigger>
       <speed>10</speed>
@@ -130,9 +38,27 @@
 	  <buoyancy>33</buoyancy>
 	  <life>5</life>
     </submodel>
-	
 	<submodel> 
-      <name>browning R centre outer smoke</name>
+      <name>browning r inner</name>
+      <model>Models/Geometry/tracer.ac</model>
+      <trigger>systems/submodels/trigger</trigger>
+      <speed>2444.2</speed>
+      <repeat>true</repeat>
+      <delay>0.263157895</delay>
+      <count>60</count>
+      <x-offset>-5.87</x-offset>
+      <y-offset>10.17 </y-offset>
+      <z-offset>-1.476 </z-offset>
+      <yaw-offset>-1.5</yaw-offset>
+      <pitch-offset>1.75</pitch-offset>
+      <wind>false</wind>
+	  <cd>0.193</cd>
+	  <weight>0.0249122356</weight>
+	  <eda>0.000500740417</eda>
+	  <life>5</life>
+    </submodel>
+	<submodel> 
+      <name>browning r inner smoke</name>
       <model>Aircraft/Spitfire/Models/smoke.xml</model>
       <trigger>systems/submodels/trigger</trigger>
       <speed>10</speed>
@@ -150,7 +76,26 @@
 	  <life>5</life>
     </submodel>
 	<submodel> 
-      <name>browning L outer smoke</name>
+      <name>browning l outer</name>
+      <model>Models/Geometry/tracer.ac</model>
+      <trigger>systems/submodels/trigger</trigger>
+      <speed>2444.2</speed>
+      <repeat>true</repeat>
+      <delay>0.263157895</delay>
+      <count>60</count>
+      <x-offset>-6.17 </x-offset>
+      <y-offset>-12.47  </y-offset>
+      <z-offset>-1.28  </z-offset>
+      <yaw-offset>1.75</yaw-offset>
+      <pitch-offset>1.75</pitch-offset>
+      <wind>false</wind>
+	  <cd>0.193</cd>
+	  <weight>0.0249122356</weight>
+	  <eda>0.000500740417</eda>
+	  <life>5</life>
+    </submodel>
+	<submodel> 
+      <name>browning l outer smoke</name>
       <model>Aircraft/Spitfire/Models/smoke.xml</model>
       <trigger>systems/submodels/trigger</trigger>
       <speed>10</speed>
@@ -168,7 +113,26 @@
 	  <life>5</life>
     </submodel>
 	<submodel> 
-      <name>browning R outer smoke</name>
+      <name>browning r outer</name>
+      <model>Models/Geometry/tracer.ac</model>
+      <trigger>systems/submodels/trigger</trigger>
+      <speed>2444.2</speed>
+      <repeat>true</repeat>
+      <delay>0.263157895</delay>
+      <count>60</count>
+      <x-offset>-6.17 </x-offset>
+      <y-offset>12.47  </y-offset>
+      <z-offset>-1.28  </z-offset>
+      <yaw-offset>-1.75</yaw-offset>
+      <pitch-offset>1.8</pitch-offset>
+      <wind>false</wind>
+	  <cd>0.193</cd>
+	  <weight>0.0249122356</weight>
+	  <eda>0.000500740417</eda>
+	  <life>5</life>
+    </submodel>
+	<submodel> 
+      <name>browning r outer smoke</name>
       <model>Aircraft/Spitfire/Models/smoke.xml</model>
       <trigger>systems/submodels/trigger</trigger>
       <speed>10</speed>
@@ -186,14 +150,33 @@
 	  <life>5</life>
     </submodel>
 	<submodel> 
-      <name>browning L center inner smoke</name>
+      <name>Hispano MkV P</name>
+      <model>Models/Geometry/tracer.ac</model>
+      <trigger>systems/submodels/trigger</trigger>
+      <speed>2755.9 </speed>
+      <repeat>true</repeat>
+      <delay>0.4</delay>
+      <count>24</count>
+      <x-offset>-3.70734908 </x-offset>
+      <y-offset>-6.88976378  </y-offset>
+      <z-offset>-1.83727034  </z-offset>
+      <yaw-offset>-1</yaw-offset>
+      <pitch-offset>0</pitch-offset>
+      <wind>false</wind>
+	  <cd>0.193</cd>
+	  <weight>0.286600941 </weight>
+	  <eda>0.00338158219 </eda>
+	  <life>5</life>
+    </submodel>
+	<submodel> 
+      <name>Hispano MkV P smoke</name>
       <model>Aircraft/Spitfire/Models/smoke.xml</model>
       <trigger>systems/submodels/trigger</trigger>
       <speed>10</speed>
       <repeat>true</repeat>
       <delay>0.08</delay>
       <count>120</count>
-      <x-offset>-5.57 </x-offset>
+      <x-offset>-3.70734908 </x-offset>
       <y-offset>-6.88976378  </y-offset>
       <z-offset>-1.83727034  </z-offset>
       <yaw-offset>-1</yaw-offset>
@@ -204,14 +187,33 @@
 	  <life>5</life>
     </submodel>
 	<submodel> 
-      <name>browning R center inner smoke</name>
+      <name>Hispano MkV S</name>
+      <model>Models/Geometry/tracer.ac</model>
+      <trigger>systems/submodels/trigger</trigger>
+      <speed>2755.9 </speed>
+      <repeat>true</repeat>
+      <delay>0.4</delay>
+      <count>24</count>
+      <x-offset>-3.70734908 </x-offset>
+      <y-offset>6.88976378  </y-offset>
+      <z-offset>-1.83727034  </z-offset>
+      <yaw-offset>1</yaw-offset>
+      <pitch-offset>0</pitch-offset>
+      <wind>false</wind>
+	  <cd>0.193</cd>
+	  <weight>0.286600941 </weight>
+	  <eda>0.00338158219 </eda>
+	  <life>5</life>
+    </submodel>            
+	<submodel> 
+      <name>Hispano MkV S smoke</name>
       <model>Aircraft/Spitfire/Models/smoke.xml</model>
       <trigger>systems/submodels/trigger</trigger>
       <speed>10</speed>
       <repeat>true</repeat>
       <delay>0.08</delay>
       <count>120</count>
-      <x-offset>-5.57 </x-offset>
+      <x-offset>-3.70734908 </x-offset>
       <y-offset>6.88976378  </y-offset>
       <z-offset>-1.83727034  </z-offset>
       <yaw-offset>1</yaw-offset>
@@ -257,4 +259,6 @@
 	<buoyancy>34</buoyancy>
 	<wind>true</wind>
   </submodel>
+  
+  
   </PropertyList>

@@ -8,7 +8,7 @@ The reference datum for measurements is the nose.
 ************************************************************************
 -->
   <!-- Weight of everything but fuel  (4873 empty) -->
-  <airplane mass="5200"> 
+  <airplane mass="6204"> 
     <!-- Approach configuration -->
     <approach speed="70" aoa="12.5"> 
       <control-setting axis="/controls/engines/engine[0]/throttle" value="0.1"/>
@@ -17,17 +17,17 @@ The reference datum for measurements is the nose.
       <control-setting axis="/controls/engines/engine[0]/boost" value="1"/>
       <control-setting axis="/controls/flight/flaps" value="1.0"/>
       <control-setting axis="/controls/gear/gear-down" value="1"/>
-      <solve-weight idx="0" weight="180"/>
+      <solve-weight idx="0" weight="200"/>
     </approach>
     <!-- Cruise configuration -->
-    <cruise speed="308" alt="17500"> 
+    <cruise speed="311" alt="6000"> 
       <control-setting axis="/controls/engines/engine[0]/throttle" value="0.9"/>
       <control-setting axis="/controls/engines/engine[0]/mixture" value="1.00"/>
       <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="0.80"/>
       <control-setting axis="/controls/engines/engine[0]/boost" value="1"/>
       <control-setting axis="/controls/flight/flaps" value="0.0"/>
       <control-setting axis="/controls/gear/gear-down" value="0"/>
-      <solve-weight idx="0" weight="180"/>
+      <solve-weight idx="0" weight="200"/>
     </cruise>
     <!-- pilot's eyepoint -->
     <cockpit x="-3.86" y="0" z="0.55"/>
@@ -47,8 +47,9 @@ flap drag not available
 		length="4.580" chord="2.845" sweep="0"
 		camber="0.0569" dihedral="6" effectiveness="1.25" > 
       <stall aoa="24" width="4" peak="1.5"/>
-      <flap0 start="0.00" end="0.437" lift="1.4" drag="1.6"/>
+      <flap0 start="0.00" end="0.437" lift="1.4" drag="1.5"/>
       <flap1 start="0.437" end="0.90" lift="1.35" drag="1.35"/>
+      <spoiler start="0.00" end="1" lift="0.25" drag="2"/>
       <control-input axis="/controls/flight/flaps" control="FLAP0"/>
       <control-output control="FLAP0" prop="/surface-positions/flap-pos-norm"/>
       <control-speed control="FLAP0" transition-time="10"/>
@@ -58,6 +59,9 @@ flap drag not available
       <control-output control="FLAP1" side="right"
 	  prop="/surface-positions/right-aileron-pos-norm"/>
       <control-speed control="FLAP1" transition-time="1"/>
+      <control-input axis="controls/flight/wing-fold" control="SPOILER"/>
+      <control-output control="SPOILER" prop="/surface-positions/wing-fold-pos-norm"/>
+      <control-speed  control="SPOILER" transition-time="5"/>
     </wing>
     <!-- tailplane -->
     <hstab 
@@ -80,7 +84,7 @@ flap drag not available
 		  min="1" max="-1"/>
       <flap1 start="0.3" end="0.65" lift="1.4" drag="1.4"/>
       <control-input axis="/controls/flight/rudder-trim" control="FLAP1" invert="true"/>
-	  <control-output control="FLAP1" prop="/surface-positions/rudder-trim-pos-norm"
+      <control-output control="FLAP1" prop="/surface-positions/rudder-trim-pos-norm"
 		  min="3" max="-3"/>
     </vstab>
     <!-- stub wing left -->
@@ -118,13 +122,13 @@ flap drag not available
     <!--  cruise-rpm documented gear ratio of 0.477  min-rpm="1500" max-rpm="3000"
 gear-ratio = "0.477" moment = 37.15-->
     <propeller   x="-1.35" y="0" z="-0.0"
-            radius="1.638" moment="-17" 
+            radius="1.638" moment="-25" 
             mass="2000" 
-			eng-power="1140" eng-rpm="3000"
-			turbo-mul="4" wastegate-mp="48"
-			cruise-alt="17500" cruise-power="1120"
+			eng-power="1585" eng-rpm="3000"
+			turbo-mul="4" wastegate-mp="66.6"
+			cruise-alt="6000" cruise-power="1585"
 			cruise-speed="300" cruise-rpm="2850"
-			takeoff-power="1140" takeoff-rpm="3000"
+			takeoff-power="1600" takeoff-rpm="3000"
 			manual-pitch="true"
 						> 
       <actionpt x="-0.75" y="0" z="0"/>
@@ -163,6 +167,12 @@ gear-ratio = "0.477" moment = 37.15-->
       <control-speed control="EXTEND" transition-time="2"/>
       <control-output control="EXTEND" prop="/gear/canopy/position-norm"/>
     </gear>
+    <!-- Hook -->
+    <gear x="-6.70" y="0.0" z="-1.74" compression="1" spring="0.15"> 
+      <control-input axis="/controls/gear/tailhook" control="EXTEND"/>
+      <control-speed control="EXTEND" transition-time="2"/>
+      <control-output control="EXTEND" prop="/gear/tailhook/position-norm"/>
+    </gear>
     <!-- Fuselage tanks. 
 Weight of contents calculated using 100 octane AVGAS density of 695 kg/m3 @ 15degC
 -->
@@ -172,17 +182,16 @@ Weight of contents calculated using 100 octane AVGAS density of 695 kg/m3 @ 15de
     <!--  lower 37 imp gals -->
     <!-- ballast and weights -->
     <!-- Cockpit, sundries-->
-    <ballast x="-5.20" y="0" z="0" mass="400"/>
+    <ballast x="-4.00" y="0" z="0" mass="300"/>
     <!-- armament -->
     <!-- -->
-    <ballast x="-2.9" y="3.85" z="-0.48" mass="170"/>
-    <ballast x="-2.9" y="-3.85" z="-0.48" mass="170"/>
-    <ballast x="-2.9" y="2.91" z="-0.57" mass="170"/>
-    <ballast x="-2.9" y="-2.91" z="-0.57" mass="170"/>
-    <ballast x="-2.9" y="2.67" z="-0.60" mass="170"/>
-    <ballast x="-2.9" y="-2.67" z="-0.60" mass="170"/>
-    <ballast x="-2.9" y="2.07" z="-0.65" mass="170"/>
-    <ballast x="-2.9" y="-2.07" z="-0.65" mass="170"/>
+    <ballast x="-2.70" y="3.10" z="-0.48" mass="52"/>
+    <ballast x="-2.70" y="-3.10" z="-0.48" mass="52"/>
+    <ballast x="-2.75" y="3.80" z="-0.57" mass="52"/>
+    <ballast x="-2.75" y="-3.80" z="-0.57" mass="52"/>
+    <ballast x="-2.40" y="2.17" z="-0.60" mass="222"/>
+    <ballast x="-2.40" y="-2.17" z="-0.60" mass="222"/>
+    
     <!-- pilot -->
     <weight x="-3.805" y="0" z="-0.05" mass-prop="/yasim/spitfire/pilot-lb"/>
   </airplane>

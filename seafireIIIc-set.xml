@@ -10,34 +10,31 @@ Aug 2004 Vivian Meazza, vivian.meazza at lineone.net
 -->
   <PropertyList> 
     <sim> 
-      <description>Spitfire IIa</description>
+      <description>Seafire IIIc</description>
       <flight-model>yasim</flight-model>
-      <aero>spitfireIIa</aero>
+      <aero>seafireIIIc</aero>
       <fuel-fraction>1</fuel-fraction>
       <systems> 
         <electrical> 
-      <!--   <path>Aircraft/Spitfire/Electrical/electrical.xml</path> -->
-		  <path>Aircraft/Generic/generic-electrical.xml</path>
+          <path>Aircraft/Spitfire/Electrical/electrical.xml</path>
         </electrical>
-       <submodels> 
+        <submodels> 
           <serviceable type="bool">true</serviceable>
-          <path>Aircraft/Spitfire/Models/spitfire-submodels.xml</path>
+          <path>Aircraft/Spitfire/Models/seafire-submodels.xml</path>
         </submodels>
       </systems>
       <virtual-cockpit archive="y">true</virtual-cockpit>
       <allow-toggle-cockpit archive="y">true</allow-toggle-cockpit>
-      <!---->
-	  <sound> 
+      <sound> 
         <audible>true</audible>
-        <path>Aircraft/Spitfire/Sounds/spitfire-sound.xml</path>
+        <path>Aircraft/Spitfire/Sounds/seafire-sound.xml</path>
       </sound>
-	  
       <panel> 
         <path>Aircraft/c172/Panels/c172-vfr-panel.xml</path>
         <visibility>false</visibility>
       </panel>
       <model> 
-        <path>Aircraft/Spitfire/Models/spitfire_model.xml</path>
+        <path>Aircraft/Spitfire/Models/seafire_model.xml</path>
       </model>
       <view n="0"> 
         <internal archive="y">true</internal>
@@ -122,7 +119,7 @@ Aug 2004 Vivian Meazza, vivian.meazza at lineone.net
           <mag-switch-left type="bool">0</mag-switch-left>
           <mag-switch-right type="bool">0</mag-switch-right>
           <magnetos>0</magnetos>
-          <coffman-starter> 
+          <!--<coffman-starter> 
             <cartridge type="bool">1</cartridge>
             <cartridge type="bool">1</cartridge>
             <cartridge type="bool">1</cartridge>
@@ -132,7 +129,7 @@ Aug 2004 Vivian Meazza, vivian.meazza at lineone.net
             <index type="double">5</index>
             <index-pull-norm type="double">0</index-pull-norm>
             <starter-push-norm type="double">0</starter-push-norm>
-          </coffman-starter>
+          </coffman-starter>-->
           <cutoff-pull-norm type="double">0</cutoff-pull-norm>
           <fuel-cock> 
             <lever-norm type="double">1</lever-norm>
@@ -156,18 +153,22 @@ Aug 2004 Vivian Meazza, vivian.meazza at lineone.net
         <flaps-lever type="double">0</flaps-lever>
         <elevator-trim>-0.055000</elevator-trim>
         <door-position-norm type="double">1</door-position-norm>
-        <canopy-slide type="bool">1</canopy-slide>
+        <wing-fold>1</wing-fold>
+		<canopy-slide type="bool">1</canopy-slide>
       </flight>
       <switches> 
         <fuel-gauge>0</fuel-gauge>
         <gun-sight-main>0</gun-sight-main>
         <gun-sight-dimmer>0</gun-sight-dimmer>
       </switches>
-    </controls>
+	</controls>
+	<surface-positions>
+	    <wing-fold-pos-norm type="double">1</wing-fold-pos-norm>
+	 </surface-positions>
     <!-- ================ map keyboard ================ -->
     <input> 
       <keyboard> 
-        <!--map keys for Coffman starter -->
+        <!--map keys for  starter -->
         <key n="32"> 
           <name>space bar</name>
           <desc>Coffman Starter.</desc>
@@ -256,10 +257,26 @@ Aug 2004 Vivian Meazza, vivian.meazza at lineone.net
 			      </script>
           </binding>
         </key>
-        <!--map keys for wing fold - used for canopy control -->
+       <key n="6"> 
+          <name>Ctrl-F</name>
+          <desc>Toggle Wingfold.</desc>
+          <binding> 
+            <command>property-toggle</command>
+            <property>controls/flight/wing-fold</property>
+            
+          </binding>
+         <!-- <mod-up> 
+            <binding> 
+              <command>property-assign</command>
+              <property>controls/flight/wing-fold</property>
+              <value type="bool">false</value>
+            </binding>
+          </mod-up>-->
+        </key>
+    <!--     map keys for wing fold - used for canopy control -->
         <key n="70"> 
           <name>F</name>
-          <desc>Wing Fold Down/Close Canopy.</desc>
+          <desc>Close Canopy.</desc>
           <binding> 
             <command>nasal</command>
             <script>
@@ -269,7 +286,7 @@ Aug 2004 Vivian Meazza, vivian.meazza at lineone.net
         </key>
         <key n="102"> 
           <name>f</name>
-          <desc>Wing Fold Up/Close Canopy.</desc>
+          <desc>Close Canopy.</desc>
           <binding> 
             <command>nasal</command>
             <script>
@@ -510,6 +527,16 @@ Aug 2004 Vivian Meazza, vivian.meazza at lineone.net
 			    </script>
           </binding>
         </key>
+        <!-- map keys for arrestor hook -->
+        <key n="8"> 
+          <name>Ctrl-H</name>
+          <desc>Hook down.</desc>
+          <binding> 
+            <command>property-assign</command>
+            <property>/controls/gear/tailhook</property>
+            <value type="double">1.0</value>
+          </binding>
+        </key>
       </keyboard>
     </input>
     <!-- instruments -->
@@ -521,8 +548,8 @@ Aug 2004 Vivian Meazza, vivian.meazza at lineone.net
     <!-- weights -->
     <yasim> 
       <weights> 
-        <pilot-lb type="double">180</pilot-lb>
-		<round-lb type="double">0.33</round-lb>
+        <pilot-lb type="double">200</pilot-lb>
+        <round-lb type="double">0.33</round-lb>
       </weights>
     </yasim>
     <!-- nasal stuff -->

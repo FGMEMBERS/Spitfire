@@ -31,6 +31,22 @@
           <max>1.0</max>
         </volume>
       </crank>
+	  <crank> 
+        <name>starter</name>
+        <path>Aircraft/Spitfire/Sounds/merlin_starter.wav</path>
+		<mode>looped</mode>
+        <property>/engines/engine/cranking</property>
+        <volume> 
+          <property>/orientation/alpha-deg</property>
+          <type>log</type>
+          <min>0.5</min>
+          <max>1.0</max>
+        </volume>
+        <volume> 
+          <factor>1.2</factor>
+          <max>1.0</max>
+        </volume>
+      </crank>
       <engine> 
         <name>engine idle rpm</name>
         <mode>looped</mode>
@@ -425,7 +441,7 @@
         <path>Aircraft/Spitfire/Sounds/gunfire_1.wav</path>
         <condition> 
           <property>/systems/submodels/trigger</property>
-		  <property>/systems/submodels/submodel/count[0]</property>
+		  <property>/systems/submodels/submodel[1]/count[0]</property>
         </condition>
         <volume> 
           <factor>1.2</factor>

@@ -16,7 +16,16 @@ registerTimer = func {
 
 # =============================== end timer stuff ===========================================
 
+# =============================== set the aircraft type =====================================
 
+spitfireIIa = 0;
+
+type = getprop("sim/aircraft");
+print ("type: " , type , " spitfireIIa: " , spitfireIIa);
+
+if (type == "spitfireIIa") {spitfireIIa = 1;}
+
+print ("type: " , type , " spitfireIIa: " , spitfireIIa);
 # ============================= Coffman starter stuff =======================================
 
 indexCof = func{
@@ -37,7 +46,9 @@ indexCof = func{
 
 startCof = func{
     start = arg[0];
-    if(start) {
+	
+    if(start and spitfire.spitfireIIa) {             #Coffman starter
+	     print ("type: " , spitfire.type , " spitfireIIa: " , spitfireIIa);
         i = getprop("controls/engines/engine/coffman-starter/index");
         j= "controls/engines/engine/coffman-starter/cartridge" ~ "[" ~ i ~ "]";
         primer = getprop("controls/engines/engine/primer");
@@ -46,8 +57,14 @@ startCof = func{
             primerMixture(primer);                            # set the mixture
             setprop("controls/engines/engine/starter",1);     # starter runs
             setprop(j,0);                                    # fire this cartridge
-        }    
-    }else{
+        }
+	}
+	elsif (start) {                           #Electric starter
+	    primer = getprop("controls/engines/engine/primer");
+	    primerMixture(primer);                            # set the mixture
+        setprop("controls/engines/engine/starter",1);     # starter runs	    
+    }
+	else{
         setprop("controls/engines/engine/starter",0);
         setprop("controls/engines/engine/coffman-starter/starter-push-norm",0);
         setprop("controls/engines/engine/primer", 0);    # set primer back to zero
@@ -177,7 +194,7 @@ openCanopy = func{ # open the canopy if door is closed
     canopyopen = arg[0];
     dooropen = getprop("controls/flight/door-position-norm");
     if (!dooropen) {
-        setprop("controls/flight/wing-fold",canopyopen)
+        setprop("controls/flight/canopy-slide",canopyopen)
     }
 
 } # end function
@@ -375,20 +392,19 @@ negGCutoff = func{
 
     g = getprop("accelerations/pilot-g");
     if (g == nil) { g = 0 };
-    
-    if (g > 0.75) {
-            mixture = getprop("controls/engines/engine/mixture-lever");
-            return  mixture;                    # mixture set by lever
-
-
-        }
-        elsif (g <= 0.75 and g >= 0)  {            # mixture set by - ve g
-            mixture = g * 4/3;
-        }
-        else  {                                    # mixture set by - ve g
-            mixture = 0;
-    }
-        
+	mixture = getprop("controls/engines/engine/mixture-lever");
+    if (spitfireIIa) {
+		if (g > 0.75) {
+				return  mixture;                    # mixture set by lever
+			}
+			elsif (g <= 0.75 and g >= 0)  {            # mixture set by - ve g
+				mixture = g * 4/3;
+			}
+			else  {                                    # mixture set by - ve g
+				mixture = 0;
+		}
+    } 
+	    
 #    print("g: " , g , " mixture: " , mixture);
     
     return mixture;
