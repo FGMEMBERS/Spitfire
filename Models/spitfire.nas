@@ -21,17 +21,27 @@ registerTimer = func {
 spitfireIIa = 0;
 
 type = getprop("sim/aircraft");
-print ("type: " , type , " spitfireIIa: " , spitfireIIa);
 
 if (type == "spitfireIIa") {spitfireIIa = 1;}
 
-print ("type: " , type , " spitfireIIa: " , spitfireIIa);
+print ("type: " , type );
 # ============================= Coffman starter stuff =======================================
+
+
+nowN       = props.globals.getNode("/sim/time/elapsed-sec", 1);
+starterN   = props.globals.getNode("controls/engines/engine/starter", 1);
+primerN    = props.globals.getNode("controls/engines/engine/primer", 1);
+cartridgeN = props.globals.getNode("controls/engines/engine/coffman-starter/index");
+LastStartTime = 0;
+LastCartridge = -1;
+Start = 0;		# stopCof needs this, too
+
 
 indexCof = func{
     pull=arg[0];
     if(pull) {
-        i = getprop("controls/engines/engine/coffman-starter/index");
+#        i = getprop("controls/engines/engine/coffman-starter/index");
+		i = cartridgeN.getValue();
         i = i - 1;
         if (i == -1) {
             i = 5;
@@ -44,32 +54,58 @@ indexCof = func{
 
 } # end function
 
+
+
+
 startCof = func{
-    start = arg[0];
+	Start = arg[0];
+	max_run = 4;
 	
-    if(start and spitfire.spitfireIIa) {             #Coffman starter
-	     print ("type: " , spitfire.type , " spitfireIIa: " , spitfireIIa);
-        i = getprop("controls/engines/engine/coffman-starter/index");
-        j= "controls/engines/engine/coffman-starter/cartridge" ~ "[" ~ i ~ "]";
-        primer = getprop("controls/engines/engine/primer");
-        setprop("controls/engines/engine/coffman-starter/starter-push-norm",1);
-        if (getprop(j) ) {                            # if cartridge hasn't been fired  
-            primerMixture(primer);                            # set the mixture
-            setprop("controls/engines/engine/starter",1);     # starter runs
-            setprop(j,0);                                    # fire this cartridge
-        }
+	if (Start) {
+		LastStartTime = nowN.getValue();
+		if (!starterN.getValue()) { 			# not started yet: do it now
+			setprop("controls/engines/engine/coffman-starter/starter-push-norm", 1);
+			
+			ready = !spitfire.spitfireIIa;		# seafires are always ready
+
+			if (!ready) {						# must be a spitfire
+				LastCartridge = cartridgeN.getValue();
+				j = "controls/engines/engine/coffman-starter/cartridge[" ~ LastCartridge ~ "]";
+				if (ready = getprop(j)) {
+					setprop(j, 0);
+#					print("max run: " , max_run);
+					settimer(func {             # nameless out-of-gas watcher
+					           	starterN.setValue(0);
+								primerN.setValue(0);
+					           	print ("starter stopping, out of gas!"); 
+					            }, max_run)};
+     		}
+
+			if (ready) {
+				primerMixture(primerN.getValue());
+				starterN.setValue(1);
+#				print ("starter running!");
+			}
+		}
+	} else{
+		settimer(stopCof, 0.2);
 	}
-	elsif (start) {                           #Electric starter
-	    primer = getprop("controls/engines/engine/primer");
-	    primerMixture(primer);                            # set the mixture
-        setprop("controls/engines/engine/starter",1);     # starter runs	    
-    }
-	else{
-        setprop("controls/engines/engine/starter",0);
-        setprop("controls/engines/engine/coffman-starter/starter-push-norm",0);
-        setprop("controls/engines/engine/primer", 0);    # set primer back to zero
-    }
-            
+} # end function
+
+stopCof = func {
+
+    min_run = 2;
+	if (!Start and starterN.getValue()) {
+		if (nowN.getValue() - LastStartTime < min_run) {
+			settimer(stopCof, 0.2);			# too soon; let's try again later
+#			print ("too soon! min run: " , min_run);
+		} else {
+			primerN.setValue(0);
+			starterN.setValue(0);
+			setprop("controls/engines/engine/coffman-starter/starter-push-norm", 0);
+#			print ("starter stopping!");
+		}
+	}
 } # end function
 
 # ============================ end Coffman starter stuff =====================================
