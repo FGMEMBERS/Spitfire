@@ -20,8 +20,15 @@ Aug 2004 Vivian Meazza, vivian.meazza at lineone.net
         </electrical>
         <submodels> 
           <serviceable type="bool">true</serviceable>
-		  <path>Aircraft/Spitfire/Models/submodels.xml</path>
+          <path>Aircraft/Spitfire/Models/spitfire-submodels.xml</path>
         </submodels>
+<!--        <smokemodels > 
+          <serviceable type="bool">1</serviceable>
+          <path>Aircraft/Spitfire/Models/smokemodels.xml</path>
+          <smokemodel n= "0"> 
+            <flare-release type="bool">0</flare-release>
+          </smokemodel>
+        </smokemodels>-->
       </systems>
       <virtual-cockpit archive="y">true</virtual-cockpit>
       <allow-toggle-cockpit archive="y">true</allow-toggle-cockpit>
@@ -252,6 +259,22 @@ Aug 2004 Vivian Meazza, vivian.meazza at lineone.net
 				  spitfire.toggleDoor();
 			      </script>
           </binding>
+        </key>
+        <key n="6"> 
+          <name>Ctrl-F</name>
+          <desc>Trigger flare release</desc>
+          <binding> 
+            <command>property-assign</command>
+            <property>systems/smokemodels/smokemodel[0]/flare-release</property>
+            <value type="bool">true</value>
+          </binding>
+          <mod-up> 
+            <binding> 
+              <command>property-assign</command>
+              <property>systems/smokemodels/smokemodel[0]/flare-release</property>
+              <value type="bool">false</value>
+            </binding>
+          </mod-up>
         </key>
         <!--map keys for wing fold - used for canopy control -->
         <key n="70"> 
@@ -515,11 +538,12 @@ Aug 2004 Vivian Meazza, vivian.meazza at lineone.net
         <serviceable type="bool">1</serviceable>
       </fuel>
     </instrumentation>
-    <!-- pilot, with parachute -->
+    <!-- weights -->
     <yasim> 
-      <spitfire> 
+      <weights> 
         <pilot-lb type="double">180</pilot-lb>
-      </spitfire>
+		<round-lb type="double">0.33</round-lb>
+      </weights>
     </yasim>
     <!-- nasal stuff -->
     <nasal> 
@@ -531,5 +555,4 @@ Aug 2004 Vivian Meazza, vivian.meazza at lineone.net
         <file>Aircraft/Spitfire/Models/fuel-cocks.nas</file>
       </spitfire-fuel>
     </nasal>
-    
   </PropertyList>
