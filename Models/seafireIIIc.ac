@@ -155,7 +155,7 @@ kids 0
 OBJECT poly
 name "Cover-Lower-A"
 loc -2.11265 0.184347 0.0923696
-texture "Seafire-tx-01.rgb"
+texture "seafire-tx-01.rgb"
 crease 180.000000
 numvert 27
 1.74982 -0.727403 -0.256339
@@ -336,7 +336,7 @@ kids 0
 OBJECT poly
 name "Cover-Lower-F"
 loc -2.11265 0.184347 0.0923696
-texture "Seafire-tx-01.rgb"
+texture "seafire-tx-01.rgb"
 crease 180.000000
 numvert 30
 0.52227 -0.310122 -0.124278
@@ -550,7 +550,7 @@ kids 0
 OBJECT poly
 name "Cover-Lower-M"
 loc -2.11265 0.184347 0.0923696
-texture "Seafire-tx-01.rgb"
+texture "seafire-tx-01.rgb"
 crease 180.000000
 numvert 22
 0.98992 -0.645882 4.47035e-008
@@ -650,7 +650,7 @@ kids 0
 OBJECT poly
 name "Cover-Upper-Tank"
 loc -2.11265 0.184347 0.0923696
-texture "Seafire-tx-01.rgb"
+texture "seafire-tx-01.rgb"
 crease 180.000000
 numvert 30
 2.31291 0.161894 -0.382441
@@ -786,7 +786,7 @@ kids 0
 OBJECT poly
 name "Cover-Engine-T"
 loc -0.686787 0.468495 -0.105058
-texture "Seafire-tx-01.rgb"
+texture "seafire-tx-01.rgb"
 crease 180.000000
 numvert 76
 -0.861742 0.0114345 0.0702991
@@ -1390,7 +1390,7 @@ kids 0
 OBJECT poly
 name "Cover-Engine-Side-L"
 loc -0.688707 -0.0421599 -0.259933
-texture "Seafire-tx-01.rgb"
+texture "seafire-tx-01.rgb"
 crease 180.000000
 numvert 44
 0.283723 0.270259 0.760813
@@ -1703,7 +1703,7 @@ kids 0
 OBJECT poly
 name "Cover-Engine-Side-R"
 loc -0.688707 -0.0421599 -0.259933
-texture "Seafire-tx-01.rgb"
+texture "seafire-tx-01.rgb"
 crease 180.000000
 numvert 44
 -0.261665 -0.0516116 -0.0330777
@@ -2016,7 +2016,7 @@ kids 0
 OBJECT poly
 name "Hull"
 loc 2.81557 0.0580561 0.0923721
-texture "Seafire-tx-01.rgb"
+texture "seafire-tx-01.rgb"
 crease 180.000000
 numvert 226
 2.37453 -0.333817 -2.48154e-005
@@ -4307,7 +4307,7 @@ kids 0
 OBJECT poly
 name "Fairing"
 loc -0.452583 0.792227 0.0216961
-texture "Seafire-tx-01.rgb"
+texture "seafire-tx-01.rgb"
 crease 180.000000
 numvert 12
 0.990041 -0.406719 -0.150855
@@ -7996,7 +7996,7 @@ kids 0
 OBJECT poly
 name "Fairing"
 loc -0.00374126 0.653314 -1.0336
-texture "Seafire-tx-03.rgb"
+texture "seafire-tx-03.rgb"
 crease 180.000000
 numvert 63
 -0.507756 -1.33045 2.06721
@@ -8538,7 +8538,7 @@ kids 0
 OBJECT poly
 name "Wing-B-L"
 loc -0.0525486 -0.0872383 -1.75495
-texture "Seafire-tx-03.rgb"
+texture "seafire-tx-03.rgb"
 crease 180.000000
 numvert 56
 1.24822 -0.225782 3.65788
@@ -8797,7 +8797,7 @@ kids 0
 OBJECT poly
 name "Wing-T-L"
 loc -0.0469997 -0.0317383 -1.75463
-texture "Seafire-tx-02.rgb"
+texture "seafire-tx-02.rgb"
 crease 180.000000
 numvert 20
 1.21664 -0.26555 3.65749
@@ -8902,7 +8902,7 @@ kids 3
 OBJECT poly
 name "Flap-Outer-B"
 loc 7.78558 0.245888 -3.63018
-texture "Seafire-tx-03.rgb"
+texture "seafire-tx-03.rgb"
 crease 180.000000
 numvert 7
 0.00535512 -0.745377 0.0164604
@@ -9017,7 +9017,7 @@ kids 11
 OBJECT poly
 name "Cannon-Blister-S"
 loc 1.16967 -0.788149 2.66219
-texture "Seafire-tx-02.rgb"
+texture "seafire-tx-02.rgb"
 crease 45.000000
 numvert 106
 0.321752 0.789229 -4.2895
@@ -9867,7 +9867,7 @@ kids 3
 OBJECT poly
 name "Fairing-B"
 loc -1.19209e-007 0 0
-texture "Seafire-tx-03.rgb"
+texture "seafire-tx-03.rgb"
 crease 180.000000
 numvert 45
 0.00451958 0 -4.24557
@@ -10144,7 +10144,7 @@ kids 0
 OBJECT poly
 name "Barrel"
 loc -1.19209e-007 0 0
-texture "Seafire-tx-02.rgb"
+texture "seafire-tx-02.rgb"
 crease 67.000000
 numvert 80
 -0.394 0.00706154 -4.2133
@@ -10629,7 +10629,7 @@ kids 0
 OBJECT poly
 name "Fairing-T"
 loc -1.19209e-007 0 0
-texture "Seafire-tx-02.rgb"
+texture "seafire-tx-02.rgb"
 crease 180.000000
 numvert 45
 -0.300965 0.0130481 -4.2093
@@ -10906,7 +10906,7 @@ kids 0
 OBJECT poly
 name "Wing-B-Outer-R"
 loc 2.03547 -0.147499 -2.32798
-texture "Seafire-tx-03.rgb"
+texture "seafire-tx-03.rgb"
 crease 180.000000
 numvert 75
 1.20859 -0.138124 0.998547
@@ -11352,7 +11352,7 @@ kids 0
 OBJECT poly
 name "Wing-T-Outer-R"
 loc 2.04102 -0.0919992 -2.32766
-texture "Seafire-tx-02.rgb"
+texture "seafire-tx-02.rgb"
 crease 180.000000
 numvert 54
 1.06712 -0.0657065 0.035965
@@ -12083,7 +12083,7 @@ kids 0
 OBJECT poly
 name "Aileron-T"
 loc 7.29122 0.176596 -7.6807
-texture "Seafire-tx-02.rgb"
+texture "seafire-tx-02.rgb"
 crease 180.000000
 numvert 20
 0.413399 -0.634874 1.02547
@@ -12219,7 +12219,7 @@ kids 0
 OBJECT poly
 name "Aileron-B"
 loc 7.29122 0.176596 -7.6807
-texture "Seafire-tx-03.rgb"
+texture "seafire-tx-03.rgb"
 crease 180.000000
 numvert 20
 -0.163406 -0.66063 1.01837
@@ -12408,7 +12408,7 @@ kids 0
 OBJECT poly
 name "Wing-Tip-T-R"
 loc -0.947399 0.444503 0.517384
-texture "Seafire-tx-02.rgb"
+texture "seafire-tx-02.rgb"
 crease 180.000000
 numvert 34
 2.29433 -0.279205 -4.88004
@@ -12625,7 +12625,7 @@ kids 0
 OBJECT poly
 name "Wing-Tip-B-R"
 loc 1.77758 0.129048 -4.74796
-texture "Seafire-tx-03.rgb"
+texture "seafire-tx-03.rgb"
 crease 180.000000
 numvert 40
 -0.598314 -0.0302904 0.385077
@@ -12952,7 +12952,7 @@ kids 3
 OBJECT poly
 name "Flap-Outer-B"
 loc 7.78558 0.245888 -3.63018
-texture "Seafire-tx-03.rgb"
+texture "seafire-tx-03.rgb"
 crease 180.000000
 numvert 7
 0.294845 -0.731348 -0.0311861
@@ -13050,7 +13050,7 @@ kids 3
 OBJECT poly
 name "Flap-Outer-B"
 loc 7.78558 0.245888 -3.63018
-texture "Seafire-tx-03.rgb"
+texture "seafire-tx-03.rgb"
 crease 180.000000
 numvert 7
 0.294845 -0.731348 3.66093
@@ -13223,7 +13223,7 @@ kids 3
 OBJECT poly
 name "Fairing-T"
 loc 1.19209e-007 0 0
-texture "Seafire-tx-02.rgb"
+texture "seafire-tx-02.rgb"
 crease 180.000000
 numvert 45
 0.00451958 0 0.0493269
@@ -13500,7 +13500,7 @@ kids 0
 OBJECT poly
 name "Barrel"
 loc 1.19209e-007 0 0
-texture "Seafire-tx-02.rgb"
+texture "seafire-tx-02.rgb"
 crease 68.000000
 numvert 80
 0.131496 0 0.0133173
@@ -13985,7 +13985,7 @@ kids 0
 OBJECT poly
 name "Fairing-B"
 loc 1.19209e-007 0 0
-texture "Seafire-tx-03.rgb"
+texture "seafire-tx-03.rgb"
 crease 180.000000
 numvert 45
 -0.300965 0 -0.0184526
@@ -14262,7 +14262,7 @@ kids 0
 OBJECT poly
 name "Wing-B-Outer-L"
 loc 1.35228 -0.102733 3.40236
-texture "Seafire-tx-03.rgb"
+texture "seafire-tx-03.rgb"
 crease 180.000000
 numvert 76
 1.23484 -0.188794 -1.51758
@@ -14702,7 +14702,7 @@ kids 0
 OBJECT poly
 name "Wing-T-Outer-L"
 loc 1.38108 -0.0979035 -2.80411
-texture "Seafire-tx-02.rgb"
+texture "seafire-tx-02.rgb"
 crease 180.000000
 numvert 54
 -1.10492 0.124857 6.74634
@@ -15414,7 +15414,7 @@ kids 0
 OBJECT poly
 name "Aileron-T"
 loc 0.0180869 0.16403 0.00835037
-texture "Seafire-tx-02.rgb"
+texture "seafire-tx-02.rgb"
 crease 180.000000
 numvert 20
 -0.345009 -0.43333 7.72947
@@ -15550,7 +15550,7 @@ kids 0
 OBJECT poly
 name "Aileron-B"
 loc 0.0180869 0.16403 0.00835037
-texture "Seafire-tx-03.rgb"
+texture "seafire-tx-03.rgb"
 crease 180.000000
 numvert 20
 -0.344032 -0.521149 7.73002
@@ -15686,7 +15686,7 @@ kids 0
 OBJECT poly
 name "Cannon-Blister-P"
 loc 0.509738 -0.794054 2.18577
-texture "Seafire-tx-02.rgb"
+texture "seafire-tx-02.rgb"
 crease 180.000000
 numvert 106
 1.37273 0.701418 -4.76837e-007
@@ -16532,7 +16532,7 @@ kids 0
 OBJECT poly
 name "Wing-Tip-T-L"
 loc -1.60734 0.438598 0.0409614
-texture "Seafire-tx-02.rgb"
+texture "seafire-tx-02.rgb"
 crease 180.000000
 numvert 33
 2.29432 -0.279205 4.88004
@@ -16748,7 +16748,7 @@ kids 0
 OBJECT poly
 name "Wing-Tip-B-L"
 loc 1.11764 0.123142 -5.2244
-texture "Seafire-tx-03.rgb"
+texture "seafire-tx-03.rgb"
 crease 180.000000
 numvert 37
 -0.595964 -0.0310873 10.1466
@@ -17066,7 +17066,7 @@ kids 3
 OBJECT poly
 name "Flap-Outer-B"
 loc 7.78558 0.245888 -3.63018
-texture "Seafire-tx-03.rgb"
+texture "seafire-tx-03.rgb"
 crease 180.000000
 numvert 7
 0.0379336 -0.740188 3.66317
@@ -17169,7 +17169,7 @@ kids 2
 OBJECT poly
 name "Door-OS"
 loc 5.32768 0.00747782 -2.43561
-texture "Seafire-tx-03.rgb"
+texture "seafire-tx-03.rgb"
 crease 45.000000
 numvert 27
 -0.298755 -0.060174 1.95213
@@ -17945,7 +17945,7 @@ kids 2
 OBJECT poly
 name "Hub"
 loc 7.18395 0.423073 -1.35133
-texture "Seafire-tx-03.rgb"
+texture "seafire-tx-03.rgb"
 crease 45.000000
 numvert 32
 -0.95043 0.90414 1.45945
@@ -20033,7 +20033,7 @@ kids 0
 OBJECT poly
 name "Fillet"
 loc -0.0718307 0.0257461 0.111718
-texture "Seafire-tx-01.rgb"
+texture "seafire-tx-01.rgb"
 crease 180.000000
 numvert 47
 0.203961 -0.138821 0.212985
@@ -20400,7 +20400,7 @@ kids 0
 OBJECT poly
 name "Tailplane-B"
 loc -0.0380306 0.00601256 -0.519875
-texture "Seafire-tx-03.rgb"
+texture "seafire-tx-03.rgb"
 crease 180.000000
 numvert 34
 -0.39942 -0.043792 0.800335
@@ -20638,7 +20638,7 @@ kids 0
 OBJECT poly
 name "Tailplane-T"
 loc -0.0380306 0.00601256 -0.519875
-texture "Seafire-tx-02.rgb"
+texture "seafire-tx-02.rgb"
 crease 180.000000
 numvert 33
 0.378748 0.0104274 0.800335
@@ -20874,7 +20874,7 @@ kids 3
 OBJECT poly
 name "Rudder"
 loc 0.0179491 -0.260997 -0.0151936
-texture "Seafire-tx-01.rgb"
+texture "seafire-tx-01.rgb"
 crease 180.000000
 numvert 67
 0.306669 -0.14238 0.0944986
@@ -21701,7 +21701,7 @@ kids 0
 OBJECT poly
 name "Hull-Aft"
 loc 12.3149 0.00722358 -0.145503
-texture "Seafire-tx-01.rgb"
+texture "seafire-tx-01.rgb"
 crease 180.000000
 numvert 44
 0.305151 -0.0796606 0.160623
@@ -21975,7 +21975,7 @@ kids 0
 OBJECT poly
 name "Tail"
 loc 12.4864 0.455923 -0.0649099
-texture "Seafire-tx-01.rgb"
+texture "seafire-tx-01.rgb"
 crease 180.000000
 numvert 37
 -0.182749 0.144702 0.043241
@@ -22288,7 +22288,7 @@ kids 4
 OBJECT poly
 name "Filet"
 loc -0.0718837 0.0257461 0.459652
-texture "Seafire-tx-01.rgb"
+texture "seafire-tx-01.rgb"
 crease 160.000000
 numvert 47
 0.203962 -0.138821 0.0279207
@@ -22655,7 +22655,7 @@ kids 0
 OBJECT poly
 name "Tailplane-T"
 loc -0.0380135 0.00601256 -0.171943
-texture "Seafire-tx-02.rgb"
+texture "seafire-tx-02.rgb"
 crease 180.000000
 numvert 38
 0.378101 0.0107038 0.683839
@@ -22904,7 +22904,7 @@ kids 0
 OBJECT poly
 name "Tailplane-B"
 loc -0.0380135 0.00601256 -0.171943
-texture "Seafire-tx-03.rgb"
+texture "seafire-tx-03.rgb"
 crease 180.000000
 numvert 34
 -0.39942 -0.043792 0.703752
@@ -23271,7 +23271,7 @@ kids 0
 OBJECT poly
 name "Elevator-T"
 loc 0.0596361 0.0271013 -0.0354429
-texture "Seafire-tx-02.rgb"
+texture "seafire-tx-02.rgb"
 crease 180.000000
 numvert 32
 -0.188578 0.00924173 -0.540056
@@ -23490,7 +23490,7 @@ kids 0
 OBJECT poly
 name "Elevator-B"
 loc 0.0596361 -0.0271012 -0.0354429
-texture "Seafire-tx-03.rgb"
+texture "seafire-tx-03.rgb"
 crease 180.000000
 numvert 32
 -0.188578 -0.00924154 -0.540056
@@ -23779,7 +23779,7 @@ kids 0
 OBJECT poly
 name "Elevator-B"
 loc 0.0596361 -0.0271011 0.0354469
-texture "Seafire-tx-03.rgb"
+texture "seafire-tx-03.rgb"
 crease 180.000000
 numvert 32
 -0.282232 -0.00727384 0.629222
@@ -23998,7 +23998,7 @@ kids 0
 OBJECT poly
 name "Elevator-T"
 loc 0.0596361 0.0271012 0.0354469
-texture "Seafire-tx-02.rgb"
+texture "seafire-tx-02.rgb"
 crease 180.000000
 numvert 32
 -0.282232 0.00727391 0.629222
@@ -24316,7 +24316,7 @@ kids 2
 OBJECT poly
 name "Hub"
 loc 7.18395 0.423073 -1.35133
-texture "Seafire-tx-03.rgb"
+texture "seafire-tx-03.rgb"
 crease 45.000000
 numvert 32
 -1.34021 0.891257 -0.24945
@@ -26585,7 +26585,7 @@ kids 2
 OBJECT poly
 name "Door-OS"
 loc 5.35293 0.0125661 -2.40527
-texture "Seafire-tx-03.rgb"
+texture "seafire-tx-03.rgb"
 crease 45.000000
 numvert 27
 -0.0769398 -0.0197451 -0.0650778
@@ -27166,7 +27166,7 @@ kids 0
 OBJECT poly
 name "Wing-B-R"
 loc 0.00193381 -0.000358224 -0.50545
-texture "Seafire-tx-03.rgb"
+texture "seafire-tx-03.rgb"
 crease 180.000000
 numvert 55
 0.980358 -0.246969 2.03388
@@ -27413,7 +27413,7 @@ kids 0
 OBJECT poly
 name "Wing-T"
 loc 0.00748396 0.0551417 -0.50513
-texture "Seafire-tx-02.rgb"
+texture "seafire-tx-02.rgb"
 crease 180.000000
 numvert 20
 -0.681458 -0.0126235 2.03396
@@ -50556,7 +50556,7 @@ kids 2
 OBJECT poly
 name "Flap"
 loc 0.203918 0.00793707 -0.846563
-texture "Seafire-tx-03.rgb"
+texture "seafire-tx-03.rgb"
 crease 45.000000
 numvert 16
 -0.152457 0.114727 0.323508
@@ -51238,7 +51238,7 @@ kids 2
 OBJECT poly
 name "Fairing"
 loc 0.125982 -0.00150084 0.000670439
-texture "Seafire-tx-03.rgb"
+texture "seafire-tx-03.rgb"
 crease 180.000000
 numvert 116
 -0.500036 -0.016355 -0.0838948
@@ -52381,7 +52381,7 @@ kids 0
 OBJECT poly
 name "Stub-Wing-T"
 loc -0.108863 0.139905 -0.00829703
-texture "Seafire-tx-01.rgb"
+texture "seafire-tx-01.rgb"
 crease 180.000000
 numvert 67
 -1.26638 -0.00469327 -0.0310317
@@ -52931,7 +52931,7 @@ kids 0
 OBJECT poly
 name "Stub-Wing-B"
 loc -0.123253 -0.012025 0.0510225
-texture "Seafire-tx-03.rgb"
+texture "seafire-tx-03.rgb"
 crease 180.000000
 numvert 64
 -2.03068 0.00555402 0.17633
@@ -55856,7 +55856,7 @@ kids 3
 OBJECT poly
 name "Stub-Wing-B"
 loc -0.122097 -0.012025 0.684138
-texture "Seafire-tx-03.rgb"
+texture "seafire-tx-03.rgb"
 crease 180.000000
 numvert 72
 -2.01893 -0.0266484 0.176677
@@ -56229,7 +56229,7 @@ kids 0
 OBJECT poly
 name "Stub-Wing-T"
 loc -0.109442 0.139905 -0.324854
-texture "Seafire-tx-01.rgb"
+texture "seafire-tx-01.rgb"
 crease 180.000000
 numvert 68
 -1.68719 -0.0283504 1.3477
@@ -56916,7 +56916,7 @@ kids 0
 OBJECT poly
 name "Door-OS"
 loc 4.94215 -0.0945179 -0.216812
-texture "Seafire-tx-01.rgb"
+texture "seafire-tx-01.rgb"
 crease 180.000000
 numvert 10
 -1.22156 0.367668 0.540008
@@ -58047,7 +58047,7 @@ kids 3
 OBJECT poly
 name "Flap-Inner-C"
 loc 5.47885 -0.520002 -0.758489
-texture "Seafire-tx-01.rgb"
+texture "seafire-tx-01.rgb"
 crease 45.000000
 numvert 14
 0.114775 -0.0233768 0.243026
@@ -58116,7 +58116,7 @@ kids 0
 OBJECT poly
 name "Flap-Inner-T"
 loc 1.38135 0.27885 -0.189661
-texture "Seafire-tx-01.rgb"
+texture "seafire-tx-01.rgb"
 crease 180.000000
 numvert 8
 4.20988 -0.820194 -0.812485
@@ -58143,7 +58143,7 @@ kids 0
 OBJECT poly
 name "Flap-Inner-B"
 loc 1.38135 0.27885 -0.189661
-texture "Seafire-tx-03.rgb"
+texture "seafire-tx-03.rgb"
 crease 180.000000
 numvert 8
 4.01098 -0.839656 -0.81168
@@ -58174,7 +58174,7 @@ kids 3
 OBJECT poly
 name "Flap-Inner-B"
 loc 1.38135 0.27885 -0.189661
-texture "Seafire-tx-03.rgb"
+texture "seafire-tx-03.rgb"
 crease 180.000000
 numvert 8
 4.20988 -0.820194 0.812488
