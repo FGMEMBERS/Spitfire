@@ -9,6 +9,7 @@ OBJECT poly
 name "glass"
 loc 0.0428335 0.0218476 -0.0464239
 texture "reflector_gun_sight.rgb"
+crease 61.000000
 numvert 50
 -0.0334661 -0.0237974 0.0464245
 -0.0365953 -0.020031 0.0463662
@@ -302,6 +303,7 @@ OBJECT poly
 name "knurled-ring-range"
 loc -0.0395551 -0.143404 0.00328559
 texture "spitfire-tx-00.rgb"
+crease 61.000000
 numvert 69
 0.0440418 0.0205296 -0.00328575
 0.0440418 0.0172472 0.0307952
@@ -646,6 +648,7 @@ kids 0
 OBJECT poly
 name "cylinder-upper"
 loc 0.02935 -0.0747023 -0.0458547
+crease 61.000000
 numvert 39
 -0.02935 0.0395605 0.0458546
 -0.0386451 0.0395605 0.0805446
@@ -809,6 +812,7 @@ kids 0
 OBJECT poly
 name "mount"
 loc -0.0179511 -0.0215925 -0.0179521
+crease 61.000000
 numvert 41
 0.0179529 -0.0135534 0.0505089
 0.0162328 0.0174747 0.0504737
@@ -1098,6 +1102,7 @@ kids 0
 OBJECT poly
 name "cylinder-lower"
 loc 0.0253536 -0.13051 -0.0396111
+crease 61.000000
 numvert 27
 -0.0253537 0.0825831 0.00858757
 -0.0173242 0.0825831 0.00964467
@@ -1216,6 +1221,7 @@ OBJECT poly
 name "disk"
 loc 0.0480251 -4.65661e-010 6.69388e-010
 texture "reflector_gun_sight.rgb"
+crease 61.000000
 numvert 13
 0 0 0.028125
 0 0.0140625 0.024357
@@ -1308,6 +1314,7 @@ OBJECT poly
 name "pad-upper"
 loc 2.99981e-009 2.00162e-009 -1.4999e-009
 texture "reflector_gun_sight-01.rgb"
+crease 61.000000
 numvert 35
 0.00863138 -0.0571758 0.0344219
 0.00869073 -0.0571455 -0.0346453
@@ -1504,6 +1511,7 @@ OBJECT poly
 name "pad-lower"
 loc -0.00382733 -0.049001 -1.86265e-009
 texture "reflector_gun_sight-01.rgb"
+crease 61.000000
 numvert 48
 0.0250878 -0.0475249 0.0414114
 0.0354966 -0.0475249 0.0338159
@@ -1796,6 +1804,7 @@ kids 0
 OBJECT poly
 name "mount"
 loc 0.0348403 -0.0747023 -0.0403644
+crease 61.000000
 numvert 14
 -0.0348403 -0.0163583 0.0403643
 -0.0348403 -0.0163583 0.000859492
@@ -1859,6 +1868,7 @@ OBJECT poly
 name "knurled-ring-base"
 loc -0.0395549 -0.131448 0.00328575
 texture "spitfire-tx-00.rgb"
+crease 61.000000
 numvert 69
 0.0440418 -0.00348298 -0.0373667
 0.0469951 -0.00348298 -0.0368459
@@ -2207,6 +2217,7 @@ kids 6
 OBJECT poly
 name "mount-back"
 loc 0.00660205 0.00440107 0.0161411
+crease 61.000000
 numvert 17
 -0.0670271 0.0239998 -0.0342481
 -0.0192032 0.00398933 -0.0342121
@@ -2290,6 +2301,7 @@ OBJECT poly
 name "knurled-ring-range-back"
 loc -0.032404 -0.0439529 0.0194267
 texture "spitfire-tx-00.rgb"
+crease 61.000000
 numvert 81
 0.0440418 0.0205296 -0.0373667
 0.0440418 0.0205296 0.0307952
@@ -2694,6 +2706,7 @@ kids 0
 OBJECT poly
 name "cylinder-lower-back"
 loc 0.0325047 -0.0310589 -0.02347
+crease 61.000000
 numvert 26
 -0.0253537 -0.0179918 0.0706345
 -0.0253537 -0.0179918 0.00858757
@@ -2810,6 +2823,7 @@ kids 0
 OBJECT poly
 name "mount-back"
 loc -0.0108 0.0778585 -0.00181106
+crease 61.000000
 numvert 26
 0.016059 0.0175106 -0.017952
 0.017951 -0.0135534 -0.01793
@@ -2986,6 +3000,7 @@ kids 0
 OBJECT poly
 name "cylinder-upper-back"
 loc 0.0365011 0.0247488 -0.0297136
+crease 61.000000
 numvert 26
 -0.02935 0.0250307 0.0817683
 -0.02935 0.0250307 0.00994118
@@ -3103,6 +3118,7 @@ OBJECT poly
 name "knurled-ring-base-back"
 loc -0.0324038 -0.0319964 0.0194269
 texture "spitfire-tx-00.rgb"
+crease 61.000000
 numvert 81
 0.0440418 -0.00348298 -0.00328575
 0.0409794 -0.00676538 -0.0359108
