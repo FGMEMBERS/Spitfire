@@ -35,7 +35,7 @@
   <submodel>
     <name>gun</name>
     <model>Models/Geometry/tracer.ac</model>
-    <trigger>systems/submodels/trigger</trigger>
+    <trigger>ai/submodels/trigger</trigger>
     <speed>2444.2</speed>
     <repeat>true</repeat>
     <delay>0.0526</delay>
