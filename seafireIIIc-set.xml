@@ -32,7 +32,7 @@ Aug 2004 Vivian Meazza, vivian.meazza at lineone.net
         <path>Aircraft/Spitfire/Sounds/seafire-sound.xml</path>
       </sound>
       <panel> 
-        <path>Aircraft/c172/Panels/c172-vfr-panel.xml</path>
+        <path>Aircraft/Generic/Panels/generic-vfr-panel.xml</path>
         <visibility>false</visibility>
       </panel>
       <model> 
