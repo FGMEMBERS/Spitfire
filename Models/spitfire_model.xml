@@ -81,6 +81,7 @@
         <z-m>0.32</z-m>
       </offsets>
     </model>
+	
 	<model> 
       <path>Aircraft/Spitfire/Models/boost.xml</path>
       <offsets> 
@@ -89,6 +90,7 @@
         <z-m>0.23</z-m>
       </offsets>
     </model>
+	
 	<model> 
       <path>Aircraft/Spitfire/Models/oil-pressure.xml</path>
       <offsets> 
@@ -98,6 +100,16 @@
         
       </offsets>
     </model>
+	<!---->
+	<model> 
+      <path>Aircraft/Spitfire/Models/fuel.xml</path>
+      <offsets> 
+        <x-m>3.265</x-m>
+        <y-m>0.27</y-m>
+        <z-m>0.08</z-m>
+      </offsets>
+    </model>
+	
 	<model> 
       <path>Aircraft/Spitfire/Models/fuel-pressure.xml</path>
       <offsets> 
@@ -106,11 +118,12 @@
         <z-m>0.23</z-m>
       </offsets>
     </model>
+	
 	<model> 
       <path>Aircraft/Spitfire/Models/starter.xml</path>
       <offsets> 
         <x-m>3.265</x-m>
-        <y-m>0.17</y-m>
+        <y-m>0.12</y-m>
         <z-m>0.05</z-m>
       </offsets>
     </model>
@@ -132,6 +145,24 @@
         <z-m>-0.05</z-m>
       </offsets>
     </model>
+	
+	<model> 
+      <path>Aircraft/Spitfire/Models/primer.xml</path>
+      <offsets> 
+        <x-m>3.265</x-m>
+        <y-m>0.16</y-m>
+        <z-m>-0.06</z-m>
+      </offsets>
+    </model>
+	
+	<model> 
+      <path>Aircraft/Spitfire/Models/fuel-cocks.xml</path>
+      <offsets> 
+        <x-m>3.265</x-m>
+        <y-m>0.09</y-m>
+        <z-m>-0.08</z-m>
+      </offsets>
+    </model>
  <!--    end engine instruments -->
 	<!-- miscellaneous (left panel) instruments -->
 	<model> 
@@ -147,7 +178,7 @@
       <path>Aircraft/Spitfire/Models/trim.xml</path>
       <offsets> 
         <x-m>3.265</x-m>
-        <y-m>-0.17</y-m>
+        <y-m>-0.19</y-m>
         <z-m>0.13</z-m>
       </offsets>
     </model>

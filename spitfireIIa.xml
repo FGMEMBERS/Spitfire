@@ -71,14 +71,14 @@ flap drag not available
       <control-output control="FLAP0" prop="/surface-positions/elevator-pos-norm"/>
     </hstab>
     <!-- tail -->
-    <vstab x="-8.52" y="0" z="-0.29" taper="0.386" effectiveness="1.2" 
+    <vstab x="-8.52" y="0" z="-0.29" taper="0.386" effectiveness="1.2" incidence="0.25"
 	 length="1.65" chord="0.994" sweep="5" > 
       <stall aoa="20" width="4" peak="1.5"/>
       <flap0 start="0" end="1" lift="1.4" drag="1.4"/>
       <control-input axis="/controls/flight/rudder" square="true" control="FLAP0" invert="true"/>
       <control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm"
 		  min="1" max="-1"/>
-      <flap1 start="0.3" end="0.65" lift="1.2" drag="1.2"/>
+      <flap1 start="0.3" end="0.65" lift="1.4" drag="1.4"/>
       <control-input axis="/controls/flight/rudder-trim" control="FLAP1" invert="true"/>
 	  <control-output control="FLAP1" prop="/surface-positions/rudder-trim-pos-norm"
 		  min="3" max="-3"/>
@@ -154,7 +154,7 @@ gear-ratio = "0.477" moment = 37.15-->
     </gear>
     <!-- Tail wheel -->
     <!-- tail wheel casters freely in Spitfire, but locked here to make it work!  -->
-    <gear x="-8.48" y="0" z="-0.66" compression="0.1" dfric="0.3" sfric ="0.4"> 
+    <gear x="-8.48" y="0" z="-0.66" compression="0.1" dfric="0.15" sfric ="0.2"> 
       <control-input axis="/controls/gear/tailwheel-lock" control="CASTERING"/>
     </gear>
     <!-- Canopy -->

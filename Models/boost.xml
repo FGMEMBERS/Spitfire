@@ -5,12 +5,12 @@
       <type>rotate</type>
       <object-name>boost-Needle1</object-name>
       <property>engines/engine/mp-osi</property>
-      <factor>0.4911</factor>
-      <offset>-29.92</offset>
-	  <!--
+   <!--    <factor>0.4911</factor>
+     <offset>-29.92</offset> -->
+	  
       <interpolation> 
         <entry> 
-          <ind>-2.5</ind>
+          <ind>-5.09</ind>
           <dep>-45</dep>
         </entry>
         <entry> 
@@ -18,31 +18,31 @@
           <dep>0</dep>
         </entry>
         <entry> 
-          <ind>2.5</ind>
+          <ind>5.09</ind>
           <dep>45</dep>
         </entry>
         <entry> 
-          <ind>5</ind>
+          <ind>10.18</ind>
           <dep>90</dep>
         </entry>
         <entry> 
-          <ind>7.5</ind>
+          <ind>15.27</ind>
           <dep>135</dep>
         </entry>
         <entry> 
-          <ind>10</ind>
+          <ind>20.36</ind>
           <dep>180</dep>
         </entry>
         <entry> 
-          <ind>12.5</ind>
+          <ind>25.45</ind>
           <dep>225</dep>
         </entry>
         <entry> 
-          <ind>15</ind>
+          <ind>30.54</ind>
           <dep>270</dep>
         </entry>
       </interpolation>
-	  -->
+	 
       <axis> 
         <x>-1</x>
         <y>0</y>

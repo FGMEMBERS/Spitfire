@@ -16,14 +16,14 @@ March 2004 Vivian Meazza, vivian.meazza at lineone.net
       <fuel-fraction>1</fuel-fraction>
       <systems> 
         <electrical> 
-          <path>Aircraft/Generic/generic-electrical.xml</path>
+          <path>Aircraft/Spitfire/Electrical/electrical.xml</path>
         </electrical>
       </systems>
       <virtual-cockpit archive="y">true</virtual-cockpit>
       <allow-toggle-cockpit archive="y">true</allow-toggle-cockpit>
       <sound> 
         <audible>true</audible>
-        <path>Aircraft/Spitfire/spitfire-sound.xml</path>
+        <path>Aircraft/Spitfire/Sounds/spitfire-sound.xml</path>
       </sound>
       <panel> 
         <path>Aircraft/c172/Panels/c172-vfr-panel.xml</path>
@@ -43,27 +43,27 @@ March 2004 Vivian Meazza, vivian.meazza at lineone.net
       </view>
       <view n="1"> 
         <config> 
-          <target-z-offset-m archive="y" type="double">2.7</target-z-offset-m>
+          <target-z-offset-m archive="y" type="double">2.75</target-z-offset-m>
         </config>
       </view>
       <view n="2"> 
         <config> 
-          <target-z-offset-m archive="y" type="double">2.7</target-z-offset-m>
+          <target-z-offset-m archive="y" type="double">2.75</target-z-offset-m>
         </config>
       </view>
       <view n="3"> 
         <config> 
-          <target-z-offset-m archive="y" type="double">2.7</target-z-offset-m>
+          <target-z-offset-m archive="y" type="double">2.75</target-z-offset-m>
         </config>
       </view>
       <view n="4"> 
         <config> 
-          <target-z-offset-m archive="y" type="double">2.7</target-z-offset-m>
+          <target-z-offset-m archive="y" type="double">2.75</target-z-offset-m>
         </config>
       </view>
       <view n="5"> 
         <config> 
-          <target-z-offset-m archive="y" type="double">2.7</target-z-offset-m>
+          <target-z-offset-m archive="y" type="double">2.75</target-z-offset-m>
         </config>
       </view>
       <autopilot> 
@@ -97,10 +97,14 @@ March 2004 Vivian Meazza, vivian.meazza at lineone.net
     <consumables> 
       <fuel> 
         <tank n="0"> 
+          <name type="string">Upper</name>
           <level-gal_us>57</level-gal_us>
+		  <selected type="bool">1</selected>
         </tank>
         <tank n="1"> 
-          <level-gal_us>44</level-gal_us>
+          <name type="string">Lower</name>
+          <level-gal_us>44</level-gal_us> 
+	 	  <selected type="bool">1</selected>
         </tank>
       </fuel>
     </consumables>
@@ -123,6 +127,12 @@ March 2004 Vivian Meazza, vivian.meazza at lineone.net
             <starter-push-norm type="double">0</starter-push-norm>
           </coffman-starter>
           <cutoff-pull-norm type="double">0</cutoff-pull-norm>
+          <fuel-cock> 
+            <lever-norm type="double">1</lever-norm>
+            <lever-norm type="double">1</lever-norm>
+          </fuel-cock>
+		  <primer type = "int">0</primer>
+		  <primer-pump type = "bool">0</primer-pump>
         </engine>
       </engines>
       <gear> 
@@ -139,6 +149,9 @@ March 2004 Vivian Meazza, vivian.meazza at lineone.net
         <door-position-norm type="double">1</door-position-norm>
         <wing-fold>1</wing-fold>
       </flight>
+      <switches> 
+        <fuel-gauge>0</fuel-gauge>
+      </switches>
     </controls>
     <!-- ================ map keyboard ================ -->
     <input> 
@@ -180,8 +193,8 @@ March 2004 Vivian Meazza, vivian.meazza at lineone.net
             </binding>
           </mod-up>
         </key>
-		<!-- map keys for rudder trim -->
-		<key n="60"> 
+        <!-- map keys for rudder trim -->
+        <key n="60"> 
           <name>&lt;</name>
           <desc>Rudder Trim Left</desc>
           <binding> 
@@ -252,7 +265,7 @@ March 2004 Vivian Meazza, vivian.meazza at lineone.net
 				  spitfire.openCanopy(0);
 			      </script>
           </binding>
-        </key>
+		         </key>
         <!-- map keys for radiator flap -->
         <key n="72"> 
           <name>H</name>
@@ -338,10 +351,10 @@ March 2004 Vivian Meazza, vivian.meazza at lineone.net
           <binding> 
             <command>nasal</command>
             <script>
-				print("These are the symbols found in the global namespace:");
-            foreach(i; keys(globals)) { print("  ", i); }
+			
+			props.dump(props.globals.getNode("consumables/"));
 
-			    </script>
+			</script>
           </binding>
         </key>
         <!-- map keys for mag switches  -->
@@ -365,8 +378,51 @@ March 2004 Vivian Meazza, vivian.meazza at lineone.net
 			    </script>
           </binding>
         </key>
+		<!-- map keys for fuel cocks  -->
+        <key n="40"> 
+          <name>(</name>
+          <desc>toggle fuel cock left</desc>
+          <binding> 
+            <command>property-toggle</command>
+            <property>controls/engines/engine/fuel-cock/lever-norm[0]</property>
+			<property>consumables/fuel/tank[0]/selected"</property>
+          </binding>
+        </key>
+        <key n="41"> 
+          <name>)</name>
+          <desc>toggle fuel cock right</desc>
+          <binding> 
+            <command>property-toggle</command>
+            <property>controls/engines/engine/fuel-cock/lever-norm[1]</property>
+			<property>consumables/fuel/tank[1]/selected"</property>
+          </binding>
+        </key>
+		<key n="79"> 
+          <name>O</name>
+          <desc>operate priming pump</desc>
+          <binding> 
+            <command>nasal</command>
+            <script>
+				spitfire.pumpPrimer(1);
+			    </script>
+          </binding>
+		  <mod-up> 
+                <binding> 
+                  <command>nasal</command>
+                  <script>
+				   spitfire.pumpPrimer(0);
+				</script>
+                </binding>
+              </mod-up>
+        </key>
       </keyboard>
     </input>
+    <!-- instruments -->
+    <instrumentation> 
+      <fuel> 
+        <serviceable type="bool">1</serviceable>
+      </fuel>
+    </instrumentation>
     <!-- pilot, with parachute -->
     <yasim> 
       <spitfire> 

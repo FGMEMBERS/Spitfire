@@ -21,8 +21,7 @@
               <name>background</name>
               <texture> 
                 <!-- 
-                <path>Aircraft/p51d/Models/hotspotgrid.rgb</path>
-				-->
+                <path>Aircraft/Spitfire/Models/hotspotgrid.rgb</path>-->
                 <path>Aircraft/Spitfire/Models/transparent-bg.rgb</path>
                 <x1>0.0</x1>
                 <y1>0.0</y1>
@@ -387,10 +386,10 @@
             <action> 
               <name>ring-pull</name>
               <button>0</button>
-              <x>395</x>
-              <y>-225</y>
-              <w>50</w>
-              <h>50</h>
+              <x>400</x>
+              <y>-300</y>
+              <w>65</w>
+              <h>130</h>
               <binding> 
                 <command>nasal</command>
                 <script>
@@ -407,13 +406,13 @@
                 </binding>
               </mod-up>
             </action>
-			<!-- starter push -->
+            <!-- starter push -->
             <action> 
               <name>starter push</name>
               <button>0</button>
-              <x>190</x>
-              <y>-275</y>
-              <w>50</w>
+              <x>130</x>
+              <y>-280</y>
+              <w>35</w>
               <h>50</h>
               <binding> 
                 <command>nasal</command>
@@ -431,14 +430,14 @@
                 </binding>
               </mod-up>
             </action>
-			<!-- cut-off ring-pull -->
+            <!-- cut-off ring-pull -->
             <action> 
               <name>cut-off</name>
               <button>0</button>
-              <x>255</x>
-              <y>-450</y>
-              <w>75</w>
-              <h>75</h>
+              <x>260</x>
+              <y>-545</y>
+              <w>50</w>
+              <h>135</h>
               <binding> 
                 <command>nasal</command>
                 <script>
@@ -451,6 +450,107 @@
                   <script>
 				  spitfire.pullCutoff(0);
 				
+				</script>
+                </binding>
+              </mod-up>
+            </action>
+            <!-- fuel gauge push -->
+            <action> 
+              <name>push to read fuel</name>
+              <button>0</button>
+              <x>260</x>
+              <y>-270</y>
+              <w>35</w>
+              <h>50</h>
+              <binding> 
+                <command>property-assign</command>
+                <property>/controls/switches/fuel-gauge</property>
+                <value type="bool">1</value>
+              </binding>
+              <mod-up> 
+                <binding> 
+                  <command>property-assign</command>
+                  <property>/controls/switches/fuel-gauge</property>
+                  <value type="bool">0</value>
+                </binding>
+              </mod-up>
+            </action>
+            <!-- fuel cocks -->
+            <action> 
+              <name>lever upper open</name>
+              <button>0</button>
+              <x>125</x>
+              <y>-450</y>
+              <w>30</w>
+              <h>90</h>
+              <binding> 
+                <command>nasal</command>
+                <script>
+				spitfire.openCock(0,1);
+				</script>
+              </binding>
+            </action>
+            <action> 
+              <name>lever upper close</name>
+              <button>0</button>
+              <x>125</x>
+              <y>-575</y>
+              <w>30</w>
+              <h>90</h>
+              <binding> 
+                <command>nasal</command>
+                <script>
+				spitfire.openCock(0,0);
+				</script>
+              </binding>
+            </action>
+            <action> 
+              <name>lever lower open</name>
+              <button>0</button>
+              <x>80</x>
+              <y>-450</y>
+              <w>30</w>
+              <h>90</h>
+              <binding> 
+                <command>nasal</command>
+                <script>
+				spitfire.openCock(1,1);
+				</script>
+              </binding>
+            </action>
+            <action> 
+              <name>lever lower close</name>
+              <button>0</button>
+              <x>80</x>
+              <y>-575</y>
+              <w>30</w>
+              <h>90</h>
+              <binding> 
+                <command>nasal</command>
+                <script>
+				spitfire.openCock(1,0);
+				</script>
+              </binding>
+            </action>
+            <!-- primer pump -->
+            <action> 
+              <name>primer pump</name>
+              <button>0</button>
+              <x>185</x>
+              <y>-510</y>
+              <w>40</w>
+              <h>100</h>
+              <binding> 
+                <command>nasal</command>
+                <script>
+				spitfire.pumpPrimer(1);
+				</script>
+              </binding>
+              <mod-up> 
+                <binding> 
+                  <command>nasal</command>
+                  <script>
+				   spitfire.pumpPrimer(0);
 				</script>
                 </binding>
               </mod-up>
