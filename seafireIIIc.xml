@@ -167,12 +167,29 @@ gear-ratio = "0.477" moment = 37.15-->
       <control-speed control="EXTEND" transition-time="2"/>
       <control-output control="EXTEND" prop="/gear/canopy/position-norm"/>
     </gear>
-    <!-- Hook -->
+    <!-- Hook 
     <gear x="-6.70" y="0.0" z="-1.74" compression="1" spring="0.15"> 
       <control-input axis="/controls/gear/tailhook" control="EXTEND"/>
       <control-speed control="EXTEND" transition-time="2"/>
       <control-output control="EXTEND" prop="/gear/tailhook/position-norm"/>
-    </gear>
+    </gear>-->
+	
+	<!-- Hook  - the hook extends only - it has no retracting mechanism -->
+ <hook x="-5.91" y="0.0" z="-0.60" length="1.416" down-angle="55" up-angle="-5">
+  <control-input axis="/controls/gear/tailhook" control="HEXTEND"/>
+  <control-speed control="HEXTEND" transition-time="5"/>
+</hook>
+
+<!-- Launch-bar 
+Note: the Seafire was not fitted with a catpult launch-bar - it used a catapult strop, 
+if at all. It usually did a free take-off.
+the launch-bar is included here as a workable substitute. --> 
+
+<launchbar x="-2.30" y="0.0" z="-1.25" length="1.0">
+  <control-input axis="/controls/gear/launchbar" control="LEXTEND"/>
+  <control-speed control="LEXTEND" transition-time="1"/>
+</launchbar>
+
     <!-- Fuselage tanks. 
 Weight of contents calculated using 100 octane AVGAS density of 695 kg/m3 @ 15degC
 -->
