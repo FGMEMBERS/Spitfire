@@ -424,9 +424,8 @@
         <mode>looped</mode>
         <path>Aircraft/Spitfire/Sounds/gunfire_1.wav</path>
         <condition> 
-          <property>/systems/submodel/amount</property>
-          <property>/systems/submodel/trigger</property>
-          <property>/systems/submodel/serviceable</property>
+          <property>/systems/submodels/trigger</property>
+		  <property>/systems/submodels/submodel/count[0]</property>
         </condition>
         <volume> 
           <factor>1.2</factor>

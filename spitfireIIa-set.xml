@@ -18,6 +18,10 @@ Aug 2004 Vivian Meazza, vivian.meazza at lineone.net
         <electrical> 
           <path>Aircraft/Spitfire/Electrical/electrical.xml</path>
         </electrical>
+        <submodels> 
+          <serviceable type="bool">true</serviceable>
+		  <path>Aircraft/Spitfire/Models/submodels.xml</path>
+        </submodels>
       </systems>
       <virtual-cockpit archive="y">true</virtual-cockpit>
       <allow-toggle-cockpit archive="y">true</allow-toggle-cockpit>
@@ -527,4 +531,5 @@ Aug 2004 Vivian Meazza, vivian.meazza at lineone.net
         <file>Aircraft/Spitfire/Models/fuel-cocks.nas</file>
       </spitfire-fuel>
     </nasal>
+    
   </PropertyList>
