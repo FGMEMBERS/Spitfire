@@ -6,7 +6,14 @@
         <path>Sounds/engstart.wav</path>
         <property>/engines/engine/cranking</property>
         <volume> 
-          <offset>0.7</offset>
+          <property>/orientation/alpha-deg</property>
+          <type>log</type>
+          <min>0.5</min>
+          <max>1.0</max>
+        </volume>
+        <volume> 
+          <factor>1.2</factor>
+          <max>1.0</max>
         </volume>
       </crank>
       <crank> 
@@ -14,7 +21,14 @@
         <path>Sounds/coughing.wav</path>
         <property>/engines/engine/running</property>
         <volume> 
-          <offset>0.7</offset>
+          <property>/orientation/alpha-deg</property>
+          <type>log</type>
+          <min>0.5</min>
+          <max>1.0</max>
+        </volume>
+        <volume> 
+          <factor>1.2</factor>
+          <max>1.0</max>
         </volume>
       </crank>
       <engine> 
@@ -383,7 +397,7 @@
           <factor>1.0</factor>
         </volume>
       </click>
-	  <click> 
+      <click> 
         <name>rgs main click down</name>
         <path>Aircraft/Spitfire/Sounds/click.wav</path>
         <condition> 
@@ -405,5 +419,19 @@
           <factor>1.0</factor>
         </volume>
       </click>
+      <guns> 
+        <name>gunfire</name>
+        <mode>looped</mode>
+        <path>Aircraft/Spitfire/Sounds/gunfire_1.wav</path>
+        <condition> 
+          <property>/systems/submodel/amount</property>
+          <property>/systems/submodel/trigger</property>
+          <property>/systems/submodel/serviceable</property>
+        </condition>
+        <volume> 
+          <factor>1.2</factor>
+          <max>1.0</max>
+        </volume>
+      </guns>
     </fx>
   </PropertyList>
