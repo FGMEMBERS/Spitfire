@@ -53,8 +53,8 @@
   <property>controls/engines/engine[0]/mixture</property>
   <interpolation>
    <entry>
-    <ind>0.0</ind>
-    <dep>-45</dep>
+    <ind>0.8</ind>
+    <dep>-10</dep>
    </entry>
    <entry>
     <ind>1.0</ind>

@@ -92,9 +92,10 @@
 	<model> 
       <path>Aircraft/Spitfire/Models/oil-pressure.xml</path>
       <offsets> 
-        <x-m>3.265</x-m>
+	  <x-m>3.265</x-m>
         <y-m>0.17</y-m>
-        <z-m>0.23</z-m>
+        <z-m>0.15</z-m>
+        
       </offsets>
     </model>
 	<model> 
@@ -102,16 +103,42 @@
       <offsets> 
         <x-m>3.265</x-m>
         <y-m>0.17</y-m>
-        <z-m>0.15</z-m>
+        <z-m>0.23</z-m>
       </offsets>
     </model>
-    <!-- end engine instruments -->
+	<model> 
+      <path>Aircraft/Spitfire/Models/starter.xml</path>
+      <offsets> 
+        <x-m>3.265</x-m>
+        <y-m>0.17</y-m>
+        <z-m>0.05</z-m>
+      </offsets>
+    </model>
+	
+	<model> 
+      <path>Aircraft/Spitfire/Models/ring-pull.xml</path>
+      <offsets> 
+        <x-m>3.265</x-m>
+        <y-m>0.33</y-m>
+        <z-m>0.08</z-m>
+      </offsets>
+    </model>
+	
+	<model> 
+      <path>Aircraft/Spitfire/Models/cut-off.xml</path>
+      <offsets> 
+        <x-m>3.265</x-m>
+        <y-m>0.22</y-m>
+        <z-m>-0.05</z-m>
+      </offsets>
+    </model>
+ <!--    end engine instruments -->
 	<!-- miscellaneous (left panel) instruments -->
 	<model> 
       <path>Aircraft/Spitfire/Models/clock.xml</path>
       <offsets> 
         <x-m>3.265</x-m>
-        <y-m>-0.28</y-m>
+        <y-m>-0.29</y-m>
         <z-m>0.19</z-m>
       </offsets>
     </model>
@@ -120,12 +147,19 @@
       <path>Aircraft/Spitfire/Models/trim.xml</path>
       <offsets> 
         <x-m>3.265</x-m>
-        <y-m>-0.19</y-m>
-        <z-m>0.15</z-m>
+        <y-m>-0.17</y-m>
+        <z-m>0.13</z-m>
       </offsets>
     </model>
 
-	
+	<model> 
+      <path>Aircraft/Spitfire/Models/triple.xml</path>
+      <offsets> 
+        <x-m>3.265</x-m>
+        <y-m>-0.25</y-m>
+        <z-m>0.05</z-m>
+      </offsets>
+    </model>
 	
  <model>
   <path>Aircraft/Spitfire/Models/magneto.xml</path>
@@ -141,7 +175,7 @@
   <offsets>
    <x-m>3.265</x-m>
    <y-m>-0.19</y-m>
-   <z-m>0.32</z-m>
+   <z-m>0.34</z-m>
   </offsets>
  </model>
  
@@ -149,8 +183,8 @@
   <path>Aircraft/Spitfire/Models/undercarriage-up-down.xml</path>
   <offsets>
    <x-m>3.265</x-m>
-   <y-m>-0.19</y-m>
-   <z-m>0.23</z-m>
+   <y-m>-0.20</y-m>
+   <z-m>0.22</z-m>
   </offsets>
  </model>
 <!--

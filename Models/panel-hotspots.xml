@@ -236,38 +236,38 @@
                 <wrap>false</wrap>
               </binding>
             </action>
-            <!-- ingition switch hotspots -->
+            <!-- magneto switch hotspots -->
             <action> 
-              <name>switch up</name>
+              <name>switch up left</name>
               <button>0</button>
-              <x>-440</x>
+              <x>-435</x>
               <y>-220</y>
               <w>20</w>
               <h>80</h>
               <binding> 
                 <command>nasal</command>
                 <script>
-				setprop("controls/engines/engine/magneto-switch[0]",0);
+				spitfire.setleftMagswitch(0);
 				</script>
               </binding>
             </action>
             <action> 
-              <name>switch down</name>
+              <name>switch down left</name>
               <button>0</button>
-              <x>-440</x>
+              <x>-435</x>
               <y>-300</y>
               <w>20</w>
               <h>80</h>
               <binding> 
                 <command>nasal</command>
                 <script>
-				setprop("controls/engines/engine/magneto-switch[0]",1);
+				spitfire.setleftMagswitch(1);
 			  </script>
               </binding>
             </action>
             <action> 
-              <name>switch up</name>
-              <button>1</button>
+              <name>switch up right</name>
+              <button>0</button>
               <x>-405</x>
               <y>-220</y>
               <w>20</w>
@@ -275,13 +275,13 @@
               <binding> 
                 <command>nasal</command>
                 <script>
-				setprop("controls/engines/engine/magneto-switch[1]",0);
+				spitfire.setrightMagswitch(0);
 			    </script>
               </binding>
             </action>
             <action> 
-              <name>switch down</name>
-              <button>1</button>
+              <name>switch down right</name>
+              <button>0</button>
               <x>-405</x>
               <y>-300</y>
               <w>20</w>
@@ -289,8 +289,8 @@
               <binding> 
                 <command>nasal</command>
                 <script>
-				setprop("controls/engines/engine/magneto-switch[1]",1);
-			    </script>
+				spitfire.setrightMagswitch(1);
+				</script>
               </binding>
             </action>
             <!-- clock hotspots -->
@@ -362,8 +362,8 @@
             <action> 
               <name>extend</name>
               <button>0</button>
-              <x>-260</x>
-              <y>120</y>
+              <x>-255</x>
+              <y>140</y>
               <w>25</w>
               <h>75</h>
               <binding> 
@@ -374,14 +374,86 @@
             <action> 
               <name>retract</name>
               <button>0</button>
-              <x>-260</x>
-              <y>195</y>
+              <x>-255</x>
+              <y>215</y>
               <w>25</w>
               <h>75</h>
               <binding> 
                 <command>nasal</command>
                 <script>controls.stepFlaps(-1)</script>
               </binding>
+            </action>
+            <!-- starter cartridge indexer ring-pull -->
+            <action> 
+              <name>ring-pull</name>
+              <button>0</button>
+              <x>395</x>
+              <y>-225</y>
+              <w>50</w>
+              <h>50</h>
+              <binding> 
+                <command>nasal</command>
+                <script>
+				spitfire.indexCof(1);
+				</script>
+              </binding>
+              <mod-up> 
+                <binding> 
+                  <command>nasal</command>
+                  <script>
+				  spitfire.indexCof(0);
+				
+				</script>
+                </binding>
+              </mod-up>
+            </action>
+			<!-- starter push -->
+            <action> 
+              <name>starter push</name>
+              <button>0</button>
+              <x>190</x>
+              <y>-275</y>
+              <w>50</w>
+              <h>50</h>
+              <binding> 
+                <command>nasal</command>
+                <script>
+				spitfire.startCof(1);
+				</script>
+              </binding>
+              <mod-up> 
+                <binding> 
+                  <command>nasal</command>
+                  <script>
+				  spitfire.startCof(0);
+				
+				</script>
+                </binding>
+              </mod-up>
+            </action>
+			<!-- cut-off ring-pull -->
+            <action> 
+              <name>cut-off</name>
+              <button>0</button>
+              <x>255</x>
+              <y>-450</y>
+              <w>75</w>
+              <h>75</h>
+              <binding> 
+                <command>nasal</command>
+                <script>
+				spitfire.pullCutoff(1);
+				</script>
+              </binding>
+              <mod-up> 
+                <binding> 
+                  <command>nasal</command>
+                  <script>
+				  spitfire.pullCutoff(0);
+				
+				</script>
+                </binding>
+              </mod-up>
             </action>
           </actions>
         </instrument>

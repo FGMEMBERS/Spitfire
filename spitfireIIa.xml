@@ -10,7 +10,7 @@ The reference datum for measurements is the nose.
   <!-- Weight of everything but fuel  (4873 empty) -->
   <airplane mass="5200"> 
     <!-- Approach configuration -->
-    <approach speed="70" aoa="13"> 
+    <approach speed="70" aoa="12.5"> 
       <control-setting axis="/controls/engines/engine[0]/throttle" value="0.1"/>
       <control-setting axis="/controls/engines/engine[0]/mixture" value="1.0"/>
       <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="1"/>
@@ -23,7 +23,7 @@ The reference datum for measurements is the nose.
     <cruise speed="308" alt="17500"> 
       <control-setting axis="/controls/engines/engine[0]/throttle" value="0.9"/>
       <control-setting axis="/controls/engines/engine[0]/mixture" value="1.00"/>
-      <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="1.0"/>
+      <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="0.80"/>
       <control-setting axis="/controls/engines/engine[0]/boost" value="1"/>
       <control-setting axis="/controls/flight/flaps" value="0.0"/>
       <control-setting axis="/controls/gear/gear-down" value="0"/>
@@ -62,7 +62,7 @@ flap drag not available
     <!-- tailplane -->
     <hstab 
 	x="-8.22" y="0.25" z="0.0" 
-	taper="0.639" effectiveness="1.0"
+	taper="0.639" effectiveness="1.2"
 	length="1.215" chord="1.246" sweep="5" > 
       <stall aoa="22" width="4" peak="1.5"/>
       <flap0 start="0.0" end="1" lift="1.7" drag="1.5"/>
@@ -71,18 +71,21 @@ flap drag not available
       <control-output control="FLAP0" prop="/surface-positions/elevator-pos-norm"/>
     </hstab>
     <!-- tail -->
-    <vstab x="-8.52" y="0" z="-0.29" taper="0.386" 
-       length="1.65" chord="0.994" sweep="5" > 
+    <vstab x="-8.52" y="0" z="-0.29" taper="0.386" effectiveness="1.2" 
+	 length="1.65" chord="0.994" sweep="5" > 
       <stall aoa="20" width="4" peak="1.5"/>
       <flap0 start="0" end="1" lift="1.4" drag="1.4"/>
       <control-input axis="/controls/flight/rudder" square="true" control="FLAP0" invert="true"/>
-      <control-input axis="/controls/flight/rudder-trim" control="FLAP0" invert="true"/>
       <control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm"
 		  min="1" max="-1"/>
+      <flap1 start="0.3" end="0.65" lift="1.2" drag="1.2"/>
+      <control-input axis="/controls/flight/rudder-trim" control="FLAP1" invert="true"/>
+	  <control-output control="FLAP1" prop="/surface-positions/rudder-trim-pos-norm"
+		  min="3" max="-3"/>
     </vstab>
     <!-- stub wing left -->
     <vstab x="-2.99" y="0.32" z="-0.81" taper="0" incidence="2" twist="0"
-       chord="2.845" sweep="0" camber="0.0569" dihedral="-90" 
+       chord="2.845" sweep="0" camber="0.0569" dihedral="90" 
        length="0.503"  > 
       <stall aoa="20" width="4" peak="1.5"/>
       <flap0 start="0.00" end="1" lift="1.4" drag="1.6"/>
@@ -92,7 +95,7 @@ flap drag not available
     </vstab>
     <!-- stub wing right -->
     <vstab x="-2.99" y="-0.32" z="-0.81" taper="0" incidence="2" twist="0"
-       chord="2.845" sweep="0" camber="0.0569" dihedral="90" 
+       chord="2.845" sweep="0" camber="0.0569" dihedral="-90" 
        length="0.503"  > 
       <stall aoa="20" width="4" peak="1.5"/>
       <flap0 start="0.00" end="1" lift="1.4" drag="1.6"/>
@@ -100,9 +103,9 @@ flap drag not available
       <control-output control="FLAP0" prop="/surface-positions/flap-pos-norm"/>
       <control-speed control="FLAP0" transition-time="10"/>
     </vstab>
-    <!-- radiator wing right -->
+    <!-- radiator 'wing' right -->
     <vstab x="-3.23" y="-0.51" z="1.02" taper="0" incidence="0" twist="0"
-       chord="1.114" sweep="0" camber="0.0" dihedral="84" 
+       chord="1.114" sweep="0" camber="0.0" dihedral="-84" 
        length="0.63"  > 
       <stall aoa="20" width="4" peak="1.5"/>
       <flap0 start="0.00" end="1" lift="1.4" drag="1.6"/>
@@ -115,7 +118,7 @@ flap drag not available
     <!--  cruise-rpm documented gear ratio of 0.477  min-rpm="1500" max-rpm="3000"
 gear-ratio = "0.477" moment = 37.15-->
     <propeller   x="-1.35" y="0" z="-0.0"
-            radius="1.638" moment="17" 
+            radius="1.638" moment="-17" 
             mass="2000" 
 			eng-power="1140" eng-rpm="3000"
 			turbo-mul="4" wastegate-mp="48"
@@ -130,37 +133,36 @@ gear-ratio = "0.477" moment = 37.15-->
       <control-input axis="/controls/engines/engine[0]/magnetos" control="MAGNETOS"/>
       <control-input axis="/controls/engines/engine[0]/mixture" control="MIXTURE"/>
       <control-input axis="/controls/engines/engine[0]/propeller-pitch" control="PROPPITCH"
-						src0="0" src1="1" dst0="0.2" dst1="0.95" />
+						src0="0" src1="1" dst0="0.2" dst1="0.82" />
       <control-input axis="/controls/engines/engine[0]/boost" control="BOOST"/>
     </propeller>
-    
     <!-- left main spring="0.7" damp="3.0"-->
-    <gear x="-2.20" y="0.87" z="-2.00" compression="0.25" > 
+    <gear x="-2.20" y="0.87" z="-2.00" compression="0.25" dfric="0.5"> 
       <control-input axis="/controls/gear/brake-left" control="BRAKE"/>
       <control-input axis="/controls/gear/brake-parking" control="BRAKE" split="true"/>
       <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
-      <control-speed control="EXTEND" transition-time="9.5"/>
+      <control-speed control="EXTEND" transition-time="9"/>
       <control-output control="EXTEND" prop="/gear/gear/position-norm"/>
     </gear>
     <!-- right main spring="0.7" damp="3.0" -->
-    <gear x="-2.20" y="-0.87" z="-2.00" compression="0.25" > 
+    <gear x="-2.20" y="-0.87" z="-2.00" compression="0.25" dfric="0.5"> 
       <control-input axis="/controls/gear/brake-right" control="BRAKE"/>
       <control-input axis="/controls/gear/brake-parking" control="BRAKE" split="true"/>
       <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
-      <control-speed control="EXTEND" transition-time="10.5"/>
+      <control-speed control="EXTEND" transition-time="7"/>
       <control-output control="EXTEND" prop="/gear/gear[1]/position-norm"/>
     </gear>
-	<!-- Tail wheel -->
+    <!-- Tail wheel -->
     <!-- tail wheel casters freely in Spitfire, but locked here to make it work!  -->
-    <gear x="-8.48" y="0" z="-0.66" compression="0.1"> 
+    <gear x="-8.48" y="0" z="-0.66" compression="0.1" dfric="0.3" sfric ="0.4"> 
       <control-input axis="/controls/gear/tailwheel-lock" control="CASTERING"/>
     </gear>
     <!-- Canopy -->
     <gear x="-3.90" y="0.0" z="0.7" compression="1"> 
       <control-input axis="/controls/flight/wing-fold" control="EXTEND"/>
-      <control-speed control="EXTEND" transition-time="5"/>
+      <control-speed control="EXTEND" transition-time="2"/>
       <control-output control="EXTEND" prop="/gear/canopy/position-norm"/>
-	</gear>
+    </gear>
     <!-- Fuselage tanks. 
 Weight of contents calculated using 100 octane AVGAS density of 695 kg/m3 @ 15degC
 -->
@@ -170,7 +172,7 @@ Weight of contents calculated using 100 octane AVGAS density of 695 kg/m3 @ 15de
     <!--  lower 37 imp gals -->
     <!-- ballast and weights -->
     <!-- Cockpit, sundries-->
-    <ballast x="-6.5" y="0" z="0" mass="450"/>
+    <ballast x="-5.20" y="0" z="0" mass="400"/>
     <!-- armament -->
     <!-- -->
     <ballast x="-2.9" y="3.85" z="-0.48" mass="170"/>

@@ -85,11 +85,14 @@ March 2004 Vivian Meazza, vivian.meazza at lineone.net
         <setting>0.00</setting>
         <setting>1.00</setting>
       </flaps>
+      <alarms> 
+        <gear-warn type="double">0</gear-warn>
+      </alarms>
     </sim>
     <engines> 
       <engine> 
         <rpm type="double">600</rpm>
-       </engine>
+      </engine>
     </engines>
     <consumables> 
       <fuel> 
@@ -101,76 +104,132 @@ March 2004 Vivian Meazza, vivian.meazza at lineone.net
         </tank>
       </fuel>
     </consumables>
-    
     <!-- set up control properties for YASim... -->
     <controls> 
       <engines> 
-        <engine n="0">
-		  <magneto-switch type="bool">1</magneto-switch>
-       <!--   <magneto-switch type="bool">1</magneto-switch> -->
-          <magnetos>3</magnetos>
+        <engine n="0"> 
+          <mag-switch-left type="bool">0</mag-switch-left>
+          <mag-switch-right type="bool">0</mag-switch-right>
+          <magnetos>0</magnetos>
+          <coffman-starter> 
+            <cartridge type="bool">1</cartridge>
+            <cartridge type="bool">1</cartridge>
+            <cartridge type="bool">1</cartridge>
+            <cartridge type="bool">1</cartridge>
+            <cartridge type="bool">1</cartridge>
+            <cartridge type="bool">1</cartridge>
+            <index type="double">5</index>
+            <index-pull-norm type="double">0</index-pull-norm>
+            <starter-push-norm type="double">0</starter-push-norm>
+          </coffman-starter>
+          <cutoff-pull-norm type="double">0</cutoff-pull-norm>
         </engine>
       </engines>
       <gear> 
         <brake-parking>1</brake-parking>
         <tailwheel-lock>false</tailwheel-lock>
-        <gear-warn type="bool">0</gear-warn>
+        <antiskid>0</antiskid>
         <canopy> 
-          <position-norm type="double">0</position-norm>
+          <position-norm type="double">1</position-norm>
         </canopy>
       </gear>
       <flight> 
         <flaps-alternate-extension type="double">1</flaps-alternate-extension>
         <elevator-trim>-0.055000</elevator-trim>
-        <door-position-norm type="double">0</door-position-norm>
+        <door-position-norm type="double">1</door-position-norm>
+        <wing-fold>1</wing-fold>
       </flight>
     </controls>
-    <!-- map keyboard -->
+    <!-- ================ map keyboard ================ -->
     <input> 
       <keyboard> 
+        <!--map keys for Coffman starter -->
+        <key n="32"> 
+          <name>space bar</name>
+          <desc>Coffman Starter.</desc>
+          <binding> 
+            <command>nasal</command>
+            <script>
+				spitfire.startCof(1);
+				</script>
+          </binding>
+          <mod-up> 
+            <binding> 
+              <command>nasal</command>
+              <script>
+				  spitfire.startCof(0);
+			      </script>
+            </binding>
+          </mod-up>
+        </key>
+        <key n="67"> 
+          <name>C</name>
+          <desc>Coffman Starter Cartridge Indexer.</desc>
+          <binding> 
+            <command>nasal</command>
+            <script>
+				spitfire.indexCof(1);
+				</script>
+          </binding>
+          <mod-up> 
+            <binding> 
+              <command>nasal</command>
+              <script>
+				  spitfire.indexCof(0);
+			      </script>
+            </binding>
+          </mod-up>
+        </key>
+		<!-- map keys for rudder trim -->
+		<key n="60"> 
+          <name>&lt;</name>
+          <desc>Rudder Trim Left</desc>
+          <binding> 
+            <command>property-adjust</command>
+            <property>/controls/flight/rudder-trim</property>
+            <min type="double">-1.0</min>
+            <step type="double">-0.001</step>
+          </binding>
+        </key>
+        <key n="62"> 
+          <name>&gt;</name>
+          <desc>Rudder Trim Right</desc>
+          <binding> 
+            <command>property-adjust</command>
+            <property>/controls/flight/rudder-trim</property>
+            <max type="double">1.0</max>
+            <step type="double">0.001</step>
+          </binding>
+        </key>
         <!--map keys for door open -->
         <key n="68"> 
           <name>D</name>
           <desc>Door Fold Down.</desc>
           <binding> 
-            <condition> 
-              <equal> 
-                <property>/gear/canopy/position-norm</property>
-                <value>1</value>
-              </equal>
-            </condition>
-            <command>property-assign</command>
-            <property>/controls/flight/door-position-norm</property>
-            <value type="double">0.015</value>
+            <command>nasal</command>
+            <script>
+				  spitfire.openDoor(0.015);
+			      </script>
           </binding>
         </key>
         <key n="100"> 
           <name>d</name>
           <desc>Door Fold Up.</desc>
           <binding> 
-            <condition> 
-              <equal> 
-                <property>/gear/canopy/position-norm</property>
-                <value>1</value>
-              </equal>
-            </condition>
-            <command>property-assign</command>
-            <property>/controls/flight/door-position-norm</property>
-            <value type="double">0.0</value>
+            <command>nasal</command>
+            <script>
+				  spitfire.openDoor(0);
+			      </script>
           </binding>
         </key>
         <key n="4"> 
           <name>CTRL D</name>
           <desc>Door Fold Toggle.</desc>
           <binding> 
-            <condition> 
-              <equal> 
-                <property>/gear/canopy/position-norm</property>
-                <value>1</value>
-              </equal>
-            </condition>
-            <command>property-toggle</command>
-            <property>/controls/flight/door-position-norm</property>
+            <command>nasal</command>
+            <script>
+				  spitfire.toggleDoor();
+			      </script>
           </binding>
         </key>
         <!--map keys for wing fold - used for canopy control -->
@@ -178,30 +237,20 @@ March 2004 Vivian Meazza, vivian.meazza at lineone.net
           <name>F</name>
           <desc>Wing Fold Down.</desc>
           <binding> 
-            <condition> 
-              <equal> 
-                <property>/controls/flight/door-position-norm</property>
-                <value>0</value>
-              </equal>
-            </condition>
-            <command>property-assign</command>
-            <property>/controls/flight/wing-fold</property>
-            <value type="bool">1</value>
+            <command>nasal</command>
+            <script>
+				  spitfire.openCanopy(1);
+			      </script>
           </binding>
         </key>
         <key n="102"> 
           <name>f</name>
           <desc>Wing Fold Up.</desc>
           <binding> 
-            <condition> 
-              <equal> 
-                <property>/controls/flight/door-position-norm</property>
-                <value>0</value>
-              </equal>
-            </condition>
-            <command>property-assign</command>
-            <property>/controls/flight/wing-fold</property>
-            <value type="bool">0</value>
+            <command>nasal</command>
+            <script>
+				  spitfire.openCanopy(0);
+			      </script>
           </binding>
         </key>
         <!-- map keys for radiator flap -->
@@ -229,7 +278,7 @@ March 2004 Vivian Meazza, vivian.meazza at lineone.net
           <desc>Gear Warn.</desc>
           <binding> 
             <command>property-toggle</command>
-            <property>controls/gear/gear-warn</property>
+            <property>sim/alarms/gear-warn</property>
           </binding>
         </key>
         <key n="75"> 
@@ -237,7 +286,7 @@ March 2004 Vivian Meazza, vivian.meazza at lineone.net
           <desc>Gear Warn.</desc>
           <binding> 
             <command>property-toggle</command>
-            <property>controls/gear/gear-warn</property>
+            <property>sim/alarms/gear-warn</property>
           </binding>
         </key>
         <!-- map keys for Mixture Control -->
@@ -247,7 +296,7 @@ March 2004 Vivian Meazza, vivian.meazza at lineone.net
           <binding> 
             <command>property-assign</command>
             <property>/controls/engines/engine/mixture</property>
-            <value type="double">0.0</value>
+            <value type="double">0.8</value>
           </binding>
         </key>
         <key n="109"> 
@@ -266,7 +315,7 @@ March 2004 Vivian Meazza, vivian.meazza at lineone.net
           <binding> 
             <command>property-adjust</command>
             <property>/controls/engines/engine/propeller-pitch</property>
-            <step type="double">-0.1</step>
+            <step type="double">0.1</step>
             <min type="double">-1</min>
             <max type="double">1</max>
           </binding>
@@ -277,7 +326,7 @@ March 2004 Vivian Meazza, vivian.meazza at lineone.net
           <binding> 
             <command>property-adjust</command>
             <property>/controls/engines/engine/propeller-pitch</property>
-            <step type="double">0.1</step>
+            <step type="double">-0.1</step>
             <min type="double">-1</min>
             <max type="double">1</max>
           </binding>
@@ -289,7 +338,30 @@ March 2004 Vivian Meazza, vivian.meazza at lineone.net
           <binding> 
             <command>nasal</command>
             <script>
-				props.dump(props.globals.getNode("/controls/flight"));
+				print("These are the symbols found in the global namespace:");
+            foreach(i; keys(globals)) { print("  ", i); }
+
+			    </script>
+          </binding>
+        </key>
+        <!-- map keys for mag switches  -->
+        <key n="123"> 
+          <name>{</name>
+          <desc>toggle mag switch left</desc>
+          <binding> 
+            <command>nasal</command>
+            <script>
+				spitfire.toggleleftMagswitch();
+			    </script>
+          </binding>
+        </key>
+        <key n="125"> 
+          <name>}</name>
+          <desc>toggle mag switch right</desc>
+          <binding> 
+            <command>nasal</command>
+            <script>
+				spitfire.togglerightMagswitch();
 			    </script>
           </binding>
         </key>
@@ -301,4 +373,9 @@ March 2004 Vivian Meazza, vivian.meazza at lineone.net
         <pilot-lb type="double">180</pilot-lb>
       </spitfire>
     </yasim>
+    <nasal> 
+      <spitfire> 
+        <file>Aircraft/Spitfire/Models/spitfire.nas</file>
+      </spitfire>
+    </nasal>
   </PropertyList>
