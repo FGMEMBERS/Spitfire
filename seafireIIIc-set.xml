@@ -94,6 +94,77 @@ Aug 2004 Vivian Meazza, vivian.meazza at lineone.net
       <alarms> 
         <gear-warn type="double">0</gear-warn>
       </alarms>
+      <help>
+        <title>Seafire IIIc</title>
+        <key>
+          <name>Space</name>
+          <desc>fire Coffman starter cartridge</desc>
+        </key>
+        <key>
+          <name>d/D</name>
+          <desc>fold door up/down</desc>
+        </key>
+        <key>
+          <name>Ctrl-D</name>
+          <desc>toggle door fold</desc>
+        </key>
+        <key>
+          <name>f/F</name>
+          <desc>close/open canopy</desc>
+        </key>
+        <key>
+          <name>Ctrl-F</name>
+          <desc>toggle wingfold</desc>
+        </key>
+        <key>
+          <name>h/H</name>
+          <desc>radiator flap up/down</desc>
+        </key>
+        <key>
+          <name>Ctrl-H</name>
+          <desc>hook down</desc>
+        </key>
+        <key>
+          <name>k/K</name>
+          <desc>toggle gear warning</desc>
+        </key>
+        <key>
+          <name>l/L</name>
+          <desc>seat down/up</desc>
+        </key>
+        <key>
+          <name>Ctrl-L</name>
+          <desc>seat default</desc>
+        </key>
+        <key>
+          <name>m/M</name>
+          <desc>mixture rich/weak</desc>
+        </key>
+        <key>
+          <name>n/N</name>
+          <desc>propeller fine/coarse</desc>
+        </key>
+        <key>
+          <name>O</name>
+          <desc>operate priming pump</desc>
+        </key>
+        <key>
+          <name>( )</name>
+          <desc>fuel cock left/right toggle</desc>
+        </key>
+        <key>
+          <name>&lt;/&gt;</name>
+          <desc>rudder trim left/right</desc>
+        </key>
+        <key>
+          <name>{ }</name>
+          <desc>mag switch left/right toggle</desc>
+        </key>
+        <line>1. turn both magnetos on</line>
+        <line>2. operate primer pump five times</line>
+        <line>3. increase throttle to one third</line>
+        <line>4. fire Coffman starter cartridge</line>
+      </help>
     </sim>
     <engines> 
       <engine> 
@@ -278,7 +349,7 @@ Aug 2004 Vivian Meazza, vivian.meazza at lineone.net
     <!--     map keys for wing fold - used for canopy control -->
         <key n="70"> 
           <name>F</name>
-          <desc>Close Canopy.</desc>
+          <desc>Open Canopy.</desc>
           <binding> 
             <command>nasal</command>
             <script>
@@ -358,7 +429,7 @@ Aug 2004 Vivian Meazza, vivian.meazza at lineone.net
         <!-- map keys for Propeller Control -->
         <key n="78"> 
           <name>N</name>
-          <desc>Propeller Course.</desc>
+          <desc>Propeller Coarse.</desc>
           <binding> 
             <command>property-adjust</command>
             <property>/controls/engines/engine/propeller-pitch</property>
