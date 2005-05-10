@@ -155,7 +155,8 @@ gear-ratio = "0.477" moment = 37.15-->
     <!-- Tail wheel -->
     <!-- tail wheel casters freely in Spitfire, but locked here to make it work!  -->
     <gear x="-8.48" y="0" z="-0.66" compression="0.1" dfric="0.05" sfric ="0.10"> 
-      <control-input axis="/controls/gear/tailwheel-lock" control="CASTERING"/>
+      <control-input axis="/controls/gear/tailwheel-lock" src0="0" src1="1"
+                     dst0="1" dst1="0" control="CASTERING"/>
     </gear>
     <!-- Canopy -->
     <gear x="-3.90" y="0.0" z="0.7" compression="1"> 
