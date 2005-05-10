@@ -215,7 +215,6 @@ Aug 2004 Vivian Meazza, vivian.meazza at lineone.net
       </engines>
       <gear> 
         <brake-parking>1</brake-parking>
-        <tailwheel-lock>false</tailwheel-lock>
         <antiskid>0</antiskid>
         <canopy> 
           <position-norm type="double">1</position-norm>
