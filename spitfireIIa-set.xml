@@ -17,10 +17,6 @@ Aug 2004 Vivian Meazza, vivian.meazza at lineone.net
       <aero>spitfireIIa</aero>
       <fuel-fraction>1</fuel-fraction>
       <systems> 
-        <electrical> 
-      <!--   <path>Aircraft/Spitfire/Electrical/electrical.xml</path> -->
-		  <path>Aircraft/Generic/generic-electrical.xml</path>
-        </electrical>
        <submodels> 
           <serviceable type="bool">true</serviceable>
           <path>Aircraft/Spitfire/Models/spitfire-submodels.xml</path>
