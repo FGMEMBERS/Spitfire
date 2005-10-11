@@ -25,6 +25,89 @@ type = getprop("sim/aircraft");
 if (type == "spitfireIIa") {spitfireIIa = 1;}
 
 print ("type: " , type );
+
+# =============================== Boost Controller stuff======================================
+
+BOOST_CONTROL_AUTHORITY = 0.99; # How much can it move the throttle?
+#BOOST_CONTROL_RANGE = 1;         When does it start to engage? (psig)
+BOOST_CONTROL_LIMIT_RATED = 9;        # Rated Maximum MP  (psi gauge) (1 hr)
+BOOST_CONTROL_LIMIT_COMBAT = 12.5;    # Combat limit (5 mins)
+
+if (type == "seafireIIIc") {BOOST_CONTROL_LIMIT_COMBAT = 16;}  
+
+boost_control = props.globals.getNode("/controls/engines/engine/boost-control", 1);
+boost_pressure = props.globals.getNode("/engines/engine/boost-gauge-inhg", 1);
+boost_pressure_psi = props.globals.getNode("/engines/engine/boost-gauge-psi", 1);
+boost_control_damp = props.globals.getNode("/controls/engines/engine/boost-control-damp", 1);
+boost_control_range = props.globals.getNode("/controls/engines/engine/boost-control-range", 1);
+boost_control_cutout = props.globals.getNode("/controls/engines/engine/boost-control-cutout", 1);
+throttle = props.globals.getNode("/controls/engines/engine/throttle", 1);
+mp_inhg = props.globals.getNode("/engines/engine/mp-inhg", 1);
+
+boost_control.setDoubleValue(1); 
+boost_pressure.setDoubleValue(0); 
+boost_pressure_psi.setDoubleValue(0); 
+boost_control_damp.setDoubleValue(0.015); 
+boost_control_range.setDoubleValue(0.5); 
+boost_control_cutout.setBoolValue(0); 
+mp_inhg.setDoubleValue(0);
+
+damp = 0;
+
+toggleCutout = func{
+	var t = throttle.getValue();
+	var c = boost_control_cutout.getValue();
+	
+	if ( t != 1){
+		c = !c;
+		boost_control_cutout.setBoolValue(c);
+	} 	    
+	print("c: " , c );
+    
+} # end function toggleCutout
+
+updateBoostControl = func {
+        var n = boost_control_damp.getValue(); 
+		var BOOST_CONTROL_RANGE = boost_control_range.getValue();
+        var mp = (mp_inhg.getValue() * 0.491154077497) - 14.6959487755 ;
+		var cutout = boost_control_cutout.getValue();
+		var throttle = throttle.getValue();
+		var val = 0;
+		
+		if (throttle == 1 and !cutout){
+			cutout = 1;
+		}
+        		
+        if(! cutout){		
+			val = (mp - BOOST_CONTROL_LIMIT_RATED) / BOOST_CONTROL_RANGE;
+		} else {
+		    val = (mp - BOOST_CONTROL_LIMIT_COMBAT) / BOOST_CONTROL_RANGE;
+		}	
+			
+		var in = val;
+			
+		if (val < 0  ) {
+				val = 0;                             # Can't increase throttle
+		} elsif (val < -BOOST_CONTROL_AUTHORITY) {
+				val = -BOOST_CONTROL_AUTHORITY        # limit by authority
+		} else {
+				val = -val;
+		}
+			
+		damp = (val * n) + (damp * (1 - n)); # apply low pass filter
+      
+#        print(sprintf("mp=%0.5f, in=%0.5f, raw=%0.5f, out=%0.5f", mp, in, val, damp));
+		boost_pressure_psi.setDoubleValue(mp);
+        boost_control.setDoubleValue(damp);
+		boost_control_cutout.setBoolValue(cutout);
+        settimer(updateBoostControl, 0.1);
+}
+
+updateBoostControl();
+
+# ======================================= end Boost Controller f ============================
+
+
 # ============================= Coffman starter stuff =======================================
 
 
@@ -53,8 +136,6 @@ indexCof = func{
         }
 
 } # end function
-
-
 
 
 startCof = func{
@@ -91,6 +172,7 @@ startCof = func{
 		settimer(stopCof, 0.2);
 	}
 } # end function
+
 
 stopCof = func {
 
@@ -369,7 +451,7 @@ flapBlowin = func{
     #print("lever: " , lever , " airspeed (kts): " , airspeed);
     
     if (lever and airspeed < 105 ) { 
-        controls.stepFlaps(1);                                # full flap
+        controls.stepProps("/controls/flight/flaps", "/sim/flaps",1);                                # full flap
         return registerTimer(flapBlowin);                        # run the timer                
         }
         elsif (lever and airspeed >= 105 and airspeed <= 115) {
@@ -385,7 +467,7 @@ flapBlowin = func{
         }
         else
         {
-            controls.stepFlaps(-1);                    # flap up, don't run the timer                    
+            controls.stepProps("/controls/flight/flaps", "/sim/flaps",-1);                    # flap up, don't run the timer                    
         }
         
 } # end function 

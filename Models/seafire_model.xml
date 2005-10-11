@@ -99,7 +99,7 @@
         </offsets>
       </model>
       <model> 
-        <path>Aircraft/Spitfire/Models/boost.xml</path>
+        <path>Aircraft/Spitfire/Models/seafire-boost.xml</path>
         <offsets> 
           <x-m>3.265</x-m>
           <y-m>0.25</y-m>
@@ -221,44 +221,7 @@
           <z-m>0.22</z-m>
         </offsets>
       </model>
-      <!--
- <model>
-  <path>Aircraft/p51d/Models/p51d-jw-clock.xml</path>
-  <offsets>
-   <x-m>3.265</x-m>
-   <y-m>-0.085</y-m>
-   <z-m>0.43</z-m>
-  </offsets>
- </model>
 
- <model>
-  <path>Aircraft/p51d/Models/p51d-jw-man.xml</path>
-  <offsets>
-   <x-m>3.265</x-m>
-   <y-m>0.10</y-m>
-   <z-m>0.435</z-m>
-  </offsets>
- </model>
--->
-      <!--
- <model>
-  <path>Aircraft/p51d/Models/p51d-jw-gearwarn.xml</path>
-  <offsets>
-   <x-m>3.265</x-m>
-   <y-m>-0.08</y-m>
-   <z-m>0.12</z-m>
-  </offsets>
- </model>
-
- <model>
-  <path>Aircraft/p51d/Models/p51d-jw-ignition.xml</path>
-  <offsets>
-   <x-m>3.265</x-m>
-   <y-m>-0.10</y-m>
-   <z-m>0.05</z-m>
-  </offsets>
- </model>
--->
       <!-- non-panel models -->
       <model> 
         <path>Aircraft/Spitfire/Models/throttle.xml</path>
@@ -302,8 +265,8 @@
       </model>
       <!-- hide all of the model not visible from the cockpit -->
       <animation> 
-        <type>select</type>
-        <object-name>Hull</object-name>
+<!--         <type>select</type>-->
+       <object-name>Hull</object-name> 
         <object-name>Hull-Aft</object-name>
         <object-name>Stub-Wing-R</object-name>
         <object-name>Stub-Wing-L</object-name>
@@ -318,17 +281,17 @@
         <object-name>UC-Main-R</object-name>
         <object-name>Wheelwell-Outer-R</object-name>
         <object-name>Wheelwell-Outer-L</object-name> 
-        <condition> 
+<!--        <condition> 
           <not> 
             <equals> 
               <property>/sim/current-view/view-number</property>
               <value>0</value>
             </equals>
           </not>
-        </condition>
+        </condition> -->
       </animation>
       <animation> 
-        <type>select</type>
+<!--        <type>select</type> -->
         <object-name>UC-Tail</object-name>
         <object-name>Spinner</object-name>
         <object-name>Exhausts</object-name>
@@ -344,14 +307,14 @@
         <object-name>Flap-Outer-R-Inner</object-name>
         <object-name>Flap-Outer-L-Inner</object-name>
         <object-name>Cover-Engine-T</object-name>
-        <condition> 
+<!--        <condition> 
           <not> 
             <equals> 
               <property>/sim/current-view/view-number</property>
               <value>0</value>
             </equals>
           </not>
-        </condition>
+        </condition> -->
       </animation>
       <!-- make sure that all the rest of the aircraft is visible
      -->
@@ -369,7 +332,7 @@
       <!--  conceal Pilot Head etc in Cockpit View-->
       <animation> 
         <type>select</type>
-        <object-name>Head</object-name>
+        <object-name>Pilot-Head</object-name>
         <condition> 
           <not> 
             <equals> 
@@ -594,24 +557,24 @@
         </axis>
       </animation>
       <animation> 
-        <type>select</type>
-        <object-name>PropellerDisk</object-name>
-        <condition> 
-          <greater-than> 
-            <property>/engines/engine[0]/rpm</property>
-            <value>900</value>
-          </greater-than>
-        </condition>
-      </animation>
-      <animation> 
-        <type>blend</type>
-        <object-name>PropellerDisk</object-name>
-        <property>/engines/engine[0]/rpm</property>
-        <factor>0.00015</factor>
-        <offset>-0.5</offset>
-        <min>0.0</min>
-        <max>0.5</max>
-      </animation>
+      <type>select</type>
+      <object-name>noshadow.PropellerDisk</object-name>
+      <condition> 
+        <greater-than> 
+          <property>/engines/engine[0]/rpm</property>
+          <value>900</value>
+        </greater-than>
+      </condition>
+    </animation>
+    <animation> 
+      <type>blend</type>
+      <object-name>noshadow.PropellerDisk</object-name>
+      <property>/engines/engine[0]/rpm</property>
+      <factor>0.0005</factor>
+      <offset>-0.5</offset>
+      <min>0.0</min>
+      <max>1</max>
+    </animation>
       <animation> 
         <type>rotate</type>
         <object-name>Door-L</object-name>
@@ -727,7 +690,53 @@
           <z>1</z>
         </axis>
       </animation>
-      <!-- Radiator Duct -->
+	  <!-- tail wheel castering -->
+    <animation> 
+      <type>rotate</type>
+      <object-name>Tail-Wheel-Assembly</object-name>
+      <property>gear/gear[2]/caster-angle-deg</property>
+      <factor>1</factor>
+      <center> 
+        <x-m>8.27781</x-m>
+        <y-m>0</y-m>
+        <z-m>-0.502272</z-m>
+      </center>
+      <axis> 
+        <x>0</x>
+        <y>0</y>
+        <z>1</z>
+      </axis>
+    </animation>
+	  <animation> 
+      <type>spin</type>
+      <object-name>Wheel-L</object-name>
+      <property>gear/gear[0]/rollspeed-ms</property>
+      <factor>29.794997</factor>
+      <axis> 
+        <x1-m>2.1962</x1-m>
+        <y1-m>-0.796587</y1-m>
+        <z1-m>-1.66508</z1-m>
+        <x2-m>2.1962</x2-m>
+        <y2-m>-0.929497</y2-m>
+        <z2-m>-1.67797</z2-m>
+      </axis>
+    </animation>
+    <animation> 
+      <type>spin</type>
+      <object-name>Wheel-R</object-name>
+      <property>gear/gear[1]/rollspeed-ms</property>
+      <factor>-29.794997</factor>
+      <axis> 
+        <x1-m>2.1962</x1-m>
+        <y1-m>0.796587</y1-m>
+        <z1-m>-1.66508</z1-m>
+        <x2-m>2.1962</x2-m>
+        <y2-m>0.929497</y2-m>
+        <z2-m>-1.67797</z2-m>
+      </axis>
+    </animation>
+	  
+      <!--  ***** Radiator Duct ***** -->
       <animation> 
         <type>rotate</type>
         <object-name>Flap</object-name>
@@ -745,7 +754,7 @@
       <!-- ***************** Canopy *********************** -->
       <animation> 
         <type>translate</type>
-        <object-name>Canopy-Main</object-name>
+        <object-name>noshadow.Canopy-Main</object-name>
         <object-name>Frame-Main</object-name>
         <property>gear/canopy/position-norm</property>
         <factor>0.575</factor>

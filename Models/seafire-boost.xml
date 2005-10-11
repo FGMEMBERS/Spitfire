@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
   <PropertyList> 
-    <path>boost.ac</path>
+    <path>seafire-boost.ac</path>
     <animation> 
       <type>rotate</type>
       <object-name>boost-Needle1</object-name>
@@ -10,19 +10,19 @@
 	  
       <interpolation> 
 	  <entry> 
-          <ind>-5</ind>
+          <ind>-20</ind>
           <dep>-85</dep>
         </entry>
         <entry> 
-          <ind>-2.5</ind>
+          <ind>-10</ind>
           <dep>-45</dep>
         </entry>
         <entry> 
-          <ind>0</ind>
+          <ind>-5</ind>
           <dep>0</dep>
         </entry>
         <entry> 
-          <ind>2.5</ind>
+          <ind>0</ind>
           <dep>45</dep>
         </entry>
         <entry> 
@@ -30,19 +30,19 @@
           <dep>90</dep>
         </entry>
         <entry> 
-          <ind>7.5</ind>
+          <ind>10</ind>
           <dep>135</dep>
         </entry>
         <entry> 
-          <ind>10</ind>
+          <ind>15</ind>
           <dep>180</dep>
         </entry>
         <entry> 
-          <ind>12.5</ind>
+          <ind>20</ind>
           <dep>225</dep>
         </entry>
         <entry> 
-          <ind>15</ind>
+          <ind>35</ind>
           <dep>265</dep>
         </entry>
       </interpolation>

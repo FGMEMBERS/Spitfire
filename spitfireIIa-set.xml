@@ -9,27 +9,24 @@ Aug 2004 Vivian Meazza, vivian.meazza at lineone.net
 ************************************************************************
 -->
   <PropertyList> 
-    <sim> 
+    <sim include="spitfire-help.xml" > 
       <description>Spitfire IIa</description>
       <author>Vivian Meazza</author>
-      <status>beta</status>
+      <status>early-production</status>
       <flight-model>yasim</flight-model>
       <aero>spitfireIIa</aero>
       <fuel-fraction>1</fuel-fraction>
-      <systems> 
-       <submodels> 
-          <serviceable type="bool">true</serviceable>
-          <path>Aircraft/Spitfire/Models/spitfire-submodels.xml</path>
-        </submodels>
-      </systems>
+      <systems> </systems>
+      <submodels> 
+        <serviceable type="bool">true</serviceable>
+        <path>Aircraft/Spitfire/Models/spitfire-submodels.xml</path>
+      </submodels>
       <virtual-cockpit archive="y">true</virtual-cockpit>
       <allow-toggle-cockpit archive="y">true</allow-toggle-cockpit>
-      <!---->
-	  <sound> 
+      <sound> 
         <audible>true</audible>
         <path>Aircraft/Spitfire/Sounds/spitfire-sound.xml</path>
       </sound>
-	  
       <panel> 
         <path>Aircraft/Generic/Panels/generic-vfr-panel.xml</path>
         <visibility>false</visibility>
@@ -93,78 +90,6 @@ Aug 2004 Vivian Meazza, vivian.meazza at lineone.net
       <alarms> 
         <gear-warn type="double">0</gear-warn>
       </alarms>
-      <help>
-        <title>Spitfire IIa</title>
-        <key>
-          <name>Space</name>
-          <desc>fire Coffman starter cartridge</desc>
-        </key>
-        <key>
-          <name>C</name>
-          <desc>select next Coffman starter cartridge</desc>
-        </key>
-        <key>
-          <name>d/D</name>
-          <desc>fold door up/down</desc>
-        </key>
-        <key>
-          <name>Ctrl-D</name>
-          <desc>toggle door fold</desc>
-        </key>
-        <key>
-          <name>f/F</name>
-          <desc>close/open canopy</desc>
-        </key>
-        <key>
-          <name>Ctrl-F</name>
-          <desc>toggle wingfold</desc>
-        </key>
-        <key>
-          <name>h/H</name>
-          <desc>radiator flap up/down</desc>
-        </key>
-        <key>
-          <name>k/K</name>
-          <desc>toggle gear warning</desc>
-        </key>
-        <key>
-          <name>l/L</name>
-          <desc>seat down/up</desc>
-        </key>
-        <key>
-          <name>Ctrl-L</name>
-          <desc>seat default</desc>
-        </key>
-        <key>
-          <name>m/M</name>
-          <desc>mixture rich/weak</desc>
-        </key>
-        <key>
-          <name>n/N</name>
-          <desc>propeller fine/coarse</desc>
-        </key>
-        <key>
-          <name>O</name>
-          <desc>operate priming pump</desc>
-        </key>
-        <key>
-          <name>( )</name>
-          <desc>toggle left/right fuel cock</desc>
-        </key>
-        <key>
-          <name>&lt; &gt;</name>
-          <desc>trim rudder left/right</desc>
-        </key>
-        <key>
-          <name>{ }</name>
-          <desc>toggle left/right magneto switch</desc>
-        </key>
-        <line>1. turn both magnetos on</line>
-        <line>2. increase throttle to one third</line>
-        <line>3. operate primer pump five times</line>
-        <line>4. select new cartridge if necessary</line>
-        <line>5. fire Coffman starter cartridge</line>
-      </help>
     </sim>
     <engines> 
       <engine> 
@@ -211,10 +136,13 @@ Aug 2004 Vivian Meazza, vivian.meazza at lineone.net
           <mixture-lever type="double">1</mixture-lever>
           <primer type = "int">0</primer>
           <primer-pump type = "bool">0</primer-pump>
+          <boost type= "double">1</boost>
+          <boost-control-cutout type= "bool">0</boost-control-cutout>
         </engine>
       </engines>
       <gear> 
         <brake-parking>1</brake-parking>
+        <tailwheel-lock>false</tailwheel-lock>
         <antiskid>0</antiskid>
         <canopy> 
           <position-norm type="double">1</position-norm>
@@ -236,6 +164,17 @@ Aug 2004 Vivian Meazza, vivian.meazza at lineone.net
     <!-- ================ map keyboard ================ -->
     <input> 
       <keyboard> 
+        <!--map keys for Boost Control Cutout -->
+        <key n="2"> 
+          <name>Ctrl-B</name>
+          <desc>Toggle engine boost control cutout.</desc>
+          <binding> 
+            <command>nasal</command>
+            <script>
+				spitfire.toggleCutout();
+				</script>
+          </binding>
+        </key>
         <!--map keys for Coffman starter -->
         <key n="32"> 
           <name>space bar</name>
@@ -429,8 +368,9 @@ Aug 2004 Vivian Meazza, vivian.meazza at lineone.net
           </binding>
         </key>
         <!-- map keys for seat vertical adjust -->
-        <key n="12"> 
-          <name>CTRL-L</name>
+        <!-- map keys for seat vertical adjust -->
+        <key n="21"> 
+          <name>CTRL-U</name>
           <desc>Seat Default.</desc>
           <binding> 
             <command>property-assign</command>
@@ -449,36 +389,12 @@ Aug 2004 Vivian Meazza, vivian.meazza at lineone.net
             <value type="double">0.53</value>
           </binding>
         </key>
-        <key n="76"> 
-          <name>L</name>
-          <desc>Seat Up.</desc>
-          <binding> 
-            <command>property-adjust</command>
-            <property>/controls/seat/vertical-adjust</property>
-            <step type="double">0.01</step>
-            <min type="double">-0.05</min>
-            <max type="double">0.05</max>
-          </binding>
-          <binding> 
-            <condition> 
-              <equals> 
-                <property>sim/current-view/view-number</property>
-                <value>0</value>
-              </equals>
-            </condition>
-            <command>property-adjust</command>
-            <property>sim/current-view/y-offset-m</property>
-            <step type="double">0.01</step>
-            <min type="double">0.43</min>
-            <max type="double">0.63</max>
-          </binding>
-        </key>
-        <key n="108"> 
-          <name>l</name>
+        <key n="85"> 
+          <name>U</name>
           <desc>Seat Down.</desc>
           <binding> 
             <command>property-adjust</command>
-            <property>controls/seat/vertical-adjust</property>
+            <property>/controls/seat/vertical-adjust</property>
             <step type="double">-0.01</step>
             <min type="double">-0.05</min>
             <max type="double">0.05</max>
@@ -493,8 +409,32 @@ Aug 2004 Vivian Meazza, vivian.meazza at lineone.net
             <command>property-adjust</command>
             <property>sim/current-view/y-offset-m</property>
             <step type="double">-0.01</step>
-            <min type="double">0.43</min>
-            <max type="double">0.63</max>
+            <min type="double">0.48</min>
+            <max type="double">0.58</max>
+          </binding>
+        </key>
+        <key n="117"> 
+          <name>u</name>
+          <desc>Seat Up.</desc>
+          <binding> 
+            <command>property-adjust</command>
+            <property>controls/seat/vertical-adjust</property>
+            <step type="double">0.01</step>
+            <min type="double">-0.05</min>
+            <max type="double">0.05</max>
+          </binding>
+          <binding> 
+            <condition> 
+              <equals> 
+                <property>sim/current-view/view-number</property>
+                <value>0</value>
+              </equals>
+            </condition>
+            <command>property-adjust</command>
+            <property>sim/current-view/y-offset-m</property>
+            <step type="double">0.01</step>
+            <min type="double">0.48</min>
+            <max type="double">0.58</max>
           </binding>
         </key>
         <!-- map keys for mag switches  -->
@@ -540,8 +480,8 @@ Aug 2004 Vivian Meazza, vivian.meazza at lineone.net
           </binding>
         </key>
         <!-- map keys for priming pump -->
-        <key n="79"> 
-          <name>O</name>
+        <key n="73"> 
+          <name>I</name>
           <desc>Operate Priming Pump.</desc>
           <binding> 
             <command>nasal</command>
@@ -591,7 +531,7 @@ Aug 2004 Vivian Meazza, vivian.meazza at lineone.net
     <yasim> 
       <weights> 
         <pilot-lb type="double">180</pilot-lb>
-		<round-lb type="double">0.33</round-lb>
+        <round-lb type="double">0.33</round-lb>
       </weights>
     </yasim>
     <!-- nasal stuff -->
