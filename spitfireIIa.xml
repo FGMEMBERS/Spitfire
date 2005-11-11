@@ -1,8 +1,13 @@
 <?xml version="1.0"?>
-  <!--
+ <!--
 ************************************************************************
 YASim aerodynamic model for a Spitfire IIa 
 
+Author: Vivian Meazza
+
+Version 1.1 
+
+Use latest YASim engine config
 
 The reference datum for measurements is the nose.
 ************************************************************************
@@ -44,7 +49,7 @@ flap drag not available
 -->
     <wing 
 		x="-2.99" y="0.77" z="-0.81"
-		taper="0.3" incidence="2" twist="-2.0"
+		taper="0.3" incidence="-2" twist="2.0"
 		length="4.580" chord="2.845" sweep="0"
 		camber="0.0569" dihedral="6" effectiveness="1.25" > 
       <stall aoa="24" width="4" peak="1.5"/>
@@ -86,7 +91,7 @@ flap drag not available
 		  min="3" max="-3"/>
     </vstab>
     <!-- stub wing left -->
-    <vstab x="-2.99" y="0.32" z="-0.81" taper="0" incidence="-2" twist="0"
+    <vstab x="-2.99" y="0.32" z="-0.81" taper="0" incidence="2" twist="0"
        chord="2.845" sweep="0" camber="0.0569" dihedral="90" 
        length="0.503"  > 
       <stall aoa="20" width="4" peak="1.5"/>
@@ -96,7 +101,7 @@ flap drag not available
       <control-speed control="FLAP0" transition-time="10"/>
     </vstab>
     <!-- stub wing right -->
-    <vstab x="-2.99" y="-0.32" z="-0.81" taper="0" incidence="2" twist="0"
+    <vstab x="-2.99" y="-0.32" z="-0.81" taper="0" incidence="-2" twist="0"
        chord="2.845" sweep="0" camber="0.0569" dihedral="-90" 
        length="0.503"  > 
       <stall aoa="20" width="4" peak="1.5"/>
@@ -174,7 +179,7 @@ flap drag not available
     <!-- tail wheel casters freely in Spitfire -->
     <gear x="-8.48" y="0" z="-0.66" compression="0.15" castering="1"> 
       <control-input axis="/controls/gear/tailwheel-lock" 
-				src0="0" src1="1" dst0="1" dst1="0" control="CASTERING"/>
+				src0="0" src1="1" dst0="1" dst1="1" control="CASTERING"/>
     </gear>
 	<!-- dummy Tail wheel - add a little friction to make it flyable! -->
     <gear x="-8.48" y="0" z="-0.66" compression="0.15" dfric="0.10" sfric ="0.20"	> 

@@ -19,41 +19,41 @@
       <!--  <property>orientation/pitch-deg</property>  -->
       <property>/instrumentation/attitude-indicator/indicated-pitch-deg</property>
       <interpolation> 
-        <entry> 
-          <ind>-179</ind>
-          <dep>0.04</dep>
+	   <entry>
+          <ind>-180</ind>
+          <dep>0.03</dep>
         </entry>
-        <entry> 
+        <entry>
           <ind>-90</ind>
-          <dep>0.04</dep>
+          <dep>0.03</dep>
         </entry>
-        <entry> 
+        <entry>
           <ind>-40</ind>
-          <dep>0.04</dep>
+          <dep>0.020</dep>
         </entry>
-        <entry> 
+        <entry>
           <ind>-20</ind>
-          <dep>0.02</dep>
+          <dep>0.010</dep>
         </entry>
-        <entry> 
+        <entry>
           <ind>0</ind>
           <dep>0</dep>
         </entry>
-        <entry> 
+        <entry>
           <ind>20</ind>
-          <dep>-0.02</dep>
+          <dep>-0.010</dep>
         </entry>
-        <entry> 
+        <entry>
           <ind>40</ind>
-          <dep>-0.04</dep>
+          <dep>-0.020</dep>
         </entry>
-        <entry> 
+        <entry>
           <ind>90</ind>
-          <dep>-0.04</dep>
+          <dep>-0.03</dep>
         </entry>
-        <entry> 
-          <ind>175</ind>
-          <dep>-0.04</dep>
+		<entry>
+          <ind>180</ind>
+          <dep>-0.03</dep>
         </entry>
       </interpolation>
       <axis> 
@@ -62,6 +62,17 @@
         <z>1</z>
       </axis>
     </animation>
+	
+	<animation> 
+      <type>material</type>
+      <emission> 
+        <factor-prop>/controls/lighting/panel-norm</factor-prop>
+        <red>0.75</red>
+        <green>0.25</green>
+        <blue>0.25</blue>
+      </emission>
+    </animation>
+	
     <!-- *** LoD *** -->
     <animation> 
       <type>range</type>

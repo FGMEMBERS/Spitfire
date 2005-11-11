@@ -169,6 +169,9 @@ Aug 2004 Vivian Meazza, vivian.meazza at lineone.net
         <gun-sight-main>0</gun-sight-main>
         <gun-sight-dimmer>0</gun-sight-dimmer>
       </switches>
+	  <lighting> 
+        <nav-lights>false</nav-lights>
+      </lighting>
     </controls>
     <surface-positions> 
       <wing-fold-pos-norm type="double">1</wing-fold-pos-norm>

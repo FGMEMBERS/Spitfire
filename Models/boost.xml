@@ -1,15 +1,15 @@
 <?xml version="1.0"?>
   <PropertyList> 
     <path>boost.ac</path>
-    <animation> 
+    
+	<animation> 
       <type>rotate</type>
       <object-name>boost-Needle1</object-name>
       <property>engines/engine/boost-gauge-psi</property>
-   <!--    <factor>0.4911</factor>
+      <!--    <factor>0.4911</factor>
      <offset>-29.92</offset> -->
-	  
       <interpolation> 
-	  <entry> 
+        <entry> 
           <ind>-5</ind>
           <dep>-85</dep>
         </entry>
@@ -46,15 +46,26 @@
           <dep>265</dep>
         </entry>
       </interpolation>
-	 
       <axis> 
         <x>-1</x>
         <y>0</y>
         <z>0</z>
       </axis>
     </animation>
-    <!-- *** LoD *** -->
-    <animation> 
+    
+	<animation> 
+      <type>material</type>
+      <emission> 
+        <factor-prop>/controls/lighting/panel-norm</factor-prop>
+        <red>0.75</red>
+        <green>0.25</green>
+        <blue>0.25</blue>
+      </emission>
+    </animation>
+    
+	<!-- *** LoD *** -->
+    
+	<animation> 
       <type>range</type>
       <min-m>0</min-m>
       <max-m>5</max-m>

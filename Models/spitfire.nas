@@ -62,7 +62,7 @@ toggleCutout = func{
 		c = !c;
 		boost_control_cutout.setBoolValue(c);
 	} 	    
-	print("c: " , c );
+#	print("c: " , c );
     
 } # end function toggleCutout
 
@@ -530,5 +530,35 @@ negGCutoff = func{
 } # end function 
 
 # =============================== end -ve g cutoff ===========================================
+
+# =============================== Pilot G stuff======================================
+
+pilot_g = props.globals.getNode("accelerations/pilot-g", 1);
+timeratio = props.globals.getNode("accelerations/timeratio", 1);
+pilot_g_damped = props.globals.getNode("accelerations/pilot-g-damped", 1);
+
+pilot_g.setDoubleValue(0);
+pilot_g_damped.setDoubleValue(0); 
+timeratio.setDoubleValue(0.03); 
+
+g_damp = 0;
+
+updatePilotG = func {
+        var n = timeratio.getValue(); 
+		var g = pilot_g.getValue() ;
+		#if (g == nil) { g = 0; }
+		g_damp = ( g * n) + (g_damp * (1 - n));
+		
+		pilot_g_damped.setDoubleValue(g_damp);
+
+# print(sprintf("pilot_g_damped in=%0.5f, out=%0.5f", g, g_damp));
+        
+        settimer(updatePilotG, 0.1);
+
+} #end updatePilotG()
+
+updatePilotG();
+
+# ======================================= end Pilot G stuff ============================
 
 # end 

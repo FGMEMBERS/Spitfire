@@ -33,6 +33,7 @@
     </model>
     <model> 
       <path>Aircraft/Spitfire/Models/attitude.xml</path>
+	  <name>Attitude</name>
       <offsets> 
         <x-m>3.265</x-m>
         <y-m>0.0</y-m>
@@ -49,6 +50,7 @@
     </model>
     <model> 
       <path>Aircraft/Spitfire/Models/altimeter.xml</path>
+	  <name>Altimeter</name>
       <offsets> 
         <x-m>3.265</x-m>
         <y-m>-0.10</y-m>
@@ -65,7 +67,7 @@
     </model>
     <model> 
       <path>Aircraft/Spitfire/Models/turn.xml</path>
-      <offsets> 
+	  <offsets> 
         <x-m>3.265</x-m>
         <y-m>0.10</y-m>
         <z-m>0.18</z-m>
@@ -215,10 +217,28 @@
     </model>
     <model> 
       <path>Aircraft/Spitfire/Models/undercarriage-up-down.xml</path>
+	  <name>Gear-Indicator</name>
       <offsets> 
         <x-m>3.265</x-m>
         <y-m>-0.20</y-m>
         <z-m>0.22</z-m>
+      </offsets>
+    </model>
+	<model> 
+      <path>Aircraft/Spitfire/Models/dimmer.xml</path>
+      <offsets> 
+        <x-m>3.265</x-m>
+        <y-m>-0.06</y-m>
+        <z-m>0.05</z-m>
+      </offsets>
+    </model>
+    
+	<model> 
+      <path>Aircraft/Spitfire/Models/nav-light-switch.xml</path>
+      <offsets> 
+        <x-m>3.265</x-m>
+        <y-m>-0.23</y-m>
+        <z-m>0.34</z-m>
       </offsets>
     </model>
     
@@ -257,12 +277,54 @@
     </model>
     <model> 
       <path>Aircraft/Spitfire/Models/rgs.xml</path>
+	  <name>Gunsight</name>
       <offsets> 
         <x-m>3.33</x-m>
         <y-m>-0.0</y-m>
         <z-m>0.53</z-m>
       </offsets>
     </model>
+	<model> 
+      <path>Aircraft/Spitfire/Models/blackout.xml</path>
+	  <name>Blackout</name>
+      <offsets> 
+        <x-m>3.86</x-m>
+        <y-m>0</y-m>
+        <z-m>0.53</z-m>
+      </offsets>
+    </model>
+	
+	<!-- ***** Navigation Lights ****** -->
+    <model> 
+      <path>Aircraft/Spitfire/Models/light-green.xml</path>
+      <name>Stbd-Light</name>
+      <offsets> 
+        <x-m>2.35</x-m>
+        <y-m>5.4805</y-m>
+        <z-m>-0.26532</z-m>
+      </offsets>
+    </model>
+    
+	<model> 
+      <path>Aircraft/Spitfire/Models/light-red.xml</path>
+      <name>Port-Light</name>
+      <offsets> 
+        <x-m>2.35</x-m>
+        <y-m>-5.4805</y-m>
+        <z-m>-0.26532</z-m>
+      </offsets>
+    </model>
+   
+	<model>  
+      <path>Aircraft/Spitfire/Models/light-white.xml</path>
+      <name>Tail-Light</name>
+      <offsets> 
+        <x-m>9.05</x-m>
+        <y-m>0.0</y-m>
+        <z-m>0.837072</z-m>
+      </offsets>
+    </model>
+	 
     <!-- hide all of the model not visible from the cockpit -->
     <animation> 
       <!--<type>select</type>-->
@@ -291,7 +353,7 @@
       </condition>-->
     </animation>
     <animation> 
-      <!--<type>select</type>-->
+     <!--<type>select</type>-->
       <object-name>UC-Tail</object-name>
       <object-name>Spinner</object-name>
       <object-name>Exhausts</object-name>
@@ -302,8 +364,8 @@
       <object-name>Oil-Cooler</object-name>
       <object-name>Radiator</object-name>
       <object-name>Carburettor-Air-Intake</object-name>
-      <!--
-      <condition> 
+	  <object-name>Tail-Light</object-name>
+	  <!--<condition> 
         <not> 
           <equals> 
             <property>/sim/current-view/view-number</property>
@@ -316,7 +378,18 @@
      -->
     <animation> 
       <type>select</type>
-      <object-name>Pilot</object-name>
+	  <object-name>Port-Light</object-name>
+      <object-name>Stbd-Light</object-name>
+	  <object-name>Gunsight</object-name>
+	  <object-name>Altimeter</object-name>
+	  <object-name>Attitude</object-name>
+	  <object-name>Gear-Indicator</object-name>
+	  <object-name>Pilot</object-name>
+	  <object-name>Port-Nav-Lt-Cover</object-name>
+      <object-name>Stbd-Nav-Lt-Cover</object-name>
+      <object-name>Tail-Lt-Cover</object-name> 
+	  <object-name>Canopy</object-name>
+	  <object-name>Blackout</object-name>
       <condition> 
         <greater-than-equals> 
           <property>/sim/current-view/view-number</property>
@@ -470,6 +543,9 @@
     <animation> 
       <type>rotate</type>
       <object-name>Rudder</object-name>
+	  <object-name>Tail-Lt-Fairing</object-name>
+	  <object-name>Tail-Lt-Cover</object-name>
+	  <object-name>Tail-Light</object-name>
       <property>surface-positions/rudder-pos-norm</property>
       <factor>-30</factor>
       <axis> 
@@ -823,7 +899,16 @@
   </condition>
  </animation>
 -->
- 
+ <animation> 
+      <type>material</type>
+      <object-name>Panel</object-name>
+      <emission> 
+        <factor-prop>/controls/lighting/panel-norm</factor-prop>
+        <red>0.6</red>
+        <green>0.20</green>
+        <blue>0.20</blue>
+      </emission>
+    </animation>
  <!-- *** LoD for the whole model *** -->
  <animation>
   <type>range</type>

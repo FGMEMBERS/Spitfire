@@ -1,31 +1,21 @@
 <?xml version="1.0"?>
   <PropertyList> 
-    <path>starter.ac</path>
-	
-<!--
-    <animation> 
-      <type>rotate</type>
-      <object-name>Switch-L</object-name>
-      <property>controls/engines/engine/mag-switch-left</property>
-      <interpolation> 
-        <entry> 
-          <ind>0</ind>
-          <dep>-25</dep>
-        </entry>
-        <entry> 
-          <ind>1</ind>
-          <dep>25</dep>
-        </entry>
-      </interpolation>
-      <axis> 
-        <x>0</x>
-        <y>1</y>
-        <z>0</z>
-      </axis>
+   
+   <path>starter.ac</path>
+    
+	<animation> 
+      <type>material</type>
+      <emission> 
+        <factor-prop>/controls/lighting/panel-norm</factor-prop>
+        <red>0.75</red>
+        <green>0.25</green>
+        <blue>0.25</blue>
+      </emission>
     </animation>
-    -->
-    <!-- *** LoD *** -->
-    <animation> 
+    
+	<!-- *** LoD *** -->
+    
+	<animation> 
       <type>range</type>
       <min-m>0</min-m>
       <max-m>5</max-m>

@@ -1,14 +1,13 @@
 AC3Db
-MATERIAL "ac3dmat1" rgb 1 1 1  amb 0.2 0.2 0.2  emis 0 0 0  spec 0.5 0.5 0.5  shi 10  trans 0
-MATERIAL "ac3dmat12" rgb 0.266667 0.266667 0.266667  amb 0.2 0.2 0.2  emis 0 0 0  spec 0.5 0.5 0.5  shi 10  trans 0
+MATERIAL "ac3dmat0" rgb 0 0 0  amb 0.2 0.2 0.2  emis 0 0 0  spec 0 0 0  shi 10  trans 0
 MATERIAL "ac3dmat13" rgb 0.533333 0.533333 0.533333  amb 0.2 0.2 0.2  emis 0 0 0  spec 0.5 0.5 0.5  shi 10  trans 0
-MATERIAL "ac3dmat14" rgb 0 0 0  amb 0 0 0  emis 0 0 0  spec 0 0 0  shi 59  trans 0
 OBJECT world
-kids 3
+kids 4
 OBJECT poly
 name "plate"
 loc 0 -0.00107137 -0.013385
 texture "large-bezel.rgb"
+crease 61.000000
 numvert 4
 0 0.0137795 0.0267024
 0 0.0137795 6.75507e-005
@@ -16,17 +15,18 @@ numvert 4
 0 -0.0116368 0.0267024
 numsurf 1
 SURF 0x0
-mat 2
+mat 1
 refs 4
-3 0 0
-2 1 0
-1 1 1
-0 0 1
+3 1 0
+2 0 0
+1 0 1
+0 1 1
 kids 0
 OBJECT poly
 name "cylinder"
 loc 0.00411623 0.00128268 0.013385
 texture "large-bezel.rgb"
+crease 61.000000
 numvert 48
 -0.000214195 0.00555224 -0.0094389
 -0.000214195 0.00162038 -0.00835679
@@ -246,7 +246,7 @@ refs 4
 0 0.30957 0.903893
 24 0.160157 0.748047
 SURF 0x30
-mat 3
+mat 1
 refs 12
 41 0.816686 0.751953
 30 0.678711 0.893502
@@ -265,6 +265,7 @@ OBJECT poly
 name "button"
 loc 0.00411623 0.00128268 0.013385
 texture "large-bezel.rgb"
+crease 61.000000
 numvert 13
 -0.000710608 -0.00128268 -0.013385
 -0.000710608 0.00162038 -0.00835679
@@ -352,4 +353,23 @@ refs 3
 11 0.728516 0.840628
 0 0.53125 0.492187
 1 0.872925 0.693359
+kids 0
+OBJECT poly
+name "label"
+loc 0.000408622 0.0104691 6.07297e-005
+texture "hurricane-starter.rgb"
+crease 61.000000
+numvert 4
+0 -0.0013366 -0.0071083
+0 -0.0013366 0.0071083
+0 0.0013366 0.0071083
+0 0.0013366 -0.0071083
+numsurf 1
+SURF 0x20
+mat 1
+refs 4
+3 0.390409 0.720669
+2 0.21226 0.720669
+1 0.21226 0.67745
+0 0.390409 0.67745
 kids 0

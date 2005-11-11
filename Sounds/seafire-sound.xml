@@ -448,5 +448,31 @@
           <max>1.0</max>
         </volume>
       </guns>
+	  <click> 
+        <name>nav lights click down</name>
+        <path>Aircraft/Spitfire/Sounds/click.wav</path>
+        <condition> 
+          <property>controls/lighting/nav-lights</property>
+        </condition>
+        <volume> 
+          <factor>1.0</factor>
+		  <min>0.1</min>
+          <max>0.9</max>
+        </volume>
+      </click>
+      <click> 
+        <name>nav lights click up</name>
+        <path>Aircraft/Spitfire/Sounds/click.wav</path>
+        <condition> 
+          <not> 
+            <property>controls/lighting/nav-lights</property>
+          </not>
+        </condition>
+        <volume> 
+          <factor>1.0</factor>
+		  <min>0.1</min>
+          <max>0.9</max>
+        </volume>
+      </click>
     </fx>
   </PropertyList>

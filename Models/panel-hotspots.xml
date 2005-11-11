@@ -582,7 +582,7 @@
                 <value type="bool">0</value>
               </binding>
             </action>
-			<action> 
+            <action> 
               <name>dimmer up fine</name>
               <button>0</button>
               <x>-90</x>
@@ -634,7 +634,7 @@
               <name>dimmer down coarse</name>
               <button>1</button>
               <x>-70</x>
-              <y>-280</y>
+              <y>280</y>
               <w>20</w>
               <h>50</h>
               <binding> 
@@ -646,7 +646,67 @@
                 <wrap>false</wrap>
               </binding>
             </action>
-           </actions>
+            <!-- navigation light switch -->
+            <action> 
+              <name>nav light up</name>
+              <button>0</button>
+              <x>-315</x>
+              <y>240</y>
+              <w>30</w>
+              <h>30</h>
+              <binding> 
+                <command>property-assign</command>
+                <property>/controls/lighting/nav-lights</property>
+                <value type="bool">1</value>
+              </binding>
+            </action>
+            <action> 
+              <name>nav light down</name>
+              <button>0</button>
+              <x>-315</x>
+              <y>210</y>
+              <w>30</w>
+              <h>30</h>
+              <binding> 
+                <command>property-assign</command>
+                <property>/controls/lighting/nav-lights</property>
+                <value type="bool">0</value>
+              </binding>
+            </action>
+			<!--  cockpit light dimmer hotspots -->
+            <action> 
+              <name>panel brighter</name>
+              <button>0</button>
+              <x>-110</x>
+              <y>-280</y>
+              <w>30</w>
+              <h>30</h>
+              <binding> 
+                <command>property-adjust</command>
+                <property>/controls/lighting/panel-norm</property>
+                <step>-0.1</step>
+                <min>0</min>
+                <max>1</max>
+                <wrap>0</wrap>
+              </binding>
+            </action>
+            <action> 
+              <name>panel dimmer</name>
+              <button>0</button>
+              <x>-80</x>
+              <y>-280</y>
+              <w>30</w>
+              <h>30</h>
+              <binding> 
+                <command>property-adjust</command>
+                <property>/controls/lighting/panel-norm</property>
+                <step>0.1</step>
+                <min>0</min>
+                <max>1</max>
+                <wrap>0</wrap>
+              </binding>
+            </action>
+          </actions>
         </instrument>
       </instruments>
     </PropertyList>

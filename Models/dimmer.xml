@@ -1,21 +1,27 @@
 <?xml version="1.0"?>
   <PropertyList> 
-    <path>cut-off.ac</path>
-	
-
+    <path>dimmer.ac</path>
     <animation> 
-      <type>translate</type>
-      <object-name>ring-pull</object-name>
-      <property>controls/engines/engine/cutoff-pull-norm</property>
-	  <factor>0.035</factor>
-	  <axis> 
+      <type>rotate</type>
+      <object-name>Knob</object-name>
+      <property>controls/lighting/panel-norm</property>
+      <interpolation> 
+        <entry> 
+          <ind>0.0</ind>
+          <dep>160</dep>
+        </entry>
+        <entry> 
+          <ind>1.0</ind>
+          <dep>-160</dep>
+        </entry>
+      </interpolation>
+      <axis> 
         <x>1</x>
         <y>0</y>
         <z>0</z>
       </axis>
     </animation>
-	
-	<animation> 
+    <animation> 
       <type>material</type>
       <emission> 
         <factor-prop>/controls/lighting/panel-norm</factor-prop>
@@ -24,8 +30,8 @@
         <blue>0.25</blue>
       </emission>
     </animation>
- 
-    <!-- *** LoD *** -->
+	
+	<!-- *** LoD for the whole model *** -->
     <animation> 
       <type>range</type>
       <min-m>0</min-m>

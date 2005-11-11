@@ -10,13 +10,17 @@ Aug 2004 Vivian Meazza, vivian.meazza at lineone.net
 -->
   <PropertyList> 
     <sim include="spitfire-help.xml" > 
-      <description>Spitfire IIa</description>
+      <description>Supermarine Spitfire IIa</description>
       <author>Vivian Meazza</author>
       <status>early-production</status>
       <flight-model>yasim</flight-model>
       <aero>spitfireIIa</aero>
       <fuel-fraction>1</fuel-fraction>
-      <systems> </systems>
+     <systems> 
+        <electrical> 
+          <path>Aircraft/Spitfire/Electrical/electrical.xml</path>
+        </electrical>
+      </systems>
       <submodels> 
         <serviceable type="bool">true</serviceable>
         <path>Aircraft/Spitfire/Models/spitfire-submodels.xml</path>
@@ -160,6 +164,9 @@ Aug 2004 Vivian Meazza, vivian.meazza at lineone.net
         <gun-sight-main>0</gun-sight-main>
         <gun-sight-dimmer>0</gun-sight-dimmer>
       </switches>
+	  <lighting> 
+        <nav-lights>false</nav-lights>
+      </lighting>
     </controls>
     <!-- ================ map keyboard ================ -->
     <input> 
