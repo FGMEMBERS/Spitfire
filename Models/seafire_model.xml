@@ -382,6 +382,7 @@
       <object-name>Port-Nav-Lt-Cover</object-name>
       <object-name>Stbd-Nav-Lt-Cover</object-name>
       <object-name>Tail-Lt-Cover</object-name>
+	  <object-name>noshadow.PropellerDisk</object-name>
       <object-name>Canopy</object-name>
       <object-name>Blackout</object-name>
       <condition> 
@@ -1033,31 +1034,24 @@
         <z>0</z>
       </axis>
     </animation>
-    <!-- 
-<animation>
-  <type>select</type>
-  <object-name>TailNavLightOn</object-name>
-  <condition>
-    <property>/controls/lighting/nav-lights</property>
-  </condition>
- </animation>
 
+    <!-- Panel backgraound lighting -->
  <animation>
-  <name>BeaconFlasher</name>
-  <type>timed</type>
-  <object-name>BeaconOff</object-name>
-  <object-name>BeaconOn</object-name>
-  <duration-sec>1.0</duration-sec>
+      <type>material</type>
+      <object-name>Panel</object-name>
+      <emission> 
+        <factor-prop>/controls/lighting/panel-norm</factor-prop>
+        <red>0.6</red>
+        <green>0.20</green>
+        <blue>0.20</blue>
+      </emission>
  </animation>
 
+	<!-- *** LoD for the whole model *** -->
  <animation>
-  <type>select</type>
-  <object-name>BeaconFlasher</object-name>
-  <condition>
-   <property>/controls/lighting/beacon</property>
-  </condition>
+      <type>range</type>
+      <min-m>0</min-m>
+      <max-m>10000</max-m>
  </animation>
-
- 
--->
   </PropertyList>
+
