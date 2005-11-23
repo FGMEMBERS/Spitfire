@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-  <!-- Spitfire IIa by Vivisn Meazza -->
+  <!-- Spitfire IIa by Vivian Meazza -->
   <PropertyList> 
     <path>seafireIIIc.ac</path>
     <!-- Front hotspots -->
@@ -67,6 +67,7 @@
     </model>
     <model> 
       <path>Aircraft/Spitfire/Models/turn.xml</path>
+	  <name>Turn</name>
       <offsets> 
         <x-m>3.265</x-m>
         <y-m>0.10</y-m>
@@ -378,6 +379,7 @@
       <object-name>Altimeter</object-name>
       <object-name>Attitude</object-name>
       <object-name>Gear-Indicator</object-name>
+	  <object-name>Turn</object-name>
       <object-name>Pilot</object-name>
       <object-name>Port-Nav-Lt-Cover</object-name>
       <object-name>Stbd-Nav-Lt-Cover</object-name>
@@ -1034,9 +1036,9 @@
         <z>0</z>
       </axis>
     </animation>
-
-    <!-- Panel backgraound lighting -->
- <animation>
+	
+    <!-- Panel background lighting -->
+    <animation> 
       <type>material</type>
       <object-name>Panel</object-name>
       <emission> 
@@ -1045,13 +1047,13 @@
         <green>0.20</green>
         <blue>0.20</blue>
       </emission>
- </animation>
-
+    </animation>
+    
 	<!-- *** LoD for the whole model *** -->
- <animation>
+    <animation> 
       <type>range</type>
       <min-m>0</min-m>
       <max-m>10000</max-m>
- </animation>
+    </animation>
   </PropertyList>
 
