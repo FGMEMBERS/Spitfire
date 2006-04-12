@@ -228,7 +228,7 @@
     <model>Aircraft/Spitfire/Models/exhaust.xml</model>
     <trigger>engines/engine/cranking</trigger>
     <speed>50</speed>
-    <repeat>false</repeat>
+    <repeat>true</repeat>
     <delay>0.001</delay>
     <count>-1</count>
     <x-offset>-4</x-offset>
@@ -246,7 +246,7 @@
     <model>Aircraft/Spitfire/Models/exhaust.xml</model>
     <trigger>engines/engine/cranking</trigger>
     <speed>50</speed>
-    <repeat>false</repeat>
+    <repeat>true</repeat>
     <delay>0.001</delay>
     <count>-1</count>
     <x-offset>-4</x-offset>
