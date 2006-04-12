@@ -14,6 +14,7 @@ MATERIAL "ac3dmat1" rgb 1 1 1  amb 0.337 0.337 0.329  emis 0 0 0  spec 0.663 0.6
 MATERIAL "ac3dmat14" rgb 0.8 0.8 0.8  amb 0.2 0.2 0.2  emis 0 0 0  spec 0.502 0.502 0.502  shi 128  trans 0.902
 MATERIAL "ac3dmat1" rgb 1 1 1  amb 0.2 0.2 0.2  emis 0 0 0  spec 0 0 0  shi 10  trans 0
 MATERIAL "ac3dmat14" rgb 0.8 0.8 0.8  amb 0.2 0.2 0.2  emis 0 0 0  spec 0.502 0.502 0.502  shi 128  trans 0.902
+MATERIAL "ac3dmat12" rgb 0.267 0.267 0.267  amb 0.2 0.2 0.2  emis 0 0 0  spec 0 0 0  shi 10  trans 0.51
 OBJECT world
 kids 29
 OBJECT group
@@ -47290,7 +47291,7 @@ numvert 3
 1.82008 0.413343 0
 numsurf 1
 SURF 0x22
-mat 10
+mat 15
 refs 3
 0 0.0150564 0
 1 0 0.817679
