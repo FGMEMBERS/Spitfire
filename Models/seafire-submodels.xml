@@ -4,7 +4,7 @@
     <submodel> 
       <name>browning l inner</name>
       <model>Models/Geometry/tracer.ac</model>
-      <trigger>ai/submodels/trigger</trigger>
+      <trigger>controls/armament/trigger</trigger>
       <speed>2444.2</speed>
       <repeat>true</repeat>
       <delay>0.263157895</delay>
@@ -23,7 +23,7 @@
 	<submodel> 
       <name>browning l inner smoke</name>
       <model>Aircraft/Spitfire/Models/smoke.xml</model>
-      <trigger>ai/submodels/trigger</trigger>
+      <trigger>controls/armament/trigger</trigger>
       <speed>10</speed>
       <repeat>true</repeat>
       <delay>0.052631579</delay>
@@ -41,7 +41,7 @@
 	<submodel> 
       <name>browning r inner</name>
       <model>Models/Geometry/tracer.ac</model>
-      <trigger>ai/submodels/trigger</trigger>
+      <trigger>controls/armament/trigger</trigger>
       <speed>2444.2</speed>
       <repeat>true</repeat>
       <delay>0.263157895</delay>
@@ -60,7 +60,7 @@
 	<submodel> 
       <name>browning r inner smoke</name>
       <model>Aircraft/Spitfire/Models/smoke.xml</model>
-      <trigger>ai/submodels/trigger</trigger>
+      <trigger>controls/armament/trigger</trigger>
       <speed>10</speed>
       <repeat>true</repeat>
       <delay>0.052631579</delay>
@@ -78,7 +78,7 @@
 	<submodel> 
       <name>browning l outer</name>
       <model>Models/Geometry/tracer.ac</model>
-      <trigger>ai/submodels/trigger</trigger>
+      <trigger>controls/armament/trigger</trigger>
       <speed>2444.2</speed>
       <repeat>true</repeat>
       <delay>0.263157895</delay>
@@ -97,7 +97,7 @@
 	<submodel> 
       <name>browning l outer smoke</name>
       <model>Aircraft/Spitfire/Models/smoke.xml</model>
-      <trigger>ai/submodels/trigger</trigger>
+      <trigger>controls/armament/trigger</trigger>
       <speed>10</speed>
       <repeat>true</repeat>
       <delay>0.052631579</delay>
@@ -115,7 +115,7 @@
 	<submodel> 
       <name>browning r outer</name>
       <model>Models/Geometry/tracer.ac</model>
-      <trigger>ai/submodels/trigger</trigger>
+      <trigger>controls/armament/trigger</trigger>
       <speed>2444.2</speed>
       <repeat>true</repeat>
       <delay>0.263157895</delay>
@@ -134,7 +134,7 @@
 	<submodel> 
       <name>browning r outer smoke</name>
       <model>Aircraft/Spitfire/Models/smoke.xml</model>
-      <trigger>ai/submodels/trigger</trigger>
+      <trigger>controls/armament/trigger</trigger>
       <speed>10</speed>
       <repeat>true</repeat>
       <delay>0.052631579</delay>
@@ -152,7 +152,7 @@
 	<submodel> 
       <name>Hispano MkV P</name>
       <model>Models/Geometry/tracer.ac</model>
-      <trigger>ai/submodels/trigger</trigger>
+      <trigger>controls/armament/trigger</trigger>
       <speed>2755.9 </speed>
       <repeat>true</repeat>
       <delay>0.4</delay>
@@ -171,7 +171,7 @@
 	<submodel> 
       <name>Hispano MkV P smoke</name>
       <model>Aircraft/Spitfire/Models/smoke.xml</model>
-      <trigger>ai/submodels/trigger</trigger>
+      <trigger>controls/armament/trigger</trigger>
       <speed>10</speed>
       <repeat>true</repeat>
       <delay>0.08</delay>
@@ -189,7 +189,7 @@
 	<submodel> 
       <name>Hispano MkV S</name>
       <model>Models/Geometry/tracer.ac</model>
-      <trigger>ai/submodels/trigger</trigger>
+      <trigger>controls/armament/trigger</trigger>
       <speed>2755.9 </speed>
       <repeat>true</repeat>
       <delay>0.4</delay>
@@ -208,7 +208,7 @@
 	<submodel> 
       <name>Hispano MkV S smoke</name>
       <model>Aircraft/Spitfire/Models/smoke.xml</model>
-      <trigger>ai/submodels/trigger</trigger>
+      <trigger>controls/armament/trigger</trigger>
       <speed>10</speed>
       <repeat>true</repeat>
       <delay>0.08</delay>

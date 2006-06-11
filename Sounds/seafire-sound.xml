@@ -440,8 +440,8 @@
         <mode>looped</mode>
         <path>Aircraft/Spitfire/Sounds/gunfire_1.wav</path>
         <condition> 
-          <property>/systems/submodels/trigger</property>
-		  <property>/systems/submodels/submodel[1]/count[0]</property>
+          <property>controls/armament/trigger</property>
+          <property>ai/submodels/submodel/count</property>
         </condition>
         <volume> 
           <factor>1.2</factor>
