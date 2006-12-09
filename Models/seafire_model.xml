@@ -884,8 +884,6 @@
     <animation> 
       <type>rotate</type>
       <object-name>Wing-R-Outer</object-name>
-      <object-name>Wing-B-Outer-R</object-name>
-      <object-name>Wheelwell-Outer-R</object-name>
       <property>surface-positions/wing-fold-pos-norm</property>
       <interpolation> 
         <entry> 
@@ -936,8 +934,6 @@
     <animation> 
       <type>rotate</type>
       <object-name>Wing-L-Outer</object-name>
-      <object-name>Wing-B-Outer-L</object-name>
-      <object-name>Wheelwell-Outer-L</object-name>
       <property>surface-positions/wing-fold-pos-norm</property>
       <interpolation> 
         <entry> 
