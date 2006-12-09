@@ -21,6 +21,9 @@ Aug 2004 Vivian Meazza, vivian.meazza at lineone.net
           <path>Aircraft/Spitfire/Electrical/electrical.xml</path>
         </electrical>
       </systems>
+			<instrumentation>
+        <path>Aircraft/Spitfire/Systems/instrumentation.xml</path>
+      </instrumentation>
       <submodels> 
         <serviceable type="bool">true</serviceable>
         <path>Aircraft/Spitfire/Models/spitfire-submodels.xml</path>

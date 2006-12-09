@@ -163,7 +163,8 @@ flap drag not available
 		compression="0.25" upx="-0.31" upy="-0.07" upz="0.95"
 	> 
       <control-input axis="/controls/gear/brake-left" control="BRAKE" transition-time="1"
-	                   src0="0" src1="1" dst0="0" dst1="0.5"/>
+	                   src0="0" src1="1" dst0="0" dst1="0.8"/>
+			<control-speed control="BRAKE" transition-time="1"/>
       <control-input axis="/controls/gear/brake-parking" control="BRAKE" split="true"/>
       <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
       <control-speed control="EXTEND" transition-time="9"/>
@@ -175,7 +176,8 @@ flap drag not available
 		compression="0.25" upx="-0.31" upy="0.07" upz="0.95"
 	> 
       <control-input axis="/controls/gear/brake-right" control="BRAKE" transition-time="1"
-	                 src0="0" src1="1" dst0="0" dst1="0.5"/>
+	                 src0="0" src1="1" dst0="0" dst1="0.8"/>
+			<control-speed control="BRAKE" transition-time="1"/>
       <control-input axis="/controls/gear/brake-parking" control="BRAKE" split="true"/>
       <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
       <control-speed control="EXTEND" transition-time="7"/>

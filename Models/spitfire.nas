@@ -26,6 +26,8 @@ if (type == "spitfireIIa") {spitfireIIa = 1;}
 
 print ("type: " , type );
 
+controls.fullBrakeTime = 0; 
+
 # =============================== Boost Controller stuff======================================
 
 BOOST_CONTROL_AUTHORITY = 0.99; # How much can it move the throttle?
