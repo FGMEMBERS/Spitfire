@@ -16,16 +16,16 @@
   <x-min>0.1</x-min>
   <y-min>0.1</y-min>
   <z-min>0.1</z-min>
-  <x-factor>3</x-factor>
-  <y-factor>3</y-factor>
-  <z-factor>3</z-factor>
+  <x-factor>10</x-factor>
+  <y-factor>10</y-factor>
+  <z-factor>10</z-factor>
  </animation>
 
  <animation>
   <type>blend</type>
   <object-name>puff</object-name>
   <property>sim/time/elapsed-sec</property>
-  <factor>4</factor>
+  <factor>2</factor>
   <!-- <offset>0.8</offset> -->
   <min>0.4</min>
  </animation>
