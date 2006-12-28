@@ -18,7 +18,7 @@ Aug 2004 Vivian Meazza, vivian.meazza at lineone.net
       <fuel-fraction>1</fuel-fraction>
      <systems> 
         <electrical> 
-          <path>Aircraft/Spitfire/Electrical/electrical.xml</path>
+          <path>Aircraft/Spitfire/Systems/electrical.xml</path>
         </electrical>
       </systems>
 			<instrumentation>
