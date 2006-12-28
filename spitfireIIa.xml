@@ -190,7 +190,7 @@ flap drag not available
 				src0="0" src1="1" dst0="1" dst1="1" control="CASTERING"/>
     </gear>
 	<!-- dummy Tail wheel - add a little friction to make it flyable! -->
-    <gear x="-8.48" y="0" z="-0.66" compression="0.15" dfric="0.10" sfric ="0.20"	> 
+    <gear x="-8.48" y="0" z="-0.66" compression="0.15" dfric="0.3" sfric ="0.50"	> 
     </gear>
     <!-- Canopy -->
     <gear x="-3.90" y="0.0" z="0.7" compression="1"> 
