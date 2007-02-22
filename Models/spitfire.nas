@@ -142,7 +142,7 @@ indexCof = func{
 
 startCof = func{
 	Start = arg[0];
-	max_run = 0.5;
+	max_run = 5.0;
 	
 	if (Start) {
 		LastStartTime = nowN.getValue();
