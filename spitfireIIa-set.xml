@@ -15,6 +15,9 @@ Aug 2004 Vivian Meazza, vivian.meazza at lineone.net
       <status>early-production</status>
       <flight-model>yasim</flight-model>
       <aero>spitfireIIa</aero>
+			<startup>
+          <splash-texture>Aircraft/Spitfire/splash.rgb</splash-texture>
+       </startup>
       <fuel-fraction>1</fuel-fraction>
      <systems> 
         <electrical> 
