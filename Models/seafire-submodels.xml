@@ -19,6 +19,7 @@
 		<cd>0.193</cd>
 		<weight>0.0249122356</weight>
 		<life>5</life>
+		<aero-stabilised>1</aero-stabilised>
 	</submodel>
 	<submodel>
 		<name>browning l inner smoke</name>
@@ -238,6 +239,7 @@
 		<pitch-offset>0.0</pitch-offset>
 		<eda>10</eda>
 		<life>1</life>
+		<random>true</random>
 		<buoyancy>34</buoyancy>
 		<wind>true</wind>
 	</submodel>
@@ -256,6 +258,7 @@
 		<pitch-offset>0.0</pitch-offset>
 		<eda>10</eda>
 		<life>1</life>
+		<random>true</random>
 		<buoyancy>34</buoyancy>
 		<wind>true</wind>
 	</submodel>
@@ -275,6 +278,7 @@
 		<pitch-offset>0.0</pitch-offset>
 		<eda>10</eda>
 		<life>1</life>
+		<random>true</random>
 		<buoyancy>34</buoyancy>
 		<wind>true</wind>
 	</submodel>
@@ -293,6 +297,7 @@
 		<pitch-offset>0.0</pitch-offset>
 		<eda>10</eda>
 		<life>1</life>
+		<random>true</random>
 		<buoyancy>34</buoyancy>
 		<wind>true</wind>
 	</submodel>
@@ -312,6 +317,7 @@
 		<pitch-offset>0.0</pitch-offset>
 		<eda>10</eda>
 		<life>1</life>
+		<random>true</random>
 		<buoyancy>34</buoyancy>
 		<wind>true</wind>
 	</submodel>
@@ -330,6 +336,7 @@
 		<pitch-offset>0.0</pitch-offset>
 		<eda>10</eda>
 		<life>1</life>
+		<random>true</random>
 		<buoyancy>34</buoyancy>
 		<wind>true</wind>
 	</submodel>
@@ -349,6 +356,7 @@
 		<pitch-offset>0.0</pitch-offset>
 		<eda>10</eda>
 		<life>1</life>
+		<random>true</random>
 		<buoyancy>34</buoyancy>
 		<wind>true</wind>
 	</submodel>
@@ -367,6 +375,7 @@
 		<pitch-offset>0.0</pitch-offset>
 		<eda>10</eda>
 		<life>1</life>
+		<random>true</random>
 		<buoyancy>34</buoyancy>
 		<wind>true</wind>
 	</submodel>
@@ -386,6 +395,7 @@
 		<pitch-offset>0.0</pitch-offset>
 		<eda>10</eda>
 		<life>1</life>
+		<random>true</random>
 		<buoyancy>34</buoyancy>
 		<wind>true</wind>
 	</submodel>
@@ -404,6 +414,7 @@
 		<pitch-offset>0.0</pitch-offset>
 		<eda>10</eda>
 		<life>1</life>
+		<random>true</random>
 		<buoyancy>34</buoyancy>
 		<wind>true</wind>
 	</submodel>
@@ -423,6 +434,7 @@
 		<pitch-offset>0.0</pitch-offset>
 		<eda>10</eda>
 		<life>1</life>
+		<random>true</random>
 		<buoyancy>34</buoyancy>
 		<wind>true</wind>
 	</submodel>
@@ -433,16 +445,17 @@
 		<speed>50</speed>
 		<repeat>true</repeat>
 		<delay>0.0001</delay>
-		<count>-1</count>9439
+		<count>-1</count>
 		<x-offset>-5.9439</x-offset>
 		<y-offset>-1.5869</y-offset>
 		<z-offset>0.3759</z-offset>
 		<yaw-offset>-160</yaw-offset>
 		<pitch-offset>0.0</pitch-offset>
 		<eda>10</eda>
-		<life>1</life>
+		<life>1</life><random>true</random>
 		<buoyancy>34</buoyancy>
 		<wind>true</wind>
+		<random>true</random>
 	</submodel>
 
 

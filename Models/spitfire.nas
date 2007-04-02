@@ -490,15 +490,13 @@ toggleGearWarn = func{                                         # toggle the gear
 
 resetWarn = func{
 
-	throttle = getprop("controls/engines/engine/throttle");
-	gearwarn = getprop("sim/alarms/gear-warn");
+	 var throttle = getprop("controls/engines/engine/throttle");
+	 var gearwarn = getprop("sim/alarms/gear-warn");
 	#print("throttle " , throttle , " gearwarn: " , gearwarn);
 	if (gearwarn and throttle >= 0.25 ) { 
-		setprop("sim/alarms/gear-warn",0);                    # reset the gear warning
-		}
-		else
-		{
-		return registerTimer(resetWarn);                      # run the timer                
+		    setprop("sim/alarms/gear-warn",0);                    # reset the gear warning
+		} else {
+		    return registerTimer(resetWarn);                      # run the timer                
 		}
 		
 } # end function 
@@ -780,5 +778,45 @@ headShake = func {
 headShake();
 
 # ======================================= end Pilot G stuff ============================
+
+# ================================== Steering =================================================
+
+controls.applyBrakes = func(v,which=0){
+
+	if (which == 0){setprop("sim/model/controls/gear/braking", v);}
+	elsif (which < 0) {setprop("/controls/gear/brake-left", v);}
+	elsif (which > 0) {setprop("/controls/gear/brake-right", v);}
+ 
+} # end function
+
+steering = func{
+
+	applied = cmdarg().getValue();
+	rudder_pos = getprop("controls/flight/rudder");
+
+	if (applied == 0 ) {
+		setprop('controls/gear/brake-left', 0);
+		setprop('controls/gear/brake-right', 0);	# Release brakes
+	}
+	elsif (rudder_pos > 0.3 ) {
+		setprop('controls/gear/brake-right', rudder_pos);
+		setprop('controls/gear/brake-left', 0);
+		return settimer(steering);	# Brake right and continue watching 
+	}
+	elsif (rudder_pos < -0.3 ) {
+		applied_left = rudder_pos * -1;
+		setprop('controls/gear/brake-left', applied_left);
+		setprop('controls/gear/brake-right', 0);
+		return settimer(steering);	# Brake left and continue watching 
+	}
+	else {
+		setprop('controls/gear/brake-left', 1);
+		setprop('controls/gear/brake-right', 1);
+		return settimer(steering);	# Brake centrally and continue watching 
+	}	
+		
+} # end function
+
+setlistener("sim/model/controls/gear/braking", steering);
 
 # end 

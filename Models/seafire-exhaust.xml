@@ -16,9 +16,9 @@
 		<x-min>0.1</x-min>
 		<y-min>0.1</y-min>
 		<z-min>0.1</z-min>
-		<x-factor>1.5</x-factor>
-		<y-factor>1.5</y-factor>
-		<z-factor>1.5</z-factor>
+		<x-factor>3</x-factor>
+		<y-factor>3</y-factor>
+		<z-factor>3</z-factor>
 	</animation>
 
 	<animation>
