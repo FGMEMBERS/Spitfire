@@ -323,7 +323,7 @@ flap drag not available
 									 src0="0"
 									 src1="1"
 									 dst0="0"
-									 dst1="0.8"/>
+									 dst1="0.75"/>
 		<control-speed control="BRAKE"
 									 transition-time="1"/>
 		<control-input axis="/controls/gear/brake-parking"
@@ -352,7 +352,7 @@ flap drag not available
 									 src0="0"
 									 src1="1"
 									 dst0="0"
-									 dst1="0.8"/>
+									 dst1="0.75"/>
 		<control-speed control="BRAKE"
 									 transition-time="1"/>
 		<control-input axis="/controls/gear/brake-parking"
