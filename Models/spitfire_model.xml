@@ -378,7 +378,7 @@
 	
 	<!-- make sure that all the rest of the aircraft is visible-->
 	<animation>
-		<type>select</type>
+		<!--<type>select</type>-->
 		<object-name>Port-Light</object-name>
 		<object-name>Stbd-Light</object-name>
 		<object-name>Gunsight</object-name>
@@ -392,12 +392,12 @@
 		<object-name>Tail-Lt-Cover</object-name>
 		<object-name>Canopy</object-name>
 		<object-name>Blackout</object-name>
-		<!--<condition> 
+		<condition> 
         <greater-than-equals> 
           <property>sim/current-view/view-number</property>
           <value>0</value>
         </greater-than-equals>
-      </condition>-->
+      </condition>
 	</animation>
 
 	<!-- **************************** Pilot ******************************* -->
