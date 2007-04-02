@@ -348,10 +348,10 @@
         <path>Sounds/gear-hrn.wav</path>
         <condition> 
           <and> 
-            <equals> 
+            <less-than-equals> 
               <property>controls/engines/engine/throttle</property>
-              <value>0</value>
-            </equals>
+              <value>0.05</value>
+            </less-than-equals>
             <equals> 
               <property>controls/gear/gear-down</property>
               <value>0</value>
