@@ -86,6 +86,12 @@ Aug 2004 Vivian Meazza, vivian.meazza at lineone.net
 													 type="double">2.75</target-z-offset-m>
 			</config>
 		</view>
+		<view n="6">
+			<config>
+				<target-z-offset-m archive="y"
+													 type="double">2.75</target-z-offset-m>
+			</config>
+		</view>
 		<autopilot>
 			<config>
 				<min-climb-speed-kt type="float">70.0</min-climb-speed-kt>
