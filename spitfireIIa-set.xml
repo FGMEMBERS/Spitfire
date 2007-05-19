@@ -114,6 +114,9 @@ Aug 2004 Vivian Meazza, vivian.meazza at lineone.net
 		<alarms>
 			<gear-warn type="double">0</gear-warn>
 		</alarms>
+		<!--<tutorials>
+			<tutorial include="Tutorials/spitfire_startup_tutorial.xml"/>
+		</tutorials>-->
 	</sim>
 	<engines>
 		<engine>

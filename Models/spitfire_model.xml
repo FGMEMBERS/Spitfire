@@ -326,6 +326,11 @@
 		</offsets>
 	</model>
 
+	<!-- Tutorial -->
+	<model>
+		<path>Models/Aircraft/marker.xml</path>
+	</model>
+
 	<!-- hide all of the model not visible from the cockpit -->
 	<animation>
 		<!--<type>select</type>-->
@@ -392,12 +397,12 @@
 		<object-name>Tail-Lt-Cover</object-name>
 		<object-name>Canopy</object-name>
 		<object-name>Blackout</object-name>
-		<condition> 
+		<!--<condition> 
         <greater-than-equals> 
           <property>sim/current-view/view-number</property>
           <value>0</value>
         </greater-than-equals>
-      </condition>
+      </condition>-->
 	</animation>
 
 	<!-- **************************** Pilot ******************************* -->
@@ -924,4 +929,5 @@
 		<min-m>0</min-m>
 		<max-m>10000</max-m>
 	</animation>
+
 </PropertyList>

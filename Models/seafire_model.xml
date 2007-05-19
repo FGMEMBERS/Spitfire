@@ -320,6 +320,12 @@
         <z-m>0.837072</z-m>
       </offsets>
     </model>
+
+    <!-- Tutorial -->
+    <model>
+      <path>Models/Aircraft/marker.xml</path>
+    </model>
+
     <!-- hide all of the model not visible from the cockpit -->
     <animation> 
       <!--         <type>select</type>-->
@@ -379,12 +385,12 @@
       <object-name>Altimeter</object-name>
       <object-name>Attitude</object-name>
       <object-name>Gear-Indicator</object-name>
-	  <object-name>Turn</object-name>
+	    <object-name>Turn</object-name>
       <object-name>Pilot</object-name>
       <object-name>Port-Nav-Lt-Cover</object-name>
       <object-name>Stbd-Nav-Lt-Cover</object-name>
       <object-name>Tail-Lt-Cover</object-name>
-	  <object-name>noshadow.PropellerDisk</object-name>
+	    <object-name>noshadow.PropellerDisk</object-name>
       <object-name>Canopy</object-name>
       <object-name>Blackout</object-name>
       <condition> 
@@ -638,7 +644,7 @@
     <animation> 
       <type>blend</type>
       <object-name>noshadow.PropellerDisk</object-name>
-      <property>/engines/engine[0]/rpm</property>
+      <property>engines/engine[0]/rpm</property>
       <factor>0.0005</factor>
       <offset>-0.5</offset>
       <min>0.0</min>
