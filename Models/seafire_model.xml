@@ -395,7 +395,7 @@
       <object-name>Blackout</object-name>
       <condition> 
         <greater-than-equals> 
-          <property>/sim/current-view/view-number</property>
+          <property>sim/current-view/view-number</property>
           <value>0</value>
         </greater-than-equals>
       </condition>
@@ -431,7 +431,7 @@
     <animation> 
       <type>rotate</type>
       <object-name>Aileron-L</object-name>
-      <property>/surface-positions/left-aileron-pos-norm</property>
+      <property>surface-positions/left-aileron-pos-norm</property>
       <factor>-30</factor>
       <axis> 
         <x1-m>3.49</x1-m>
@@ -445,7 +445,7 @@
     <animation> 
       <type>rotate</type>
       <object-name>Aileron-R</object-name>
-      <property>/surface-positions/right-aileron-pos-norm</property>
+      <property>surface-positions/right-aileron-pos-norm</property>
       <factor>30</factor>
       <axis> 
         <x1-m>3.49</x1-m>
@@ -594,7 +594,7 @@
       <object-name>Propeller</object-name>
       <condition> 
         <less-than> 
-          <property>/engines/engine[0]/rpm</property>
+          <property>engines/engine[0]/rpm</property>
           <value>1000</value>
         </less-than>
       </condition>
@@ -602,7 +602,7 @@
     <animation> 
       <type>spin</type>
       <object-name>Propeller</object-name>
-      <property>/engines/engine[0]/rpm</property>
+      <property>engines/engine[0]/rpm</property>
       <factor>0.477</factor>
       <center> 
         <x-m>-0.40</x-m>
@@ -618,7 +618,7 @@
     <animation> 
       <type>spin</type>
       <object-name>Spinner</object-name>
-      <property>/engines/engine[0]/rpm</property>
+      <property>engines/engine[0]/rpm</property>
       <factor>0.477</factor>
       <center> 
         <x-m>-0.40</x-m>
@@ -636,7 +636,7 @@
       <object-name>noshadow.PropellerDisk</object-name>
       <condition> 
         <greater-than> 
-          <property>/engines/engine[0]/rpm</property>
+          <property>engines/engine[0]/rpm</property>
           <value>900</value>
         </greater-than>
       </condition>
@@ -1016,7 +1016,7 @@
     <animation> 
       <type>rotate</type>
       <object-name>Arrester-Hook</object-name>
-      <property>/gear/gear[4]/compression-norm</property>
+      <property>gear/gear[4]/compression-norm</property>
       <interpolation> 
         <entry> 
           <ind>0</ind>
