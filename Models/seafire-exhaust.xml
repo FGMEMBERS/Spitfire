@@ -12,7 +12,6 @@
 		<type>scale</type>
 		<object-name>puff</object-name>
 		<property>sim/time/elapsed-sec</property>
-		<offset>0</offset>
 		<x-min>0.1</x-min>
 		<y-min>0.1</y-min>
 		<z-min>0.1</z-min>
