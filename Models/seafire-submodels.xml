@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!-- data for the guns represents the .303 Browning -->
 <PropertyList>
-<!--<submodel>
+<submodel>
 		<name>Hispano MkV P</name>
 		<model>Models/Geometry/tracer.xml</model>
 		<trigger>ai/submodels/trigger</trigger>
@@ -85,7 +85,7 @@
 		<buoyancy>33</buoyancy>
 		<life>5</life>
 	</submodel>
--->	<submodel>
+	<submodel>
 		<name>browning l inner</name>
 		<model>Models/Geometry/tracer.xml</model>
 		<trigger>ai/submodels/trigger</trigger>
