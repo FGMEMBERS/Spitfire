@@ -39,7 +39,7 @@
 <PropertyList>
 	<submodel>
 		<name>Browning L inner</name>
-		<model>Models/Geometry/tracer.ac</model>
+		<model>Models/Geometry/tracer.xml</model>
 		<trigger>ai/submodels/trigger</trigger>  
 		<speed>2444.2</speed>
 		<repeat>true</repeat>
@@ -54,7 +54,6 @@
 		<weight>0.0249122356</weight>
 		<eda>0.000500740417</eda>
 		<life>5</life>
-		<life>3</life>
 	</submodel>
 	<submodel>
 		<name>browning L inner smoke</name>
@@ -76,7 +75,7 @@
 	</submodel>
 	<submodel>
 		<name>Browning R inner</name>
-		<model>Models/Geometry/tracer.ac</model>
+		<model>Models/Geometry/tracer.xml</model>
 		<trigger>ai/submodels/trigger</trigger>
 		<speed>2444.2</speed>
 		<repeat>true</repeat>
