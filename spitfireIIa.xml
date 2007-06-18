@@ -307,6 +307,37 @@ flap drag not available
 										 control="BOOST"/>
 		</piston-engine>
 	</propeller>
+	<!-- simulate cannon recoil -->
+	<thruster x="3.5"
+						y="0"
+						z="0.4"
+						vx="-1"
+						vy="0"
+						vz="0.3"
+						thrust="4000">
+		<control-input axis="/sim/ai/recoil"
+									 control="THROTTLE"
+									 src0="0"
+									 src1="1"
+									 dst0="0"
+									 dst1="1"/>
+	</thruster>
+	
+<thruster x="3.5"
+						y="0"
+						z="0.4"
+						vx="1"
+						vy="0"
+						vz="-0.3"
+						thrust="4000">
+		<control-input axis="/sim/ai/runout"
+									 control="THROTTLE"
+									 src0="0"
+									 src1="1"
+									 dst0="0"
+									 dst1="1"/>
+	</thruster>
+
 	<!-- left main spring="0.7" damp="3.0"-->
 	<gear
 		x="-2.20"

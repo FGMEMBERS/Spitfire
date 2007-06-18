@@ -580,5 +580,8 @@ Aug 2004 Vivian Meazza, vivian.meazza at lineone.net
         <module>fuel</module>
         <file>Aircraft/Spitfire/Models/fuel-cocks.nas</file>
       </spitfire-fuel>
+			<recoil>
+			<file>Aircraft/Spitfire/Models/recoil.nas</file>
+		</recoil>
     </nasal>
   </PropertyList>
