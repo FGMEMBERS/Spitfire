@@ -45,6 +45,11 @@ Aug 2004 Vivian Meazza, vivian.meazza at lineone.net
       <model> 
         <path>Aircraft/Spitfire/Models/seafire_model.xml</path>
       </model>
+			<rendering>
+				<camera-group>
+					<znear type="double">0.1</znear>
+				</camera-group>
+			</rendering>
       <view n="0"> 
         <internal archive="y">true</internal>
         <config> 

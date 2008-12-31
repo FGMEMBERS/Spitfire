@@ -113,7 +113,7 @@ flap drag not available
 										side="right"
 										prop="/surface-positions/right-aileron-pos-norm"/>
 		<control-speed control="FLAP1"
-									 transition-time="1"/>
+									 transition-time="2"/>
 	</wing>
 	<!-- tailplane -->
 	<hstab
@@ -314,7 +314,7 @@ flap drag not available
 						vx="-1"
 						vy="0"
 						vz="0.3"
-						thrust="4000">
+						thrust="2000">
 		<control-input axis="/sim/ai/recoil"
 									 control="THROTTLE"
 									 src0="0"
@@ -329,7 +329,7 @@ flap drag not available
 						vx="1"
 						vy="0"
 						vz="-0.3"
-						thrust="4000">
+						thrust="2000">
 		<control-input axis="/sim/ai/runout"
 									 control="THROTTLE"
 									 src0="0"
