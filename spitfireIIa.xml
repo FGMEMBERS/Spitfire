@@ -329,7 +329,7 @@ flap drag not available
 						vx="1"
 						vy="0"
 						vz="-0.3"
-						thrust="2000">
+						thrust="1000">
 		<control-input axis="/sim/ai/runout"
 									 control="THROTTLE"
 									 src0="0"

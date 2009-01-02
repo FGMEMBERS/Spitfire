@@ -324,7 +324,7 @@ gear-ratio = "0.477" moment = 37.15-->
 										 control="BOOST"/>
 		</piston-engine>
 	</propeller>
-	
+
 	<!-- simulate cannon recoil -->
 	<thruster x="3.5"
 						y="0"
@@ -340,14 +340,14 @@ gear-ratio = "0.477" moment = 37.15-->
 									 dst0="0"
 									 dst1="1"/>
 	</thruster>
-	
-<thruster x="3.5"
+
+	<thruster x="3.5"
 						y="0"
 						z="0.4"
 						vx="1"
 						vy="0"
 						vz="-0.3"
-						thrust="2000">
+						thrust="1000">
 		<control-input axis="/sim/ai/runout"
 									 control="THROTTLE"
 									 src0="0"
