@@ -94,7 +94,7 @@
 		<x-offset>-5.87</x-offset>
 		<y-offset>-10.17 </y-offset>
 		<z-offset>-1.476</z-offset>
-		<yaw-offset>1.0</yaw-offset>
+		<yaw-offset>0.5</yaw-offset>
 		<pitch-offset>0.5</pitch-offset>
 		<eda>0.000500740417</eda>
 		<wind>false</wind>
@@ -102,6 +102,10 @@
 		<weight>0.0249122356</weight>
 		<life>5</life>
 		<aero-stabilised>1</aero-stabilised>
+		<collision>true</collision>
+		<impact>true</impact>
+		<impact-report>sim/ai/aircraft/impact/droptank</impact-report>
+		<submodel-path>Aircraft/Spitfire/Models/seafire-subsubmodels2.xml</submodel-path>
 	</submodel>
 	<submodel>
 		<name>browning l inner smoke</name>
@@ -132,13 +136,17 @@
 		<x-offset>-5.87</x-offset>
 		<y-offset>10.17 </y-offset>
 		<z-offset>-1.476 </z-offset>
-		<yaw-offset>-1.0</yaw-offset>
+		<yaw-offset>-0.5</yaw-offset>
 		<pitch-offset>0.5</pitch-offset>
 		<wind>false</wind>
 		<cd>0.193</cd>
 		<weight>0.0249122356</weight>
 		<eda>0.000500740417</eda>
 		<life>5</life>
+		<collision>true</collision>
+		<impact>true</impact>
+		<impact-report>sim/ai/aircraft/impact/droptank</impact-report>
+		<submodel-path>Aircraft/Spitfire/Models/seafire-subsubmodels2.xml</submodel-path>
 	</submodel>
 	<submodel>
 		<name>browning r inner smoke</name>
@@ -291,6 +299,7 @@
 		<buoyancy>34</buoyancy>
 		<wind>true</wind>
 	</submodel>
+	
 	<submodel>
 		<name>exhaust smoke 2l</name>
 		<model>Aircraft/Spitfire/Models/seafire-exhaust.xml</model>
