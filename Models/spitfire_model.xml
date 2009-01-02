@@ -285,7 +285,7 @@
 			<z-m>0.53</z-m>
 		</offsets>
 	</model>
-	<model>
+	<!--<model>
 		<path>Aircraft/Spitfire/Models/blackout.xml</path>
 		<name>Blackout</name>
 		<offsets>
@@ -293,7 +293,7 @@
 			<y-m>0</y-m>
 			<z-m>0.53</z-m>
 		</offsets>
-	</model>
+	</model>-->
 
 	<!-- ***** Navigation Lights ****** -->
 	<model>
@@ -380,7 +380,7 @@
         </not>
       </condition>-->
 	</animation>
-	
+
 	<!-- make sure that all the rest of the aircraft is visible-->
 	<animation>
 		<!--<type>select</type>-->
@@ -395,8 +395,10 @@
 		<object-name>Port-Nav-Lt-Cover</object-name>
 		<object-name>Stbd-Nav-Lt-Cover</object-name>
 		<object-name>Tail-Lt-Cover</object-name>
+		<object-name>Dirt-Oil</object-name>
+		<object-name>Dirt-Exhaust</object-name>
 		<object-name>Canopy</object-name>
-		<object-name>Blackout</object-name>
+		<!--<object-name>Blackout</object-name>-->
 		<!--<condition> 
         <greater-than-equals> 
           <property>sim/current-view/view-number</property>
@@ -922,6 +924,37 @@
 			<blue>0.20</blue>
 		</emission>
 	</animation>
+
+	<!-- ========== Dirt textures ========= -->
+
+	<animation>
+		<type>material</type>
+		<object-name>Dirt-Exhaust</object-name>
+		<nopreview/>
+		<transparency>
+			<alpha-prop>sim/time/hobbs/engine[0]</alpha-prop>
+			<factor>0.00027</factor>
+			<offset>0</offset>
+			<max>0.7</max>
+			<min>0.0075</min>
+		</transparency>
+		<!--<threshold>0.001</threshold>-->
+	</animation>
+
+	<animation>
+		<type>material</type>
+		<object-name>Dirt-Oil</object-name>
+		<nopreview/>
+		<transparency>
+			<alpha-prop>sim/time/hobbs/engine[0]</alpha-prop>
+			<factor>0.00027</factor>
+			<offset>0</offset>
+			<max>0.9</max>
+			<min>0.0075</min>
+		</transparency>
+		<!--<threshold>0.001</threshold>-->
+	</animation>
+
 
 	<!-- *** LoD for the whole model *** -->
 	<animation>

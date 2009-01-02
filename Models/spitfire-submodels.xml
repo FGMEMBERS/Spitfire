@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-	<!--  Submodels are objects which can be dropped or launched from the user aircraft.
+<!--  Submodels are objects which can be dropped or launched from the user aircraft.
 			The trigger is a boolean property, which you define, which when "true" causes
 			the submodel to be released/launched. 
 			A submodel will create an AIBallistic object which will follow a ballistic path.
@@ -40,7 +40,7 @@
 	<submodel>
 		<name>Browning L inner</name>
 		<model>Models/Geometry/tracer.xml</model>
-		<trigger>ai/submodels/trigger</trigger>  
+		<trigger>ai/submodels/trigger</trigger>
 		<speed>2444.2</speed>
 		<repeat>true</repeat>
 		<delay>0.0526</delay>
@@ -54,7 +54,12 @@
 		<weight>0.0249122356</weight>
 		<eda>0.000500740417</eda>
 		<life>5</life>
+		<collision>true</collision>
+		<impact>true</impact>
+		<impact-report>sim/ai/aircraft/impact/droptank</impact-report>
+		<submodel-path>Aircraft/Spitfire/Models/seafire-subsubmodels2.xml</submodel-path>
 	</submodel>
+
 	<submodel>
 		<name>browning L inner smoke</name>
 		<model>Aircraft/Spitfire/Models/smoke.xml</model>
@@ -91,7 +96,12 @@
 		<weight>0.0249122356</weight>
 		<eda>0.000500740417</eda>
 		<life>5</life>
+		<collision>true</collision>
+		<impact>true</impact>
+		<impact-report>sim/ai/aircraft/impact/droptank</impact-report>
+		<submodel-path>Aircraft/Spitfire/Models/seafire-subsubmodels2.xml</submodel-path>
 	</submodel>
+
 	<submodel>
 		<name>Browning R inner smoke</name>
 		<model>Aircraft/Spitfire/Models/smoke.xml</model>
@@ -111,6 +121,31 @@
 		<buoyancy>33</buoyancy>
 		<life>5</life>
 	</submodel>
+
+	<submodel>
+		<name>Browning L centre outer</name>
+		<model>Models/Geometry/round.xml</model>
+		<trigger>ai/submodels/trigger</trigger>
+		<speed>2444.2</speed>
+		<repeat>true</repeat>
+		<delay>0.0526</delay>
+		<count>300</count>
+		<x-offset>-5.87</x-offset>
+		<y-offset>-10.17 </y-offset>
+		<z-offset>-1.476</z-offset>
+		<yaw-offset>-1.5</yaw-offset>
+		<pitch-offset>1.8</pitch-offset>
+		<wind>false</wind>
+		<cd>0.193</cd>
+		<weight>0.0249122356</weight>
+		<eda>0.000500740417</eda>
+		<life>5</life>
+		<collision>true</collision>
+		<impact>true</impact>
+		<impact-report>sim/ai/aircraft/impact/droptank</impact-report>
+		<submodel-path>Aircraft/Spitfire/Models/seafire-subsubmodels2.xml</submodel-path>
+	</submodel>
+
 	<submodel>
 		<name>browning L centre outer smoke</name>
 		<model>Aircraft/Spitfire/Models/smoke.xml</model>
@@ -128,6 +163,30 @@
 		<wind>true</wind>
 		<buoyancy>33</buoyancy>
 		<life>5</life>
+	</submodel>
+
+	<submodel>
+		<name>Browning r centre outer</name>
+		<model>Models/Geometry/round.xml</model>
+		<trigger>ai/submodels/trigger</trigger>
+		<speed>2444.2</speed>
+		<repeat>true</repeat>
+		<delay>0.0526</delay>
+		<count>300</count>
+		<x-offset>-5.87</x-offset>
+		<y-offset>10.17 </y-offset>
+		<z-offset>-1.476</z-offset>
+		<yaw-offset>-1.5</yaw-offset>
+		<pitch-offset>1.8</pitch-offset>
+		<wind>false</wind>
+		<cd>0.193</cd>
+		<weight>0.0249122356</weight>
+		<eda>0.000500740417</eda>
+		<life>5</life>
+		<collision>true</collision>
+		<impact>true</impact>
+		<impact-report>sim/ai/aircraft/impact/droptank</impact-report>
+		<submodel-path>Aircraft/Spitfire/Models/seafire-subsubmodels2.xml</submodel-path>
 	</submodel>
 
 	<submodel>

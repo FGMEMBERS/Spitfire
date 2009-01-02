@@ -283,15 +283,7 @@
 			<z-m>0.53</z-m>
 		</offsets>
 	</model>
-	<model>
-		<path>Aircraft/Spitfire/Models/blackout.xml</path>
-		<name>Blackout</name>
-		<offsets>
-			<x-m>3.86</x-m>
-			<y-m>0</y-m>
-			<z-m>0.53</z-m>
-		</offsets>
-	</model>
+
 	<!-- ***** Navigation Lights ****** -->
 	<model>
 		<path>Aircraft/Spitfire/Models/light-green.xml</path>
@@ -391,8 +383,9 @@
 		<object-name>Stbd-Nav-Lt-Cover</object-name>
 		<object-name>Tail-Lt-Cover</object-name>
 		<object-name>noshadow.PropellerDisk</object-name>
+		<object-name>Dirt-Oil</object-name>
+		<object-name>Dirt-Exhaust</object-name>
 		<object-name>Canopy</object-name>
-		<object-name>Blackout</object-name>
 		<condition>
 			<greater-than-equals>
 				<property>sim/current-view/view-number</property>
