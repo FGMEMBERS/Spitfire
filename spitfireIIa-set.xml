@@ -122,6 +122,25 @@ Aug 2004 Vivian Meazza, vivian.meazza at lineone.net
 		<tutorials>
 			<tutorial include="Tutorials/spitfire_startup_tutorial.xml"/>
 		</tutorials>
+		<menubar>
+			<default>
+				<menu n="10">
+					<label>Spitfire</label>
+					<enabled type="bool">true</enabled>
+					<item>
+						<label>Toggle pilot model</label>
+						<binding>
+							<command>property-toggle</command>
+							<property>sim/model/spitfire/show-pilot</property>
+						</binding>
+					</item>
+				</menu>
+			</default>
+		</menubar>
+		<spitfire>
+			<show-pilot archive="y"
+									type="bool">true</show-pilot>
+		</spitfire>
 	</sim>
 	<engines>
 		<engine>

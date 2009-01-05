@@ -264,7 +264,7 @@
 		<path>Aircraft/Spitfire/Models/trim-wheel-elev.xml</path>
 		<offsets>
 			<x-m>3.52</x-m>
-			<y-m>-0.375</y-m>
+			<y-m>-0.3725</y-m>
 			<z-m>-0.135</z-m>
 		</offsets>
 	</model>
@@ -272,7 +272,7 @@
 		<path>Aircraft/Spitfire/Models/trim-knob-rudder.xml</path>
 		<offsets>
 			<x-m>3.64</x-m>
-			<y-m>-0.375</y-m>
+			<y-m>-0.3725</y-m>
 			<z-m>-0.16</z-m>
 		</offsets>
 	</model>
@@ -333,8 +333,7 @@
 
 	<!-- hide all of the model not visible from the cockpit -->
 	<animation>
-		<!--<type>select</type>-->
-		<object-name>Hull</object-name>
+		<type>select</type>
 		<object-name>Hull-Aft</object-name>
 		<object-name>Stub-Wing-R</object-name>
 		<object-name>Stub-Wing-L</object-name>
@@ -349,17 +348,17 @@
 		<object-name>Cover-Engine-Side-R</object-name>
 		<object-name>UC-Main-L</object-name>
 		<object-name>UC-Main-R</object-name>
-		<!--<condition> 
-        <not> 
-          <equals> 
-            <property>sim/current-view/view-number</property>
-            <value>0</value>
-          </equals>
-        </not>
-      </condition>-->
+		<condition>
+			<not>
+				<equals>
+					<property>sim/current-view/view-number</property>
+					<value>0</value>
+				</equals>
+			</not>
+		</condition>
 	</animation>
 	<animation>
-		<!--<type>select</type>-->
+		<type>select</type>
 		<object-name>UC-Tail</object-name>
 		<object-name>Spinner</object-name>
 		<object-name>Exhausts</object-name>
@@ -371,19 +370,20 @@
 		<object-name>Radiator</object-name>
 		<object-name>Carburettor-Air-Intake</object-name>
 		<object-name>Tail-Light</object-name>
-		<!--<condition> 
-        <not> 
-          <equals> 
-            <property>sim/current-view/view-number</property>
-            <value>0</value>
-          </equals>
-        </not>
-      </condition>-->
+		<condition>
+			<not>
+				<equals>
+					<property>sim/current-view/view-number</property>
+					<value>0</value>
+				</equals>
+			</not>
+		</condition>
 	</animation>
 
 	<!-- make sure that all the rest of the aircraft is visible-->
 	<animation>
 		<!--<type>select</type>-->
+		<object-name>Hull</object-name>
 		<object-name>Port-Light</object-name>
 		<object-name>Stbd-Light</object-name>
 		<object-name>Gunsight</object-name>
@@ -408,6 +408,25 @@
 	</animation>
 
 	<!-- **************************** Pilot ******************************* -->
+
+	<animation>
+		<type>select</type>
+		<object-name>Pilot</object-name>
+		<condition>
+			<or>
+				<not>
+				<property>sim/model/spitfire/show-pilot</property>
+				</not>
+				<not>
+					<equals>
+						<property>sim/current-view/view-number</property>
+						<value>0</value>
+					</equals>
+				</not>
+			</or>
+		</condition>
+	</animation>
+
 	<!--  conceal Pilot Head etc in Cockpit View-->
 	<animation>
 		<type>select</type>
@@ -426,7 +445,6 @@
 		<type>translate</type>
 		<object-name>Pilot</object-name>
 		<object-name>Seat</object-name>
-		<object-name>Blackout</object-name>
 		<property>controls/seat/vertical-adjust</property>
 		<axis>
 			<x>0</x>
@@ -527,7 +545,7 @@
 		<type>rotate</type>
 		<object-name>Elevator-L</object-name>
 		<property>surface-positions/elevator-pos-norm</property>
-		<factor>-30</factor>
+		<factor>-15</factor>
 		<axis>
 			<x1-m>8.36</x1-m>
 			<y1-m>-0.05</y1-m>
@@ -541,7 +559,7 @@
 		<type>rotate</type>
 		<object-name>Elevator-R</object-name>
 		<property>surface-positions/elevator-pos-norm</property>
-		<factor>30</factor>
+		<factor>15</factor>
 		<axis>
 			<x1-m>8.36</x1-m>
 			<y1-m>0.05</y1-m>
@@ -555,11 +573,9 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>Rudder</object-name>
-		<object-name>Tail-Lt-Fairing</object-name>
-		<object-name>Tail-Lt-Cover</object-name>
 		<object-name>Tail-Light</object-name>
 		<property>surface-positions/rudder-pos-norm</property>
-		<factor>-30</factor>
+		<factor>-15</factor>
 		<axis>
 			<x1-m>8.51</x1-m>
 			<y1-m>0.00</y1-m>
@@ -569,6 +585,8 @@
 			<z2-m>-0.29</z2-m>
 		</axis>
 	</animation>
+
+
 	<!-- ***** Propeller ***** -->
 	<animation>
 		<type>select</type>
@@ -955,6 +973,14 @@
 		<!--<threshold>0.001</threshold>-->
 	</animation>
 
+	<animation>
+		<type>shader</type>
+		<shader>chrome</shader>
+		<texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+		<object-name>noshadow.Canopy-Main</object-name>
+		<object-name>noshadow.Canopy-Rear</object-name>
+		<object-name>noshadow.Canopy-F</object-name>
+	</animation>
 
 	<!-- *** LoD for the whole model *** -->
 	<animation>

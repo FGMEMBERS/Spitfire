@@ -1,7 +1,8 @@
 AC3Db
-MATERIAL "ac3dmat1" rgb 1 1 1  amb 0.2 0.2 0.2  emis 0 0 0  spec 0.5 0.5 0.5  shi 10  trans 0
+MATERIAL "ac3dmat1" rgb 1 1 1  amb 0.2 0.2 0.2  emis 0 0 0  spec 0.502 0.502 0.502  shi 10  trans 0
+MATERIAL "ac3dmat1" rgb 1 1 1  amb 0.2 0.2 0.2  emis 0 0 0  spec 0.502 0.502 0.502  shi 120  trans 0
 OBJECT world
-kids 1
+kids 2
 OBJECT poly
 name "Knob"
 loc -4.09782e-008 2.45869e-007 -2.44007e-007
@@ -747,4 +748,23 @@ refs 3
 36 0.334304 0.0963685
 35 0.340038 0.0963685
 37 0.32857 0.0963685
+kids 0
+OBJECT poly
+name "rect"
+loc 0 -6.98492e-010 0.0104156
+texture "spitfire-tx-00.rgb"
+crease 61.000000
+numvert 4
+-0.0331873 -0.0340706 0
+0.0331873 -0.0340706 0
+0.0331873 0.0340706 0
+-0.0331873 0.0340706 0
+numsurf 1
+SURF 0x30
+mat 1
+refs 4
+3 0.705078 0.193359
+2 0.65625 0.193359
+1 0.65625 0.125
+0 0.705078 0.125
 kids 0

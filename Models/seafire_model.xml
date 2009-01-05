@@ -539,7 +539,7 @@
 		<type>rotate</type>
 		<object-name>Elevator-L</object-name>
 		<property>surface-positions/elevator-pos-norm</property>
-		<factor>-30</factor>
+		<factor>-15</factor>
 		<axis>
 			<x1-m>8.36</x1-m>
 			<y1-m>-0.05</y1-m>
@@ -553,7 +553,7 @@
 		<type>rotate</type>
 		<object-name>Elevator-R</object-name>
 		<property>surface-positions/elevator-pos-norm</property>
-		<factor>30</factor>
+		<factor>15</factor>
 		<axis>
 			<x1-m>8.36</x1-m>
 			<y1-m>0.05</y1-m>
@@ -571,7 +571,7 @@
 		<object-name>Tail-Lt-Cover</object-name>
 		<object-name>Tail-Light</object-name>
 		<property>surface-positions/rudder-pos-norm</property>
-		<factor>-30</factor>
+		<factor>-15</factor>
 		<axis>
 			<x1-m>8.51</x1-m>
 			<y1-m>0.00</y1-m>
