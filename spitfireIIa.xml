@@ -23,7 +23,7 @@ The reference datum for measurements is the nose.
 		<control-setting axis="/controls/engines/engine[0]/mixture"
 										 value="1.0"/>
 		<control-setting axis="/controls/engines/engine[0]/propeller-pitch"
-										 value="1"/>
+										 value="0"/>
 		<control-setting axis="/controls/engines/engine[0]/boost"
 										 value="1"/>
 		<control-setting axis="/controls/flight/flaps"
@@ -121,7 +121,7 @@ flap drag not available
 		y="0.25"
 		z="0.0"
 		taper="0.639"
-		effectiveness="1.2"
+		effectiveness="1.25"
 		length="1.215"
 		chord="1.246"
 		sweep="5" >
@@ -130,8 +130,8 @@ flap drag not available
 					 peak="1.5"/>
 		<flap0 start="0.0"
 					 end="1"
-					 lift="1.75"
-					 drag="1.6"/>
+					 lift="1.4"
+					 drag="1.4"/>
 		<control-input axis="/controls/flight/elevator"
 									 control="FLAP0"/>
 		<control-input axis="/controls/flight/elevator-trim"
@@ -313,7 +313,7 @@ flap drag not available
 						z="0.4"
 						vx="-1"
 						vy="0"
-						vz="0.3"
+						vz="0.15"
 						thrust="2000">
 		<control-input axis="/sim/ai/recoil"
 									 control="THROTTLE"
@@ -328,7 +328,7 @@ flap drag not available
 						z="0.4"
 						vx="1"
 						vy="0"
-						vz="-0.3"
+						vz="-0.15"
 						thrust="1000">
 		<control-input axis="/sim/ai/runout"
 									 control="THROTTLE"
