@@ -280,20 +280,11 @@
 		<path>Aircraft/Spitfire/Models/rgs.xml</path>
 		<name>Gunsight</name>
 		<offsets>
-			<x-m>3.33</x-m>
+			<x-m>3.38</x-m>
 			<y-m>-0.0</y-m>
 			<z-m>0.53</z-m>
 		</offsets>
 	</model>
-	<!--<model>
-		<path>Aircraft/Spitfire/Models/blackout.xml</path>
-		<name>Blackout</name>
-		<offsets>
-			<x-m>3.86</x-m>
-			<y-m>0</y-m>
-			<z-m>0.53</z-m>
-		</offsets>
-	</model>-->
 
 	<!-- ***** Navigation Lights ****** -->
 	<model>
@@ -406,7 +397,65 @@
         </greater-than-equals>
       </condition>-->
 	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>Canopy-Rear-Rain</object-name>
+		<condition>
+			<greater-than>
+				<property>sim/model/rain/raining-norm</property>
+				<value>0.01</value>
+			</greater-than>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<nopreview/>
+		<object-name>Canopy-FP-Rain</object-name>
+		<condition>
+			<greater-than>
+				<property>sim/model/rain/raining-norm</property>
+				<value>0.01</value>
+			</greater-than>
+		</condition>
+	</animation>
 
+	<animation>
+		<type>select</type>
+		<nopreview/>
+		<object-name>Canopy-F-Rain</object-name>
+		<condition>
+			<greater-than>
+				<property>sim/model/rain/raining-norm</property>
+				<value>0.01</value>
+			</greater-than>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<nopreview/>
+		<object-name>Canopy-Main-Rain</object-name>
+		<condition>
+			<greater-than>
+				<property>sim/model/rain/raining-norm</property>
+				<value>0.01</value>
+			</greater-than>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>Canopy-Main</object-name>
+		<object-name>Canopy-Rear</object-name>
+		<object-name>Canopy-FP</object-name>
+		<condition>
+			<less-than-equals>
+				<property>sim/model/rain/raining-norm</property>
+				<value>0.01</value>
+			</less-than-equals>
+		</condition>
+	</animation>
 	<!-- **************************** Pilot ******************************* -->
 
 	<animation>
@@ -632,7 +681,7 @@
 	</animation>
 	<animation>
 		<type>select</type>
-		<object-name>noshadow.PropellerDisk</object-name>
+		<object-name>PropellerDisk</object-name>
 		<condition>
 			<greater-than>
 				<property>engines/engine[0]/rpm</property>
@@ -642,7 +691,7 @@
 	</animation>
 	<animation>
 		<type>blend</type>
-		<object-name>noshadow.PropellerDisk</object-name>
+		<object-name>PropellerDisk</object-name>
 		<property>engines/engine[0]/rpm</property>
 		<factor>0.0005</factor>
 		<offset>-0.5</offset>
@@ -847,7 +896,7 @@
 	<!-- ***************** Canopy *********************** -->
 	<animation>
 		<type>translate</type>
-		<object-name>noshadow.Canopy-Main</object-name>
+		<object-name>Canopy-Main</object-name>
 		<object-name>Frame-Main</object-name>
 		<property>gear/canopy/position-norm</property>
 		<factor>0.575</factor>
@@ -973,13 +1022,148 @@
 		<!--<threshold>0.001</threshold>-->
 	</animation>
 
+	<!-- ============= Rain Animations ============= -->
+
+	<model>
+		<path>Aircraft/Generic/Effects/tyre-smoke-port.xml</path>
+		<name>tyre-smoke-p</name>
+		<offsets>
+			<x-m>2.3191</x-m>
+			<y-m>-0.831494</y-m>
+			<z-m>-1.96577</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/Generic/Effects/tyre-smoke-stbd.xml</path>
+		<name>tyre-smoke-s</name>
+		<offsets>
+			<x-m>2.3191</x-m>
+			<y-m>0.831494</y-m>
+			<z-m>-1.96577</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/Generic/Effects/rain-port.xml</path>
+		<name>rain-p</name>
+		<offsets>
+			<offsets>
+				<x-m>2.3191</x-m>
+				<y-m>-0.831494</y-m>
+				<z-m>-1.96577</z-m>
+			</offsets>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/Generic/Effects/rain-stbd.xml</path>
+		<name>rain-s</name>
+		<offsets>
+			<x-m>2.3191</x-m>
+			<y-m>0.831494</y-m>
+			<z-m>-1.96577</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/Generic/Effects/rain-tail.xml</path>
+		<name>rain-t</name>
+		<offsets>
+			<x-m>8.56606</x-m>
+			<y-m>0</y-m>
+			<z-m>-0.94651</z-m>
+		</offsets>
+	</model>
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>Canopy-FP-Rain</object-name>
+		<property>sim/model/rain/flow-mps</property>
+		<factor>1</factor>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>Canopy-F-Rain</object-name>
+		<property>sim/model/rain/flow-mps</property>
+		<factor>1</factor>
+		<offset>0.33</offset>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>Canopy-Rear-Rain</object-name>
+		<property>sim/model/rain/flow-mps</property>
+		<factor>1</factor>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>Canopy-Main-Rain</object-name>
+		<property>sim/model/rain/flow-mps</property>
+		<factor>1</factor>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>material</type>
+		<object-name>Canopy-FP-Rain</object-name>
+		<object-name>Canopy-Rear-Rain</object-name>
+		<object-name>Canopy-F-Rain</object-name>
+		<object-name>Canopy-Main-Rain</object-name>
+		<transparency>
+			<alpha-prop>velocities/airspeed-kt</alpha-prop>
+			<factor>-0.00333</factor>
+			<offset>1</offset>
+			<max>0.3</max>
+			<min>0.0075</min>
+		</transparency>
+		<!--<threshold>0.001</threshold>-->
+	</animation>
+
+	<animation>
+		<type>material</type>
+		<object-name>Canopy-FP-Rain</object-name>
+		<object-name>Canopy-Rear-Rain</object-name>
+		<object-name>Canopy-F-Rain</object-name>
+		<object-name>Canopy-Main-Rain</object-name>
+		<transparency>
+			<alpha-prop>sim/model/rain/raining-norm</alpha-prop>
+			<factor>0.7</factor>
+			<offset>0</offset>
+			<max>0.3</max>
+			<min>0.0075</min>
+		</transparency>
+		<!--<threshold>0.001</threshold>-->
+	</animation>
+
 	<animation>
 		<type>shader</type>
 		<shader>chrome</shader>
 		<texture>Aircraft/Generic/Effects/glass_shader.png</texture>
-		<object-name>noshadow.Canopy-Main</object-name>
-		<object-name>noshadow.Canopy-Rear</object-name>
-		<object-name>noshadow.Canopy-F</object-name>
+		<object-name>Canopy-Main</object-name>
+		<object-name>Canopy-Rear</object-name>
+		<object-name>Canopy-F</object-name>
 	</animation>
 
 	<!-- *** LoD for the whole model *** -->
