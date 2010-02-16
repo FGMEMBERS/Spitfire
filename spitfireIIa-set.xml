@@ -6,6 +6,8 @@ used by FGFS to represent the aircraft. Components include the flight data
 model, instrument panel, sound, electrical and external 3D model.
 
 Aug 2004 Vivian Meazza, vivian.meazza at lineone.net
+
+$Id$
 ************************************************************************
 -->
 <PropertyList>
