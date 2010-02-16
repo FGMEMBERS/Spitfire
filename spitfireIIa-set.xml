@@ -9,6 +9,82 @@ Aug 2004 Vivian Meazza, vivian.meazza at lineone.net
 ************************************************************************
 -->
 <PropertyList>
+
+	<engines>
+		<engine>
+			<rpm type="double">600</rpm>
+		</engine>
+	</engines>
+	<consumables>
+		<fuel>
+			<tank n="0">
+				<name type="string">Upper</name>
+				<level-gal_us>57</level-gal_us>
+				<selected type="bool">1</selected>
+				<kill-when-empty type="bool">0</kill-when-empty>
+			</tank>
+			<tank n="1">
+				<name type="string">Lower</name>
+				<level-gal_us>44</level-gal_us>
+				<selected type="bool">1</selected>
+				<kill-when-empty type="bool">1</kill-when-empty>
+			</tank>
+		</fuel>
+	</consumables>
+	<controls>
+		<engines>
+			<engine n="0">
+				<mag-switch-left type="bool">0</mag-switch-left>
+				<mag-switch-right type="bool">0</mag-switch-right>
+				<magnetos>0</magnetos>
+				<coffman-starter>
+					<cartridge type="bool">1</cartridge>
+					<cartridge type="bool">1</cartridge>
+					<cartridge type="bool">1</cartridge>
+					<cartridge type="bool">1</cartridge>
+					<cartridge type="bool">1</cartridge>
+					<cartridge type="bool">1</cartridge>
+					<index type="double">5</index>
+					<index-pull-norm type="double">0</index-pull-norm>
+					<starter-push-norm type="double">0</starter-push-norm>
+				</coffman-starter>
+				<cutoff-pull-norm type="double">0</cutoff-pull-norm>
+				<fuel-cock>
+					<lever-norm type="double">1</lever-norm>
+					<lever-norm type="double">1</lever-norm>
+				</fuel-cock>
+				<mixture-lever type="double">1</mixture-lever>
+				<primer type = "int">0</primer>
+				<primer-pump type = "bool">0</primer-pump>
+				<boost type= "double">1</boost>
+				<boost-control-cutout type= "bool">0</boost-control-cutout>
+			</engine>
+		</engines>
+		<gear>
+			<brake-parking>1</brake-parking>
+			<tailwheel-lock>false</tailwheel-lock>
+			<antiskid>0</antiskid>
+			<canopy>
+				<position-norm type="double">1</position-norm>
+			</canopy>
+		</gear>
+		<flight>
+			<flaps-alternate-extension type="double">1</flaps-alternate-extension>
+			<flaps-lever type="double">0</flaps-lever>
+			<elevator-trim>-0.055000</elevator-trim>
+			<door-position-norm type="double">1</door-position-norm>
+			<canopy-slide type="bool">1</canopy-slide>
+		</flight>
+		<switches>
+			<fuel-gauge>0</fuel-gauge>
+			<gun-sight-main>0</gun-sight-main>
+			<gun-sight-dimmer>0</gun-sight-dimmer>
+		</switches>
+		<lighting>
+			<nav-lights>false</nav-lights>
+		</lighting>
+	</controls>
+	
 	<sim include="spitfire-help.xml" >
 		<description type="string">Supermarine Spitfire IIa</description>
 		<author type="string">Vivian Meazza</author>
@@ -141,82 +217,56 @@ Aug 2004 Vivian Meazza, vivian.meazza at lineone.net
 			<show-pilot archive="y"
 									type="bool">true</show-pilot>
 		</spitfire>
+
+		<multiplay>
+			<generic>
+				<string n="0"
+								alias="/sim/submodels/path"/>
+				<int n="0"
+						 alias="/engines/engine[0]/running"/>
+				<int n="1"
+						 alias="/gear/gear[0]/tyre-smoke"/>
+				<int n="2"
+						 alias="/gear/gear[1]/tyre-smoke"/>
+				<int n="3"
+						 alias="/gear/gear[2]/tyre-smoke"/>
+				<int n="4"
+						 alias="/controls/lighting/nav-lights"/>
+				<int n="5"
+						 alias="/controls/armament/trigger"/>
+				<int n="6"
+						 alias="/controls/lighting/landing-light"/>
+				<float n="0"
+							 alias="/gear/gear[0]/sprayspeed-ms"/>
+				<float n="1"
+							 alias="/gear/gear[1]/sprayspeed-ms"/>
+				<float n="2"
+							 alias="/gear/gear[2]/sprayspeed-ms"/>
+				<float n="3"
+							 alias="/gear/gear[0]/spray-density"/>
+				<float n="4"
+							 alias="/gear/gear[1]/spray-density"/>
+				<float n="5"
+							 alias="/gear/gear[2]/spray-density"/>
+				<float n="6"
+							 alias="/position/altitude-agl-ft"/>
+				<float n="7"
+							 alias="/gear/gear/caster-angle-deg"/>
+				<float n="8"
+							 alias="/controls/engines/engine[0]/throttle"/>
+				<float n="9"
+							 alias="/gear/canopy/position-norm"/>
+				<float n="10"
+							 alias="/controls/flight/door-position-norm"/>
+				<float n="11"
+							 alias="/sim/time/hobbs/engine[0]"/>
+				<float n="12"
+							 alias="/engines/engine/rad-flap-norm"/>
+			</generic>
+		</multiplay>
+
 	</sim>
-	<engines>
-		<engine>
-			<rpm type="double">600</rpm>
-		</engine>
-	</engines>
-	<consumables>
-		<fuel>
-			<tank n="0">
-				<name type="string">Upper</name>
-				<level-gal_us>57</level-gal_us>
-				<selected type="bool">1</selected>
-				<kill-when-empty type="bool">0</kill-when-empty>
-			</tank>
-			<tank n="1">
-				<name type="string">Lower</name>
-				<level-gal_us>44</level-gal_us>
-				<selected type="bool">1</selected>
-				<kill-when-empty type="bool">1</kill-when-empty>
-			</tank>
-		</fuel>
-	</consumables>
-	<!-- set up control properties for YASim... -->
-	<controls>
-		<engines>
-			<engine n="0">
-				<mag-switch-left type="bool">0</mag-switch-left>
-				<mag-switch-right type="bool">0</mag-switch-right>
-				<magnetos>0</magnetos>
-				<coffman-starter>
-					<cartridge type="bool">1</cartridge>
-					<cartridge type="bool">1</cartridge>
-					<cartridge type="bool">1</cartridge>
-					<cartridge type="bool">1</cartridge>
-					<cartridge type="bool">1</cartridge>
-					<cartridge type="bool">1</cartridge>
-					<index type="double">5</index>
-					<index-pull-norm type="double">0</index-pull-norm>
-					<starter-push-norm type="double">0</starter-push-norm>
-				</coffman-starter>
-				<cutoff-pull-norm type="double">0</cutoff-pull-norm>
-				<fuel-cock>
-					<lever-norm type="double">1</lever-norm>
-					<lever-norm type="double">1</lever-norm>
-				</fuel-cock>
-				<mixture-lever type="double">1</mixture-lever>
-				<primer type = "int">0</primer>
-				<primer-pump type = "bool">0</primer-pump>
-				<boost type= "double">1</boost>
-				<boost-control-cutout type= "bool">0</boost-control-cutout>
-			</engine>
-		</engines>
-		<gear>
-			<brake-parking>1</brake-parking>
-			<tailwheel-lock>false</tailwheel-lock>
-			<antiskid>0</antiskid>
-			<canopy>
-				<position-norm type="double">1</position-norm>
-			</canopy>
-		</gear>
-		<flight>
-			<flaps-alternate-extension type="double">1</flaps-alternate-extension>
-			<flaps-lever type="double">0</flaps-lever>
-			<elevator-trim>-0.055000</elevator-trim>
-			<door-position-norm type="double">1</door-position-norm>
-			<canopy-slide type="bool">1</canopy-slide>
-		</flight>
-		<switches>
-			<fuel-gauge>0</fuel-gauge>
-			<gun-sight-main>0</gun-sight-main>
-			<gun-sight-dimmer>0</gun-sight-dimmer>
-		</switches>
-		<lighting>
-			<nav-lights>false</nav-lights>
-		</lighting>
-	</controls>
+	
 	<!-- ================ map keyboard ================ -->
 	<input>
 		<keyboard>
