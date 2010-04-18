@@ -284,9 +284,9 @@ $Id$
 				</binding>
 			</key>
 			<!--map keys for Coffman starter -->
-			<key n="32">
-				<name>space bar</name>
-				<desc>Coffman Starter.</desc>
+			<key n="115">
+				<name>s</name>
+				<desc>Fire Coffman Starter.</desc>
 				<binding>
 					<command>nasal</command>
 					<script>

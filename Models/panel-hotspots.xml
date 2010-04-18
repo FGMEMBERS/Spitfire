@@ -540,6 +540,7 @@
               <y>-510</y>
               <w>40</w>
               <h>100</h>
+              <repeatable type="bool">false</repeatable>
               <binding> 
                 <command>nasal</command>
                 <script>

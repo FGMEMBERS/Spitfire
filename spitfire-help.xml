@@ -2,7 +2,7 @@
   <PropertyList> 
     <help> 
       <key> 
-        <name>Space</name>
+        <name>s</name>
         <desc>fire Coffman Starter cartridge</desc>
       </key>
       <key> 
@@ -20,10 +20,6 @@
       <key> 
         <name>f/F</name>
         <desc>close/open canopy</desc>
-      </key>
-      <key> 
-        <name>Ctrl-F</name>
-        <desc>toggle wingFold</desc>
       </key>
       <key> 
         <name>h/H</name>
