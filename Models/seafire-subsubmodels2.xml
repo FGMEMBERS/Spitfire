@@ -44,7 +44,7 @@
 	<submodel>
 		<name>Browning impact smoke</name>
 		<model>Aircraft/Spitfire/Models/smoke-impact2.xml</model>
-		<!--<trigger>ai/submodels/trigger</trigger>-->
+		<!--<trigger>controls/armament/trigger</trigger>-->
 		<speed>0</speed>
 		<repeat>false</repeat>
 		<delay>0</delay>

@@ -4,7 +4,7 @@
 <submodel>
 		<name>Hispano MkV P</name>
 		<model>Models/Geometry/tracer.xml</model>
-		<trigger>ai/submodels/trigger</trigger>
+		<trigger>controls/armament/trigger</trigger>
 		<speed>2755.9 </speed>
 		<repeat>true</repeat>
 		<delay>0.4</delay>
@@ -21,13 +21,14 @@
 		<life>10</life>
 		<collision>true</collision>
 		<impact>true</impact>
-		<impact-reports>sim/ai/aircraft/impact/droptank</impact-reports>
+		<!--<impact-reports>sim/ai/aircraft/impact/droptank</impact-reports>-->
 		<submodel-path>Aircraft/Spitfire/Models/seafire-subsubmodels.xml</submodel-path>
 	</submodel>
+  
 	<submodel>
 		<name>Hispano MkV P smoke</name>
 		<model>Aircraft/Spitfire/Models/smoke.xml</model>
-		<trigger>ai/submodels/trigger</trigger>
+		<trigger>controls/armament/trigger</trigger>
 		<speed>10</speed>
 		<repeat>true</repeat>
 		<delay>0.08</delay>
@@ -42,10 +43,11 @@
 		<buoyancy>33</buoyancy>
 		<life>5</life>
 	</submodel>
+  
 	<submodel>
 		<name>Hispano MkV S</name>
 		<model>Models/Geometry/tracer.xml</model>
-		<trigger>ai/submodels/trigger</trigger>
+		<trigger>controls/armament/trigger</trigger>
 		<speed>2755.9 </speed>
 		<repeat>true</repeat>
 		<delay>0.4</delay>
@@ -65,10 +67,11 @@
 		<impact-reports>sim/ai/aircraft/impact/droptank</impact-reports>
 		<submodel-path>Aircraft/Spitfire/Models/seafire-subsubmodels.xml</submodel-path>
 	</submodel>
+  
 	<submodel>
 		<name>Hispano MkV S smoke</name>
 		<model>Aircraft/Spitfire/Models/smoke.xml</model>
-		<trigger>ai/submodels/trigger</trigger>
+		<trigger>controls/armament/trigger</trigger>
 		<speed>10</speed>
 		<repeat>true</repeat>
 		<delay>0.08</delay>
@@ -83,10 +86,11 @@
 		<buoyancy>33</buoyancy>
 		<life>5</life>
 	</submodel>
+  
 	<submodel>
 		<name>browning l inner</name>
 		<model>Models/Geometry/tracer.xml</model>
-		<trigger>ai/submodels/trigger</trigger>
+		<trigger>controls/armament/trigger</trigger>
 		<speed>2444.2</speed>
 		<repeat>true</repeat>
 		<delay>0.263157895</delay>
@@ -104,13 +108,14 @@
 		<aero-stabilised>1</aero-stabilised>
 		<collision>true</collision>
 		<impact>true</impact>
-		<impact-report>sim/ai/aircraft/impact/droptank</impact-report>
+		<!--<impact-report>sim/ai/aircraft/impact/droptank</impact-report>-->
 		<submodel-path>Aircraft/Spitfire/Models/seafire-subsubmodels2.xml</submodel-path>
 	</submodel>
+  
 	<submodel>
 		<name>browning l inner smoke</name>
 		<model>Aircraft/Spitfire/Models/smoke.xml</model>
-		<trigger>ai/submodels/trigger</trigger>
+		<trigger>controls/armament/trigger</trigger>
 		<speed>10</speed>
 		<repeat>true</repeat>
 		<delay>0.052631579</delay>
@@ -125,10 +130,11 @@
 		<buoyancy>33</buoyancy>
 		<life>5</life>
 	</submodel>
+  
 	<submodel>
 		<name>browning r inner</name>
 		<model>Models/Geometry/tracer.xml</model>
-		<trigger>ai/submodels/trigger</trigger>
+		<trigger>controls/armament/trigger</trigger>
 		<speed>2444.2</speed>
 		<repeat>true</repeat>
 		<delay>0.263157895</delay>
@@ -145,13 +151,14 @@
 		<life>5</life>
 		<collision>true</collision>
 		<impact>true</impact>
-		<impact-report>sim/ai/aircraft/impact/droptank</impact-report>
+		<!--<impact-report>sim/ai/aircraft/impact/droptank</impact-report>-->
 		<submodel-path>Aircraft/Spitfire/Models/seafire-subsubmodels2.xml</submodel-path>
 	</submodel>
+  
 	<submodel>
 		<name>browning r inner smoke</name>
 		<model>Aircraft/Spitfire/Models/smoke.xml</model>
-		<trigger>ai/submodels/trigger</trigger>
+		<trigger>controls/armament/trigger</trigger>
 		<speed>10</speed>
 		<repeat>true</repeat>
 		<delay>0.052631579</delay>
@@ -166,10 +173,11 @@
 		<buoyancy>33</buoyancy>
 		<life>5</life>
 	</submodel>
+  
 	<submodel>
 		<name>browning l outer</name>
 		<model>Models/Geometry/tracer.xml</model>
-		<trigger>ai/submodels/trigger</trigger>
+		<trigger>controls/armament/trigger</trigger>
 		<speed>2444.2</speed>
 		<repeat>true</repeat>
 		<delay>0.263157895</delay>
@@ -185,10 +193,11 @@
 		<eda>0.000500740417</eda>
 		<life>5</life>
 	</submodel>
+  
 	<submodel>
 		<name>browning l outer smoke</name>
 		<model>Aircraft/Spitfire/Models/smoke.xml</model>
-		<trigger>ai/submodels/trigger</trigger>
+		<trigger>controls/armament/trigger</trigger>
 		<speed>10</speed>
 		<repeat>true</repeat>
 		<delay>0.052631579</delay>
@@ -203,10 +212,11 @@
 		<buoyancy>33</buoyancy>
 		<life>5</life>
 	</submodel>
+  
 	<submodel>
 		<name>browning r outer</name>
 		<model>Models/Geometry/tracer.xml</model>
-		<trigger>ai/submodels/trigger</trigger>
+		<trigger>controls/armament/trigger</trigger>
 		<speed>2444.2</speed>
 		<repeat>true</repeat>
 		<delay>0.263157895</delay>
@@ -222,10 +232,11 @@
 		<eda>0.000500740417</eda>
 		<life>5</life>
 	</submodel>
+  
 	<submodel>
 		<name>browning r outer smoke</name>
 		<model>Aircraft/Spitfire/Models/smoke.xml</model>
-		<trigger>ai/submodels/trigger</trigger>
+		<trigger>controls/armament/trigger</trigger>
 		<speed>10</speed>
 		<repeat>true</repeat>
 		<delay>0.052631579</delay>
@@ -240,6 +251,8 @@
 		<buoyancy>33</buoyancy>
 		<life>5</life>
 	</submodel>
+  
+  <!-- Start-up Smoke -->
 	
 	<submodel>
 		<name>exhaust smoke 1r</name>
@@ -260,6 +273,7 @@
 		<buoyancy>34</buoyancy>
 		<wind>true</wind>
 	</submodel>
+  
 	<submodel>
 		<name>exhaust smoke 1l</name>
 		<model>Aircraft/Spitfire/Models/seafire-exhaust.xml</model>
@@ -339,6 +353,7 @@
 		<buoyancy>34</buoyancy>
 		<wind>true</wind>
 	</submodel>
+  
 	<submodel>
 		<name>exhaust smoke 3l</name>
 		<model>Aircraft/Spitfire/Models/seafire-exhaust.xml</model>
@@ -378,6 +393,7 @@
 		<buoyancy>34</buoyancy>
 		<wind>true</wind>
 	</submodel>
+  
 	<submodel>
 		<name>exhaust smoke 4l</name>
 		<model>Aircraft/Spitfire/Models/seafire-exhaust.xml</model>
@@ -417,6 +433,7 @@
 		<buoyancy>34</buoyancy>
 		<wind>true</wind>
 	</submodel>
+  
 	<submodel>
 		<name>exhaust smoke 5l</name>
 		<model>Aircraft/Spitfire/Models/seafire-exhaust.xml</model>
@@ -456,6 +473,7 @@
 		<buoyancy>34</buoyancy>
 		<wind>true</wind>
 	</submodel>
+  
 	<submodel>
 		<name>exhaust smoke 6l</name>
 		<model>Aircraft/Spitfire/Models/seafire-exhaust.xml</model>
