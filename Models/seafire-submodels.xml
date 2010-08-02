@@ -1,498 +1,499 @@
 <?xml version="1.0"?>
 <!-- data for the guns represents the .303 Browning -->
 <PropertyList>
-<submodel>
-		<name>Hispano MkV P</name>
-		<model>Models/Geometry/tracer.xml</model>
-		<trigger>controls/armament/trigger</trigger>
-		<speed>2755.9 </speed>
-		<repeat>true</repeat>
-		<delay>0.4</delay>
-		<count>24</count>
-		<x-offset>-3.70734908 </x-offset>
-		<y-offset>-6.88976378  </y-offset>
-		<z-offset>-1.83727034  </z-offset>
-		<yaw-offset>-1.5</yaw-offset>
-		<pitch-offset>0</pitch-offset>
-		<wind>false</wind>
-		<cd>0.193</cd>
-		<weight>0.286600941 </weight>
-		<eda>0.00338158219 </eda>
-		<life>10</life>
-		<collision>true</collision>
-		<impact>true</impact>
-		<!--<impact-reports>sim/ai/aircraft/impact/droptank</impact-reports>-->
-		<submodel-path>Aircraft/Spitfire/Models/seafire-subsubmodels.xml</submodel-path>
-	</submodel>
-  
-	<submodel>
-		<name>Hispano MkV P smoke</name>
-		<model>Aircraft/Spitfire/Models/smoke.xml</model>
-		<trigger>controls/armament/trigger</trigger>
-		<speed>10</speed>
-		<repeat>true</repeat>
-		<delay>0.08</delay>
-		<count>120</count>
-		<x-offset>-3.70734908 </x-offset>
-		<y-offset>-6.88976378  </y-offset>
-		<z-offset>-1.83727034  </z-offset>
-		<yaw-offset>-1</yaw-offset>
-		<pitch-offset>0</pitch-offset>
-		<eda>10</eda>
-		<wind>true</wind>
-		<buoyancy>33</buoyancy>
-		<life>5</life>
-	</submodel>
-  
-	<submodel>
-		<name>Hispano MkV S</name>
-		<model>Models/Geometry/tracer.xml</model>
-		<trigger>controls/armament/trigger</trigger>
-		<speed>2755.9 </speed>
-		<repeat>true</repeat>
-		<delay>0.4</delay>
-		<count>24</count>
-		<x-offset>-3.70734908 </x-offset>
-		<y-offset>6.88976378  </y-offset>
-		<z-offset>-1.83727034  </z-offset>
-		<yaw-offset>1.5</yaw-offset>
-		<pitch-offset>0</pitch-offset>
-		<wind>false</wind>
-		<cd>0.193</cd>
-		<weight>0.286600941 </weight>
-		<eda>0.00338158219 </eda>
-		<life>10</life>
-		<collision>true</collision>
-		<impact>true</impact>
-		<impact-reports>sim/ai/aircraft/impact/droptank</impact-reports>
-		<submodel-path>Aircraft/Spitfire/Models/seafire-subsubmodels.xml</submodel-path>
-	</submodel>
-  
-	<submodel>
-		<name>Hispano MkV S smoke</name>
-		<model>Aircraft/Spitfire/Models/smoke.xml</model>
-		<trigger>controls/armament/trigger</trigger>
-		<speed>10</speed>
-		<repeat>true</repeat>
-		<delay>0.08</delay>
-		<count>120</count>
-		<x-offset>-3.70734908 </x-offset>
-		<y-offset>6.88976378  </y-offset>
-		<z-offset>-1.83727034  </z-offset>
-		<yaw-offset>1</yaw-offset>
-		<pitch-offset>0</pitch-offset>
-		<eda>10</eda>
-		<wind>true</wind>
-		<buoyancy>33</buoyancy>
-		<life>5</life>
-	</submodel>
-  
-	<submodel>
-		<name>browning l inner</name>
-		<model>Models/Geometry/tracer.xml</model>
-		<trigger>controls/armament/trigger</trigger>
-		<speed>2444.2</speed>
-		<repeat>true</repeat>
-		<delay>0.263157895</delay>
-		<count>60</count>
-		<x-offset>-5.87</x-offset>
-		<y-offset>-10.17 </y-offset>
-		<z-offset>-1.476</z-offset>
-		<yaw-offset>0.5</yaw-offset>
-		<pitch-offset>0.5</pitch-offset>
-		<eda>0.000500740417</eda>
-		<wind>false</wind>
-		<cd>0.193</cd>
-		<weight>0.0249122356</weight>
-		<life>5</life>
-		<aero-stabilised>1</aero-stabilised>
-		<collision>true</collision>
-		<impact>true</impact>
-		<!--<impact-report>sim/ai/aircraft/impact/droptank</impact-report>-->
-		<submodel-path>Aircraft/Spitfire/Models/seafire-subsubmodels2.xml</submodel-path>
-	</submodel>
-  
-	<submodel>
-		<name>browning l inner smoke</name>
-		<model>Aircraft/Spitfire/Models/smoke.xml</model>
-		<trigger>controls/armament/trigger</trigger>
-		<speed>10</speed>
-		<repeat>true</repeat>
-		<delay>0.052631579</delay>
-		<count>300</count>
-		<x-offset>-5.87</x-offset>
-		<y-offset>-10.17 </y-offset>
-		<z-offset>-1.476</z-offset>
-		<yaw-offset>1.0</yaw-offset>
-		<pitch-offset>1.0</pitch-offset>
-		<eda>10</eda>
-		<wind>true</wind>
-		<buoyancy>33</buoyancy>
-		<life>5</life>
-	</submodel>
-  
-	<submodel>
-		<name>browning r inner</name>
-		<model>Models/Geometry/tracer.xml</model>
-		<trigger>controls/armament/trigger</trigger>
-		<speed>2444.2</speed>
-		<repeat>true</repeat>
-		<delay>0.263157895</delay>
-		<count>60</count>
-		<x-offset>-5.87</x-offset>
-		<y-offset>10.17 </y-offset>
-		<z-offset>-1.476 </z-offset>
-		<yaw-offset>-0.5</yaw-offset>
-		<pitch-offset>0.5</pitch-offset>
-		<wind>false</wind>
-		<cd>0.193</cd>
-		<weight>0.0249122356</weight>
-		<eda>0.000500740417</eda>
-		<life>5</life>
-		<collision>true</collision>
-		<impact>true</impact>
-		<!--<impact-report>sim/ai/aircraft/impact/droptank</impact-report>-->
-		<submodel-path>Aircraft/Spitfire/Models/seafire-subsubmodels2.xml</submodel-path>
-	</submodel>
-  
-	<submodel>
-		<name>browning r inner smoke</name>
-		<model>Aircraft/Spitfire/Models/smoke.xml</model>
-		<trigger>controls/armament/trigger</trigger>
-		<speed>10</speed>
-		<repeat>true</repeat>
-		<delay>0.052631579</delay>
-		<count>300</count>
-		<x-offset>-5.87</x-offset>
-		<y-offset>10.17 </y-offset>
-		<z-offset>-1.476 </z-offset>
-		<yaw-offset>-1.0</yaw-offset>
-		<pitch-offset>1.0</pitch-offset>
-		<eda>10</eda>
-		<wind>true</wind>
-		<buoyancy>33</buoyancy>
-		<life>5</life>
-	</submodel>
-  
-	<submodel>
-		<name>browning l outer</name>
-		<model>Models/Geometry/tracer.xml</model>
-		<trigger>controls/armament/trigger</trigger>
-		<speed>2444.2</speed>
-		<repeat>true</repeat>
-		<delay>0.263157895</delay>
-		<count>60</count>
-		<x-offset>-6.17 </x-offset>
-		<y-offset>-12.47  </y-offset>
-		<z-offset>-1.28  </z-offset>
-		<yaw-offset>1.0</yaw-offset>
-		<pitch-offset>0.5</pitch-offset>
-		<wind>false</wind>
-		<cd>0.193</cd>
-		<weight>0.0249122356</weight>
-		<eda>0.000500740417</eda>
-		<life>5</life>
-	</submodel>
-  
-	<submodel>
-		<name>browning l outer smoke</name>
-		<model>Aircraft/Spitfire/Models/smoke.xml</model>
-		<trigger>controls/armament/trigger</trigger>
-		<speed>10</speed>
-		<repeat>true</repeat>
-		<delay>0.052631579</delay>
-		<count>300</count>
-		<x-offset>-6.17 </x-offset>
-		<y-offset>-12.47  </y-offset>
-		<z-offset>-1.28  </z-offset>
-		<yaw-offset>1.0</yaw-offset>
-		<pitch-offset>1.0</pitch-offset>
-		<eda>10</eda>
-		<wind>true</wind>
-		<buoyancy>33</buoyancy>
-		<life>5</life>
-	</submodel>
-  
-	<submodel>
-		<name>browning r outer</name>
-		<model>Models/Geometry/tracer.xml</model>
-		<trigger>controls/armament/trigger</trigger>
-		<speed>2444.2</speed>
-		<repeat>true</repeat>
-		<delay>0.263157895</delay>
-		<count>60</count>
-		<x-offset>-6.17 </x-offset>
-		<y-offset>12.47  </y-offset>
-		<z-offset>-1.28  </z-offset>
-		<yaw-offset>-1.0</yaw-offset>
-		<pitch-offset>0.5</pitch-offset>
-		<wind>false</wind>
-		<cd>0.193</cd>
-		<weight>0.0249122356</weight>
-		<eda>0.000500740417</eda>
-		<life>5</life>
-	</submodel>
-  
-	<submodel>
-		<name>browning r outer smoke</name>
-		<model>Aircraft/Spitfire/Models/smoke.xml</model>
-		<trigger>controls/armament/trigger</trigger>
-		<speed>10</speed>
-		<repeat>true</repeat>
-		<delay>0.052631579</delay>
-		<count>300</count>
-		<x-offset>-6.17 </x-offset>
-		<y-offset>12.47  </y-offset>
-		<z-offset>-1.28  </z-offset>
-		<yaw-offset>-1.0</yaw-offset>
-		<pitch-offset>1.0</pitch-offset>
-		<eda>10</eda>
-		<wind>true</wind>
-		<buoyancy>33</buoyancy>
-		<life>5</life>
-	</submodel>
-  
+  <submodel>
+    <name>Hispano MkV P</name>
+    <model>Models/Geometry/tracer.xml</model>
+    <trigger>controls/armament/trigger</trigger>
+    <speed>2755.9 </speed>
+    <repeat>true</repeat>
+    <delay>0.4</delay>
+    <count>24</count>
+    <x-offset>-3.70734908 </x-offset>
+    <y-offset>-6.88976378  </y-offset>
+    <z-offset>-1.83727034  </z-offset>
+    <yaw-offset>-1.5</yaw-offset>
+    <pitch-offset>0</pitch-offset>
+    <wind>false</wind>
+    <cd>0.193</cd>
+    <weight>0.286600941 </weight>
+    <eda>0.00338158219 </eda>
+    <life>10</life>
+    <collision>true</collision>
+    <impact>true</impact>
+    <!--<impact-reports>sim/ai/aircraft/impact/droptank</impact-reports>-->
+    <submodel-path>Aircraft/Spitfire/Models/seafire-subsubmodels.xml</submodel-path>
+  </submodel>
+
+  <submodel>
+    <name>Hispano MkV P smoke</name>
+    <model>Aircraft/Spitfire/Models/smoke.xml</model>
+    <trigger>controls/armament/trigger</trigger>
+    <speed>10</speed>
+    <repeat>true</repeat>
+    <delay>0.08</delay>
+    <count>120</count>
+    <x-offset>-3.70734908 </x-offset>
+    <y-offset>-6.88976378  </y-offset>
+    <z-offset>-1.83727034  </z-offset>
+    <yaw-offset>-1</yaw-offset>
+    <pitch-offset>0</pitch-offset>
+    <eda>10</eda>
+    <wind>true</wind>
+    <buoyancy>33</buoyancy>
+    <life>5</life>
+  </submodel>
+
+  <submodel>
+    <name>Hispano MkV S</name>
+    <model>Models/Geometry/tracer.xml</model>
+    <trigger>controls/armament/trigger</trigger>
+    <speed>2755.9 </speed>
+    <repeat>true</repeat>
+    <delay>0.4</delay>
+    <count>24</count>
+    <x-offset>-3.70734908 </x-offset>
+    <y-offset>6.88976378  </y-offset>
+    <z-offset>-1.83727034  </z-offset>
+    <yaw-offset>1.5</yaw-offset>
+    <pitch-offset>0</pitch-offset>
+    <wind>false</wind>
+    <cd>0.193</cd>
+    <weight>0.286600941 </weight>
+    <eda>0.00338158219 </eda>
+    <life>10</life>
+    <collision>true</collision>
+    <impact>true</impact>
+    <impact-reports>sim/ai/aircraft/impact/droptank</impact-reports>
+    <submodel-path>Aircraft/Spitfire/Models/seafire-subsubmodels.xml</submodel-path>
+  </submodel>
+
+  <submodel>
+    <name>Hispano MkV S smoke</name>
+    <model>Aircraft/Spitfire/Models/smoke.xml</model>
+    <trigger>controls/armament/trigger</trigger>
+    <speed>10</speed>
+    <repeat>true</repeat>
+    <delay>0.08</delay>
+    <count>120</count>
+    <x-offset>-3.70734908 </x-offset>
+    <y-offset>6.88976378  </y-offset>
+    <z-offset>-1.83727034  </z-offset>
+    <yaw-offset>1</yaw-offset>
+    <pitch-offset>0</pitch-offset>
+    <eda>10</eda>
+    <wind>true</wind>
+    <buoyancy>33</buoyancy>
+    <life>5</life>
+  </submodel>
+
+  <submodel>
+    <name>browning l inner</name>
+    <model>Models/Geometry/tracer.xml</model>
+    <trigger>controls/armament/trigger</trigger>
+    <speed>2444.2</speed>
+    <repeat>true</repeat>
+    <delay>0.263157895</delay>
+    <count>60</count>
+    <x-offset>-5.87</x-offset>
+    <y-offset>-10.17 </y-offset>
+    <z-offset>-1.476</z-offset>
+    <yaw-offset>0.5</yaw-offset>
+    <pitch-offset>0.5</pitch-offset>
+    <eda>0.000500740417</eda>
+    <wind>false</wind>
+    <cd>0.193</cd>
+    <weight>0.0249122356</weight>
+    <life>5</life>
+    <aero-stabilised>1</aero-stabilised>
+    <collision>true</collision>
+    <impact>true</impact>
+    <!--<impact-report>sim/ai/aircraft/impact/droptank</impact-report>-->
+    <submodel-path>Aircraft/Spitfire/Models/seafire-subsubmodels2.xml</submodel-path>
+  </submodel>
+
+  <submodel>
+    <name>browning l inner smoke</name>
+    <model>Aircraft/Spitfire/Models/smoke.xml</model>
+    <trigger>controls/armament/trigger</trigger>
+    <speed>10</speed>
+    <repeat>true</repeat>
+    <delay>0.052631579</delay>
+    <count>300</count>
+    <x-offset>-5.87</x-offset>
+    <y-offset>-10.17 </y-offset>
+    <z-offset>-1.476</z-offset>
+    <yaw-offset>1.0</yaw-offset>
+    <pitch-offset>1.0</pitch-offset>
+    <eda>10</eda>
+    <wind>true</wind>
+    <buoyancy>33</buoyancy>
+    <life>5</life>
+  </submodel>
+
+  <submodel>
+    <name>browning r inner</name>
+    <model>Models/Geometry/tracer.xml</model>
+    <trigger>controls/armament/trigger</trigger>
+    <speed>2444.2</speed>
+    <repeat>true</repeat>
+    <delay>0.263157895</delay>
+    <count>60</count>
+    <x-offset>-5.87</x-offset>
+    <y-offset>10.17 </y-offset>
+    <z-offset>-1.476 </z-offset>
+    <yaw-offset>-0.5</yaw-offset>
+    <pitch-offset>0.5</pitch-offset>
+    <wind>false</wind>
+    <cd>0.193</cd>
+    <weight>0.0249122356</weight>
+    <eda>0.000500740417</eda>
+    <life>5</life>
+    <collision>true</collision>
+    <impact>true</impact>
+    <!--<impact-report>sim/ai/aircraft/impact/droptank</impact-report>-->
+    <submodel-path>Aircraft/Spitfire/Models/seafire-subsubmodels2.xml</submodel-path>
+  </submodel>
+
+  <submodel>
+    <name>browning r inner smoke</name>
+    <model>Aircraft/Spitfire/Models/smoke.xml</model>
+    <trigger>controls/armament/trigger</trigger>
+    <speed>10</speed>
+    <repeat>true</repeat>
+    <delay>0.052631579</delay>
+    <count>300</count>
+    <x-offset>-5.87</x-offset>
+    <y-offset>10.17 </y-offset>
+    <z-offset>-1.476 </z-offset>
+    <yaw-offset>-1.0</yaw-offset>
+    <pitch-offset>1.0</pitch-offset>
+    <eda>10</eda>
+    <wind>true</wind>
+    <buoyancy>33</buoyancy>
+    <life>5</life>
+  </submodel>
+
+  <submodel>
+    <name>browning l outer</name>
+    <model>Models/Geometry/tracer.xml</model>
+    <trigger>controls/armament/trigger</trigger>
+    <speed>2444.2</speed>
+    <repeat>true</repeat>
+    <delay>0.263157895</delay>
+    <count>60</count>
+    <x-offset>-6.17 </x-offset>
+    <y-offset>-12.47  </y-offset>
+    <z-offset>-1.28  </z-offset>
+    <yaw-offset>1.0</yaw-offset>
+    <pitch-offset>0.5</pitch-offset>
+    <wind>false</wind>
+    <cd>0.193</cd>
+    <weight>0.0249122356</weight>
+    <eda>0.000500740417</eda>
+    <life>5</life>
+  </submodel>
+
+  <submodel>
+    <name>browning l outer smoke</name>
+    <model>Aircraft/Spitfire/Models/smoke.xml</model>
+    <trigger>controls/armament/trigger</trigger>
+    <speed>10</speed>
+    <repeat>true</repeat>
+    <delay>0.052631579</delay>
+    <count>300</count>
+    <x-offset>-6.17 </x-offset>
+    <y-offset>-12.47  </y-offset>
+    <z-offset>-1.28  </z-offset>
+    <yaw-offset>1.0</yaw-offset>
+    <pitch-offset>1.0</pitch-offset>
+    <eda>10</eda>
+    <wind>true</wind>
+    <buoyancy>33</buoyancy>
+    <life>5</life>
+  </submodel>
+
+  <submodel>
+    <name>browning r outer</name>
+    <model>Models/Geometry/tracer.xml</model>
+    <trigger>controls/armament/trigger</trigger>
+    <speed>2444.2</speed>
+    <repeat>true</repeat>
+    <delay>0.263157895</delay>
+    <count>60</count>
+    <x-offset>-6.17 </x-offset>
+    <y-offset>12.47  </y-offset>
+    <z-offset>-1.28  </z-offset>
+    <yaw-offset>-1.0</yaw-offset>
+    <pitch-offset>0.5</pitch-offset>
+    <wind>false</wind>
+    <cd>0.193</cd>
+    <weight>0.0249122356</weight>
+    <eda>0.000500740417</eda>
+    <life>5</life>
+  </submodel>
+
+  <submodel>
+    <name>browning r outer smoke</name>
+    <model>Aircraft/Spitfire/Models/smoke.xml</model>
+    <trigger>controls/armament/trigger</trigger>
+    <speed>10</speed>
+    <repeat>true</repeat>
+    <delay>0.052631579</delay>
+    <count>300</count>
+    <x-offset>-6.17 </x-offset>
+    <y-offset>12.47  </y-offset>
+    <z-offset>-1.28  </z-offset>
+    <yaw-offset>-1.0</yaw-offset>
+    <pitch-offset>1.0</pitch-offset>
+    <eda>10</eda>
+    <wind>true</wind>
+    <buoyancy>33</buoyancy>
+    <life>5</life>
+  </submodel>
+
   <!-- Start-up Smoke -->
-	
-	<submodel>
-		<name>exhaust smoke 1r</name>
-		<model>Aircraft/Spitfire/Models/seafire-exhaust.xml</model>
-		<trigger>engines/engine/cranking</trigger>
-		<speed>50</speed>
-		<repeat>true</repeat>
-		<delay>0.0001</delay>
-		<count>-1</count>
-		<x-offset>-3.2424</x-offset>
-		<y-offset>1.5869</y-offset>
-		<z-offset>0.3759</z-offset>
-		<yaw-offset>160</yaw-offset>
-		<pitch-offset>0.0</pitch-offset>
-		<eda>10</eda>
-		<life>1</life>
-		<random>true</random>
-		<buoyancy>34</buoyancy>
-		<wind>true</wind>
-	</submodel>
-  
-	<submodel>
-		<name>exhaust smoke 1l</name>
-		<model>Aircraft/Spitfire/Models/seafire-exhaust.xml</model>
-		<trigger>engines/engine/cranking</trigger>
-		<speed>50</speed>
-		<repeat>true</repeat>
-		<delay>0.0001</delay>
-		<count>-1</count>
-		<x-offset>-3.2424</x-offset>
-		<y-offset>-1.5869</y-offset>
-		<z-offset>0.3759</z-offset>
-		<yaw-offset>-160</yaw-offset>
-		<pitch-offset>0.0</pitch-offset>
-		<eda>10</eda>
-		<life>1</life>
-		<random>true</random>
-		<buoyancy>34</buoyancy>
-		<wind>true</wind>
-	</submodel>
 
-	<submodel>
-		<name>exhaust smoke 2r</name>
-		<model>Aircraft/Spitfire/Models/seafire-exhaust.xml</model>
-		<trigger>engines/engine/cranking</trigger>
-		<speed>50</speed>
-		<repeat>true</repeat>
-		<delay>0.0001</delay>
-		<count>-1</count>
-		<x-offset>-3.7788</x-offset>
-		<y-offset>1.5869</y-offset>
-		<z-offset>0.3759</z-offset>
-		<yaw-offset>160</yaw-offset>
-		<pitch-offset>0.0</pitch-offset>
-		<eda>10</eda>
-		<life>1</life>
-		<random>true</random>
-		<buoyancy>34</buoyancy>
-		<wind>true</wind>
-	</submodel>
-	
-	<submodel>
-		<name>exhaust smoke 2l</name>
-		<model>Aircraft/Spitfire/Models/seafire-exhaust.xml</model>
-		<trigger>engines/engine/cranking</trigger>
-		<speed>50</speed>
-		<repeat>true</repeat>
-		<delay>0.0001</delay>
-		<count>-1</count>
-		<x-offset>-3.7788</x-offset>
-		<y-offset>-1.5869</y-offset>
-		<z-offset>0.3759</z-offset>
-		<yaw-offset>-160</yaw-offset>
-		<pitch-offset>0.0</pitch-offset>
-		<eda>10</eda>
-		<life>1</life>
-		<random>true</random>
-		<buoyancy>34</buoyancy>
-		<wind>true</wind>
-	</submodel>
+  <submodel>
+    <name>exhaust smoke 1r</name>
+    <model>Aircraft/Spitfire/Models/seafire-exhaust.xml</model>
+    <trigger>engines/engine/cranking</trigger>
+    <speed>50</speed>
+    <repeat>true</repeat>
+    <delay>0.0001</delay>
+    <count>-1</count>
+    <x-offset>-3.2424</x-offset>
+    <y-offset>1.5869</y-offset>
+    <z-offset>0.3759</z-offset>
+    <yaw-offset>160</yaw-offset>
+    <pitch-offset>0.0</pitch-offset>
+    <eda>10</eda>
+    <life>1</life>
+    <random>true</random>
+    <buoyancy>34</buoyancy>
+    <wind>true</wind>
+  </submodel>
 
-	<submodel>
-		<name>exhaust smoke 3r</name>
-		<model>Aircraft/Spitfire/Models/seafire-exhaust.xml</model>
-		<trigger>engines/engine/cranking</trigger>
-		<speed>50</speed>
-		<repeat>true</repeat>
-		<delay>0.0001</delay>
-		<count>-1</count>
-		<x-offset>-4.3156</x-offset>
-		<y-offset>1.5869</y-offset>
-		<z-offset>0.3759</z-offset>
-		<yaw-offset>160</yaw-offset>
-		<pitch-offset>0.0</pitch-offset>
-		<eda>10</eda>
-		<life>1</life>
-		<random>true</random>
-		<buoyancy>34</buoyancy>
-		<wind>true</wind>
-	</submodel>
-  
-	<submodel>
-		<name>exhaust smoke 3l</name>
-		<model>Aircraft/Spitfire/Models/seafire-exhaust.xml</model>
-		<trigger>engines/engine/cranking</trigger>
-		<speed>50</speed>
-		<repeat>true</repeat>
-		<delay>0.0001</delay>
-		<count>-1</count>
-		<x-offset>-4.3156</x-offset>
-		<y-offset>-1.5869</y-offset>
-		<z-offset>0.3759</z-offset>
-		<yaw-offset>-160</yaw-offset>
-		<pitch-offset>0.0</pitch-offset>
-		<eda>10</eda>
-		<life>1</life>
-		<random>true</random>
-		<buoyancy>34</buoyancy>
-		<wind>true</wind>
-	</submodel>
+  <submodel>
+    <name>exhaust smoke 1l</name>
+    <model>Aircraft/Spitfire/Models/seafire-exhaust.xml</model>
+    <trigger>engines/engine/cranking</trigger>
+    <speed>50</speed>
+    <repeat>true</repeat>
+    <delay>0.0001</delay>
+    <count>-1</count>
+    <x-offset>-3.2424</x-offset>
+    <y-offset>-1.5869</y-offset>
+    <z-offset>0.3759</z-offset>
+    <yaw-offset>-160</yaw-offset>
+    <pitch-offset>0.0</pitch-offset>
+    <eda>10</eda>
+    <life>1</life>
+    <random>true</random>
+    <buoyancy>34</buoyancy>
+    <wind>true</wind>
+  </submodel>
 
-	<submodel>
-		<name>exhaust smoke 4r</name>
-		<model>Aircraft/Spitfire/Models/seafire-exhaust.xml</model>
-		<trigger>engines/engine/cranking</trigger>
-		<speed>50</speed>
-		<repeat>true</repeat>
-		<delay>0.0001</delay>
-		<count>-1</count>
-		<x-offset>-4.8517</x-offset>
-		<y-offset>1.5869</y-offset>
-		<z-offset>0.3759</z-offset>
-		<yaw-offset>160</yaw-offset>
-		<pitch-offset>0.0</pitch-offset>
-		<eda>10</eda>
-		<life>1</life>
-		<random>true</random>
-		<buoyancy>34</buoyancy>
-		<wind>true</wind>
-	</submodel>
-  
-	<submodel>
-		<name>exhaust smoke 4l</name>
-		<model>Aircraft/Spitfire/Models/seafire-exhaust.xml</model>
-		<trigger>engines/engine/cranking</trigger>
-		<speed>50</speed>
-		<repeat>true</repeat>
-		<delay>0.0001</delay>
-		<count>-1</count>
-		<x-offset>-4.8517</x-offset>
-		<y-offset>-1.5869</y-offset>
-		<z-offset>0.3759</z-offset>
-		<yaw-offset>-160</yaw-offset>
-		<pitch-offset>0.0</pitch-offset>
-		<eda>10</eda>
-		<life>1</life>
-		<random>true</random>
-		<buoyancy>34</buoyancy>
-		<wind>true</wind>
-	</submodel>
+  <submodel>
+    <name>exhaust smoke 2r</name>
+    <model>Aircraft/Spitfire/Models/seafire-exhaust.xml</model>
+    <trigger>engines/engine/cranking</trigger>
+    <speed>50</speed>
+    <repeat>true</repeat>
+    <delay>0.0001</delay>
+    <count>-1</count>
+    <x-offset>-3.7788</x-offset>
+    <y-offset>1.5869</y-offset>
+    <z-offset>0.3759</z-offset>
+    <yaw-offset>160</yaw-offset>
+    <pitch-offset>0.0</pitch-offset>
+    <eda>10</eda>
+    <life>1</life>
+    <random>true</random>
+    <buoyancy>34</buoyancy>
+    <wind>true</wind>
+  </submodel>
 
-	<submodel>
-		<name>exhaust smoke 5r</name>
-		<model>Aircraft/Spitfire/Models/seafire-exhaust.xml</model>
-		<trigger>engines/engine/cranking</trigger>
-		<speed>50</speed>
-		<repeat>true</repeat>
-		<delay>0.0001</delay>
-		<count>-1</count>
-		<x-offset>-5.4075</x-offset>
-		<y-offset>1.5869</y-offset>
-		<z-offset>0.3759</z-offset>
-		<yaw-offset>160</yaw-offset>
-		<pitch-offset>0.0</pitch-offset>
-		<eda>10</eda>
-		<life>1</life>
-		<random>true</random>
-		<buoyancy>34</buoyancy>
-		<wind>true</wind>
-	</submodel>
-  
-	<submodel>
-		<name>exhaust smoke 5l</name>
-		<model>Aircraft/Spitfire/Models/seafire-exhaust.xml</model>
-		<trigger>engines/engine/cranking</trigger>
-		<speed>50</speed>
-		<repeat>true</repeat>
-		<delay>0.0001</delay>
-		<count>-1</count>
-		<x-offset>-5.4075</x-offset>
-		<y-offset>-1.5869</y-offset>
-		<z-offset>0.3759</z-offset>
-		<yaw-offset>-160</yaw-offset>
-		<pitch-offset>0.0</pitch-offset>
-		<eda>10</eda>
-		<life>1</life>
-		<random>true</random>
-		<buoyancy>34</buoyancy>
-		<wind>true</wind>
-	</submodel>
+  <submodel>
+    <name>exhaust smoke 2l</name>
+    <model>Aircraft/Spitfire/Models/seafire-exhaust.xml</model>
+    <trigger>engines/engine/cranking</trigger>
+    <speed>50</speed>
+    <repeat>true</repeat>
+    <delay>0.0001</delay>
+    <count>-1</count>
+    <x-offset>-3.7788</x-offset>
+    <y-offset>-1.5869</y-offset>
+    <z-offset>0.3759</z-offset>
+    <yaw-offset>-160</yaw-offset>
+    <pitch-offset>0.0</pitch-offset>
+    <eda>10</eda>
+    <life>1</life>
+    <random>true</random>
+    <buoyancy>34</buoyancy>
+    <wind>true</wind>
+  </submodel>
 
-	<submodel>
-		<name>exhaust smoke 6r</name>
-		<model>Aircraft/Spitfire/Models/seafire-exhaust.xml</model>
-		<trigger>engines/engine/cranking</trigger>
-		<speed>50</speed>
-		<repeat>true</repeat>
-		<delay>0.0001</delay>
-		<count>-1</count>
-		<x-offset>-5.9439</x-offset>
-		<y-offset>1.5869</y-offset>
-		<z-offset>0.3759</z-offset>
-		<yaw-offset>160</yaw-offset>
-		<pitch-offset>0.0</pitch-offset>
-		<eda>10</eda>
-		<life>1</life>
-		<random>true</random>
-		<buoyancy>34</buoyancy>
-		<wind>true</wind>
-	</submodel>
-  
-	<submodel>
-		<name>exhaust smoke 6l</name>
-		<model>Aircraft/Spitfire/Models/seafire-exhaust.xml</model>
-		<trigger>engines/engine/cranking</trigger>
-		<speed>50</speed>
-		<repeat>true</repeat>
-		<delay>0.0001</delay>
-		<count>-1</count>
-		<x-offset>-5.9439</x-offset>
-		<y-offset>-1.5869</y-offset>
-		<z-offset>0.3759</z-offset>
-		<yaw-offset>-160</yaw-offset>
-		<pitch-offset>0.0</pitch-offset>
-		<eda>10</eda>
-		<life>1</life><random>true</random>
-		<buoyancy>34</buoyancy>
-		<wind>true</wind>
-		<random>true</random>
-	</submodel>
+  <submodel>
+    <name>exhaust smoke 3r</name>
+    <model>Aircraft/Spitfire/Models/seafire-exhaust.xml</model>
+    <trigger>engines/engine/cranking</trigger>
+    <speed>50</speed>
+    <repeat>true</repeat>
+    <delay>0.0001</delay>
+    <count>-1</count>
+    <x-offset>-4.3156</x-offset>
+    <y-offset>1.5869</y-offset>
+    <z-offset>0.3759</z-offset>
+    <yaw-offset>160</yaw-offset>
+    <pitch-offset>0.0</pitch-offset>
+    <eda>10</eda>
+    <life>1</life>
+    <random>true</random>
+    <buoyancy>34</buoyancy>
+    <wind>true</wind>
+  </submodel>
+
+  <submodel>
+    <name>exhaust smoke 3l</name>
+    <model>Aircraft/Spitfire/Models/seafire-exhaust.xml</model>
+    <trigger>engines/engine/cranking</trigger>
+    <speed>50</speed>
+    <repeat>true</repeat>
+    <delay>0.0001</delay>
+    <count>-1</count>
+    <x-offset>-4.3156</x-offset>
+    <y-offset>-1.5869</y-offset>
+    <z-offset>0.3759</z-offset>
+    <yaw-offset>-160</yaw-offset>
+    <pitch-offset>0.0</pitch-offset>
+    <eda>10</eda>
+    <life>1</life>
+    <random>true</random>
+    <buoyancy>34</buoyancy>
+    <wind>true</wind>
+  </submodel>
+
+  <submodel>
+    <name>exhaust smoke 4r</name>
+    <model>Aircraft/Spitfire/Models/seafire-exhaust.xml</model>
+    <trigger>engines/engine/cranking</trigger>
+    <speed>50</speed>
+    <repeat>true</repeat>
+    <delay>0.0001</delay>
+    <count>-1</count>
+    <x-offset>-4.8517</x-offset>
+    <y-offset>1.5869</y-offset>
+    <z-offset>0.3759</z-offset>
+    <yaw-offset>160</yaw-offset>
+    <pitch-offset>0.0</pitch-offset>
+    <eda>10</eda>
+    <life>1</life>
+    <random>true</random>
+    <buoyancy>34</buoyancy>
+    <wind>true</wind>
+  </submodel>
+
+  <submodel>
+    <name>exhaust smoke 4l</name>
+    <model>Aircraft/Spitfire/Models/seafire-exhaust.xml</model>
+    <trigger>engines/engine/cranking</trigger>
+    <speed>50</speed>
+    <repeat>true</repeat>
+    <delay>0.0001</delay>
+    <count>-1</count>
+    <x-offset>-4.8517</x-offset>
+    <y-offset>-1.5869</y-offset>
+    <z-offset>0.3759</z-offset>
+    <yaw-offset>-160</yaw-offset>
+    <pitch-offset>0.0</pitch-offset>
+    <eda>10</eda>
+    <life>1</life>
+    <random>true</random>
+    <buoyancy>34</buoyancy>
+    <wind>true</wind>
+  </submodel>
+
+  <submodel>
+    <name>exhaust smoke 5r</name>
+    <model>Aircraft/Spitfire/Models/seafire-exhaust.xml</model>
+    <trigger>engines/engine/cranking</trigger>
+    <speed>50</speed>
+    <repeat>true</repeat>
+    <delay>0.0001</delay>
+    <count>-1</count>
+    <x-offset>-5.4075</x-offset>
+    <y-offset>1.5869</y-offset>
+    <z-offset>0.3759</z-offset>
+    <yaw-offset>160</yaw-offset>
+    <pitch-offset>0.0</pitch-offset>
+    <eda>10</eda>
+    <life>1</life>
+    <random>true</random>
+    <buoyancy>34</buoyancy>
+    <wind>true</wind>
+  </submodel>
+
+  <submodel>
+    <name>exhaust smoke 5l</name>
+    <model>Aircraft/Spitfire/Models/seafire-exhaust.xml</model>
+    <trigger>engines/engine/cranking</trigger>
+    <speed>50</speed>
+    <repeat>true</repeat>
+    <delay>0.0001</delay>
+    <count>-1</count>
+    <x-offset>-5.4075</x-offset>
+    <y-offset>-1.5869</y-offset>
+    <z-offset>0.3759</z-offset>
+    <yaw-offset>-160</yaw-offset>
+    <pitch-offset>0.0</pitch-offset>
+    <eda>10</eda>
+    <life>1</life>
+    <random>true</random>
+    <buoyancy>34</buoyancy>
+    <wind>true</wind>
+  </submodel>
+
+  <submodel>
+    <name>exhaust smoke 6r</name>
+    <model>Aircraft/Spitfire/Models/seafire-exhaust.xml</model>
+    <trigger>engines/engine/cranking</trigger>
+    <speed>50</speed>
+    <repeat>true</repeat>
+    <delay>0.0001</delay>
+    <count>-1</count>
+    <x-offset>-5.9439</x-offset>
+    <y-offset>1.5869</y-offset>
+    <z-offset>0.3759</z-offset>
+    <yaw-offset>160</yaw-offset>
+    <pitch-offset>0.0</pitch-offset>
+    <eda>10</eda>
+    <life>1</life>
+    <random>true</random>
+    <buoyancy>34</buoyancy>
+    <wind>true</wind>
+  </submodel>
+
+  <submodel>
+    <name>exhaust smoke 6l</name>
+    <model>Aircraft/Spitfire/Models/seafire-exhaust.xml</model>
+    <trigger>engines/engine/cranking</trigger>
+    <speed>50</speed>
+    <repeat>true</repeat>
+    <delay>0.0001</delay>
+    <count>-1</count>
+    <x-offset>-5.9439</x-offset>
+    <y-offset>-1.5869</y-offset>
+    <z-offset>0.3759</z-offset>
+    <yaw-offset>-160</yaw-offset>
+    <pitch-offset>0.0</pitch-offset>
+    <eda>10</eda>
+    <life>1</life>
+    <random>true</random>
+    <buoyancy>34</buoyancy>
+    <wind>true</wind>
+    <random>true</random>
+  </submodel>
 
 
 </PropertyList>
