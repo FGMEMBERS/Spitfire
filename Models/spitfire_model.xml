@@ -700,6 +700,91 @@
 	</animation>
 
 	<!-- ****** Undercarriage ***** -->
+
+	<animation>
+		<type>pick</type>
+		<visible>true</visible>
+		<object-name>Tyre-P</object-name>
+		<object-name>Hub-P</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<interval-sec>0.1</interval-sec>
+			<binding>
+				<command>property-assign</command>
+				<property>controls/gear/chock-left</property>
+				<value>1</value>
+			</binding>
+		</action>
+	</animation>
+
+	<animation>
+		<type>pick</type>
+		<visible>true</visible>
+		<object-name>Tyre-S</object-name>
+		<object-name>Hub-S</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<interval-sec>0.1</interval-sec>
+			<binding>
+				<command>property-assign</command>
+				<property>controls/gear/chock-right</property>
+				<value>1</value>
+			</binding>
+		</action>
+	</animation>
+
+	<animation>
+		<type>pick</type>
+		<visible>true</visible>
+		<object-name>Chock-Left</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<interval-sec>0.1</interval-sec>
+			<binding>
+				<command>property-assign</command>
+				<property>controls/gear/chock-left</property>
+				<value>0</value>
+			</binding>
+		</action>
+	</animation>
+
+	<animation>
+		<type>pick</type>
+		<visible>true</visible>
+		<object-name>Chock-Right</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<interval-sec>0.1</interval-sec>
+			<binding>
+				<command>property-assign</command>
+				<property>controls/gear/chock-right</property>
+				<value>0</value>
+			</binding>
+		</action>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>Chock-Left</object-name>
+		<condition>
+			<property>controls/gear/chock-left</property>
+			<property>gear/gear/wow</property>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>Chock-Right</object-name>
+		<condition>
+			<property>controls/gear/chock-right</property>
+			<property>gear/gear[1]/wow</property>
+		</condition>
+	</animation>
+	
 	<animation>
 		<type>rotate</type>
 		<object-name>Door-L</object-name>
@@ -796,6 +881,7 @@
 	<animation>
 		<type>translate</type>
 		<object-name>Leg-Lower-Assembly-L</object-name>
+		<object-name>Chock-Left</object-name>
 		<property>gear/gear/compression-norm</property>
 		<factor>0.2</factor>
 		<axis>
@@ -807,6 +893,7 @@
 	<animation>
 		<type>translate</type>
 		<object-name>Leg-Lower-Assembly-R</object-name>
+		<object-name>Chock-Right</object-name>
 		<property>gear/gear[1]/compression-norm</property>
 		<factor>0.2</factor>
 		<axis>
@@ -1166,6 +1253,7 @@
 		<object-name>Canopy-F</object-name>
 	</animation>
 
+	
 	<!-- *** LoD for the whole model *** -->
 	<animation>
 		<type>range</type>

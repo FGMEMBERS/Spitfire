@@ -322,8 +322,8 @@ flap drag not available
 									 dst0="0"
 									 dst1="1"/>
 	</thruster>
-	
-<thruster x="3.5"
+
+	<thruster x="3.5"
 						y="0"
 						z="0.4"
 						vx="1"
@@ -360,6 +360,9 @@ flap drag not available
 		<control-input axis="/controls/gear/brake-parking"
 									 control="BRAKE"
 									 split="true"/>
+		<control-input axis="/controls/gear/chock-left"
+									 control="BRAKE"
+									 split="true"/>
 		<control-input axis="/controls/gear/gear-down"
 									 control="EXTEND"/>
 		<control-speed control="EXTEND"
@@ -367,6 +370,7 @@ flap drag not available
 		<control-output control="EXTEND"
 										prop="/gear/gear/position-norm"/>
 	</gear>
+
 	<!-- right main spring="0.7" damp="3.0" -->
 	<gear
 		x="-2.20"
@@ -387,6 +391,9 @@ flap drag not available
 		<control-speed control="BRAKE"
 									 transition-time="1"/>
 		<control-input axis="/controls/gear/brake-parking"
+									 control="BRAKE"
+									 split="true"/>
+		<control-input axis="/controls/gear/chock-right"
 									 control="BRAKE"
 									 split="true"/>
 		<control-input axis="/controls/gear/gear-down"
@@ -416,7 +423,7 @@ flap drag not available
 				z="-0.66"
 				compression="0.15"
 				dfric="0.50"
-				sfric ="0.60"	>
+				sfric ="0.60">
 		<control-input axis="/controls/gear/brake-parking"
 									 control="BRAKE"
 									 transition-time="0"
@@ -437,6 +444,7 @@ flap drag not available
 		<control-output control="EXTEND"
 										prop="/gear/canopy/position-norm"/>
 	</gear>
+
 	<!-- Fuselage tanks. 
 Weight of contents calculated using 100 octane AVGAS density of 695 kg/m3 @ 15degC
 -->

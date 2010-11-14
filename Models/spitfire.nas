@@ -813,8 +813,60 @@ var tyresmoke_0 = aircraft.tyresmoke.new(0);
 var tyresmoke_1 = aircraft.tyresmoke.new(1);
 var tyresmoke_2 = aircraft.tyresmoke.new(2);
 
-# =============================== listeners ===============================
-#
+
+
+#============================ Tyre Smoke ===================================
+
+var tyresmoke = func {
+
+#print ("run_tyresmoke ",run_tyresmoke0,run_tyresmoke1,run_tyresmoke2);
+
+	if (run_tyresmoke0)
+		tyresmoke_0.update();
+
+	if (run_tyresmoke1)
+		tyresmoke_1.update();
+
+	if (run_tyresmoke2)
+		tyresmoke_2.update();
+
+	settimer(tyresmoke, 0);
+}# end tyresmoke
+
+
+#============================ Rain ===================================
+
+aircraft.rain.init();
+
+var rain = func {
+	var running = engine_running_Node.getValue();
+	aircraft.rain.update();
+#	print("rain running ", running);
+
+	if(running){
+		setprop("sim/model/rain/flow-threshold-kt", 0);
+	} else {
+		setprop("sim/model/rain/flow-threshold-kt", 15);
+	}
+	
+	settimer(rain, 0);
+}
+
+#========================= Initialize ===============================
+
+var initialize = func {
+        print( "Initializing Spitfire utilities ..." );
+
+    setprop("sim/model/position/latitude-deg", getprop("position/latitude-deg"));
+    setprop("sim/model/position/longitude-deg", getprop("position/longitude-deg"));
+    setprop("sim/model/position/altitude-ft", getprop("position/altitude-ft"));
+    
+    rain();
+    tyresmoke();
+    aircraft.steering.init();
+
+
+# ============ listeners ==========================
 
 setlistener( "controls/lighting/nav-lights", func {
 	var nav_lights_node = props.globals.getNode("controls/lighting/nav-lights", 1);
@@ -863,46 +915,8 @@ setlistener("gear/gear[2]/position-norm", func {
 	1,
 	0);
 
-#============================ Tyre Smoke ===================================
+} #end init
 
-var tyresmoke = func {
+setlistener("sim/signals/fdm-initialized", initialize);
 
-#print ("run_tyresmoke ",run_tyresmoke0,run_tyresmoke1,run_tyresmoke2);
-
-	if (run_tyresmoke0)
-		tyresmoke_0.update();
-
-	if (run_tyresmoke1)
-		tyresmoke_1.update();
-
-	if (run_tyresmoke2)
-		tyresmoke_2.update();
-
-	settimer(tyresmoke, 0);
-}# end tyresmoke
-
-# == fire it up ===
-
-tyresmoke();
-
-#============================ Rain ===================================
-
-aircraft.rain.init();
-
-var rain = func {
-	var running = engine_running_Node.getValue();
-	aircraft.rain.update();
-#	print("running ", running);
-
-	if(running){
-		setprop("sim/model/rain/flow-threshold-kt", 0);
-	} else {
-		setprop("sim/model/rain/flow-threshold-kt", 15);
-	}
-	
-	settimer(rain, 0);
-}
-
-# == fire it up ===
-rain()
 # end 
