@@ -220,6 +220,7 @@ Aug 2004 Vivian Meazza, vivian.meazza at lineone.net
 				<primer-pump type = "bool">0</primer-pump>
 				<boost type= "double">1</boost>
 				<boost-control-cutout type= "bool">0</boost-control-cutout>
+				<cowl-flaps-norm type="double">0</cowl-flaps-norm>
 			</engine>
 		</engines>
 		<gear>
@@ -229,6 +230,8 @@ Aug 2004 Vivian Meazza, vivian.meazza at lineone.net
 			<canopy>
 				<position-norm type="double">1</position-norm>
 			</canopy>
+			<chock-left type="bool">1</chock-left>
+			<chock-right type="bool">1</chock-right>
 		</gear>
 		<flight>
 			<flaps-alternate-extension type="double">1</flaps-alternate-extension>

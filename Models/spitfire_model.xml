@@ -734,7 +734,7 @@
 			</binding>
 		</action>
 	</animation>
-
+	
 	<animation>
 		<type>pick</type>
 		<visible>true</visible>
@@ -970,6 +970,20 @@
 		<object-name>Flap</object-name>
 		<property>engines/engine/cowl-flaps-norm</property>
 		<factor>90</factor>
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>0.334</ind>
+				<dep>30</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>30</dep>
+			</entry>
+		</interpolation>
 		<axis>
 			<x1-m>3.46</x1-m>
 			<y1-m>0.52</y1-m>
@@ -1021,6 +1035,20 @@
 
 	<!-- ***************** Radiator Flap*********************** -->
 	<animation>
+		<type>pick</type>
+		<visible>true</visible>
+		<object-name>Lever-Rad-Flap</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>controls/engines/engine/cowl-flaps-norm</property>
+			</binding>
+		</action>
+	</animation>
+
+	<animation>
 		<type>rotate</type>
 		<object-name>Lever-Rad-Flap</object-name>
 		<property>controls/engines/engine/cowl-flaps-norm</property>
@@ -1030,8 +1058,12 @@
 				<dep>0</dep>
 			</entry>
 			<entry>
+				<ind>0.334</ind>
+				<dep>-20</dep>
+			</entry>
+			<entry>
 				<ind>1</ind>
-				<dep>-90</dep>
+				<dep>-20</dep>
 			</entry>
 		</interpolation>
 		<axis>
