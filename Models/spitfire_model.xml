@@ -285,6 +285,15 @@
 			<z-m>0.53</z-m>
 		</offsets>
 	</model>
+	<model>
+		<path>Aircraft/Spitfire/Models/compass-p11.xml</path>
+		<name>Compass-Bowl</name>
+		<offsets>
+			<x-m>3.265</x-m>
+			<y-m>-0.0</y-m>
+			<z-m>-0.15</z-m>
+		</offsets>
+	</model>
 
 	<!-- ***** Navigation Lights ****** -->
 	<model>
