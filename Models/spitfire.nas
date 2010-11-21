@@ -834,7 +834,6 @@ var tyresmoke = func {
 }# end tyresmoke
 
 
-#============================ Rain ===================================
 
 aircraft.rain.init();
 
@@ -852,6 +851,39 @@ var rain = func {
 	settimer(rain, 0);
 }
 
+#============================ Gear ===================================
+
+var run_gear = func (gear_lever) {
+    var gear = getprop("gear/gear/position-norm");
+    var uplock = 0;
+    var downlock = 0;
+
+    if (gear >= 0 and gear <= 0.02){
+        uplock = 1;
+    } elsif (gear <= 1 and gear >= 0.98){
+        downlock = 1
+    }
+
+    print ("uplock ", uplock, " downlock ", downlock);
+
+    if (!uplock and gear_lever == 1){
+        print("gear_lever ", gear_lever);
+        gear_lever = 1;
+        setprop("controls/gear/gear-lever", gear_lever);
+        settimer(run_gear, 0);
+    } elsif (!downlock and gear_lever == -1){
+        print("gear_lever", gear_lever);
+        setprop("controls/gear/gear-lever", gear_lever);
+        settimer(run_gear, 0);
+    } else {
+        print("gear_lever", gear_lever);
+        setprop("controls/gear/gear-lever", 0);
+    }
+
+
+
+}
+
 #========================= Initialize ===============================
 
 var initialize = func {
@@ -860,7 +892,8 @@ var initialize = func {
     setprop("sim/model/position/latitude-deg", getprop("position/latitude-deg"));
     setprop("sim/model/position/longitude-deg", getprop("position/longitude-deg"));
     setprop("sim/model/position/altitude-ft", getprop("position/altitude-ft"));
-    
+    setprop("controls/gear/gear-lever", 0);
+
     rain();
     tyresmoke();
     aircraft.steering.init();
@@ -914,6 +947,25 @@ setlistener("gear/gear[2]/position-norm", func {
 	},
 	1,
 	0);
+
+setlistener("controls/gear/gear-down", func (n){
+    var gear_control = n.getValue();
+    var gear_lever = 0;
+
+    if (gear_control == 0) {
+        print("gear control 0 ", gear_control);
+        gear_lever = -1;
+    } else {
+        print("gear control 1 ", gear_control);
+        gear_lever = 1;
+    }
+        
+    run_gear(gear_lever);
+
+	},
+	0,
+	0);
+
 
 } #end init
 
