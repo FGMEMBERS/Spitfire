@@ -10,7 +10,7 @@ UPDATE_PERIOD = 0.3;
 
 registerTimer = func {
 
-	settimer(arg[0], UPDATE_PERIOD);
+    settimer(arg[0], UPDATE_PERIOD);
 
 } # end function 
 
@@ -57,52 +57,52 @@ mp_inhg.setDoubleValue(0);
 damp = 0;
 
 toggleCutout = func{
-	var t = throttle.getValue();
-	var c = boost_control_cutout.getValue();
+    var t = throttle.getValue();
+    var c = boost_control_cutout.getValue();
 
-	if ( t != 1){
-		c = !c;
-		boost_control_cutout.setBoolValue(c);
-	} 	    
+    if ( t != 1){
+        c = !c;
+        boost_control_cutout.setBoolValue(c);
+    } 	    
 #	print("c: " , c );
 
 } # end function toggleCutout
 
 updateBoostControl = func {
-	var n = boost_control_damp.getValue(); 
-	var BOOST_CONTROL_RANGE = boost_control_range.getValue();
-	var mp = (mp_inhg.getValue() * 0.491154077497) - 14.6959487755 ;
-	var cutout = boost_control_cutout.getValue();
-	var throttle = throttle.getValue();
-	var val = 0;
+    var n = boost_control_damp.getValue(); 
+    var BOOST_CONTROL_RANGE = boost_control_range.getValue();
+    var mp = (mp_inhg.getValue() * 0.491154077497) - 14.6959487755 ;
+    var cutout = boost_control_cutout.getValue();
+    var throttle = throttle.getValue();
+    var val = 0;
 
-	if (throttle == 1 and !cutout){
-		cutout = 1;
-	}
+    if (throttle == 1 and !cutout){
+        cutout = 1;
+    }
 
-	if(! cutout){
-		val = (mp - BOOST_CONTROL_LIMIT_RATED) / BOOST_CONTROL_RANGE;
-	} else {
-		val = (mp - BOOST_CONTROL_LIMIT_COMBAT) / BOOST_CONTROL_RANGE;
-	}	
+    if(! cutout){
+        val = (mp - BOOST_CONTROL_LIMIT_RATED) / BOOST_CONTROL_RANGE;
+    } else {
+        val = (mp - BOOST_CONTROL_LIMIT_COMBAT) / BOOST_CONTROL_RANGE;
+    }	
 
-	var in = val;
+    var in = val;
 
-	if (val < 0  ) {
-		val = 0;                             # Can't increase throttle
-	} elsif (val < -BOOST_CONTROL_AUTHORITY) {
-		val = -BOOST_CONTROL_AUTHORITY        # limit by authority
-	} else {
-		val = -val;
-		}
+    if (val < 0  ) {
+        val = 0;                             # Can't increase throttle
+    } elsif (val < -BOOST_CONTROL_AUTHORITY) {
+        val = -BOOST_CONTROL_AUTHORITY        # limit by authority
+    } else {
+        val = -val;
+        }
 
-	damp = (val * n) + (damp * (1 - n)); # apply low pass filter
+        damp = (val * n) + (damp * (1 - n)); # apply low pass filter
 
 #	print(sprintf("mp=%0.5f, in=%0.5f, raw=%0.5f, out=%0.5f", mp, in, val, damp));
-	boost_pressure_psi.setDoubleValue(mp);
-	boost_control.setDoubleValue(damp);
-	boost_control_cutout.setBoolValue(cutout);
-	settimer(updateBoostControl, 0.1);
+            boost_pressure_psi.setDoubleValue(mp);
+        boost_control.setDoubleValue(damp);
+        boost_control_cutout.setBoolValue(cutout);
+        settimer(updateBoostControl, 0.1);
 }
 
 updateBoostControl();
@@ -123,73 +123,73 @@ Start = 0;		# stopCof needs this, too
 
 
 indexCof = func{
-	pull=arg[0];
-	if(pull) {
+    pull=arg[0];
+    if(pull) {
 #        i = getprop("controls/engines/engine/coffman-starter/index");
-		i = cartridgeN.getValue();
-		i = i - 1;
-		if (i == -1) {
-			i = 5;
-		}
-		setprop("controls/engines/engine/coffman-starter/index",i);
-		setprop("controls/engines/engine/coffman-starter/index-pull-norm",1)
-	}else{
-		setprop("controls/engines/engine/coffman-starter/index-pull-norm",0)
-	}
+        i = cartridgeN.getValue();
+        i = i - 1;
+        if (i == -1) {
+            i = 5;
+        }
+        setprop("controls/engines/engine/coffman-starter/index",i);
+        setprop("controls/engines/engine/coffman-starter/index-pull-norm",1)
+    }else{
+        setprop("controls/engines/engine/coffman-starter/index-pull-norm",0)
+    }
 
 } # end function
 
 
 startCof = func{
-	Start = arg[0];
-	max_run = 5.0;
+    Start = arg[0];
+    max_run = 5.0;
 
-	if (Start) {
-		LastStartTime = nowN.getValue();
-		if (!starterN.getValue()) { 			# not started yet: do it now
-			setprop("controls/engines/engine/coffman-starter/starter-push-norm", 1);
+    if (Start) {
+        LastStartTime = nowN.getValue();
+        if (!starterN.getValue()) { 			# not started yet: do it now
+            setprop("controls/engines/engine/coffman-starter/starter-push-norm", 1);
 
-		ready = !spitfire.spitfireIIa;		# seafires are always ready
+        ready = !spitfire.spitfireIIa;		# seafires are always ready
 
-			if (!ready) {						# must be a spitfire
-				LastCartridge = cartridgeN.getValue();
-		j = "controls/engines/engine/coffman-starter/cartridge[" ~ LastCartridge ~ "]";
-		if (ready = getprop(j)) {
-			setprop(j, 0);
+            if (!ready) {						# must be a spitfire
+                LastCartridge = cartridgeN.getValue();
+        j = "controls/engines/engine/coffman-starter/cartridge[" ~ LastCartridge ~ "]";
+        if (ready = getprop(j)) {
+            setprop(j, 0);
 #					print("max run: " , max_run);
-			settimer(func {             # nameless out-of-gas watcher
-				starterN.setValue(0);
-			primerN.setValue(0);
-			print ("starter stopping, out of gas!"); 
-			}, max_run)};
-			}
+            settimer(func {             # nameless out-of-gas watcher
+                starterN.setValue(0);
+            primerN.setValue(0);
+            print ("starter stopping, out of gas!"); 
+            }, max_run)};
+            }
 
-			if (ready) {
-				primerMixture(primerN.getValue());
-				starterN.setValue(1);
+            if (ready) {
+                primerMixture(primerN.getValue());
+                starterN.setValue(1);
 #				print ("starter running!");
-			}
-		}
-	} else{
-		settimer(stopCof, 0.2);
-	}
+            }
+        }
+    } else{
+        settimer(stopCof, 0.2);
+    }
 } # end function
 
 
 stopCof = func {
 
-	min_run = 0.4;
-	if (!Start and starterN.getValue()) {
-		if (nowN.getValue() - LastStartTime < min_run) {
-			settimer(stopCof, 0.2);			# too soon; let's try again later
+    min_run = 0.4;
+    if (!Start and starterN.getValue()) {
+        if (nowN.getValue() - LastStartTime < min_run) {
+            settimer(stopCof, 0.2);			# too soon; let's try again later
 #			print ("too soon! min run: " , min_run);
-		} else {
-			primerN.setValue(0);
-			starterN.setValue(0);
-			setprop("controls/engines/engine/coffman-starter/starter-push-norm", 0);
+        } else {
+            primerN.setValue(0);
+            starterN.setValue(0);
+            setprop("controls/engines/engine/coffman-starter/starter-push-norm", 0);
 #			print ("starter stopping!");
-		}
-	}
+        }
+    }
 } # end function
 
 # ======================= end Coffman starter stuff =====================================
@@ -198,30 +198,30 @@ stopCof = func {
 
 pumpPrimer = func{
 
-	push = arg[0];
+    push = arg[0];
 
-	if (push){
-		pump = getprop("controls/engines/engine/primer") + 1;
-		setprop("controls/engines/engine/primer", pump);
-		setprop("controls/engines/engine/primer-pump",1);
-	}
-	else
-	{
-		setprop("controls/engines/engine/primer-pump",0);
-	}
+    if (push){
+        pump = getprop("controls/engines/engine/primer") + 1;
+        setprop("controls/engines/engine/primer", pump);
+        setprop("controls/engines/engine/primer-pump",1);
+    }
+    else
+    {
+        setprop("controls/engines/engine/primer-pump",0);
+    }
 
 } # end function
 
 primerMixture = func{
 
-	mixture = 0;
-	primer = arg[0];
+    mixture = 0;
+    primer = arg[0];
 
-	if(primer >3 and primer <7) {
-		mixture = 1;
-	}
+    if(primer >3 and primer <7) {
+        mixture = 1;
+    }
 
-	return mixture;
+    return mixture;
 
 } # end function
 
@@ -243,44 +243,44 @@ elsif (!left and right) {                         # right
 setprop("controls/engines/engine/magnetos",2)
 }
 else{    
-	setprop("controls/engines/engine/magnetos",0); # none
+    setprop("controls/engines/engine/magnetos",0); # none
 }
 
 } # end function
 
 setleftMagswitch = func{
 
-	left = arg[0];
-	setprop("controls/engines/engine/mag-switch-left",left);
-	spitfire.setMagnetos();
+    left = arg[0];
+    setprop("controls/engines/engine/mag-switch-left",left);
+    spitfire.setMagnetos();
 
 } # end function
 
 
 setrightMagswitch = func{
 
-	right = arg[0];
-	setprop("controls/engines/engine/mag-switch-right",right);
-	spitfire.setMagnetos();
+    right = arg[0];
+    setprop("controls/engines/engine/mag-switch-right",right);
+    spitfire.setMagnetos();
 
 } # end function
 
 
 toggleleftMagswitch = func{
 
-	left = getprop("controls/engines/engine/mag-switch-left");
-	left = !left;
-	setprop("controls/engines/engine/mag-switch-left",left);
-	spitfire.setMagnetos();
+    left = getprop("controls/engines/engine/mag-switch-left");
+    left = !left;
+    setprop("controls/engines/engine/mag-switch-left",left);
+    spitfire.setMagnetos();
 
 } # end function
 
 togglerightMagswitch = func{
 
-	right = getprop("controls/engines/engine/mag-switch-right");
-	right = !right;
-	setprop("controls/engines/engine/mag-switch-right",right);
-	spitfire.setMagnetos();
+    right = getprop("controls/engines/engine/mag-switch-right");
+    right = !right;
+    setprop("controls/engines/engine/mag-switch-right",right);
+    spitfire.setMagnetos();
 
 } # end function
 
@@ -293,7 +293,7 @@ openDoor = func{ # open the door if canopy is open
 dooropen = arg[0];
 canopyopen = getprop("gear/canopy/position-norm");
 if (canopyopen) {
-	setprop("controls/flight/door-position-norm",dooropen)
+    setprop("controls/flight/door-position-norm",dooropen)
 }
 
 } # end function
@@ -303,8 +303,8 @@ toggleDoor = func{ # toggle the door if canopy is open
 dooropen = getprop("controls/flight/door-position-norm");
 canopyopen = getprop("gear/canopy/position-norm");
 if (canopyopen) {
-	dooropen = !dooropen;
-	setprop("controls/flight/door-position-norm",dooropen);
+    dooropen = !dooropen;
+    setprop("controls/flight/door-position-norm",dooropen);
 }
 
 } # end function
@@ -314,7 +314,7 @@ openCanopy = func{ # open the canopy if door is closed
 canopyopen = arg[0];
 dooropen = getprop("controls/flight/door-position-norm");
 if (!dooropen) {
-	setprop("controls/flight/canopy-slide",canopyopen)
+    setprop("controls/flight/canopy-slide",canopyopen)
 }
 
 } # end function
@@ -325,19 +325,19 @@ if (!dooropen) {
 
 pullCutoff = func{
 
-	pull=arg[0];
-	mixturelever = getprop("controls/engines/engine/mixture-lever");
+    pull=arg[0];
+    mixturelever = getprop("controls/engines/engine/mixture-lever");
 
-	if(pull) {
-		setprop("controls/engines/engine/cutoff-pull-norm",1);
-		setprop("controls/engines/engine/cutoff",0);
+    if(pull) {
+        setprop("controls/engines/engine/cutoff-pull-norm",1);
+        setprop("controls/engines/engine/cutoff",0);
 #setprop("controls/engines/engine/mixture",0);
-		if (getprop("engines/engine/rpm") < 100) {setprop("engines/engine/running",0)}
-	}else{
-		setprop("controls/engines/engine/cutoff-pull-norm",0);
-		setprop("controls/engines/engine/cutoff",1);
+        if (getprop("engines/engine/rpm") < 100) {setprop("engines/engine/running",0)}
+    }else{
+        setprop("controls/engines/engine/cutoff-pull-norm",0);
+        setprop("controls/engines/engine/cutoff",1);
 #setprop("controls/engines/engine/mixture",mixturelever)
-	}
+    }
 
 } # end function
 
@@ -353,18 +353,18 @@ pullCutoff = func{
 
 openCock=func{
 
-	cock=arg[0];
-	open=arg[1];
-	if (cock == 0){
+    cock=arg[0];
+    open=arg[1];
+    if (cock == 0){
 
 #setprop("controls/engines/engine/fuel-cock/lever-norm[0]",open);
-		setprop("consumables/fuel/tank[0]/selected",open)
-	}
-	else
-	{
+        setprop("consumables/fuel/tank[0]/selected",open)
+    }
+    else
+    {
 #setprop("controls/engines/engine/fuel-cock/lever-norm[1]",open);
-		setprop("consumables/fuel/tank[1]/selected",open)
-	}
+        setprop("consumables/fuel/tank[1]/selected",open)
+    }
 
 }#end func
 
@@ -372,25 +372,25 @@ openCock=func{
 
 toggleCock=func{
 
-	cock=arg[0];
+    cock=arg[0];
 
-	if (cock == 0){
+    if (cock == 0){
 #open = getprop("controls/engines/engine/fuel-cock/lever-norm[0]");
 #open = !open;
 #setprop("controls/engines/engine/fuel-cock/lever-norm[0]",open);
-		open = getprop("consumables/fuel/tank[0]/selected");
-		open = !open;
-		setprop("consumables/fuel/tank[0]/selected",open)
-	}
-	else
-	{
+        open = getprop("consumables/fuel/tank[0]/selected");
+        open = !open;
+        setprop("consumables/fuel/tank[0]/selected",open)
+    }
+    else
+    {
 #open = getprop("controls/engines/engine/fuel-cock/lever-norm[1]");
 #open = !open;
 #setprop("controls/engines/engine/fuel-cock/lever-norm[1]",open);
-		open = getprop("consumables/fuel/tank[1]/selected");
-		open = !open;
-		setprop("consumables/fuel/tank[1]/selected",open)
-	}
+        open = getprop("consumables/fuel/tank[1]/selected");
+        open = !open;
+        setprop("consumables/fuel/tank[1]/selected",open)
+    }
 
 }#end func
 
@@ -398,33 +398,33 @@ toggleCock=func{
 
 fuelTrans = func {
 
-	amount = 0;
+    amount = 0;
 
 
-	if(getprop("/sim/freeze/fuel")) { return registerTimer(fuelTrans); }
+    if(getprop("/sim/freeze/fuel")) { return registerTimer(fuelTrans); }
 
-	capacityLower = getprop("consumables/fuel/tank[1]/capacity-gal_us");
-	if(capacityLower == nil) { capacityLower = 0; }
+    capacityLower = getprop("consumables/fuel/tank[1]/capacity-gal_us");
+    if(capacityLower == nil) { capacityLower = 0; }
 
-	levelLower = getprop("consumables/fuel/tank[1]/level-gal_us");
-	if(levelLower == nil) { levelLower = 0; }
+    levelLower = getprop("consumables/fuel/tank[1]/level-gal_us");
+    if(levelLower == nil) { levelLower = 0; }
 
-	levelUpper = getprop("consumables/fuel/tank/level-gal_us");
-	if(levelUpper == nil) { levelUpper = 0; }
+    levelUpper = getprop("consumables/fuel/tank/level-gal_us");
+    if(levelUpper == nil) { levelUpper = 0; }
 
-	if ( capacityLower > levelLower and levelUpper > 0){
-		amount = capacityLower - levelLower;
-		if (amount > levelUpper) {amount = levelUpper; }
-		levelUpper = levelUpper - amount;
-		levelLower = levelLower + amount;
-		setprop( "consumables/fuel/tank/level-gal_us",levelUpper);
-		setprop( "consumables/fuel/tank[1]/level-gal_us",levelLower);
-	}
+    if ( capacityLower > levelLower and levelUpper > 0){
+        amount = capacityLower - levelLower;
+        if (amount > levelUpper) {amount = levelUpper; }
+        levelUpper = levelUpper - amount;
+        levelLower = levelLower + amount;
+        setprop( "consumables/fuel/tank/level-gal_us",levelUpper);
+        setprop( "consumables/fuel/tank[1]/level-gal_us",levelLower);
+    }
 
 #print("Upper: ",levelUpper, " Lower: ",levelLower);
 #print( " Amount: ",amount);
 
-	registerTimer(fuelTrans);
+    registerTimer(fuelTrans);
 
 } # end funtion fuelTrans    
 
@@ -447,30 +447,30 @@ if (down) {registerTimer(flapBlowin)}                        # run the timer
 } # end function 
 
 flapBlowin = func{
-	flap = 0;
-	lever = getprop("controls/flight/flaps-lever");
-	airspeed = getprop("velocities/airspeed-kt");
+    flap = 0;
+    lever = getprop("controls/flight/flaps-lever");
+    airspeed = getprop("velocities/airspeed-kt");
 #print("lever: " , lever , " airspeed (kts): " , airspeed);
 
-	if (lever and airspeed < 105 ) { 
-		controls.stepProps("/controls/flight/flaps", "/sim/flaps",1);                                # full flap
-			return registerTimer(flapBlowin);                        # run the timer                
-	}
-	elsif (lever and airspeed >= 105 and airspeed <= 115) {
-		flap = -0.08*airspeed + 9.4;
+    if (lever and airspeed < 105 ) { 
+        controls.stepProps("/controls/flight/flaps", "/sim/flaps",1);                                # full flap
+            return registerTimer(flapBlowin);                        # run the timer                
+    }
+    elsif (lever and airspeed >= 105 and airspeed <= 115) {
+        flap = -0.08*airspeed + 9.4;
 #print("flap: " , flap);
-		setprop("controls/flight/flaps", flap);            # flap partially blown in     
-			return registerTimer(flapBlowin);                    # run the timer                        
-	}
-	elsif (lever and airspeed > 115) {
-		flap = 0.2;
-		setprop("controls/flight/flaps", flap);            # flap blown in                                         
-			return registerTimer(flapBlowin);                    # run the timer
-	}
-	else
-	{
-		controls.stepProps("/controls/flight/flaps", "/sim/flaps",-1);                    # flap up, don't run the timer                    
-	}
+        setprop("controls/flight/flaps", flap);            # flap partially blown in     
+            return registerTimer(flapBlowin);                    # run the timer                        
+    }
+    elsif (lever and airspeed > 115) {
+        flap = 0.2;
+        setprop("controls/flight/flaps", flap);            # flap blown in                                         
+            return registerTimer(flapBlowin);                    # run the timer
+    }
+    else
+    {
+        controls.stepProps("/controls/flight/flaps", "/sim/flaps",-1);                    # flap up, don't run the timer                    
+    }
 
 } # end function 
 
@@ -483,21 +483,21 @@ toggleGearWarn = func{                                         # toggle the gear
 cancel = getprop("sim/alarms/gear-warn");
 cancel = !cancel;
 #print("cancel :", cancel);
-setprop("sim/alarms/gear-warn",cancel);
+setprop("sim/alarms/gear-warn", cancel);
 if (cancel) {registerTimer(resetWarn)}                    # run the timer
 
 } # end function 
 
 resetWarn = func{
 
-	var throttle = getprop("controls/engines/engine/throttle");
-	var gearwarn = getprop("sim/alarms/gear-warn");
+    var throttle = getprop("controls/engines/engine/throttle");
+    var gearwarn = getprop("sim/alarms/gear-warn");
 #print("throttle " , throttle , " gearwarn: " , gearwarn);
-	if (gearwarn and throttle >= 0.25 ) { 
-		setprop("sim/alarms/gear-warn",0);                    # reset the gear warning
-	} else {
-		return registerTimer(resetWarn);                      # run the timer                
-	}
+    if (gearwarn and throttle >= 0.25 ) { 
+        setprop("sim/alarms/gear-warn",0);                    # reset the gear warning
+    } else {
+        return registerTimer(resetWarn);                      # run the timer                
+    }
 
 } # end function 
 
@@ -508,24 +508,24 @@ resetWarn = func{
 
 negGCutoff = func{
 
-	g = getprop("accelerations/pilot-g");
-	if (g == nil) { g = 0 };
-	mixture = getprop("controls/engines/engine/mixture-lever");
-	if (spitfireIIa) {
-		if (g > 0.75) {
-			return  mixture;                    # mixture set by lever
-		}
-		elsif (g <= 0.75 and g >= 0)  {            # mixture set by - ve g
-			mixture = g * 4/3;
-		}
-		else  {                                    # mixture set by - ve g
-			mixture = 0;
-		}
-	} 
+    g = getprop("accelerations/pilot-g");
+    if (g == nil) { g = 0 };
+    mixture = getprop("controls/engines/engine/mixture-lever");
+    if (spitfireIIa) {
+        if (g > 0.75) {
+            return  mixture;                    # mixture set by lever
+        }
+        elsif (g <= 0.75 and g >= 0)  {            # mixture set by - ve g
+            mixture = g * 4/3;
+        }
+        else  {                                    # mixture set by - ve g
+            mixture = 0;
+        }
+    } 
 
 #    print("g: " , g , " mixture: " , mixture);
 
-	return mixture;
+    return mixture;
 
 } # end function 
 
@@ -544,16 +544,16 @@ timeratio.setDoubleValue(0.03);
 g_damp = 0;
 
 updatePilotG = func {
-	var n = timeratio.getValue(); 
-	var g = pilot_g.getValue() ;
+    var n = timeratio.getValue(); 
+    var g = pilot_g.getValue() ;
 #if (g == nil) { g = 0; }
-	g_damp = ( g * n) + (g_damp * (1 - n));
+    g_damp = ( g * n) + (g_damp * (1 - n));
 
-	pilot_g_damped.setDoubleValue(g_damp);
+    pilot_g_damped.setDoubleValue(g_damp);
 
 # print(sprintf("pilot_g_damped in=%0.5f, out=%0.5f", g, g_damp));
 
-	settimer(updatePilotG, 0.1);
+    settimer(updatePilotG, 0.1);
 
 } #end updatePilotG()
 
@@ -637,33 +637,33 @@ headShake = func {
 # First, we don't shake outside the vehicle. Inside, we boogie down.
 # There are two coordinate systems here, one used for accelerations, and one used for the viewpoint.
 # We will be using the one for accelerations.
-	var enabled = enabledNode.getValue();
-	var view_number= view_number_Node.getValue();
-	var n = timeratio.getValue(); 
-	var seat_vertical_adjust = seat_vertical_adjust_Node.getValue();
+    var enabled = enabledNode.getValue();
+    var view_number= view_number_Node.getValue();
+    var n = timeratio.getValue(); 
+    var seat_vertical_adjust = seat_vertical_adjust_Node.getValue();
 
 
-	if ( (enabled) and ( view_number == 0)) {
+    if ( (enabled) and ( view_number == 0)) {
 
-		var xConfig = xConfigNode.getValue();
-		var yConfig = yConfigNode.getValue();
-		var zConfig = zConfigNode.getValue();
+        var xConfig = xConfigNode.getValue();
+        var yConfig = yConfigNode.getValue();
+        var zConfig = zConfigNode.getValue();
 
-		var xMax = xMaxNode.getValue();
-		var xMin = xMinNode.getValue();
-		var yMax = yMaxNode.getValue();
-		var yMin = yMinNode.getValue();
-		var zMax = zMaxNode.getValue();
-		var zMin = zMinNode.getValue();
+        var xMax = xMaxNode.getValue();
+        var xMin = xMinNode.getValue();
+        var yMax = yMaxNode.getValue();
+        var yMin = yMinNode.getValue();
+        var zMax = zMaxNode.getValue();
+        var zMin = zMinNode.getValue();
 
 #work in G, not fps/s
-		var xAccel = xAccelNode.getValue()/32;
-		var yAccel = yAccelNode.getValue()/32;
-		var zAccel = (zAccelNode.getValue() + 32)/32; # We aren't counting gravity
+        var xAccel = xAccelNode.getValue()/32;
+        var yAccel = yAccelNode.getValue()/32;
+        var zAccel = (zAccelNode.getValue() + 32)/32; # We aren't counting gravity
 
-			var xThreshold =  xThresholdNode.getValue();
-		var yThreshold =  yThresholdNode.getValue();
-		var zThreshold =  zThresholdNode.getValue();
+            var xThreshold =  xThresholdNode.getValue();
+        var yThreshold =  yThresholdNode.getValue();
+        var zThreshold =  zThresholdNode.getValue();
 
 # Set viewpoint divergence and clamp
 # Note that each dimension has it's own special ratio and +X is clamped at 1cm
@@ -672,106 +672,106 @@ headShake = func {
 #y = -0.0005x3 - 0.005x2 - 0.0089x - 0.0045
 # -0.0004x3 + 0.0042x2 - 0.0084x + 0.0048
 # -0.0004x3 - 0.0042x2 - 0.0084x - 0.0048
-		if (xAccel < -5 ) {
-			xDivergence = -0.03;
-		} elsif ((xAccel < -0.5) and (xAccel >= -5)) {
-			xDivergence = ((( -0.0005 * xAccel ) - ( 0.0036 )) * xAccel - ( 0.001 )) * xAccel - 0.0004;
-		} elsif ((xAccel > 1) and (xAccel <= 6)) {
-			xDivergence = ((( -0.0004 * xAccel ) + ( 0.0031 )) * xAccel - ( 0.0016 )) * xAccel + 0.0002;
-		} elsif (xAccel > 5) {
-			xDivergence = 0.02;
-		} else {
-			xDivergence = 0;
-		}
+        if (xAccel < -5 ) {
+            xDivergence = -0.03;
+        } elsif ((xAccel < -0.5) and (xAccel >= -5)) {
+            xDivergence = ((( -0.0005 * xAccel ) - ( 0.0036 )) * xAccel - ( 0.001 )) * xAccel - 0.0004;
+        } elsif ((xAccel > 1) and (xAccel <= 6)) {
+            xDivergence = ((( -0.0004 * xAccel ) + ( 0.0031 )) * xAccel - ( 0.0016 )) * xAccel + 0.0002;
+        } elsif (xAccel > 5) {
+            xDivergence = 0.02;
+        } else {
+            xDivergence = 0;
+        }
 
 #       These equations shape the output and convet from G number to divergence left/right in meters
 #	y = -0.0005x3 - 0.0036x2 + 0.0001x + 0.0004
 #	y = -0.013x3 + 0.125x2 - 0.1202x + 0.0272
 
-		if (yAccel < -5 ) {
-			yDivergence = -0.03;
-		} elsif ((yAccel < -0.5) and (yAccel >= -5)) {
-			yDivergence = ((( -0.005 * yAccel ) - ( 0.0036 )) * yAccel - (  0.0001 )) * yAccel - 0.0004;
-		} elsif ((yAccel > 0.5) and (yAccel <= 5)) {
-			yDivergence = ((( -0.013 * yAccel ) + ( 0.125 )) * yAccel - (  0.1202 )) * yAccel + 0.0272;
-		} elsif (yAccel > 5) {
-			yDivergence = 0.03;
-		}else {
-			yDivergence = 0;
-		}
+        if (yAccel < -5 ) {
+            yDivergence = -0.03;
+        } elsif ((yAccel < -0.5) and (yAccel >= -5)) {
+            yDivergence = ((( -0.005 * yAccel ) - ( 0.0036 )) * yAccel - (  0.0001 )) * yAccel - 0.0004;
+        } elsif ((yAccel > 0.5) and (yAccel <= 5)) {
+            yDivergence = ((( -0.013 * yAccel ) + ( 0.125 )) * yAccel - (  0.1202 )) * yAccel + 0.0272;
+        } elsif (yAccel > 5) {
+            yDivergence = 0.03;
+        }else {
+            yDivergence = 0;
+        }
 
 #        setprop("/sim/current-view/x-offset-m", (yConfig + yDivergence));	
 # y = -0.0005x3 - 0.0036x2 + 0.0001x + 0.0004
 # y = -0.0004x3 + 0.0031x2 - 0.0016x + 0.0002
-		if (zAccel < -5 ) {
-			zDivergence = -0.03;
-		} elsif ((zAccel < -0.5) and (zAccel >= -5)) {
-			zDivergence = ((( -0.0005 * zAccel ) - ( 0.0036 )) * zAccel - ( 0.001 )) * zAccel - 0.0004;
-		} elsif ((zAccel > 0.5) and (zAccel <= 5)) {
-			zDivergence = ((( -0.0004 * zAccel ) + ( 0.0031 )) * zAccel - ( 0.0016 )) * zAccel + 0.0002;
-		} elsif (zAccel > 5) {
-			zDivergence = 0.02;
-		} else {
-			zDivergence = 0;
-		}
+        if (zAccel < -5 ) {
+            zDivergence = -0.03;
+        } elsif ((zAccel < -0.5) and (zAccel >= -5)) {
+            zDivergence = ((( -0.0005 * zAccel ) - ( 0.0036 )) * zAccel - ( 0.001 )) * zAccel - 0.0004;
+        } elsif ((zAccel > 0.5) and (zAccel <= 5)) {
+            zDivergence = ((( -0.0004 * zAccel ) + ( 0.0031 )) * zAccel - ( 0.0016 )) * zAccel + 0.0002;
+        } elsif (zAccel > 5) {
+            zDivergence = 0.02;
+        } else {
+            zDivergence = 0;
+        }
 # 
 
-		xDivergence_total = (xDivergence * 0.75) + (zDivergence * 0.25);
+        xDivergence_total = (xDivergence * 0.75) + (zDivergence * 0.25);
 
-		if (xDivergence_total > xMax){xDivergence_total = xMax;}
-		if (xDivergence_total < xMin){xDivergence_total = xMin;}
+        if (xDivergence_total > xMax){xDivergence_total = xMax;}
+        if (xDivergence_total < xMin){xDivergence_total = xMin;}
 
-		if (abs(last_xDivergence - xDivergence_total) <= xThreshold){
-			xDivergence_damp = ( xDivergence_total * n) + ( xDivergence_damp * (1 - n));
+        if (abs(last_xDivergence - xDivergence_total) <= xThreshold){
+            xDivergence_damp = ( xDivergence_total * n) + ( xDivergence_damp * (1 - n));
 #	print ("x low pass");
-		} else {
-			xDivergence_damp = xDivergence_total;
+        } else {
+            xDivergence_damp = xDivergence_total;
 #	print ("x high pass");
-		}
+        }
 
-		last_xDivergence = xDivergence_damp;
+        last_xDivergence = xDivergence_damp;
 
 # print (sprintf("x-G=%0.5fx, total=%0.5f, x div damped=%0.5f",xAccel, xDivergence_total, xDivergence_damp));	
 
-		yDivergence_total = yDivergence;
-		if (yDivergence_total >= yMax){yDivergence_total = yMax;}
-		if (yDivergence_total <= yMin){yDivergence_total = yMin;}
+        yDivergence_total = yDivergence;
+        if (yDivergence_total >= yMax){yDivergence_total = yMax;}
+        if (yDivergence_total <= yMin){yDivergence_total = yMin;}
 
-		if (abs(last_yDivergence - yDivergence_total) <= yThreshold){
-			yDivergence_damp = ( yDivergence_total * n) + ( yDivergence_damp * (1 - n));
+        if (abs(last_yDivergence - yDivergence_total) <= yThreshold){
+            yDivergence_damp = ( yDivergence_total * n) + ( yDivergence_damp * (1 - n));
 # 	print ("y low pass");
-		} else {
-			yDivergence_damp = yDivergence_total;
+        } else {
+            yDivergence_damp = yDivergence_total;
 #	print ("y high pass");
-		}
+        }
 
-		last_yDivergence = yDivergence_damp;
+        last_yDivergence = yDivergence_damp;
 
 #print (sprintf("y=%0.5f, y total=%0.5f, y min=%0.5f, y div damped=%0.5f",yDivergence, yDivergence_total, yMin , yDivergence_damp));
 
-		zDivergence_total =  (xDivergence * 0.25 ) + (zDivergence * 0.75);
+        zDivergence_total =  (xDivergence * 0.25 ) + (zDivergence * 0.75);
 
-		if (zDivergence_total >= zMax){zDivergence_total = zMax;}
-		if (zDivergence_total <= zMin){zDivergence_total = zMin;}
+        if (zDivergence_total >= zMax){zDivergence_total = zMax;}
+        if (zDivergence_total <= zMin){zDivergence_total = zMin;}
 
-		if (abs(last_zDivergence - zDivergence_total) <= zThreshold){ 
-			zDivergence_damp = ( zDivergence_total * n) + ( zDivergence_damp * (1 - n));
+        if (abs(last_zDivergence - zDivergence_total) <= zThreshold){ 
+            zDivergence_damp = ( zDivergence_total * n) + ( zDivergence_damp * (1 - n));
 #print ("z low pass");
-		} else {
-			zDivergence_damp = zDivergence_total;
+        } else {
+            zDivergence_damp = zDivergence_total;
 #print ("z high pass");
-		}
+        }
 
 
 #	last_zDivergence = zDivergence_damp;
 
 #print (sprintf("z-G=%0.5f, z total=%0.5f, z div damped=%0.5f",zAccel, zDivergence_total,zDivergence_damp));
 
-		setprop("/sim/current-view/z-offset-m", xConfig + xDivergence_damp );
-		setprop("/sim/current-view/x-offset-m", yConfig + yDivergence_damp );
-		setprop("/sim/current-view/y-offset-m", zConfig + zDivergence_damp + seat_vertical_adjust );
-	}
-	settimer(headShake,0 );
+        setprop("/sim/current-view/z-offset-m", xConfig + xDivergence_damp );
+        setprop("/sim/current-view/x-offset-m", yConfig + yDivergence_damp );
+        setprop("/sim/current-view/y-offset-m", zConfig + zDivergence_damp + seat_vertical_adjust );
+    }
+    settimer(headShake,0 );
 
 }
 
@@ -790,16 +790,16 @@ var engine_running_Node = props.globals.initNode("engines/engine[0]/running", 1,
 
 hobbs_engine.reset();
 
-updateHobbs = func{
-	var running = engine_running_Node.getValue();
+var updateHobbs = func{
+    var running = engine_running_Node.getValue();
 
-	if(running){
-		hobbs_engine.start();
-	} else {
-		hobbs_engine.stop();
-	}
+    if(running){
+        hobbs_engine.start();
+    } else {
+        hobbs_engine.stop();
+    }
 
-	settimer(updateHobbs,0)
+    settimer(updateHobbs,0)
 }
 
 updateHobbs();
@@ -821,16 +821,16 @@ var tyresmoke = func {
 
 #print ("run_tyresmoke ",run_tyresmoke0,run_tyresmoke1,run_tyresmoke2);
 
-	if (run_tyresmoke0)
-		tyresmoke_0.update();
+    if (run_tyresmoke0)
+        tyresmoke_0.update();
 
-	if (run_tyresmoke1)
-		tyresmoke_1.update();
+    if (run_tyresmoke1)
+        tyresmoke_1.update();
 
-	if (run_tyresmoke2)
-		tyresmoke_2.update();
+    if (run_tyresmoke2)
+        tyresmoke_2.update();
 
-	settimer(tyresmoke, 0);
+    settimer(tyresmoke, 0);
 }# end tyresmoke
 
 
@@ -838,61 +838,90 @@ var tyresmoke = func {
 aircraft.rain.init();
 
 var rain = func {
-	var running = engine_running_Node.getValue();
-	aircraft.rain.update();
+    var running = engine_running_Node.getValue();
+    aircraft.rain.update();
 #	print("rain running ", running);
 
-	if(running){
-		setprop("sim/model/rain/flow-threshold-kt", 0);
-	} else {
-		setprop("sim/model/rain/flow-threshold-kt", 15);
-	}
-	
-	settimer(rain, 0);
+    if(running){
+        setprop("sim/model/rain/flow-threshold-kt", 0);
+    } else {
+        setprop("sim/model/rain/flow-threshold-kt", 15);
+    }
+
+    settimer(rain, 0);
 }
 
 #============================ Gear ===================================
+var gear_lever = 0;
 
-var run_gear = func (gear_lever) {
-    var gear = getprop("gear/gear/position-norm");
-    var uplock = 0;
-    var downlock = 0;
+var run_gear = func {
 
-    if (gear >= 0 and gear <= 0.02){
-        uplock = 1;
-    } elsif (gear <= 1 and gear >= 0.98){
-        downlock = 1
+    var gear_control = getprop("controls/gear/gear-down");
+    var cock = 0;
+
+    var gearleft = getprop("gear/gear/position-norm");
+    var uplockleft = 0;
+    var downlockleft = 0;
+
+    var gearright = getprop("gear/gear[1]/position-norm");
+    var uplockright = 0;
+    var downlockright = 0;
+
+#   print ("gearleft ", gearleft, " gearright ", gearright, " gear_control ", gear_control);
+
+    if ( gearleft >= 0 and gearleft <= 0.05 and gear_control == 1){
+        cock = -1;
+    } elsif (gearleft >= 0.95 and gearleft <= 1 and gear_control == 0){
+        cock = 1;
+    } else {
+        cock = 0;
     }
 
-    print ("uplock ", uplock, " downlock ", downlock);
+    if (gearleft > 0.05 and gearleft <= 0.07){
+        uplockleft = 1;
+    } elsif ( gearleft > 0.93 and gearleft < 0.95){
+        downlockleft = 1
+    }
 
-    if (!uplock and gear_lever == 1){
-        print("gear_lever ", gear_lever);
-        gear_lever = 1;
-        setprop("controls/gear/gear-lever", gear_lever);
+    if (gearright >= 0.05 and gearright <= 0.07){
+        uplockright = 1;
+    } elsif ( gearright >= 0.93 and gearright <= 0.95){
+        downlockright = 1
+    }
+
+#    print ("uplock ", uplock, " downlock ", downlock);
+
+    if( cock == -1 and gear_control == 1){
+        setprop("controls/gear/gear-lever", -1);
         settimer(run_gear, 0);
-    } elsif (!downlock and gear_lever == -1){
-        print("gear_lever", gear_lever);
-        setprop("controls/gear/gear-lever", gear_lever);
+    } elsif (!downlockleft and !downlockright and gear_control == 1){
+        setprop("controls/gear/gear-lever", 1);
+        setprop("controls/gear/oil-flow", 1);
+        settimer(run_gear, 0);
+    } elsif( cock == 1 and gear_control == 0){
+        setprop("controls/gear/gear-lever", 1);
+        settimer(run_gear, 0);
+    } elsif (!uplockleft and !uplockright and gear_control == 0){
+        setprop("controls/gear/gear-lever", -1);
+        setprop("controls/gear/oil-flow", -1);
         settimer(run_gear, 0);
     } else {
-        print("gear_lever", gear_lever);
         setprop("controls/gear/gear-lever", 0);
+        setprop("controls/gear/oil-flow", 0);
     }
-
-
-
 }
 
 #========================= Initialize ===============================
 
 var initialize = func {
-        print( "Initializing Spitfire utilities ..." );
+
+    print( "Initializing Spitfire utilities ..." );
 
     setprop("sim/model/position/latitude-deg", getprop("position/latitude-deg"));
     setprop("sim/model/position/longitude-deg", getprop("position/longitude-deg"));
     setprop("sim/model/position/altitude-ft", getprop("position/altitude-ft"));
     setprop("controls/gear/gear-lever", 0);
+    setprop("controls/gear/oil-flow", 0);
 
     rain();
     tyresmoke();
@@ -901,70 +930,67 @@ var initialize = func {
 
 # ============ listeners ==========================
 
-setlistener( "controls/lighting/nav-lights", func {
-	var nav_lights_node = props.globals.getNode("controls/lighting/nav-lights", 1);
-	var generic_node = props.globals.getNode("sim/multiplay/generic/int[0]", 1);
-	generic_node.setIntValue(nav_lights_node.getValue());
-	print("nav_lights ", nav_lights_node.getValue(), "generic_node ", generic_node.getValue());
-	}
-); 
-
-setlistener("gear/gear[0]/position-norm", func {
-	var gear = getprop("gear/gear[0]/position-norm");
-	
-	if (gear == 1 ){
-		run_tyresmoke0 = 1;
-	}else{
-		run_tyresmoke0 = 0;
-	}
-
-	},
-	1,
-	0);
-
-setlistener("gear/gear[1]/position-norm", func {
-	var gear = getprop("gear/gear[1]/position-norm");
-	
-	if (gear == 1 ){
-		run_tyresmoke1 = 1;
-	}else{
-		run_tyresmoke1 = 0;
-	}
-
-	},
-	1,
-	0);
-
-setlistener("gear/gear[2]/position-norm", func {
-	var gear = getprop("gear/gear[2]/position-norm");
-	
-	if (gear == 1 ){
-		run_tyresmoke2 = 1;
-	}else{
-		run_tyresmoke2 = 0;
-	}
-
-	},
-	1,
-	0);
-
-setlistener("controls/gear/gear-down", func (n){
-    var gear_control = n.getValue();
-    var gear_lever = 0;
-
-    if (gear_control == 0) {
-        print("gear control 0 ", gear_control);
-        gear_lever = -1;
-    } else {
-        print("gear control 1 ", gear_control);
-        gear_lever = 1;
+    setlistener( "controls/lighting/nav-lights", func {
+        var nav_lights_node = props.globals.getNode("controls/lighting/nav-lights", 1);
+        var generic_node = props.globals.getNode("sim/multiplay/generic/int[0]", 1);
+        generic_node.setIntValue(nav_lights_node.getValue());
+        print("nav_lights ", nav_lights_node.getValue(), "generic_node ", generic_node.getValue());
     }
-        
-    run_gear(gear_lever);
+    ); 
 
-	},
-	0,
-	0);
+    setlistener("gear/gear[0]/position-norm", func {
+        var gear = getprop("gear/gear[0]/position-norm");
+
+        if (gear == 1 ){
+            run_tyresmoke0 = 1;
+        }else{
+            run_tyresmoke0 = 0;
+        }
+
+    },
+        1,
+        0);
+
+    setlistener("gear/gear[1]/position-norm", func {
+        var gear = getprop("gear/gear[1]/position-norm");
+
+        if (gear == 1 ){
+            run_tyresmoke1 = 1;
+        }else{
+            run_tyresmoke1 = 0;
+        }
+
+    },
+        1,
+        0);
+
+    setlistener("gear/gear[2]/position-norm", func {
+        var gear = getprop("gear/gear[2]/position-norm");
+
+        if (gear == 1 ){
+            run_tyresmoke2 = 1;
+        }else{
+            run_tyresmoke2 = 0;
+        }
+
+    },
+        1,
+        0);
+
+    setlistener("controls/gear/gear-down", func (n){
+        var gear_control = n.getValue();
+
+        if (gear_control == 0) {
+            gear_lever = -1;
+        } else {
+            gear_lever = 1;
+        }
+
+        run_gear();
+
+    },
+        0,
+        0);
 
 
 } #end init

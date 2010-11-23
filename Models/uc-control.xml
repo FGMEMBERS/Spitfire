@@ -4,25 +4,26 @@
 	<path>uc-control.ac</path>
 
 	<animation>
+		<type>pick</type>
+		<visible>true</visible>
+		<object-name>lever-assmbly</object-name>		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>/controls/gear/gear-down</property>
+			</binding>
+		</action>
+	</animation>
+
+	<animation>
 		<type>rotate</type>
-		<!--<condition>
-			<and>
-				<greater-than>
-					<property>gear/gear/position-norm</property>
-					<value>0</value>
-				</greater-than>
-				<less-than>
-					<property>gear/gear[0]/position-norm</property>
-					<value>1</value>
-				</less-than>
-			</and>
-		</condition>-->
 		<object-name>lever-assmbly</object-name>
 		<property>/controls/gear/gear-lever</property>
 		<interpolation>
 			<entry>
 				<ind>-1</ind>
-				<dep>45</dep>
+				<dep>65</dep>
 			</entry>
 			<entry>
 				<ind>0</ind>
@@ -30,40 +31,40 @@
 			</entry>
 			<entry>
 				<ind>1</ind>
-				<dep>-45</dep>
+				<dep>-65</dep>
 			</entry>
 		</interpolation>
-		<axis>
-			<x>0</x>
-			<y>1</y>
-			<z>0</z>
-		</axis>
-	</animation>
-
-	<!--<animation>
-		<type>rotate</type>
-		<condition>
-			<or>
-				<equals>
-					<property>/gear/gear/position-norm</property>
-					<value>0</value>
-				</equals>
-				<equals>
-					<property>/gear/gear/position-norm</property>
-					<value>1</value>
-				</equals>
-			</or>
-		</condition>
-		<object-name>indicator-group</object-name>
-		<property>gear/gear/position-norm</property>
-		<factor>0</factor>
-		<offset>20</offset>
 		<axis>
 			<x>0</x>
 			<y>-1</y>
 			<z>0</z>
 		</axis>
-	</animation>-->
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>indicator-group</object-name>
+		<property>controls/gear/oil-flow</property>
+		<interpolation>
+			<entry>
+				<ind>-1</ind>
+				<dep>-10</dep>
+			</entry>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>10</dep>
+			</entry>
+		</interpolation>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
 
 	<!--<animation>
 		<type>rotate</type>

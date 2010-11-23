@@ -258,7 +258,7 @@
 			<x-m>3.45</x-m>
 			<y-m>0.37</y-m>
 			<z-m>-0.07</z-m>
-			<pitch-deg>30</pitch-deg>
+			<pitch-deg>45</pitch-deg>
 		</offsets>
 	</model>
 	<model>
@@ -813,6 +813,14 @@
 				<dep>0</dep>
 			</entry>
 			<entry>
+				<ind>0.07</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>0.93</ind>
+				<dep>96</dep>
+			</entry>
+			<entry>
 				<ind>1</ind>
 				<dep>96</dep>
 			</entry>
@@ -834,6 +842,14 @@
 			<entry>
 				<ind>0</ind>
 				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>0.07</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>0.93</ind>
+				<dep>-96</dep>
 			</entry>
 			<entry>
 				<ind>1</ind>
@@ -859,6 +875,14 @@
 				<dep>-90.4</dep>
 			</entry>
 			<entry>
+				<ind>0.07</ind>
+				<dep>-90.4</dep>
+			</entry>
+			<entry>
+				<ind>0.93</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
 				<ind>1</ind>
 				<dep>0</dep>
 			</entry>
@@ -880,6 +904,14 @@
 			<entry>
 				<ind>0</ind>
 				<dep>90.4</dep>
+			</entry>
+			<entry>
+				<ind>0.07</ind>
+				<dep>90.4</dep>
+			</entry>
+			<entry>
+				<ind>0.93</ind>
+				<dep>0</dep>
 			</entry>
 			<entry>
 				<ind>1</ind>
