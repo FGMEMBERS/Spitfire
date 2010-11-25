@@ -264,7 +264,7 @@
 	<model>
 		<path>Aircraft/Spitfire/Models/control-stick.xml</path>
 		<offsets>
-			<x-m>3.45</x-m>
+			<x-m>3.4715</x-m>
 			<y-m>-0.0</y-m>
 			<z-m>-0.80</z-m>
 		</offsets>
@@ -298,9 +298,9 @@
 		<path>Aircraft/Spitfire/Models/compass-p11.xml</path>
 		<name>Compass-Bowl</name>
 		<offsets>
-			<x-m>3.265</x-m>
+			<x-m>3.300</x-m>
 			<y-m>-0.0</y-m>
-			<z-m>-0.15</z-m>
+			<z-m>-0.175</z-m>
 		</offsets>
 	</model>
 
