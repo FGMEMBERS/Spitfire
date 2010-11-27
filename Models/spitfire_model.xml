@@ -256,25 +256,25 @@
 		<path>Aircraft/Spitfire/Models/uc-control.xml</path>
 		<offsets>
 			<x-m>3.45</x-m>
-			<y-m>0.37</y-m>
-			<z-m>-0.07</z-m>
+			<y-m>0.365</y-m>
+			<z-m>-0.120</z-m>
 			<pitch-deg>45</pitch-deg>
 		</offsets>
 	</model>
 	<model>
 		<path>Aircraft/Spitfire/Models/uc-emergency.xml</path>
 		<offsets>
-			<x-m>3.675</x-m>
-			<y-m>0.37</y-m>
-			<z-m>-0.1</z-m>
+			<x-m>3.670</x-m>
+			<y-m>0.39</y-m>
+			<z-m>-0.225</z-m>
 		</offsets>
 	</model>
 	<model>
 		<path>Aircraft/Spitfire/Models/control-stick.xml</path>
 		<offsets>
-			<x-m>3.4715</x-m>
+			<x-m>3.51</x-m>
 			<y-m>-0.0</y-m>
-			<z-m>-0.80</z-m>
+			<z-m>-0.85</z-m>
 		</offsets>
 	</model>
 	<model>
