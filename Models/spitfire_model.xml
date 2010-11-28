@@ -1126,8 +1126,6 @@
 		</interpolation>
 		<axis>
 			<x1-m>3.74</x1-m>
-			<!-- ***************** Radiator Flap*********************** -->
-
 			<y1-m>0.19</y1-m>
 			<z1-m>-0.80</z1-m>
 			<x2-m>3.74</x2-m>
@@ -1136,10 +1134,7 @@
 		</axis>
 	</animation>
 
-
 	<!-- ***************** Seat Height*********************** -->
-
-
 	<animation>
 		<type>pick</type>
 		<visible>true</visible>
@@ -1165,8 +1160,8 @@
 				<command>property-adjust</command>
 				<property>sim/current-view/y-offset-m</property>
 				<step type="double">0.01</step>
-				<min type="double">0.48</min>
-				<max type="double">0.58</max>
+				<min type="double">0.477</min>
+				<max type="double">0.577</max>
 			</binding>
 		</action>
 	</animation>
@@ -1201,7 +1196,20 @@
 		</center>
 	</animation>
 
-	<!--4.10254	-0.403489	-0.253859-->
+	<!-- ***************** Map Box*********************** -->
+	<animation>
+		<type>pick</type>
+		<visible>true</visible>
+		<object-name>Map-Box</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>dialog-show</command>
+				<dialog-name>map</dialog-name>
+			</binding>
+		</action>
+	</animation>
 
 	<!-- 
 <animation>

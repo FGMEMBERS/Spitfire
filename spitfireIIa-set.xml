@@ -457,7 +457,7 @@ Aug 2004 Vivian Meazza, vivian.meazza at lineone.net
 					</condition>
 					<command>property-assign</command>
 					<property>sim/current-view/y-offset-m</property>
-					<value type="double">0.53</value>
+					<value type="double">0.527</value>
 				</binding>
 			</key>
 			<key n="85">
@@ -480,8 +480,8 @@ Aug 2004 Vivian Meazza, vivian.meazza at lineone.net
 					<command>property-adjust</command>
 					<property>sim/current-view/y-offset-m</property>
 					<step type="double">-0.01</step>
-					<min type="double">0.48</min>
-					<max type="double">0.58</max>
+					<min type="double">0.477</min>
+					<max type="double">0.577</max>
 				</binding>
 			</key>
 			<key n="117">
@@ -504,8 +504,8 @@ Aug 2004 Vivian Meazza, vivian.meazza at lineone.net
 					<command>property-adjust</command>
 					<property>sim/current-view/y-offset-m</property>
 					<step type="double">0.01</step>
-					<min type="double">0.48</min>
-					<max type="double">0.58</max>
+					<min type="double">0.477</min>
+					<max type="double">0.577</max>
 				</binding>
 			</key>
 			<!-- map keys for mag switches  -->
