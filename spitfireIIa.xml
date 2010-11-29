@@ -445,6 +445,76 @@ flap drag not available
 										prop="/gear/canopy/position-norm"/>
 	</gear>
 
+	<!-- left dummy main spring="0.7" damp="3.0"-->
+	<gear
+		x="-2.20"
+		y="0.87"
+		z="-2.00"
+		compression="0.25"
+		upx="-0.31"
+		upy="-0.07"
+		upz="0.95"
+	>
+		<control-input axis="/controls/gear/brake-left"
+									 control="BRAKE"
+									 transition-time="1"
+									 src0="0"
+									 src1="1"
+									 dst0="0"
+									 dst1="0.75"/>
+		<!--<control-speed control="BRAKE"
+									 transition-time="1"/>
+		<control-input axis="/controls/gear/brake-parking"
+									 control="BRAKE"
+									 split="true"/>-->
+		<control-input axis="/controls/gear/chock-left"
+									 control="BRAKE"
+									 split="true"/>
+		<!--<control-input axis="/controls/gear/chock-left"
+									 control="EXTEND"/>-->
+		<control-input axis="/controls/gear/gear-down"
+									 control="EXTEND"/>
+		<control-speed control="EXTEND"
+									 transition-time="1"/>
+		<control-output control="EXTEND"
+										prop="/gear/gear[4]/position-norm"/>
+	</gear>
+
+	<!-- right dummy main spring="0.7" damp="3.0" -->
+	<gear
+		x="-2.20"
+		y="-0.87"
+		z="-2.00"
+		compression="0.25"
+		upx="-0.31"
+		upy="0.07"
+		upz="0.95"
+	>
+		<control-input axis="/controls/gear/brake-right"
+									 control="BRAKE"
+									 transition-time="1"
+									 src0="0"
+									 src1="1"
+									 dst0="0"
+									 dst1="0.75"/>
+		<!--<control-speed control="BRAKE"
+									 transition-time="1"/>
+		<control-input axis="/controls/gear/brake-parking"
+									 control="BRAKE"
+									 split="true"/>-->
+		<control-input axis="/controls/gear/chock-right"
+									 control="BRAKE"
+									 split="true"/>
+		<!--<control-input axis="/controls/gear/chock-right"
+									 control="EXTEND"/>-->
+		<control-input axis="/controls/gear/gear-down"
+									 control="EXTEND"/>
+		<control-speed control="EXTEND"
+									 transition-time="1"/>
+		<control-output control="EXTEND"
+										prop="/gear/gear[5]/position-norm"/>
+	</gear>
+
 	<!-- Fuselage tanks. 
 Weight of contents calculated using 100 octane AVGAS density of 695 kg/m3 @ 15degC
 -->
