@@ -916,6 +916,7 @@
 		<property>gear/gear[1]/position-norm</property>
 		<interpolation>
 			<entry>
+				<ind>0</ind>
 				<dep>91.1</dep>
 			</entry>
 			<entry>
@@ -1024,6 +1025,75 @@
 			<x2-m>2.1962</x2-m>
 			<y2-m>0.929497</y2-m>
 			<z2-m>-1.67797</z2-m>
+		</axis>
+	</animation>
+
+	<!--2.32036	-0.397948	1.4848
+	2.32036	-0.488667	1.5091-->
+	<!--2.32036	-0.488667	1.48452
+	2.32036	-0.397948	1.50883-->
+
+	<animation>
+		<type>translate</type>
+		<object-name>UC-Indicator-Port</object-name>
+		<property>/gear/gear/position-norm</property>
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep>0.09</dep>
+			</entry>
+			<entry>
+				<ind>0.07</ind>
+				<dep>0.09</dep>
+			</entry>
+			<entry>
+				<ind>0.93</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>0</dep>
+			</entry>
+		</interpolation>
+		<axis>
+			<x1-m>2.32036</x1-m>
+			<y1-m>-1.48452</y1-m>
+			<z1-m>-0.397948</z1-m>
+			<x2-m>2.32036</x2-m>
+			<y2-m>-1.50883</y2-m>
+			<z2-m>-0.488667</z2-m>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>translate</type>
+		<object-name>UC-Indicator-Stbd</object-name>
+		<property>/gear/gear[1]/position-norm</property>
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep>0.09</dep>
+			</entry>
+			<entry>
+				<ind>0.07</ind>
+				<dep>0.09</dep>
+			</entry>
+			<entry>
+				<ind>0.93</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>0</dep>
+			</entry>
+		</interpolation>
+		<axis>
+			<x1-m>2.32036</x1-m>
+			<y1-m>1.48452</y1-m>
+			<z1-m>-0.397948</z1-m>
+			<x2-m>2.32036</x2-m>
+			<y2-m>1.50883</y2-m>
+			<z2-m>-0.488667</z2-m>
 		</axis>
 	</animation>
 
