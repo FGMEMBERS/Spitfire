@@ -247,8 +247,8 @@
 	<model>
 		<path>Aircraft/Spitfire/Models/throttle.xml</path>
 		<offsets>
-			<x-m>3.40</x-m>
-			<y-m>-0.39</y-m>
+			<x-m>3.47</x-m>
+			<y-m>-0.37</y-m>
 			<z-m>-0.10</z-m>
 		</offsets>
 	</model>
@@ -264,7 +264,7 @@
 	<model>
 		<path>Aircraft/Spitfire/Models/uc-emergency.xml</path>
 		<offsets>
-			<x-m>3.670</x-m>
+			<x-m>3.80</x-m>
 			<y-m>0.39</y-m>
 			<z-m>-0.225</z-m>
 		</offsets>
@@ -280,7 +280,7 @@
 	<model>
 		<path>Aircraft/Spitfire/Models/trim-wheel-elev.xml</path>
 		<offsets>
-			<x-m>3.52</x-m>
+			<x-m>3.60</x-m>
 			<y-m>-0.3725</y-m>
 			<z-m>-0.135</z-m>
 		</offsets>
@@ -288,7 +288,7 @@
 	<model>
 		<path>Aircraft/Spitfire/Models/trim-knob-rudder.xml</path>
 		<offsets>
-			<x-m>3.64</x-m>
+			<x-m>3.72</x-m>
 			<y-m>-0.3725</y-m>
 			<z-m>-0.16</z-m>
 		</offsets>
