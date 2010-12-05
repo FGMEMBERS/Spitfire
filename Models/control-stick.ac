@@ -4453,7 +4453,7 @@ refs 4
 kids 0
 OBJECT group
 name "Pedal-stbd"
-loc -3.81685 1.07291 0.185338
+loc -3.76425 1.07291 0.185338
 kids 9
 OBJECT poly
 name "strap-stbd"
@@ -10551,7 +10551,7 @@ refs 4
 kids 0
 OBJECT group
 name "Pedal-port"
-loc -3.81685 1.07291 0.185338
+loc -3.76425 1.07291 0.185338
 kids 9
 OBJECT poly
 name "cylinder"
