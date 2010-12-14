@@ -1,23 +1,46 @@
 <?xml version="1.0"?>
-  <PropertyList> 
-   
-   <path>starter.ac</path>
-    
-	<animation> 
-      <type>material</type>
-      <emission> 
-        <factor-prop>/controls/lighting/panel-norm</factor-prop>
-        <red>0.75</red>
-        <green>0.25</green>
-        <blue>0.25</blue>
-      </emission>
-    </animation>
-    
+<PropertyList>
+
+	<path>starter.ac</path>
+
+	<animation>
+		<type>material</type>
+		<emission>
+			<factor-prop>/controls/lighting/panel-norm</factor-prop>
+			<red>0.75</red>
+			<green>0.25</green>
+			<blue>0.25</blue>
+		</emission>
+	</animation>
+
+	<animation>
+		<type>pick</type>
+		<visible>true</visible>
+		<object-name>button</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>nasal</command>
+				<script>
+					spitfire.startCof(1);
+				</script>
+			</binding>
+			<mod-up>
+				<binding>
+					<command>nasal</command>
+					<script>
+						spitfire.startCof(0);
+					</script>
+				</binding>
+			</mod-up>
+		</action>
+	</animation>
+
 	<!-- *** LoD *** -->
-    
-	<animation> 
-      <type>range</type>
-      <min-m>0</min-m>
-      <max-m>5</max-m>
-    </animation>
-  </PropertyList>
+	<animation>
+		<type>range</type>
+		<min-m>0</min-m>
+		<max-m>5</max-m>
+	</animation>
+</PropertyList>

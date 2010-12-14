@@ -1,9 +1,10 @@
 <?xml version="1.0"?>
 <!--
-  Zeppelin LZ 121 "Nordstern" airship for FlightGear.
-
   Copyright (C) 2010  Anders Gidenstam  (anders(at)gidenstam.org)
   This file is licensed under the GPL license version 2 or later.
+	
+	Amendment to alter into standard RAF compass type P 11
+	
 -->
 <PropertyList>
 
@@ -26,6 +27,16 @@
 	</offsets>
 
 	<animation>
+		<type>material</type>
+		<emission>
+			<factor-prop>controls/lighting/panel-norm</factor-prop>
+			<red>0.75</red>
+			<green>0.25</green>
+			<blue>0.25</blue>
+		</emission>
+	</animation>
+
+	<animation>
 		<type>pick</type>
 		<object-name>button-left</object-name>
 		<visible>false</visible>
@@ -46,7 +57,8 @@
 	<animation>
 		<type>pick</type>
 		<object-name>button-right</object-name>
-		<visible>false</visible>		<action>
+		<visible>false</visible>
+		<action>
 			<button>0</button>
 			<repeatable>true</repeatable>
 			<interval-sec>0.2</interval-sec>
@@ -95,15 +107,6 @@
 		</action>
 	</animation>
 
-	<animation>
-		<type>material</type>
-		<emission>
-			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.75</red>
-			<green>0.25</green>
-			<blue>0.25</blue>
-		</emission>
-	</animation>
 
 	<!--<animation>
 		<name>compass_unit</name>

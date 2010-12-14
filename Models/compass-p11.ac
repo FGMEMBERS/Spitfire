@@ -1,7 +1,8 @@
 AC3Db
 MATERIAL "ac3dmat1" rgb 1 1 1  amb 0.2 0.2 0.2  emis 0 0 0  spec 0.2 0.2 0.2  shi 128  trans 0
-MATERIAL "black_paint" rgb 0.05 0.05 0.05  amb 0.05 0.05 0.05  emis 0 0 0  spec 0.1 0.1 0.1  shi 32  trans 0
+MATERIAL "ac3dmat12" rgb 0.6 0.6 0.6  amb 0.6 0.6 0.6  emis 0 0 0  spec 0.8 0.8 0.8  shi 100  trans 0
 MATERIAL "textured_paint" rgb 1 1 1  amb 1 1 1  emis 0.502 0.502 0.502  spec 1 1 1  shi 100  trans 0
+MATERIAL "black_paint" rgb 0.05 0.05 0.05  amb 0.05 0.05 0.05  emis 0 0 0  spec 0.1 0.1 0.1  shi 32  trans 0
 MATERIAL "glass" rgb 0.8 0.8 0.95  amb 0.8 0.8 0.95  emis 0 0 0  spec 0.2 0.2 0.2  shi 32  trans 0.85
 MATERIAL "textured_paint" rgb 1 1 1  amb 1 1 1  emis 0 0 0  spec 1 1 1  shi 71  trans 0
 OBJECT world
@@ -1134,28 +1135,28 @@ numvert 12
 -0.0502165 0 -0.0167224
 numsurf 4
 SURF 0x0
-mat 1
+mat 3
 refs 4
 3 0 0
 9 0 0
 8 0 0
 1 0 0
 SURF 0x0
-mat 4
+mat 5
 refs 4
 1 0 0
 11 0 0
 10 0 0
 3 0 0
 SURF 0x0
-mat 4
+mat 5
 refs 4
 2 0 0
 6 0 0
 7 0 0
 0 0 0
 SURF 0x0
-mat 1
+mat 3
 refs 4
 0 0 0
 4 0 0
@@ -1185,35 +1186,35 @@ numvert 14
 -0.0115148 0 -8.98777e-006
 numsurf 5
 SURF 0x0
-mat 1
+mat 3
 refs 4
 0 0 0
 10 0 0
 12 0 0
 1 0 0
 SURF 0x0
-mat 4
+mat 5
 refs 4
 1 0 0
 2 0 0
 3 0 0
 0 0 0
 SURF 0x0
-mat 4
+mat 5
 refs 4
 13 0 0
 9 0 0
 8 0 0
 11 0 0
 SURF 0x0
-mat 4
+mat 5
 refs 4
 11 0 0
 7 0 0
 6 0 0
 13 0 0
 SURF 0x0
-mat 4
+mat 5
 refs 4
 10 0 0
 4 0 0
@@ -1552,6 +1553,7 @@ name "housing"
 loc 0 -0.120157 0
 data 12
 Cylinder.001
+texture "large-bezel.png"
 crease 30.000000
 numvert 386
 0 0.129992 0
@@ -4867,193 +4869,193 @@ numvert 33
 0.0399593 0.145964 -0.0399593
 numsurf 32
 SURF 0x0
-mat 3
+mat 4
 refs 3
 0 0 0
 18 0 0
 19 0 0
 SURF 0x0
-mat 3
+mat 4
 refs 3
 0 0 0
 32 0 0
 1 0 0
 SURF 0x0
-mat 3
+mat 4
 refs 3
 0 0 0
 1 0 0
 2 0 0
 SURF 0x0
-mat 3
+mat 4
 refs 3
 0 0 0
 2 0 0
 3 0 0
 SURF 0x0
-mat 3
+mat 4
 refs 3
 0 0 0
 3 0 0
 4 0 0
 SURF 0x0
-mat 3
+mat 4
 refs 3
 0 0 0
 4 0 0
 5 0 0
 SURF 0x0
-mat 3
+mat 4
 refs 3
 0 0 0
 5 0 0
 6 0 0
 SURF 0x0
-mat 3
+mat 4
 refs 3
 0 0 0
 6 0 0
 7 0 0
 SURF 0x0
-mat 3
+mat 4
 refs 3
 0 0 0
 7 0 0
 8 0 0
 SURF 0x0
-mat 3
+mat 4
 refs 3
 0 0 0
 8 0 0
 9 0 0
 SURF 0x0
-mat 3
+mat 4
 refs 3
 0 0 0
 9 0 0
 10 0 0
 SURF 0x0
-mat 3
+mat 4
 refs 3
 0 0 0
 10 0 0
 11 0 0
 SURF 0x0
-mat 3
+mat 4
 refs 3
 0 0 0
 11 0 0
 12 0 0
 SURF 0x0
-mat 3
+mat 4
 refs 3
 0 0 0
 12 0 0
 13 0 0
 SURF 0x0
-mat 3
+mat 4
 refs 3
 0 0 0
 13 0 0
 14 0 0
 SURF 0x0
-mat 3
+mat 4
 refs 3
 0 0 0
 14 0 0
 15 0 0
 SURF 0x0
-mat 3
+mat 4
 refs 3
 0 0 0
 15 0 0
 16 0 0
 SURF 0x0
-mat 3
+mat 4
 refs 3
 0 0 0
 16 0 0
 17 0 0
 SURF 0x0
-mat 3
+mat 4
 refs 3
 0 0 0
 17 0 0
 18 0 0
 SURF 0x0
-mat 3
+mat 4
 refs 3
 0 0 0
 19 0 0
 20 0 0
 SURF 0x0
-mat 3
+mat 4
 refs 3
 0 0 0
 20 0 0
 21 0 0
 SURF 0x0
-mat 3
+mat 4
 refs 3
 0 0 0
 21 0 0
 22 0 0
 SURF 0x0
-mat 3
+mat 4
 refs 3
 0 0 0
 22 0 0
 23 0 0
 SURF 0x0
-mat 3
+mat 4
 refs 3
 0 0 0
 23 0 0
 24 0 0
 SURF 0x0
-mat 3
+mat 4
 refs 3
 0 0 0
 24 0 0
 25 0 0
 SURF 0x0
-mat 3
+mat 4
 refs 3
 0 0 0
 25 0 0
 26 0 0
 SURF 0x0
-mat 3
+mat 4
 refs 3
 0 0 0
 26 0 0
 27 0 0
 SURF 0x0
-mat 3
+mat 4
 refs 3
 0 0 0
 27 0 0
 28 0 0
 SURF 0x0
-mat 3
+mat 4
 refs 3
 0 0 0
 28 0 0
 29 0 0
 SURF 0x0
-mat 3
+mat 4
 refs 3
 0 0 0
 29 0 0
 30 0 0
 SURF 0x0
-mat 3
+mat 4
 refs 3
 0 0 0
 30 0 0
 31 0 0
 SURF 0x0
-mat 3
+mat 4
 refs 3
 31 0 0
 32 0 0

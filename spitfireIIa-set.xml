@@ -145,6 +145,13 @@ Aug 2004 Vivian Meazza, vivian.meazza at lineone.net
 			<setting>0.00</setting>
 			<setting>1.00</setting>
 		</flaps>
+		<cowl-flaps>
+			<setting>0.00</setting>
+			<setting>0.25</setting>
+			<setting>0.5</setting>
+			<setting>0.75</setting>
+			<setting>1.00</setting>
+		</cowl-flaps>
 		<alarms>
 			<gear-warn type="double">0</gear-warn>
 		</alarms>
@@ -264,8 +271,8 @@ Aug 2004 Vivian Meazza, vivian.meazza at lineone.net
 				</binding>
 			</key>
 			<!--map keys for Coffman starter -->
-      <key n="115">
-        <name>s</name>
+			<key n="115">
+				<name>s</name>
 				<desc>Coffman Starter.</desc>
 				<binding>
 					<command>nasal</command>
@@ -384,19 +391,20 @@ Aug 2004 Vivian Meazza, vivian.meazza at lineone.net
 			<key n="72">
 				<name>H</name>
 				<desc>Radiator Flap down.</desc>
+				<!--<command>property-assign</command>
+				<property>controls/engines/engine/</property>
+				<value type="double">0.334</value>-->
 				<binding>
-					<command>property-assign</command>
-					<property>controls/engines/engine/cowl-flaps-norm</property>
-					<value type="double">0.334</value>
+					<command>nasal</command>
+					<script>controls.stepProps("/controls/engines/engine/cowl-flaps-norm","/sim/cowl-flaps",-1);</script>
 				</binding>
 			</key>
 			<key n="104">
 				<name>h</name>
 				<desc>Radiator Flap Up.</desc>
 				<binding>
-					<command>property-assign</command>
-					<property>controls/engines/engine/cowl-flaps-norm</property>
-					<value type="double">0.0</value>
+					<command>nasal</command>
+					<script>controls.stepProps("/controls/engines/engine/cowl-flaps-norm","/sim/cowl-flaps",1);</script>
 				</binding>
 			</key>
 			<!-- map keys for Cancel Gear Warning  -->

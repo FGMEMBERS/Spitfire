@@ -25,53 +25,65 @@
 	<!-- blind flying instruments -->
 	<model>
 		<path>Aircraft/Spitfire/Models/asi.xml</path>
+		<!--3.26664	0.222092	0.0992981
+		3.26664	0.222092	0.0992981-->
 		<offsets>
-			<x-m>3.265</x-m>
-			<y-m>-0.10</y-m>
-			<z-m>0.28</z-m>
+			<x-m>3.26664</x-m>
+			<y-m>-0.0992981</y-m>
+			<z-m>0.222092</z-m>
 		</offsets>
 	</model>
 	<model>
 		<path>Aircraft/Spitfire/Models/attitude.xml</path>
 		<name>Attitude</name>
+		<!--3.26664	0.219903	1.29594e-008
+		3.26664	0.219903	1.29594e-008-->
 		<offsets>
 			<x-m>3.265</x-m>
 			<y-m>0.0</y-m>
-			<z-m>0.28</z-m>
+			<z-m>0.219903</z-m>
 		</offsets>
 	</model>
 	<model>
 		<path>Aircraft/Spitfire/Models/vsi.xml</path>
+		<!--3.26664	0.219903	-0.124499
+		3.26664	0.219903	-0.124499-->
 		<offsets>
 			<x-m>3.265</x-m>
 			<y-m>0.10</y-m>
-			<z-m>0.28</z-m>
+			<z-m>0.219903</z-m>
 		</offsets>
 	</model>
 	<model>
 		<path>Aircraft/Spitfire/Models/altimeter.xml</path>
+		<!--3.26664	0.123125	0.101239
+		3.26664	0.123125	0.101239-->
 		<name>Altimeter</name>
 		<offsets>
 			<x-m>3.265</x-m>
-			<y-m>-0.10</y-m>
-			<z-m>0.18</z-m>
+			<y-m>-0.101239</y-m>
+			<z-m>0.123125</z-m>
 		</offsets>
 	</model>
 	<model>
+		<!--3.26664	0.118597	1.07102e-008
+		3.26664	0.118597	1.07102e-008-->
 		<path>Aircraft/Spitfire/Models/compass.xml</path>
 		<offsets>
 			<x-m>3.265</x-m>
 			<y-m>0</y-m>
-			<z-m>0.18</z-m>
+			<z-m>0.118597</z-m>
 		</offsets>
 	</model>
 	<model>
 		<path>Aircraft/Spitfire/Models/turn.xml</path>
 		<name>Turn</name>
+		<!--3.26664	0.118142	-0.121535
+		3.26664	0.118142	-0.121535-->
 		<offsets>
 			<x-m>3.265</x-m>
 			<y-m>0.10</y-m>
-			<z-m>0.18</z-m>
+			<z-m>0.118142</z-m>
 		</offsets>
 	</model>
 	<!-- end blind flying instruments -->
@@ -92,62 +104,76 @@
 			<z-m>0.38</z-m>
 		</offsets>
 	</model>
+	
 	<!-- engine instruments -->
 	<model>
 		<path>Aircraft/Spitfire/Models/rpm.xml</path>
+		<!--3.26664	0.183456	-0.290907
+		3.26664	0.183456	-0.290907-->
 		<offsets>
 			<x-m>3.265</x-m>
-			<y-m>0.19</y-m>
-			<z-m>0.32</z-m>
+			<y-m>0.290907</y-m>
+			<z-m>0.183456</z-m>
 		</offsets>
 	</model>
 	<model>
 		<path>Aircraft/Spitfire/Models/boost.xml</path>
+		<!--3.26664	0.262941	-0.22179
+		3.26664	0.262941	-0.22179-->
 		<offsets>
 			<x-m>3.265</x-m>
-			<y-m>0.25</y-m>
-			<z-m>0.23</z-m>
-		</offsets>
-	</model>
-	<model>
-		<path>Aircraft/Spitfire/Models/oil-pressure.xml</path>
-		<offsets>
-			<x-m>3.265</x-m>
-			<y-m>0.17</y-m>
-			<z-m>0.15</z-m>
-		</offsets>
-	</model>
-	<!---->
-	<model>
-		<path>Aircraft/Spitfire/Models/fuel.xml</path>
-		<offsets>
-			<x-m>3.265</x-m>
-			<y-m>0.27</y-m>
-			<z-m>0.08</z-m>
+			<y-m>0.22179</y-m>
+			<z-m>0.262941</z-m>
 		</offsets>
 	</model>
 	<model>
 		<path>Aircraft/Spitfire/Models/fuel-pressure.xml</path>
+		<!--3.26677	0.185946	-0.193828
+		3.26677	0.185946	-0.193828-->
 		<offsets>
 			<x-m>3.265</x-m>
-			<y-m>0.17</y-m>
-			<z-m>0.23</z-m>
+			<y-m>0.193828</y-m>
+			<z-m>0.185946</z-m>
+		</offsets>
+	</model>
+	<model>
+		<path>Aircraft/Spitfire/Models/fuel.xml</path>
+		<!--3.26664	0.033435	-0.29171
+		3.26664	0.033435	-0.29171-->
+		<offsets>
+			<x-m>3.265</x-m>
+			<y-m>0.29171</y-m>
+			<z-m>0.033435</z-m>
+		</offsets>
+	</model>
+	<model>
+		<path>Aircraft/Spitfire/Models/oil-pressure.xml</path>
+		<!--3.26677	0.108834	-0.193828
+		3.26677	0.108834	-0.193828-->
+		<offsets>
+			<x-m>3.265</x-m>
+			<y-m>0.193828</y-m>
+			<z-m>0.108834</z-m>
 		</offsets>
 	</model>
 	<model>
 		<path>Aircraft/Spitfire/Models/starter.xml</path>
+		<!--3.26664	0.0100965	-0.0914805
+		3.26664	0.0100965	-0.0914805-->
 		<offsets>
 			<x-m>3.265</x-m>
-			<y-m>0.12</y-m>
-			<z-m>0.05</z-m>
+			<y-m>0.0914805</y-m>
+			<z-m>0.0100965</z-m>
 		</offsets>
 	</model>
 	<model>
 		<path>Aircraft/Spitfire/Models/ring-pull.xml</path>
+		<!--3.26664	0.0441133	-0.354137
+3.26664	0.0441133	-0.354137-->
 		<offsets>
 			<x-m>3.265</x-m>
-			<y-m>0.33</y-m>
-			<z-m>0.08</z-m>
+			<y-m>0.354137</y-m>
+			<z-m>0.0441133</z-m>
 		</offsets>
 	</model>
 	<model>
@@ -178,68 +204,93 @@
 	<!-- miscellaneous (left panel) instruments -->
 	<model>
 		<path>Aircraft/Spitfire/Models/clock.xml</path>
+		<!--3.26664	0.128292	0.306873
+		3.26664	0.128292	0.306873-->
 		<offsets>
 			<x-m>3.265</x-m>
-			<y-m>-0.29</y-m>
-			<z-m>0.19</z-m>
+			<y-m>-0.306873</y-m>
+			<z-m>0.128292</z-m>
 		</offsets>
 	</model>
 	<model>
 		<path>Aircraft/Spitfire/Models/trim.xml</path>
+		<!--3.26664	0.0850959	0.218664
+		3.26664	0.0850959	0.218664-->
 		<offsets>
 			<x-m>3.265</x-m>
-			<y-m>-0.19</y-m>
-			<z-m>0.13</z-m>
+			<y-m>-0.218664</y-m>
+			<z-m>0.08509593</z-m>
 		</offsets>
 	</model>
 	<model>
 		<path>Aircraft/Spitfire/Models/triple.xml</path>
+		<!--3.26664	0.033435	0.29171
+		3.26664	0.033435	0.29171-->
 		<offsets>
 			<x-m>3.265</x-m>
-			<y-m>-0.25</y-m>
-			<z-m>0.05</z-m>
+			<y-m>-0.29171</y-m>
+			<z-m>0.033435</z-m>
 		</offsets>
 	</model>
 	<model>
 		<path>Aircraft/Spitfire/Models/magneto.xml</path>
+		<!--3.26664	0.0607927	0.36114
+		3.26664	0.0607927	0.36114-->
 		<offsets>
 			<x-m>3.265</x-m>
-			<y-m>-0.32</y-m>
-			<z-m>0.08</z-m>
+			<y-m>-0.36114</y-m>
+			<z-m>0.0607927</z-m>
 		</offsets>
 	</model>
 	<model>
 		<path>Aircraft/Spitfire/Models/flaps.xml</path>
+		<!--3.26664	0.308911	0.20005
+		3.26664	0.308911	0.20005-->
 		<offsets>
 			<x-m>3.265</x-m>
-			<y-m>-0.19</y-m>
-			<z-m>0.34</z-m>
+			<y-m>-0.20005</y-m>
+			<z-m>0.308911</z-m>
+		</offsets>
+	</model>
+	<model>
+		<path>Aircraft/Spitfire/Models/oxygen-control.xml</path>
+		<!--3.26664	0.229527	0.25126-->
+		<offsets>
+			<x-m>3.265</x-m>
+			<y-m>-0.25126</y-m>
+			<z-m>0.229527</z-m>
 		</offsets>
 	</model>
 	<model>
 		<path>Aircraft/Spitfire/Models/undercarriage-up-down.xml</path>
 		<name>Gear-Indicator</name>
+		<!--3.26664	0.158693	0.225371
+		3.26664	0.158693	0.225371-->
 		<offsets>
 			<x-m>3.265</x-m>
-			<y-m>-0.20</y-m>
-			<z-m>0.22</z-m>
+			<y-m>-0.225371</y-m>
+			<z-m>0.158693</z-m>
 		</offsets>
 	</model>
 	<model>
 		<path>Aircraft/Spitfire/Models/dimmer.xml</path>
+		<!--3.26664	0.0100965	0.0272552
+		3.26664	0.0100965	0.0272552-->
 		<offsets>
 			<x-m>3.265</x-m>
-			<y-m>-0.06</y-m>
-			<z-m>0.05</z-m>
+			<y-m>-0.0272552</y-m>
+			<z-m>0.0100965</z-m>
 		</offsets>
 	</model>
 
 	<model>
 		<path>Aircraft/Spitfire/Models/nav-light-switch.xml</path>
+		<!--3.26664	0.319142	0.242676
+		3.26664	0.319142	0.242676-->
 		<offsets>
 			<x-m>3.265</x-m>
-			<y-m>-0.23</y-m>
-			<z-m>0.34</z-m>
+			<y-m>-0.242676</y-m>
+			<z-m>0.319142</z-m>
 		</offsets>
 	</model>
 
@@ -302,7 +353,7 @@
 		<offsets>
 			<x-m>3.38</x-m>
 			<y-m>-0.0</y-m>
-			<z-m>0.53</z-m>
+			<z-m>0.528</z-m>
 		</offsets>
 	</model>
 	<model>
@@ -1112,12 +1163,20 @@
 				<dep>0</dep>
 			</entry>
 			<entry>
-				<ind>0.334</ind>
-				<dep>30</dep>
+				<ind>0.25</ind>
+				<dep>5</dep>
 			</entry>
 			<entry>
-				<ind>1</ind>
-				<dep>30</dep>
+				<ind>0.5</ind>
+				<dep>10</dep>
+			</entry>
+			<entry>
+				<ind>0.75</ind>
+				<dep>15</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep>20</dep>
 			</entry>
 		</interpolation>
 		<axis>
@@ -1176,10 +1235,14 @@
 		<object-name>Lever-Rad-Flap</object-name>
 		<action>
 			<button>0</button>
-			<repeatable>false</repeatable>
+			<repeatable>true</repeatable>
 			<binding>
-				<command>property-toggle</command>
+				<command>property-adjust</command>
 				<property>controls/engines/engine/cowl-flaps-norm</property>
+				<step type="double">0.25</step>
+				<min type="double">0</min>
+				<max type="double">1</max>
+				<wrap type="bool">true</wrap>
 			</binding>
 		</action>
 	</animation>
@@ -1194,11 +1257,19 @@
 				<dep>0</dep>
 			</entry>
 			<entry>
-				<ind>0.334</ind>
-				<dep>-20</dep>
+				<ind>0.25</ind>
+				<dep>-5</dep>
 			</entry>
 			<entry>
-				<ind>1</ind>
+				<ind>0.5</ind>
+				<dep>-10</dep>
+			</entry>
+			<entry>
+				<ind>0.75</ind>
+				<dep>-15</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind>
 				<dep>-20</dep>
 			</entry>
 		</interpolation>
@@ -1317,6 +1388,7 @@
 	<animation>
 		<type>material</type>
 		<object-name>Panel</object-name>
+		<object-name>Blind-Flying-Panel</object-name>
 		<emission>
 			<factor-prop>/controls/lighting/panel-norm</factor-prop>
 			<red>0.6</red>
@@ -1499,6 +1571,17 @@
 		<object-name>Canopy-F</object-name>
 	</animation>
 
+	<animation>
+		<type>select</type>
+		<object-name>Panel-Construction</object-name>
+		<object-name>Place-Holders</object-name>
+		<condition>
+				<equals>
+					<property>sim/current-view/view-number</property>
+					<value>-1</value>
+				</equals>
+		</condition>
+	</animation>
 
 	<!-- *** LoD for the whole model *** -->
 	<animation>

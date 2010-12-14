@@ -5,6 +5,7 @@
 
 	<animation>
 		<type>material</type>
+		<object-name>lighting-group</object-name>
 		<emission>
 			<factor-prop>/controls/lighting/panel-norm</factor-prop>
 			<red>0.75</red>
