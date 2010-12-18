@@ -1,6 +1,5 @@
 AC3Db
-MATERIAL "ac3dmat1" rgb 1 1 1  amb 1 1 1  emis 0 0 0  spec 0.5 0.5 0.5  shi 10  trans 0
-MATERIAL "ac3dmat12" rgb 0.266667 0.266667 0.266667  amb 0.266667 0.266667 0.266667  emis 0 0 0  spec 0.5 0.5 0.5  shi 10  trans 0
+MATERIAL "ac3dmat1" rgb 1 1 1  amb 1 1 1  emis 0 0 0  spec 0.502 0.502 0.502  shi 10  trans 0
 OBJECT world
 kids 2
 OBJECT poly
@@ -30,7 +29,7 @@ kids 0
 OBJECT poly
 name "Knob"
 loc 0.00455761 0 2.91038e-011
-texture "large-bezel.rgb"
+texture "large-bezel.png"
 crease 61.000000
 numvert 20
 0.00459484 0.00387189 0.00506837
@@ -175,49 +174,49 @@ refs 3
 9 0.260938 0.847656
 0 0.203125 0.847656
 SURF 0x0
-mat 1
+mat 0
 refs 3
 5 0.210202 0.260994
 7 0.640384 0.113281
 6 0.402585 0.113281
 SURF 0x0
-mat 1
+mat 0
 refs 3
 7 0.640384 0.113281
 5 0.210202 0.260994
 8 0.832766 0.260995
 SURF 0x0
-mat 1
+mat 0
 refs 3
 8 0.832766 0.260995
 5 0.210202 0.260994
 4 0.136719 0.5
 SURF 0x0
-mat 1
+mat 0
 refs 3
 8 0.832766 0.260995
 4 0.136719 0.5
 9 0.90625 0.5
 SURF 0x0
-mat 1
+mat 0
 refs 3
 9 0.90625 0.5
 4 0.136719 0.5
 3 0.210202 0.739005
 SURF 0x0
-mat 1
+mat 0
 refs 3
 9 0.90625 0.5
 3 0.210202 0.739005
 0 0.832766 0.739006
 SURF 0x0
-mat 1
+mat 0
 refs 3
 0 0.832766 0.739006
 3 0.210202 0.739005
 2 0.402585 0.886719
 SURF 0x0
-mat 1
+mat 0
 refs 3
 0 0.832766 0.739006
 2 0.402585 0.886719

@@ -1,12 +1,12 @@
 AC3Db
-MATERIAL "ac3dmat12" rgb 0.267 0.267 0.267  amb 0.267 0.267 0.267  emis 0 0 0  spec 0.502 0.502 0.502  shi 10  trans 0
+MATERIAL "ac3dmat12" rgb 0.266667 0.266667 0.266667  amb 0.266667 0.266667 0.266667  emis 0 0 0  spec 0.5 0.5 0.5  shi 10  trans 0
 MATERIAL "ac3dmat0" rgb 0 0 0  amb 0 0 0  emis 0 0 0  spec 0.5 0.5 0.5  shi 10  trans 0
 OBJECT world
 kids 3
 OBJECT poly
 name "plate"
 loc 0 -0.00107137 -0.013385
-texture "large-bezel.rgb"
+texture "large-bezel.png"
 crease 61.000000
 numvert 4
 0 0.0150503 0.0280341
@@ -30,7 +30,7 @@ kids 0
 OBJECT poly
 name "cylinder"
 loc 0.00414085 0.00139684 0.0145763
-texture "large-bezel.rgb"
+texture "large-bezel.png"
 crease 61.000000
 numvert 24
 -0.00414085 -0.00139684 -0.0231711
@@ -206,7 +206,7 @@ kids 0
 OBJECT poly
 name "pump"
 loc 0.00580175 0.00139684 0.0162372
-texture "large-bezel.rgb"
+texture "large-bezel.png"
 crease 61.000000
 numvert 25
 0.00602408 -0.00139686 -0.0256915

@@ -6,7 +6,7 @@ kids 2
 OBJECT poly
 name "plate"
 loc 0 -0.00107137 -0.013385
-texture "large-bezel.rgb"
+texture "large-bezel.png"
 crease 61.000000
 numvert 4
 0 -0.0116368 0.0267024

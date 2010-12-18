@@ -198,6 +198,14 @@ Aug 2004 Vivian Meazza, vivian.meazza at lineone.net
 				<kill-when-empty type="bool">1</kill-when-empty>
 			</tank>
 		</fuel>
+		<oxygen>
+			<tank n="0">
+				<name type="string">1</name>
+				<capacity-cu-ft type="double">0.4</capacity-cu-ft>
+				<level-cu-ft type="double">54</level-cu-ft>
+				<selected type="bool">1</selected>
+			</tank>
+		</oxygen>
 	</consumables>
 	<!-- set up control properties for YASim... -->
 	<controls>
@@ -631,6 +639,9 @@ Aug 2004 Vivian Meazza, vivian.meazza at lineone.net
 		<walkviews>
 			<file>Aircraft/spitfire/Models/spitfire-walk-views.nas</file>
 		</walkviews>
+		<oxygen>
+			<file>Aircraft/Generic/Oxygen/oxygen.nas</file>
+		</oxygen>
 	</nasal>
 	<ai>
 		<submodels>

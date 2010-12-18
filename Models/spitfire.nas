@@ -911,11 +911,14 @@ var run_gear = func {
     }
 }
 
+
+
 #========================= Initialize ===============================
 
 var initialize = func {
 
     print( "Initializing Spitfire utilities ..." );
+
 
     setprop("sim/model/position/latitude-deg", getprop("position/latitude-deg"));
     setprop("sim/model/position/longitude-deg", getprop("position/longitude-deg"));

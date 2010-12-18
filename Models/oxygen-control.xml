@@ -101,7 +101,7 @@
 	<property>/controls/oxygen/altitude-norm</property>
 	<interpolation>
 		<entry>
-			<ind>-1</ind>
+			<ind>0</ind>
 			<dep>-150</dep>
 		</entry>
 		<entry>
@@ -126,6 +126,38 @@
 		<z>0</z>
 	</axis>
 </animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>needle-contents</object-name>
+		<property>consumables/oxygen/tank/pressure-psi</property>
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep>-150</dep>
+			</entry>
+			<entry>
+				<ind>1000</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>2000</ind>
+				<dep>150</dep>
+			</entry>
+		</interpolation>
+		<!--0.0035198	-2.30837e-006	0.0309151
+	0.00363644	-2.30837e-006	0.0309151-->
+		<center>
+			<x-m>0.0035198</x-m>
+			<y-m>0.0309151</y-m>
+			<z-m>0</z-m>
+		</center>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
 
 	<!-- *** LoD *** -->
 	<animation>
