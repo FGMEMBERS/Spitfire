@@ -6,7 +6,8 @@
 	<animation>
 		<type>pick</type>
 		<visible>true</visible>
-		<object-name>lever-assmbly</object-name>		<action>
+		<object-name>lever-assmbly</object-name>
+		<action>
 			<button>0</button>
 			<repeatable>false</repeatable>
 			<binding>

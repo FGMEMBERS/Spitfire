@@ -4,17 +4,6 @@
 	<path>compass.ac</path>
 
 	<animation>
-		<type>material</type>
-		<object-name>lighting-group</object-name>
-		<emission>
-			<factor-prop>/controls/lighting/panel-norm</factor-prop>
-			<red>0.75</red>
-			<green>0.25</green>
-			<blue>0.25</blue>
-		</emission>
-	</animation>
-
-	<animation>
 		<type>pick</type>
 		<object-name>pick-left</object-name>
 		<visible>false</visible>
@@ -112,6 +101,21 @@
 		</axis>
 	</animation>
 
+	<animation>
+		<type>material</type>
+		<condition>
+			<greater-than>
+				<property>/controls/lighting/panel-norm</property>
+				<value>0</value>
+			</greater-than>
+		</condition>
+		<emission>
+			<factor-prop>/controls/lighting/panel-norm</factor-prop>
+			<red>0.75</red>
+			<green>0.25</green>
+			<blue>0.25</blue>
+		</emission>
+	</animation>
 
 	<!-- *** LoD *** -->
 	<animation>

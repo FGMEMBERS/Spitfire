@@ -892,14 +892,14 @@ var run_gear = func {
 #    print ("uplock ", uplock, " downlock ", downlock);
 
     if( cock == -1 and gear_control == 1){
-        setprop("controls/gear/gear-lever", -1);
+        setprop("controls/gear/gear-lever", -0.2);
         settimer(run_gear, 0);
     } elsif (!downlockleft and !downlockright and gear_control == 1){
         setprop("controls/gear/gear-lever", 1);
         setprop("controls/gear/oil-flow", 1);
         settimer(run_gear, 0);
     } elsif( cock == 1 and gear_control == 0){
-        setprop("controls/gear/gear-lever", 1);
+        setprop("controls/gear/gear-lever", 0.2);
         settimer(run_gear, 0);
     } elsif (!uplockleft and !uplockright and gear_control == 0){
         setprop("controls/gear/gear-lever", -1);

@@ -97437,7 +97437,7 @@ kids 0
 OBJECT group
 name "Place-Holders"
 loc 3.26665 0.190475 0.107669
-kids 45
+kids 47
 OBJECT poly
 name "disk"
 loc -3.38102 -0.187108 0.0183963
@@ -98165,6 +98165,38 @@ refs 3
 1 1 1
 0 0.5 0.5
 2 0 0
+kids 0
+OBJECT poly
+name "line"
+loc -2.00272e-005 0.162636 0.098797
+crease 61.000000
+numvert 3
+-1.19209e-006 -0.0378898 -0.154557
+-1.19209e-006 -0.0378898 -0.174277
+-1.19209e-006 -0.0378898 -0.134837
+numsurf 1
+SURF 0x32
+mat 15
+refs 3
+1 1 1
+0 0.5 0.5
+2 0 0
+kids 0
+OBJECT poly
+name "line"
+loc -2.00272e-005 0.162636 0.098797
+crease 61.000000
+numvert 3
+-1.19209e-006 -0.0576096 -0.154557
+-1.19209e-006 -0.0181698 -0.154557
+-1.19209e-006 -0.0378898 -0.154557
+numsurf 1
+SURF 0x32
+mat 15
+refs 3
+1 1 1
+2 0.5 0.5
+0 0 0
 kids 0
 OBJECT poly
 name "line"

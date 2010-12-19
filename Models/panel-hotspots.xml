@@ -288,7 +288,7 @@
 						</binding>
 					</mod-up>
 				</action>-->
-				<!-- fuel cocks -->
+				<!-- fuel cocks 
 				<action>
 					<name>lever upper open</name>
 					<button>0</button>
@@ -344,7 +344,7 @@
 							spitfire.openCock(1,0);
 						</script>
 					</binding>
-				</action>
+				</action>-->
 				<!-- primer pump -->
 				<action>
 					<name>primer pump</name>

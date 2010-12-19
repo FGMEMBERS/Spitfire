@@ -2,7 +2,7 @@
 <PropertyList>
 	<path>oxygen-supply.ac</path>
 
-	<animation>
+	<!--<animation>
 		<type>material</type>
 		<emission>
 			<factor-prop>/controls/lighting/panel-norm</factor-prop>
@@ -10,7 +10,7 @@
 			<green>0.25</green>
 			<blue>0.25</blue>
 		</emission>
-	</animation>
+	</animation>-->
 
 	<animation>
 		<type>pick</type>

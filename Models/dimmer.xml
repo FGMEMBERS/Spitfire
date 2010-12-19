@@ -3,16 +3,6 @@
 	<path>dimmer.ac</path>
 
 	<animation>
-		<type>material</type>
-		<emission>
-			<factor-prop>/controls/lighting/panel-norm</factor-prop>
-			<red>0.75</red>
-			<green>0.25</green>
-			<blue>0.25</blue>
-		</emission>
-	</animation>
-
-	<animation>
 		<type>pick</type>
 		<visible>false</visible>
 		<object-name>Pick-Inc</object-name>
@@ -68,6 +58,21 @@
 		</axis>
 	</animation>
 
+	<animation>
+		<type>material</type>
+		<condition>
+			<greater-than>
+				<property>/controls/lighting/panel-norm</property>
+				<value>0</value>
+			</greater-than>
+		</condition>
+		<emission>
+			<factor-prop>/controls/lighting/panel-norm</factor-prop>
+			<red>0.75</red>
+			<green>0.25</green>
+			<blue>0.25</blue>
+		</emission>
+	</animation>
 
 	<!-- *** LoD for the whole model *** -->
 	<animation>

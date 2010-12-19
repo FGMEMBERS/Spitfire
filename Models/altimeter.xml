@@ -5,14 +5,61 @@
 	<path>altimeter.ac</path>
 
 	<animation>
-		<type>material</type>
-		<emission>
-			<factor-prop>/controls/lighting/panel-norm</factor-prop>
-			<red>0.75</red>
-			<green>0.25</green>
-			<blue>0.25</blue>
-		</emission>
+		<type>pick</type>
+		<object-name>pick-left</object-name>
+		<visible>false</visible>
+		<action>
+			<button>0</button>
+			<repeatable>true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>/instrumentation/altimeter/setting-inhg</property>
+				<step>-0.01</step>
+				<min>26.0</min>
+				<max>33.0</max>
+				<wrap>false</wrap>
+			</binding>
+			<!--<button>1</button>
+			<repeatable>true</repeatable>
+					<binding>
+						<command>property-adjust</command>
+						<property>/instrumentation/altimeter/setting-inhg</property>
+						<step>-0.1</step>
+						<min>26.0</min>
+						<max>33.0</max>
+						<wrap>false</wrap>
+					</binding>-->
+		</action>
 	</animation>
+
+	<animation>
+		<type>pick</type>
+		<object-name>pick-right</object-name>
+		<visible>false</visible>
+		<action>
+			<button>0</button>
+			<repeatable>true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>/instrumentation/altimeter/setting-inhg</property>
+				<step>0.01</step>
+				<min>26.0</min>
+				<max>33.0</max>
+				<wrap>false</wrap>
+			</binding>
+			<!--<button>1</button>
+			<repeatable>true</repeatable>
+					<binding>
+						<command>property-adjust</command>
+						<property>/instrumentation/altimeter/setting-inhg</property>
+						<step>0.1</step>
+						<min>26.0</min>
+						<max>33.0</max>
+						<wrap>false</wrap>
+					</binding> -->
+		</action>
+	</animation>
+
 
 	<animation>
 		<type>rotate</type>
@@ -95,6 +142,21 @@
 		</axis>
 	</animation>
 
+	<animation>
+		<type>material</type>
+		<condition>
+			<greater-than>
+				<property>/controls/lighting/panel-norm</property>
+				<value>0</value>
+			</greater-than>
+		</condition>
+		<emission>
+			<factor-prop>/controls/lighting/panel-norm</factor-prop>
+			<red>0.75</red>
+			<green>0.25</green>
+			<blue>0.25</blue>
+		</emission>
+	</animation>
 
 
 	<!-- *** LoD *** -->

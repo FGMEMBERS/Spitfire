@@ -3,13 +3,65 @@
 	<path>fuel-cocks.ac</path>
 
 	<animation>
-		<type>material</type>
-		<emission>
-			<factor-prop>/controls/lighting/panel-norm</factor-prop>
-			<red>0.75</red>
-			<green>0.25</green>
-			<blue>0.25</blue>
-		</emission>
+		<type>pick</type>
+		<visible>false</visible>
+		<object-name>pick-left-up</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>nasal</command>
+				<script>
+					spitfire.openCock(1,1);
+				</script>
+			</binding>
+		</action>
+	</animation>
+	<animation>
+		<type>pick</type>
+		<visible>false</visible>
+		<object-name>pick-left-down</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>nasal</command>
+				<script>
+					spitfire.openCock(1,0);
+				</script>
+			</binding>
+		</action>
+	</animation>
+
+	<animation>
+		<type>pick</type>
+		<visible>false</visible>
+		<object-name>pick-right-up</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>nasal</command>
+				<script>
+					spitfire.openCock(0,1);
+				</script>
+			</binding>
+		</action>
+	</animation>
+	<animation>
+		<type>pick</type>
+		<visible>false</visible>
+		<object-name>pick-right-down</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>nasal</command>
+				<script>
+					spitfire.openCock(0,0);
+				</script>
+			</binding>
+		</action>
 	</animation>
 
 	<animation>
@@ -19,15 +71,15 @@
 		<interpolation>
 			<entry>
 				<ind>0.0</ind>
-				<dep>-35</dep>
+				<dep>-30</dep>
 			</entry>
 			<entry>
 				<ind>1.0</ind>
-				<dep>35</dep>
+				<dep>30</dep>
 			</entry>
 		</interpolation>
 		<center>
-			<x-m>-0.03187492</x-m>
+			<x-m>-0.0491104</x-m>
 			<y-m>0</y-m>
 			<z-m>0</z-m>
 		</center>
@@ -44,15 +96,15 @@
 		<interpolation>
 			<entry>
 				<ind>0.0</ind>
-				<dep>-35</dep>
+				<dep>-30</dep>
 			</entry>
 			<entry>
 				<ind>1.0</ind>
-				<dep>35</dep>
+				<dep>30</dep>
 			</entry>
 		</interpolation>
 		<center>
-			<x-m>-0.0318749</x-m>
+			<x-m>-0.0491104</x-m>
 			<y-m>0</y-m>
 			<z-m>0</z-m>
 		</center>
@@ -63,4 +115,19 @@
 		</axis>
 	</animation>
 
+	<animation>
+		<type>material</type>
+		<condition>
+			<greater-than>
+				<property>/controls/lighting/panel-norm</property>
+				<value>0</value>
+			</greater-than>
+		</condition>
+		<emission>
+			<factor-prop>/controls/lighting/panel-norm</factor-prop>
+			<red>0.75</red>
+			<green>0.25</green>
+			<blue>0.25</blue>
+		</emission>
+	</animation>
 </PropertyList>

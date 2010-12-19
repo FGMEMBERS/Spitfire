@@ -3,7 +3,7 @@
 <PropertyList>
 	<path>spitfireIIa.ac</path>
 	<!-- Front hotspots -->
-	<panel>
+	<!--<panel>
 		<path>Aircraft/Spitfire/Models/panel-hotspots.xml</path>
 		<bottom-left>
 			<x-m>3.265</x-m>
@@ -20,7 +20,7 @@
 			<y-m>-0.40</y-m>
 			<z-m> 0.70</z-m>
 		</top-left>
-	</panel>
+	</panel>-->
 	<!-- ************* panel models ************* -->
 	<!-- blind flying instruments -->
 	<model>
@@ -93,15 +93,17 @@
 		<offsets>
 			<x-m>3.265</x-m>
 			<y-m>-0.09</y-m>
-			<z-m>0.38</z-m>
+			<z-m>0.315221</z-m>
 		</offsets>
 	</model>
 	<model>
 		<path>Aircraft/Spitfire/Models/rgs-dimmer-switch.xml</path>
+		<!--3.26663	0.315221	0.0519094
+		3.26663	0.315221	0.0519094-->
 		<offsets>
 			<x-m>3.265</x-m>
-			<y-m>-0.055</y-m>
-			<z-m>0.38</z-m>
+			<y-m>-0.0519094</y-m>
+			<z-m>0.315221</z-m>
 		</offsets>
 	</model>
 	
@@ -196,8 +198,8 @@
 		<path>Aircraft/Spitfire/Models/fuel-cocks.xml</path>
 		<offsets>
 			<x-m>3.265</x-m>
-			<y-m>0.09</y-m>
-			<z-m>-0.1</z-m>
+			<y-m>0.092</y-m>
+			<z-m>-0.12</z-m>
 		</offsets>
 	</model>
 	<!--    end engine instruments -->
@@ -209,7 +211,7 @@
 		<offsets>
 			<x-m>3.265</x-m>
 			<y-m>-0.306873</y-m>
-			<z-m>0.128292</z-m>
+			<z-m>0.1284</z-m>
 		</offsets>
 	</model>
 	<model>
@@ -229,7 +231,7 @@
 		<offsets>
 			<x-m>3.265</x-m>
 			<y-m>-0.29171</y-m>
-			<z-m>0.033435</z-m>
+			<z-m>0.035</z-m>
 		</offsets>
 	</model>
 	<model>
@@ -239,7 +241,7 @@
 		<offsets>
 			<x-m>3.265</x-m>
 			<y-m>-0.36114</y-m>
-			<z-m>0.0607927</z-m>
+			<z-m>0.057</z-m>
 		</offsets>
 	</model>
 	<model>
@@ -307,7 +309,7 @@
 		<path>Aircraft/Spitfire/Models/uc-control.xml</path>
 		<offsets>
 			<x-m>3.45</x-m>
-			<y-m>0.365</y-m>
+			<y-m>0.3645</y-m>
 			<z-m>-0.120</z-m>
 			<pitch-deg>45</pitch-deg>
 		</offsets>
