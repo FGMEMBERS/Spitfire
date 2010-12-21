@@ -353,7 +353,7 @@ refs 3
 kids 0
 OBJECT poly
 name "Face"
-loc 0.000301881 -1.92334 5.8607e-011
+loc 0.00150188 -1.92334 5.8607e-011
 texture "spitfire-vsi.rgb"
 crease 61.000000
 numvert 17
@@ -474,7 +474,7 @@ refs 3
 kids 0
 OBJECT poly
 name "vsi-Needle1"
-loc 0.0157749 -2.00071 0.0171564
+loc 0.0178749 -2.00071 0.0171564
 crease 61.000000
 numvert 7
 -0.0153699 2.00012 0.0162099
