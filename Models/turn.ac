@@ -6,7 +6,7 @@ OBJECT world
 kids 8
 OBJECT poly
 name "disk"
-loc 5.46447e-005 0.0354268 0.0369521
+loc 0.00105464 0.0354268 0.0369521
 texture "slot_screw_med_button_head_steel.png"
 crease 61.000000
 numvert 52
