@@ -1196,8 +1196,9 @@
 		<type>translate</type>
 		<object-name>Canopy-Main</object-name>
 		<object-name>Frame-Main</object-name>
+		<object-name>Hood-Catch</object-name>
 		<property>gear/canopy/position-norm</property>
-		<factor>0.575</factor>
+		<factor>0.565</factor>
 		<axis>
 			<x>1</x>
 			<y>0</y>
