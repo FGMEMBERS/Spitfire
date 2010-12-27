@@ -55,7 +55,7 @@ Aug 2004 Vivian Meazza, vivian.meazza at lineone.net
 				<x-offset-m archive="y"
 										type="double">0.0</x-offset-m>
 				<y-offset-m archive="y"
-										type="double">0.527</y-offset-m>
+										type="double">0.5265</y-offset-m>
 				<z-offset-m archive="y"
 										type="double">3.88</z-offset-m>
 				<pitch-offset-deg>-12.5</pitch-offset-deg>
@@ -473,7 +473,7 @@ Aug 2004 Vivian Meazza, vivian.meazza at lineone.net
 					</condition>
 					<command>property-assign</command>
 					<property>sim/current-view/y-offset-m</property>
-					<value type="double">0.527</value>
+					<value type="double">0.5265</value>
 				</binding>
 			</key>
 			<key n="85">
@@ -497,7 +497,7 @@ Aug 2004 Vivian Meazza, vivian.meazza at lineone.net
 					<property>sim/current-view/y-offset-m</property>
 					<step type="double">-0.01</step>
 					<min type="double">0.477</min>
-					<max type="double">0.577</max>
+					<max type="double">0.5765</max>
 				</binding>
 			</key>
 			<key n="117">
@@ -521,7 +521,7 @@ Aug 2004 Vivian Meazza, vivian.meazza at lineone.net
 					<property>sim/current-view/y-offset-m</property>
 					<step type="double">0.01</step>
 					<min type="double">0.477</min>
-					<max type="double">0.577</max>
+					<max type="double">0.5765</max>
 				</binding>
 			</key>
 			<!-- map keys for mag switches  -->
