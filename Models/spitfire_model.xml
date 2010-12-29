@@ -1261,6 +1261,42 @@
 			<z2-m>0.635517</z2-m>
 		</axis>
 	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>Locking-Pawl-Rear</object-name>
+		<condition>
+			<property>/controls/flight/canopy-slide</property>
+			<value>0</value>
+		</condition>
+		<property>/gear/canopy/position-norm</property>
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>0.99</ind>
+				<dep>45</dep>
+			</entry>
+			<entry>
+				<ind>0.995</ind>
+				<dep>45</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep>0</dep>
+			</entry>
+		</interpolation>
+		<axis>
+			<x1-m>3.59456</x1-m>
+			<y1-m>-0.0140342</y1-m>
+			<z1-m>0.635517</z1-m>
+			<x2-m>3.59456</x2-m>
+			<y2-m>0.0140342</y2-m>
+			<z2-m>0.635517</z2-m>
+		</axis>
+	</animation>
 
 	<animation>
 		<type>rotate</type>
@@ -1278,6 +1314,42 @@
 			<entry>
 				<ind>1</ind>
 				<dep>-15</dep>
+			</entry>
+		</interpolation>
+		<axis>
+			<x1-m>3.59456</x1-m>
+			<y1-m>-0.0140342</y1-m>
+			<z1-m>0.635517</z1-m>
+			<x2-m>3.59456</x2-m>
+			<y2-m>0.0140342</y2-m>
+			<z2-m>0.635517</z2-m>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>Locking-Pawl-Front</object-name>
+		<condition>
+			<property>/controls/flight/canopy-slide</property>
+			<value>1</value>
+		</condition>
+		<property>/gear/canopy/position-norm</property>
+		<interpolation>
+			<entry>
+				<ind>0.0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>0.005</ind>
+				<dep>45</dep>
+			</entry>
+			<entry>
+				<ind>0.11</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep>0</dep>
 			</entry>
 		</interpolation>
 		<axis>

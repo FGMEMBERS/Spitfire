@@ -288,34 +288,36 @@ togglerightMagswitch = func{
 
 # ================================== door and canopy stuff ==============================
 
-openDoor = func{ # open the door if canopy is open
-
-dooropen = arg[0];
-canopyopen = getprop("gear/canopy/position-norm");
-if (canopyopen) {
-    setprop("controls/flight/door-position-norm",dooropen)
-}
-
-} # end function
-
-toggleDoor = func{ # toggle the door if canopy is open
-
-dooropen = getprop("controls/flight/door-position-norm");
-canopyopen = getprop("gear/canopy/position-norm");
-if (canopyopen) {
-    dooropen = !dooropen;
-    setprop("controls/flight/door-position-norm",dooropen);
-}
+openDoor = func{ 
+# open the door if canopy is open
+    dooropen = arg[0];
+    canopyopen = getprop("gear/canopy/position-norm");
+    if (canopyopen) {
+        setprop("controls/flight/door-position-norm",dooropen)
+    }
 
 } # end function
 
-openCanopy = func{ # open the canopy if door is closed
+toggleDoor = func{ 
+# toggle the door if canopy is open
+    dooropen = getprop("controls/flight/door-position-norm");
+    canopyopen = getprop("gear/canopy/position-norm");
 
-canopyopen = arg[0];
-dooropen = getprop("controls/flight/door-position-norm");
-if (!dooropen) {
-    setprop("controls/flight/canopy-slide",canopyopen);
-}
+    if (canopyopen) {
+        dooropen = !dooropen;
+        setprop("controls/flight/door-position-norm",dooropen);
+    }
+
+} # end function
+
+openCanopy = func{ 
+# open the canopy if door is closed
+    canopyopen = arg[0];
+    dooropen = getprop("controls/flight/door-position-norm");
+
+    if (!dooropen) {
+        setprop("controls/flight/canopy-slide",canopyopen);
+    }
 
 } # end function
 
@@ -995,7 +997,7 @@ var initialize = func {
         0,
         0);
 
-        setlistener("gear/canopy/position-norm", func (n){
+    setlistener("gear/canopy/position-norm", func (n){
         var canopy_pos = n.getValue();
         var canopy_slide = getprop("controls/flight/canopy-slide");
 
@@ -1007,8 +1009,9 @@ var initialize = func {
             setprop("/controls/flight/canopy-lever", 1);
         }
 
-#        print ("/controls/flight/canopy-lever ", getprop("/controls/flight/canopy-lever"));
-#        print ("controls/flight/canopy-slide ", getprop("controls/flight/canopy-slide"));
+        print ("/controls/flight/canopy-lever ", getprop("/controls/flight/canopy-lever"));
+        print ("controls/flight/canopy-slide ", getprop("controls/flight/canopy-slide"));
+        print ("gear/canopy/position-norm ", getprop("gear/canopy/position-norm"));
     },
         0,
         0);
