@@ -59,6 +59,19 @@ Aug 2004 Vivian Meazza, vivian.meazza at lineone.net
 				<z-offset-m archive="y"
 										type="double">3.88</z-offset-m>
 				<pitch-offset-deg>-12.5</pitch-offset-deg>
+				<limits>
+					<enabled type="bool">true</enabled>
+					<left>
+						<heading-max-deg type="double">145</heading-max-deg>
+						<x-offset-max-m type="double">0.16</x-offset-max-m>
+						<x-offset-threshold-deg type="double">65</x-offset-threshold-deg>
+					</left>
+					<right>
+						<heading-max-deg type="double">145</heading-max-deg>
+						<x-offset-max-m type="double">0.16</x-offset-max-m>
+						<x-offset-threshold-deg type="double">65</x-offset-threshold-deg>
+					</right>
+				</limits>
 			</config>
 		</view>
 		<view n="1">

@@ -2222,7 +2222,7 @@ name "Handle"
 loc 0.0174878 0.0258847 -0.00230339
 kids 3
 OBJECT poly
-name "Lever"
+name "Lever-Flap"
 loc -5.23683e-005 -0.00886887 0.00230339
 texture "spitfire-tx-00.rgb"
 crease 61.000000

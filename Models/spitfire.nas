@@ -314,7 +314,7 @@ openCanopy = func{ # open the canopy if door is closed
 canopyopen = arg[0];
 dooropen = getprop("controls/flight/door-position-norm");
 if (!dooropen) {
-    setprop("controls/flight/canopy-slide",canopyopen)
+    setprop("controls/flight/canopy-slide",canopyopen);
 }
 
 } # end function
@@ -991,6 +991,24 @@ var initialize = func {
 
         run_gear();
 
+    },
+        0,
+        0);
+
+        setlistener("gear/canopy/position-norm", func (n){
+        var canopy_pos = n.getValue();
+        var canopy_slide = getprop("controls/flight/canopy-slide");
+
+        if (canopy_pos == 0 or canopy_pos == 1) {
+            setprop("/controls/flight/canopy-lever", 0);
+        } elsif (canopy_slide == 0){
+            setprop("/controls/flight/canopy-lever", -1);
+        } else {
+            setprop("/controls/flight/canopy-lever", 1);
+        }
+
+#        print ("/controls/flight/canopy-lever ", getprop("/controls/flight/canopy-lever"));
+#        print ("controls/flight/canopy-slide ", getprop("controls/flight/canopy-slide"));
     },
         0,
         0);

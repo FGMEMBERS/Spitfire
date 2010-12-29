@@ -106,7 +106,7 @@
 			<z-m>0.315221</z-m>
 		</offsets>
 	</model>
-	
+
 	<!-- engine instruments -->
 	<model>
 		<path>Aircraft/Spitfire/Models/rpm.xml</path>
@@ -322,7 +322,7 @@
 			<z-m>-0.225</z-m>
 		</offsets>
 	</model>
-<!--	3.39461	-0.817523	0.0319045
+	<!--	3.39461	-0.817523	0.0319045
 	3.39461	-0.817523	-0.0319045-->
 
 	<model>
@@ -590,7 +590,20 @@
 		<type>rotate</type>
 		<object-name>Aileron-L</object-name>
 		<property>surface-positions/left-aileron-pos-norm</property>
-		<factor>-30</factor>
+		<interpolation>
+			<entry>
+				<ind>-1</ind>
+				<dep>30</dep>
+			</entry>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>-20</dep>
+			</entry>
+		</interpolation>
 		<axis>
 			<x1-m>3.49</x1-m>
 			<y1-m>-3.24</y1-m>
@@ -604,7 +617,20 @@
 		<type>rotate</type>
 		<object-name>Aileron-R</object-name>
 		<property>surface-positions/right-aileron-pos-norm</property>
-		<factor>30</factor>
+		<interpolation>
+			<entry>
+				<ind>-1</ind>
+				<dep>-30</dep>
+			</entry>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>20</dep>
+			</entry>
+		</interpolation>
 		<axis>
 			<x1-m>3.49</x1-m>
 			<y1-m>3.24</y1-m>
@@ -1206,6 +1232,91 @@
 		</axis>
 	</animation>
 
+	<!--3.59456	0.635517	0.0140342
+	3.59456	0.635517	-0.0140342-->
+	<animation>
+		<type>rotate</type>
+		<object-name>Locking-Pawl-Rear</object-name>
+		<property>/controls/flight/canopy-lever</property>
+		<interpolation>
+			<entry>
+				<ind>-1</ind>
+				<dep>15</dep>
+			</entry>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>0</dep>
+			</entry>
+		</interpolation>
+		<axis>
+			<x1-m>3.59456</x1-m>
+			<y1-m>-0.0140342</y1-m>
+			<z1-m>0.635517</z1-m>
+			<x2-m>3.59456</x2-m>
+			<y2-m>0.0140342</y2-m>
+			<z2-m>0.635517</z2-m>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>Locking-Pawl-Front</object-name>
+		<property>/controls/flight/canopy-lever</property>
+		<interpolation>
+			<entry>
+				<ind>-1</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>-15</dep>
+			</entry>
+		</interpolation>
+		<axis>
+			<x1-m>3.59456</x1-m>
+			<y1-m>-0.0140342</y1-m>
+			<z1-m>0.635517</z1-m>
+			<x2-m>3.59456</x2-m>
+			<y2-m>0.0140342</y2-m>
+			<z2-m>0.635517</z2-m>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>Lever</object-name>
+		<property>/controls/flight/canopy-lever</property>
+		<interpolation>
+			<entry>
+				<ind>-1.0</ind>
+				<dep>15</dep>
+			</entry>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep>-15</dep>
+			</entry>
+		</interpolation>
+		<axis>
+			<x1-m>3.59456</x1-m>
+			<y1-m>-0.0140342</y1-m>
+			<z1-m>0.635517</z1-m>
+			<x2-m>3.59456</x2-m>
+			<y2-m>0.0140342</y2-m>
+			<z2-m>0.635517</z2-m>
+		</axis>
+	</animation>
 	<!-- ***************** Door *********************** -->
 	<animation>
 		<type>rotate</type>
@@ -1579,10 +1690,10 @@
 		<object-name>Panel-Construction</object-name>
 		<object-name>Place-Holders</object-name>
 		<condition>
-				<equals>
-					<property>sim/current-view/view-number</property>
-					<value>-1</value>
-				</equals>
+			<equals>
+				<property>sim/current-view/view-number</property>
+				<value>-1</value>
+			</equals>
 		</condition>
 	</animation>
 
