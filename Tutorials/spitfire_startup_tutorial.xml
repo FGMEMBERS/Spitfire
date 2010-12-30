@@ -43,7 +43,7 @@
 
 	<step>
 		<message>
-		Switch on left magneto
+			Switch on left magneto
 		</message>
 		<view>
 			<heading-offset-deg>7</heading-offset-deg>
@@ -51,10 +51,10 @@
 			<field-of-view>40</field-of-view>
 		</view>
 		<marker>
-			<x-m>3.7000</x-m>
-			<y-m>-0.0889</y-m>
-			<z-m>0.4089</z-m>
-			<scale>0.5111</scale>
+			<x-m>3.3000</x-m>
+			<y-m>-0.3380</y-m>
+			<z-m>0.0769</z-m>
+			<scale>1.0165</scale>
 		</marker>
 		<exit>
 			<condition>
@@ -65,13 +65,13 @@
 
 	<step>
 		<message>
-		Switch on right magneto
+			Switch on right magneto
 		</message>
 		<marker>
-		    <x-m>3.4000</x-m>
-		    <y-m>-0.2378</y-m>
-		    <z-m>0.1813</z-m>
-		    <scale>1.0000</scale>
+			<x-m>3.3000</x-m>
+			<y-m>-0.3529</y-m>
+			<z-m>0.0769</z-m>
+			<scale>1.0165</scale>
 		</marker>
 		<exit>
 			<condition>
@@ -82,7 +82,7 @@
 
 	<step>
 		<message>
-		Open throttle to around 1/3rd
+			Open throttle to around 1/3rd
 		</message>
 		<view>
 			<heading-offset-deg>27.7</heading-offset-deg>
