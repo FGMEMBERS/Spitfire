@@ -446,8 +446,7 @@ flap drag not available
 	</gear>
 
 	<!-- Fuselage tanks. 
-Weight of contents calculated using 100 octane AVGAS density of 695 kg/m3 @ 15degC
--->
+Weight of contents calculated using 100 octane AVGAS density of 695 kg/m3 @ 15degC -->
 	<tank x="-2.80"
 				y="0"
 				z="0.17"
@@ -507,7 +506,7 @@ Weight of contents calculated using 100 octane AVGAS density of 695 kg/m3 @ 15de
 					 y="-2.07"
 					 z="-0.65"
 					 mass="60"/>
-
+<!--Oil Cooler-->
 	<ballast x="-3.2"
 					 y="2.07"
 					 z="-0.88"
