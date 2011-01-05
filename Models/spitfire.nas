@@ -102,7 +102,7 @@ updateBoostControl = func {
             boost_pressure_psi.setDoubleValue(mp);
         boost_control.setDoubleValue(damp);
         boost_control_cutout.setBoolValue(cutout);
-        settimer(updateBoostControl, 0.1);
+        settimer(updateBoostControl, 0.0);
 }
 
 updateBoostControl();

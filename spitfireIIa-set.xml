@@ -170,6 +170,7 @@ Aug 2004 Vivian Meazza, vivian.meazza at lineone.net
 		</alarms>
 		<tutorials>
 			<tutorial include="Tutorials/spitfire_startup_tutorial.xml"/>
+			<tutorial include="Tutorials/spitfire_takeoff_tutorial.xml"/>
 		</tutorials>
 		<menubar>
 			<default>
@@ -417,7 +418,7 @@ Aug 2004 Vivian Meazza, vivian.meazza at lineone.net
 				<value type="double">0.334</value>-->
 				<binding>
 					<command>nasal</command>
-					<script>controls.stepProps("/controls/engines/engine/cowl-flaps-norm","/sim/cowl-flaps",-1);</script>
+					<script>controls.stepProps("/controls/engines/engine/cowl-flaps-norm","/sim/cowl-flaps",1);</script>
 				</binding>
 			</key>
 			<key n="104">
@@ -425,7 +426,7 @@ Aug 2004 Vivian Meazza, vivian.meazza at lineone.net
 				<desc>Radiator Flap Up.</desc>
 				<binding>
 					<command>nasal</command>
-					<script>controls.stepProps("/controls/engines/engine/cowl-flaps-norm","/sim/cowl-flaps",1);</script>
+					<script>controls.stepProps("/controls/engines/engine/cowl-flaps-norm","/sim/cowl-flaps",-1);</script>
 				</binding>
 			</key>
 			<!-- map keys for Cancel Gear Warning  -->
@@ -630,7 +631,7 @@ Aug 2004 Vivian Meazza, vivian.meazza at lineone.net
 	<!-- weights -->
 	<yasim>
 		<weights>
-			<pilot-lb type="double">180</pilot-lb>
+			<pilot-lb type="double">200</pilot-lb>
 			<round-lb type="double">0.33</round-lb>
 		</weights>
 	</yasim>

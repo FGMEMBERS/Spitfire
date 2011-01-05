@@ -39,6 +39,10 @@
 			<property>/engines/engine[0]/running</property>
 			<value>0</value>
 		</set>
+		<set>
+			<property>controls/engines/engine/cowl-flaps-norm</property>
+			<value>0.0</value>
+		</set>
 	</init>
 
 	<step>

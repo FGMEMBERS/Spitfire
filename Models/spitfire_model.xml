@@ -1184,7 +1184,7 @@
 		<type>rotate</type>
 		<object-name>Flap</object-name>
 		<property>engines/engine/cowl-flaps-norm</property>
-		<factor>90</factor>
+		<!--<factor>90</factor>-->
 		<interpolation>
 			<entry>
 				<ind>0</ind>
@@ -1444,19 +1444,19 @@
 			</entry>
 			<entry>
 				<ind>0.25</ind>
-				<dep>-5</dep>
+				<dep>5</dep>
 			</entry>
 			<entry>
 				<ind>0.5</ind>
-				<dep>-10</dep>
+				<dep>10</dep>
 			</entry>
 			<entry>
 				<ind>0.75</ind>
-				<dep>-15</dep>
+				<dep>15</dep>
 			</entry>
 			<entry>
 				<ind>1.0</ind>
-				<dep>-20</dep>
+				<dep>20</dep>
 			</entry>
 		</interpolation>
 		<axis>
