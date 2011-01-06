@@ -64,7 +64,7 @@ The reference datum for measurements is the nose.
 		bx="-9.13"
 		by="0.0"
 		bz="0.0"
-		width="0.95"
+		width="1.0"
 		taper="0.38"
 		midpoint="0.4"
 />
