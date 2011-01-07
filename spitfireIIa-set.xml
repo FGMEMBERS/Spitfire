@@ -12,7 +12,7 @@ Aug 2004 Vivian Meazza, vivian.meazza at lineone.net
 	<sim include="spitfire-help.xml" >
 		<description type="string">Supermarine Spitfire IIa</description>
 		<author type="string">Vivian Meazza</author>
-		<status type="string">early-production</status>
+		<status type="string">production</status>
 		<flight-model>yasim</flight-model>
 		<aero>spitfireIIa</aero>
 		<startup>
@@ -413,9 +413,6 @@ Aug 2004 Vivian Meazza, vivian.meazza at lineone.net
 			<key n="72">
 				<name>H</name>
 				<desc>Radiator Flap down.</desc>
-				<!--<command>property-assign</command>
-				<property>controls/engines/engine/</property>
-				<value type="double">0.334</value>-->
 				<binding>
 					<command>nasal</command>
 					<script>controls.stepProps("/controls/engines/engine/cowl-flaps-norm","/sim/cowl-flaps",1);</script>

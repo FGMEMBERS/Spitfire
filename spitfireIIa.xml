@@ -308,7 +308,7 @@ flap drag not available
 		</piston-engine>
 	</propeller>
 	<!-- simulate MG recoil -->
-	<thruster x="3.5"
+	<thruster x="-3.2"
 						y="0"
 						z="0.4"
 						vx="-1"
@@ -323,7 +323,7 @@ flap drag not available
 									 dst1="1"/>
 	</thruster>
 
-	<thruster x="3.5"
+	<thruster x="-3.2"
 						y="0"
 						z="0.4"
 						vx="1"
@@ -354,15 +354,14 @@ flap drag not available
 									 transition-time="1"
 									 src0="0"
 									 src1="1"
-									 dst0="0"
-									 dst1="0.75"/>
+									 dst0="0.0"
+									 dst1="0.85"/>
 		<control-speed control="BRAKE"
 									 transition-time="1"/>
 		<control-input axis="/controls/gear/brake-parking"
 									 control="BRAKE"/>
 		<control-input axis="/controls/gear/chock-left"
-									 control="BRAKE"
-									 split="true"/>
+									 control="BRAKE" />
 		<control-input axis="/controls/gear/gear-down"
 									 control="EXTEND"/>
 		<control-speed control="EXTEND"
@@ -388,8 +387,8 @@ flap drag not available
 									 transition-time="1"
 									 src0="0"
 									 src1="1"
-									 dst0="0"
-									 dst1="0.75"/>
+									 dst0="0.0"
+									 dst1="0.85"/>
 		<control-speed control="BRAKE"
 									 transition-time="1"/>
 		<control-input axis="/controls/gear/brake-parking"
@@ -422,15 +421,15 @@ flap drag not available
 				y="0"
 				z="-0.66"
 				compression="0.15"
-				dfric="0.4"
-				sfric ="0.5">
-		<control-input axis="/controls/gear/brake-parking"
+				dfric="0.7"
+				sfric ="0.8">
+		<control-input axis="/controls/flight/elevator"
 									 control="BRAKE"
 									 transition-time="0"
-									 src0="0"
-									 src1="1"
-									 dst0="0.15"
-									 dst1="0.15"/>
+									 src0="-1"
+									 src1="0"
+									 dst0="1"
+									 dst1="0"/>
 	</gear>
 	<!-- Canopy -->
 	<gear x="-3.90"
@@ -459,13 +458,13 @@ Weight of contents calculated using 100 octane AVGAS density of 695 kg/m3 @ 15de
 	<!--  lower 37 imp gals -->
 
 	<!-- Ballast and Weights -->
-	<!-- cockpit, radio, oxygen tanks etc-->
+	<!-- cockpit, radio, oxygen tanks etc. -->
 	<ballast x="-4.3"
 					 y="0"
 					 z="-0.3"
 					 mass="500"/>
 
-	<!-- 5 x 17.5 lbs lead ballast weights fitted in tail-->
+	<!-- 5 x 17.5 lbs lead ballast weights fitted in tail -->
 	<ballast x="-8.50"
 					 y="0"
 					 z="-0.15"
@@ -506,7 +505,7 @@ Weight of contents calculated using 100 octane AVGAS density of 695 kg/m3 @ 15de
 					 y="-2.07"
 					 z="-0.65"
 					 mass="60"/>
-<!--Oil Cooler-->
+	<!--Oil Cooler-->
 	<ballast x="-3.2"
 					 y="2.07"
 					 z="-0.88"
