@@ -66,7 +66,7 @@ The reference datum for measurements is the nose.
 		bz="0.0"
 		width="1.0"
 		taper="0.38"
-		midpoint="0.4"
+		midpoint="0.35"
 />
 	<!--
 NACA airfoil section 2213  
@@ -226,10 +226,11 @@ flap drag not available
 		<control-speed control="FLAP0"
 									 transition-time="10"/>
 	</vstab>
+
 	<!-- radiator 'wing' right -->
-	<vstab x="-3.23"
+	<vstab x="-3.17377"
 				 y="-0.51"
-				 z="1.02"
+				 z="-1.02"
 				 taper="0"
 				 incidence="0"
 				 twist="0"
@@ -275,7 +276,7 @@ flap drag not available
 							 max-rpm="1431"
 							 gear-ratio="0.477"
 			>
-		<actionpt x="-0.75"
+		<actionpt x="-0.38"
 							y="0"
 							z="0"/>
 		<control-input axis="/controls/engines/engine[0]/propeller-pitch"

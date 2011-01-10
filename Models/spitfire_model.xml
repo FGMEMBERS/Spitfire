@@ -1184,29 +1184,7 @@
 		<type>rotate</type>
 		<object-name>Flap</object-name>
 		<property>engines/engine/cowl-flaps-norm</property>
-		<!--<factor>90</factor>-->
-		<interpolation>
-			<entry>
-				<ind>0</ind>
-				<dep>0</dep>
-			</entry>
-			<entry>
-				<ind>0.25</ind>
-				<dep>5</dep>
-			</entry>
-			<entry>
-				<ind>0.5</ind>
-				<dep>10</dep>
-			</entry>
-			<entry>
-				<ind>0.75</ind>
-				<dep>15</dep>
-			</entry>
-			<entry>
-				<ind>1.0</ind>
-				<dep>20</dep>
-			</entry>
-		</interpolation>
+		<factor>70</factor>
 		<axis>
 			<x1-m>3.46</x1-m>
 			<y1-m>0.52</y1-m>
@@ -1427,7 +1405,7 @@
 				<property>controls/engines/engine/cowl-flaps-norm</property>
 				<step type="double">0.25</step>
 				<min type="double">0</min>
-				<max type="double">1</max>
+				<max type="double">1.25</max>
 				<wrap type="bool">true</wrap>
 			</binding>
 		</action>
@@ -1758,6 +1736,7 @@
 	</animation>
 
 	<animation>
+		<nopreview/>
 		<type>select</type>
 		<object-name>Panel-Construction</object-name>
 		<object-name>Place-Holders</object-name>
