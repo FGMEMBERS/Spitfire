@@ -1,15 +1,28 @@
 <?xml version="1.0"?>
-  <PropertyList> 
-    <path>trim-wheel-elev.ac</path>
-    <animation> 
-      <type>rotate</type>
-      <object-name>cylinder</object-name>
-      <property>/controls/flight/elevator-trim</property>
-      <factor>1440</factor>
-      <axis> 
-        <x>0</x>
-        <y>-1</y>
-        <z>0</z>
-      </axis>
-    </animation>
-  </PropertyList>
+<PropertyList>
+	<path>trim-wheel-elev.ac</path>
+	<animation>
+		<type>rotate</type>
+		<object-name>cylinder</object-name>
+		<property>/controls/flight/elevator-trim</property>
+		<factor>1440</factor>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>material</type>
+		<object-name>backing-plate</object-name>
+		<condition>
+			<equals>
+				<property>sim/aircraft</property>
+				<value>seafireIIIc</value>
+			</equals>
+		</condition>
+		<texture>seafire-tx-00.png</texture>
+	</animation>
+
+</PropertyList>

@@ -5066,7 +5066,7 @@ name "light"
 loc 0.00345277 -0.0166172 0
 kids 0
 OBJECT poly
-name "bracket"
+name "bracket-support"
 texture "spitfire-tx-00.rgb"
 crease 61.000000
 numvert 68

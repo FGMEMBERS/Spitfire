@@ -29,6 +29,14 @@ $Id$
 				<selected type="bool">1</selected>
 			</tank>
 		</fuel>
+		<oxygen>
+			<tank n="0">
+				<name type="string">1</name>
+				<capacity-cu-ft type="double">0.4</capacity-cu-ft>
+				<level-cu-ft type="double">54</level-cu-ft>
+				<selected type="bool">1</selected>
+			</tank>
+		</oxygen>
 	</consumables>
 	<!-- set up control properties for YASim... -->
 	<controls>
@@ -136,10 +144,23 @@ $Id$
 				<x-offset-m archive="y"
 										type="double">0.0</x-offset-m>
 				<y-offset-m archive="y"
-										type="double">0.53</y-offset-m>
+										type="double">0.5265</y-offset-m>
 				<z-offset-m archive="y"
-										type="double">3.86</z-offset-m>
+										type="double">3.88</z-offset-m>
 				<pitch-offset-deg>-12.5</pitch-offset-deg>
+				<limits>
+					<enabled type="bool">true</enabled>
+					<left>
+						<heading-max-deg type="double">145</heading-max-deg>
+						<x-offset-max-m type="double">0.16</x-offset-max-m>
+						<x-offset-threshold-deg type="double">65</x-offset-threshold-deg>
+					</left>
+					<right>
+						<heading-max-deg type="double">145</heading-max-deg>
+						<x-offset-max-m type="double">0.16</x-offset-max-m>
+						<x-offset-threshold-deg type="double">65</x-offset-threshold-deg>
+					</right>
+				</limits>
 			</config>
 		</view>
 		<view n="1">
@@ -178,18 +199,6 @@ $Id$
 													 type="double">2.75</target-z-offset-m>
 			</config>
 		</view>
-		<autopilot>
-			<config>
-				<min-climb-speed-kt type="float">70.0</min-climb-speed-kt>
-				<best-climb-speed-kt type="float">75.0</best-climb-speed-kt>
-				<target-climb-rate-fpm type="float">500.0</target-climb-rate-fpm>
-				<target-descent-rate-fpm type="float">1000.0</target-descent-rate-fpm>
-				<elevator-adj-factor type="float">4000.0</elevator-adj-factor>
-				<integral-contribution type="float">0.01</integral-contribution>
-				<zero-pitch-throttle type="float">0.45</zero-pitch-throttle>
-				<zero-pitch-trim-full-throttle type="float">0.14</zero-pitch-trim-full-throttle>
-			</config>
-		</autopilot>
 		<hud>
 			<enable3d>false</enable3d>
 		</hud>
@@ -197,6 +206,13 @@ $Id$
 			<setting>0.00</setting>
 			<setting>1.00</setting>
 		</flaps>
+		<cowl-flaps>
+			<setting>0.00</setting>
+			<setting>0.25</setting>
+			<setting>0.5</setting>
+			<setting>0.75</setting>
+			<setting>1.00</setting>
+		</cowl-flaps>
 		<alarms>
 			<gear-warn type="double">0</gear-warn>
 		</alarms>
@@ -398,18 +414,16 @@ $Id$
 				<name>H</name>
 				<desc>Radiator Flap down.</desc>
 				<binding>
-					<command>property-assign</command>
-					<property>controls/engines/engine/cowl-flaps-norm</property>
-					<value type="double">0.334</value>
+					<command>nasal</command>
+					<script>controls.stepProps("/controls/engines/engine/cowl-flaps-norm","/sim/cowl-flaps",1);</script>
 				</binding>
 			</key>
 			<key n="104">
 				<name>h</name>
 				<desc>Radiator Flap Up.</desc>
 				<binding>
-					<command>property-assign</command>
-					<property>controls/engines/engine/cowl-flaps-norm</property>
-					<value type="double">0.0</value>
+					<command>nasal</command>
+					<script>controls.stepProps("/controls/engines/engine/cowl-flaps-norm","/sim/cowl-flaps",-1);</script>
 				</binding>
 			</key>
 			<!-- map keys for Cancel Gear Warning  -->
@@ -667,5 +681,8 @@ $Id$
 		<recoil>
 			<file>Aircraft/Spitfire/Models/recoil.nas</file>
 		</recoil>
+		<oxygen>
+			<file>Aircraft/Generic/Oxygen/oxygen.nas</file>
+		</oxygen>
 	</nasal>
 </PropertyList>

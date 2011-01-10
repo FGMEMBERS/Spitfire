@@ -14,13 +14,17 @@
 
 	<animation>
 		<type>material</type>
-		<object-name>front</object-name>
-		<emission>
-			<factor-prop>/controls/lighting/panel-norm</factor-prop>
-			<red>0.25</red>
-			<green>0.020</green>
-			<blue>0.020</blue>
-		</emission>
+		<object-name>mount-back</object-name>
+		<object-name>clamp</object-name>
+	<object-name>lug-rear</object-name>
+	<object-name>lug-front</object-name>
+		<condition>
+			<equals>
+				<property>sim/aircraft</property>
+				<value>seafireIIIc</value>
+			</equals>
+		</condition>
+		<texture>seafire-tx-00.png</texture>
 	</animation>
 
 	<animation>
@@ -56,6 +60,7 @@
 
 	<animation>
 		<type>material</type>
+		<object-name>front</object-name>
 		<condition>
 			<greater-than>
 				<property>/controls/lighting/panel-norm</property>

@@ -12,4 +12,17 @@
 			<z>0</z>
 		</axis>
 	</animation>
+
+	<animation>
+		<type>material</type>
+		<object-name>backing-plate</object-name>
+		<condition>
+			<equals>
+				<property>sim/aircraft</property>
+				<value>seafireIIIc</value>
+			</equals>
+		</condition>
+		<texture>seafire-tx-00.png</texture>
+	</animation>
+	
 </PropertyList>

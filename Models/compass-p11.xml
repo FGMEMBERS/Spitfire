@@ -181,6 +181,18 @@
 
 	<animation>
 		<type>material</type>
+		<object-name>bracket-support</object-name>
+		<condition>
+			<equals>
+				<property>sim/aircraft</property>
+				<value>seafireIIIc</value>
+			</equals>
+		</condition>
+		<texture>seafire-tx-00.png</texture>
+	</animation>
+
+	<animation>
+		<type>material</type>
 		<condition>
 			<greater-than>
 				<property>/controls/lighting/panel-norm</property>
