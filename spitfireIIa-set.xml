@@ -139,18 +139,6 @@ Aug 2004 Vivian Meazza, vivian.meazza at lineone.net
 				<default-field-of-view-deg>60</default-field-of-view-deg>
 			</config>
 		</view>
-		<autopilot>
-			<config>
-				<min-climb-speed-kt type="float">70.0</min-climb-speed-kt>
-				<best-climb-speed-kt type="float">75.0</best-climb-speed-kt>
-				<target-climb-rate-fpm type="float">500.0</target-climb-rate-fpm>
-				<target-descent-rate-fpm type="float">1000.0</target-descent-rate-fpm>
-				<elevator-adj-factor type="float">4000.0</elevator-adj-factor>
-				<integral-contribution type="float">0.01</integral-contribution>
-				<zero-pitch-throttle type="float">0.45</zero-pitch-throttle>
-				<zero-pitch-trim-full-throttle type="float">0.14</zero-pitch-trim-full-throttle>
-			</config>
-		</autopilot>
 		<hud>
 			<enable3d>false</enable3d>
 		</hud>
