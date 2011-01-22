@@ -129,7 +129,7 @@
 		</offsets>
 	</model>
 	<model>
-		<path>Aircraft/Spitfire/Models/fuel-pressure.xml</path>
+		<path>Aircraft/Spitfire/Models/fuel-pressure-warning-light.xml</path>
 		<!--3.26677	0.185946	-0.193828
 		3.26677	0.185946	-0.193828-->
 		<offsets>

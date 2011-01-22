@@ -183,10 +183,16 @@
 		<type>material</type>
 		<object-name>bracket-support</object-name>
 		<condition>
+			<or>
 			<equals>
 				<property>sim/aircraft</property>
 				<value>seafireIIIc</value>
+			</equals>	
+				<equals>
+				<property>sim/aircraft</property>
+				<value>spitfireVc</value>
 			</equals>
+			</or>
 		</condition>
 		<texture>seafire-tx-00.png</texture>
 	</animation>
