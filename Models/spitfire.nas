@@ -35,7 +35,7 @@ BOOST_CONTROL_AUTHORITY = 0.99; # How much can it move the throttle?
 BOOST_CONTROL_LIMIT_RATED = 9;        # Rated Maximum MP  (psi gauge) (1 hr)
 BOOST_CONTROL_LIMIT_COMBAT = 12.5;    # Combat limit (5 mins)
 
-if (type == "seafireIIIc" or type == "spitfireVb") {BOOST_CONTROL_LIMIT_COMBAT = 16;}  
+if (type == "seafireIIIc") {BOOST_CONTROL_LIMIT_COMBAT = 16;}  
 
 boost_control = props.globals.getNode("/controls/engines/engine/boost-control", 1);
 boost_pressure = props.globals.getNode("/engines/engine/boost-gauge-inhg", 1);
