@@ -190,7 +190,7 @@
 			</equals>	
 				<equals>
 				<property>sim/aircraft</property>
-				<value>spitfireVc</value>
+				<value>spitfireVb</value>
 			</equals>
 			</or>
 		</condition>
