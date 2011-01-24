@@ -442,14 +442,15 @@
 				<max>0.9</max>
 			</volume>
 		</click>
-		
+
+		<!-- ========= guns ============= -->
 		<guns>
 			<name>gunfire</name>
 			<mode>looped</mode>
 			<path>Aircraft/Spitfire/Sounds/gunfire_1.wav</path>
 			<condition>
-				<property>ai/submodels/trigger</property>
-				<property>ai/submodels/submodel/count</property>
+				<property>/controls/armament/trigger</property>
+				<property>/ai/submodels/submodel/count</property>
 			</condition>
 			<volume>
 				<factor>1.2</factor>

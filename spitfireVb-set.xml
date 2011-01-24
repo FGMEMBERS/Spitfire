@@ -75,6 +75,8 @@ $Id$
 			<canopy>
 				<position-norm type="double">1</position-norm>
 			</canopy>
+			<chock-left type="bool">1</chock-left>
+			<chock-right type="bool">1</chock-right>
 		</gear>
 		<flight>
 			<flaps-alternate-extension type="double">1</flaps-alternate-extension>
@@ -120,7 +122,7 @@ $Id$
 		<allow-toggle-cockpit archive="y">true</allow-toggle-cockpit>
 		<sound>
 			<audible>true</audible>
-			<path>Aircraft/Spitfire/Sounds/seafire-sound.xml</path>
+			<path>Aircraft/Spitfire/Sounds/spitfire-sound.xml</path>
 		</sound>
 		<panel>
 			<path>Aircraft/Generic/Panels/generic-vfr-panel.xml</path>

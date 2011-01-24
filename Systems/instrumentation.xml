@@ -80,11 +80,6 @@ file, these values will be used (they are hardcoded).
 		<number>0</number>
 	</heading-indicator-dg>
 
-	<KT-70>
-		<name>kt-70</name>
-		<number>0</number>
-	</KT-70>
-
 	<magnetic-compass>
 		<name>magnetic-compass</name>
 		<number>0</number>
@@ -121,25 +116,5 @@ file, these values will be used (they are hardcoded).
 		<number>0</number>
 		<static-port>/systems/static</static-port>
 	</vertical-speed-indicator>
-
-	<!--<gps>
-		<name>gps</name>
-		<number>0</number>
-	</gps>-->
-
-	<!--<radar>
-    <name>wxradar</name>
-    <number>0</number>
-  </radar>-->
-
-	<!--<tacan>
-    <name>tacan</name>
-    <number>0</number>
-  </tacan>-->
-
-	<!--<mk-viii>
-   <name>mk-viii</name>
-   <number>0</number>
-  </mk-viii>-->
 
 </PropertyList>

@@ -109,6 +109,14 @@
 
 	<!-- engine instruments -->
 	<model>
+		<path>Aircraft/Spitfire/Models/ammeter.xml</path>
+		<offsets>
+			<x-m>3.265</x-m>
+			<y-m>0.137895</y-m>
+			<z-m>0.3710</z-m>
+		</offsets>
+	</model>
+	<model>
 		<path>Aircraft/Spitfire/Models/boost.xml</path>
 		<!--3.26664	0.183456	-0.290907
 		3.26664	0.183456	-0.290907-->
@@ -121,11 +129,13 @@
 	<model>
 		<path>Aircraft/Spitfire/Models/rpm.xml</path>
 		<!--3.26664	0.262941	-0.22179
-		3.26664	0.262941	-0.22179-->
+		3.26664	0.262941	-0.22179
+		3.26663	0.269903	-0.226468
+		3.26663	0.269903	-0.226467-->
 		<offsets>
 			<x-m>3.265</x-m>
-			<y-m>0.22179</y-m>
-			<z-m>0.262941</z-m>
+			<y-m>0.226467</y-m>
+			<z-m>0.269903</z-m>
 		</offsets>
 	</model>
 	<model>
@@ -140,12 +150,10 @@
 	</model>
 	<model>
 		<path>Aircraft/Spitfire/Models/fuel.xml</path>
-		<!--3.26664	0.033435	-0.29171
-		3.26664	0.033435	-0.29171-->
 		<offsets>
 			<x-m>3.265</x-m>
-			<y-m>0.29171</y-m>
-			<z-m>0.033435</z-m>
+			<y-m>0.304738</y-m>
+			<z-m>0.0177704</z-m>
 		</offsets>
 	</model>
 	<model>
@@ -217,11 +225,13 @@
 	<model>
 		<path>Aircraft/Spitfire/Models/triple.xml</path>
 		<!--3.26664	0.033435	0.29171
-		3.26664	0.033435	0.29171-->
+		3.26664	0.033435	0.29171
+		3.26664	0.0177704	0.278682
+		3.26664	0.0177704	0.278682-->
 		<offsets>
 			<x-m>3.265</x-m>
 			<y-m>-0.29171</y-m>
-			<z-m>0.035</z-m>
+			<z-m>0.0177704</z-m>
 		</offsets>
 	</model>
 	<model>
@@ -811,6 +821,99 @@
 		<min>0.0</min>
 		<max>1</max>
 	</animation>
+
+	<!-- ****** Undercarriage ***** -->
+
+	<animation>
+		<type>pick</type>
+		<visible>true</visible>
+		<object-name>Tyre-P</object-name>
+		<object-name>Hub-P</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<interval-sec>0.1</interval-sec>
+			<binding>
+				<command>property-assign</command>
+				<property>controls/gear/chock-left</property>
+				<value>1</value>
+			</binding>
+		</action>
+	</animation>
+
+	<animation>
+		<type>pick</type>
+		<visible>true</visible>
+		<object-name>Tyre-S</object-name>
+		<object-name>Hub-S</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<interval-sec>0.1</interval-sec>
+			<binding>
+				<command>property-assign</command>
+				<property>controls/gear/chock-right</property>
+				<value>1</value>
+			</binding>
+		</action>
+	</animation>
+
+	<animation>
+		<type>pick</type>
+		<visible>true</visible>
+		<object-name>Chocks-Left</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<interval-sec>0.1</interval-sec>
+			<binding>
+				<command>property-assign</command>
+				<property>controls/gear/chock-left</property>
+				<value>0</value>
+			</binding>
+		</action>
+	</animation>
+
+	<animation>
+		<type>pick</type>
+		<visible>true</visible>
+		<object-name>Chocks-Right</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<interval-sec>0.1</interval-sec>
+			<binding>
+				<command>property-assign</command>
+				<property>controls/gear/chock-right</property>
+				<value>0</value>
+			</binding>
+		</action>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>Chocks-Left</object-name>
+		<condition>
+			<and>
+				<property>controls/gear/chock-left</property>
+				<property>gear/gear/position-norm</property>
+				<value>1</value>
+				<property>gear/gear/wow</property>
+			</and>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>Chocks-Right</object-name>
+		<condition>
+			<property>controls/gear/chock-right</property>
+			<property>gear/gear[1]/position-norm</property>
+			<value>1</value>
+			<property>gear/gear[1]/wow</property>
+		</condition>
+	</animation>
+	
 	<animation>
 		<type>rotate</type>
 		<object-name>Door-L</object-name>
@@ -923,6 +1026,7 @@
 	<animation>
 		<type>translate</type>
 		<object-name>Leg-Lower-Assembly-L</object-name>
+		<object-name>Chocks-Left</object-name>
 		<property>gear/gear/compression-norm</property>
 		<factor>0.2</factor>
 		<axis>
@@ -934,6 +1038,7 @@
 	<animation>
 		<type>translate</type>
 		<object-name>Leg-Lower-Assembly-R</object-name>
+		<object-name>Chocks-Right</object-name>
 		<property>gear/gear[1]/compression-norm</property>
 		<factor>0.2</factor>
 		<axis>
@@ -942,6 +1047,21 @@
 			<z>1</z>
 		</axis>
 	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>Chocks-Left</object-name>
+		<object-name>Chocks-Right</object-name>
+		<property>orientation/pitch-deg</property>
+		<axis>
+			<x1-m>2.18975</x1-m>
+			<y1-m>1.18265</y1-m>
+			<z1-m>-1.6796</z1-m>
+			<x2-m>2.18975</x2-m>
+			<y2-m>-1.18265</y2-m>
+			<z2-m>-1.6796</z2-m>
+		</axis>
+	</animation>
+	
 	<!-- tail wheel castering -->
 	<animation>
 		<type>rotate</type>
@@ -1738,7 +1858,7 @@
 		<nopreview/>
 		<type>select</type>
 		<object-name>Panel-Construction</object-name>
-		<!--<object-name>Place-Holders</object-name>-->
+		<object-name>Place-Holders</object-name>
 		<condition>
 			<equals>
 				<property>sim/current-view/view-number</property>
@@ -1746,6 +1866,7 @@
 			</equals>
 		</condition>
 	</animation>
+	
 	<!-- *** LoD for the whole model *** -->
 	<animation>
 		<type>range</type>

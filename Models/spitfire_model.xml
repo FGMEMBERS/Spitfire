@@ -846,7 +846,7 @@
 	<animation>
 		<type>pick</type>
 		<visible>true</visible>
-		<object-name>Chock-Left</object-name>
+		<object-name>Chocks-Left</object-name>
 		<action>
 			<button>0</button>
 			<repeatable>false</repeatable>
@@ -862,7 +862,7 @@
 	<animation>
 		<type>pick</type>
 		<visible>true</visible>
-		<object-name>Chock-Right</object-name>
+		<object-name>Chocks-Right</object-name>
 		<action>
 			<button>0</button>
 			<repeatable>false</repeatable>
@@ -877,7 +877,7 @@
 
 	<animation>
 		<type>select</type>
-		<object-name>Chock-Left</object-name>
+		<object-name>Chocks-Left</object-name>
 		<condition>
 			<and>
 				<property>controls/gear/chock-left</property>
@@ -890,7 +890,7 @@
 
 	<animation>
 		<type>select</type>
-		<object-name>Chock-Right</object-name>
+		<object-name>Chocks-Right</object-name>
 		<condition>
 			<property>controls/gear/chock-right</property>
 			<property>gear/gear[1]/position-norm</property>
@@ -1027,7 +1027,7 @@
 	<animation>
 		<type>translate</type>
 		<object-name>Leg-Lower-Assembly-L</object-name>
-		<object-name>Chock-Left</object-name>
+		<object-name>Chocks-Left</object-name>
 		<property>gear/gear/compression-norm</property>
 		<factor>0.2</factor>
 		<axis>
@@ -1039,13 +1039,27 @@
 	<animation>
 		<type>translate</type>
 		<object-name>Leg-Lower-Assembly-R</object-name>
-		<object-name>Chock-Right</object-name>
+		<object-name>Chocks-Right</object-name>
 		<property>gear/gear[1]/compression-norm</property>
 		<factor>0.2</factor>
 		<axis>
 			<x>0.321</x>
 			<y>-0.075</y>
 			<z>1</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>Chocks-Left</object-name>
+		<object-name>Chocks-Right</object-name>
+		<property>orientation/pitch-deg</property>
+		<axis>
+			<x1-m>2.18975</x1-m>
+			<y1-m>1.18265</y1-m>
+			<z1-m>-1.6796</z1-m>
+			<x2-m>2.18975</x2-m>
+			<y2-m>-1.18265</y2-m>
+			<z2-m>-1.6796</z2-m>
 		</axis>
 	</animation>
 	<!-- tail wheel castering -->

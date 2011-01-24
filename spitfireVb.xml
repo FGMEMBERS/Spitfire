@@ -376,8 +376,9 @@ gear-ratio = "0.477" moment = 37.15-->
 		<control-speed control="BRAKE"
 									 transition-time="1"/>
 		<control-input axis="/controls/gear/brake-parking"
-									 control="BRAKE"
-									 split="true"/>
+									 control="BRAKE"/>
+		<control-input axis="/controls/gear/chock-left"
+									 control="BRAKE" />
 		<control-input axis="/controls/gear/gear-down"
 									 control="EXTEND"/>
 		<control-speed control="EXTEND"
@@ -404,8 +405,9 @@ gear-ratio = "0.477" moment = 37.15-->
 		<control-speed control="BRAKE"
 									 transition-time="1"/>
 		<control-input axis="/controls/gear/brake-parking"
-									 control="BRAKE"
-									 split="true"/>
+									 control="BRAKE"/>
+		<control-input axis="/controls/gear/chock-right"
+									 control="BRAKE"/>
 		<control-input axis="/controls/gear/gear-down"
 									 control="EXTEND"/>
 		<control-speed control="EXTEND"
