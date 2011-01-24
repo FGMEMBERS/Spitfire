@@ -913,7 +913,24 @@ var run_gear = func {
     }
 }
 
+# =========================== smoke stuff ====================================
 
+var updateSmoking = func {     # set the smoke value according to the engine conditions
+
+print("updating Smoke");
+var cranking = getprop("engines/engine/cranking");
+var running  = getprop("engines/engine/running");
+var smoking = 0;
+
+if (cranking and !running){  
+    smoking = 1;
+} else {
+    smoking = 0;            # none
+}
+
+setprop("sim/ai/engines/engine/smoking", smoking);
+
+} # end function
 
 #========================= Initialize ===============================
 
@@ -1016,6 +1033,13 @@ var initialize = func {
         0,
         0);
 
+    setlistener( "engines/engine/cranking", func {updateSmoking()},
+        0,
+        0);
+
+    setlistener( "engines/engine/running", func {updateSmoking()},
+        0,
+        0);
 
 } #end init
 

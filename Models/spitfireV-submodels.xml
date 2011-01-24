@@ -296,7 +296,7 @@
 	<submodel>
 		<name>exhaust smoke 2r</name>
 		<model>Aircraft/Spitfire/Models/seafire-exhaust.xml</model>
-		<trigger>engines/engine/cranking</trigger>
+		<trigger>sim/ai/engines/engine/smoking</trigger>
 		<speed>50</speed>
 		<repeat>true</repeat>
 		<delay>0.0001</delay>
@@ -316,7 +316,7 @@
 	<submodel>
 		<name>exhaust smoke 2l</name>
 		<model>Aircraft/Spitfire/Models/seafire-exhaust.xml</model>
-		<trigger>engines/engine/cranking</trigger>
+		<trigger>sim/ai/engines/engine/smoking</trigger>
 		<speed>50</speed>
 		<repeat>true</repeat>
 		<delay>0.0001</delay>
@@ -376,7 +376,7 @@
 	<submodel>
 		<name>exhaust smoke 4r</name>
 		<model>Aircraft/Spitfire/Models/seafire-exhaust.xml</model>
-		<trigger>engines/engine/cranking</trigger>
+		<trigger>sim/ai/engines/engine/smoking</trigger>
 		<speed>50</speed>
 		<repeat>true</repeat>
 		<delay>0.0001</delay>
@@ -396,7 +396,7 @@
 	<submodel>
 		<name>exhaust smoke 4l</name>
 		<model>Aircraft/Spitfire/Models/seafire-exhaust.xml</model>
-		<trigger>engines/engine/cranking</trigger>
+		<trigger>sim/ai/engines/engine/smoking</trigger>
 		<speed>50</speed>
 		<repeat>true</repeat>
 		<delay>0.0001</delay>
@@ -456,7 +456,7 @@
 	<submodel>
 		<name>exhaust smoke 6r</name>
 		<model>Aircraft/Spitfire/Models/seafire-exhaust.xml</model>
-		<trigger>engines/engine/cranking</trigger>
+		<trigger>sim/ai/engines/engine/smoking</trigger>
 		<speed>50</speed>
 		<repeat>true</repeat>
 		<delay>0.0001</delay>
@@ -476,7 +476,7 @@
 	<submodel>
 		<name>exhaust smoke 6l</name>
 		<model>Aircraft/Spitfire/Models/seafire-exhaust.xml</model>
-		<trigger>engines/engine/cranking</trigger>
+		<trigger>sim/ai/engines/engine/smoking</trigger>
 		<speed>50</speed>
 		<repeat>true</repeat>
 		<delay>0.0001</delay>
