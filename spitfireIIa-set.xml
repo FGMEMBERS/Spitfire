@@ -636,7 +636,7 @@ Aug 2004 Vivian Meazza, vivian.meazza at lineone.net
 			<file>Aircraft/Generic/WalkView/walkview.nas</file>
 		</walkview>
 		<walkviews>
-			<file>Aircraft/spitfire/Models/spitfire-walk-views.nas</file>
+			<file>Aircraft/Spitfire/Models/spitfire-walk-views.nas</file>
 		</walkviews>
 		<oxygen>
 			<file>Aircraft/Generic/Oxygen/oxygen.nas</file>
