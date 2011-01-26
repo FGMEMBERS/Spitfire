@@ -3,7 +3,7 @@
 
 ************************************************************************
 
-YASim aerodynamic model for a Spitfire Vc
+YASim aerodynamic model for a Spitfire Vb
 
 
 Author: Vivian Meazza
@@ -18,7 +18,7 @@ The reference datum for measurements is the nose.
 
 -->
 <!-- Weight of everything but fuel  (4873 empty) -->
-<airplane mass="5875">
+<airplane mass="5732">
 	<!-- Approach configuration -->
 	<approach speed="85"
 						aoa="7"
@@ -283,12 +283,12 @@ gear-ratio = "0.477" moment = 37.15-->
 							 y="0"
 							 z="-0.25"
 							 mass="2055"
-							 moment="90"
+							 moment="80"
 							 radius="1.638"
-							 cruise-speed="300"
+							 cruise-speed="322"
 							 cruise-rpm="1431"
-							 cruise-power="1585"
-							 cruise-alt="10500"
+							 cruise-power="1440"
+							 cruise-alt="20000"
 							 min-rpm="715"
 							 max-rpm="1431"
 							 gear-ratio="0.477"
@@ -372,9 +372,9 @@ gear-ratio = "0.477" moment = 37.15-->
 									 src0="0"
 									 src1="1"
 									 dst0="0"
-									 dst1="0.8"/>
+									 dst1="0.9"/>
 		<control-speed control="BRAKE"
-									 transition-time="1"/>
+									 transition-time="0.5"/>
 		<control-input axis="/controls/gear/brake-parking"
 									 control="BRAKE"/>
 		<control-input axis="/controls/gear/chock-left"
@@ -401,9 +401,9 @@ gear-ratio = "0.477" moment = 37.15-->
 									 src0="0"
 									 src1="1"
 									 dst0="0"
-									 dst1="0.8"/>
+									 dst1="0.9"/>
 		<control-speed control="BRAKE"
-									 transition-time="1"/>
+									 transition-time="0.5"/>
 		<control-input axis="/controls/gear/brake-parking"
 									 control="BRAKE"/>
 		<control-input axis="/controls/gear/chock-right"
@@ -457,7 +457,7 @@ gear-ratio = "0.477" moment = 37.15-->
 		<control-output control="EXTEND"
 										prop="/gear/canopy/position-norm"/>
 	</gear>
-	<!-- Hook  - the hook extends only - it has no retracting mechanism -->
+	<!-- Hook  - the hook extends only - it has no retracting mechanism 
 	<hook x="-5.91"
 				y="0.0"
 				z="-0.60"
@@ -468,11 +468,11 @@ gear-ratio = "0.477" moment = 37.15-->
 									 control="HEXTEND"/>
 		<control-speed control="HEXTEND"
 									 transition-time="5"/>
-	</hook>
+	</hook>-->
 	<!-- Launch-bar 
 	Note: the Seafire was not fitted with a catpult launch-bar - it used a catapult strop, 
 	if at all. It usually did a free take-off.
-	the launch-bar is included here as a workable substitute. -->
+	the launch-bar is included here as a workable substitute. 
 	<launchbar x="-2.30"
 						 y="0.0"
 						 z="-1.25"
@@ -481,7 +481,7 @@ gear-ratio = "0.477" moment = 37.15-->
 									 control="LEXTEND"/>
 		<control-speed control="LEXTEND"
 									 transition-time="1"/>
-	</launchbar>
+	</launchbar>-->
 	<!-- Fuselage tanks. 
 Weight of contents calculated using 100 octane AVGAS density of 695 kg/m3 @ 15degC
 -->
@@ -512,29 +512,29 @@ Weight of contents calculated using 100 octane AVGAS density of 695 kg/m3 @ 15de
 	<ballast x="-2.70"
 					 y="3.10"
 					 z="-0.48"
-					 mass="52"/>
+					 mass="60"/>
 	<ballast x="-2.70"
 					 y="-3.10"
 					 z="-0.48"
-					 mass="52"/>
+					 mass="60"/>
 	<ballast x="-2.75"
 					 y="3.80"
 					 z="-0.57"
-					 mass="52"/>
+					 mass="60"/>
 	<ballast x="-2.75"
 					 y="-3.80"
 					 z="-0.57"
-					 mass="52"/>
-	<ballast x="-2.40"
+					 mass="60"/>
+	<ballast x="-2.39"
 					 y="2.17"
 					 z="-0.60"
-					 mass="222"/>
-	<ballast x="-2.40"
+					 mass="184"/>
+	<ballast x="-2.39"
 					 y="-2.17"
 					 z="-0.60"
-					 mass="222"/>
+					 mass="184"/>
 	<!--Oil Cooler-->
-	<ballast x="-3.1"
+	<ballast x="-3.0"
 					 y="2.07"
 					 z="-0.88"
 					 mass="4.0"/>
