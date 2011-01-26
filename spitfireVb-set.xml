@@ -201,6 +201,35 @@ $Id$
 													 type="double">2.75</target-z-offset-m>
 			</config>
 		</view>
+		<view n="105">
+			<name>Ground Crew View</name>
+			<type>lookfrom</type>
+			<config>
+				<internal type="bool">false</internal>
+				<from-model type="bool">false</from-model>
+				<!--<from-model-idx type="int">0</from-model-idx>-->
+				<eye-lat-deg-path>/sim/model/position/latitude-deg</eye-lat-deg-path>
+				<eye-lon-deg-path>/sim/model/position/longitude-deg</eye-lon-deg-path>
+				<eye-alt-ft-path>/sim/model/position/altitude-ft</eye-alt-ft-path>
+				<eye-roll-deg-path>/sim/tower/roll-deg</eye-roll-deg-path>
+				<eye-pitch-deg-path>/sim/tower/pitch-deg</eye-pitch-deg-path>
+				<eye-heading-deg-path>/sim/tower/heading-deg</eye-heading-deg-path>
+				<at-model type="bool">false</at-model>
+				<at-model-idx type="int">0</at-model-idx>
+				<ground-level-nearplane-m type="double">0.1f</ground-level-nearplane-m>
+
+				<!-- back -->
+				<heading-offset-deg>180</heading-offset-deg>
+				<x-offset-m>0</x-offset-m>
+				<!-- right -->
+				<y-offset-m>-0.0</y-offset-m>
+				<!-- up -->
+				<z-offset-m>-10.0</z-offset-m>
+				<!-- back -->
+				<pitch-offset-deg>0</pitch-offset-deg>
+				<default-field-of-view-deg>60</default-field-of-view-deg>
+			</config>
+		</view>
 		<hud>
 			<enable3d>false</enable3d>
 		</hud>
@@ -291,7 +320,7 @@ $Id$
 
 	<!-- ================ map keyboard ================ -->
 	<input>
-		<keyboard>
+		<keyboard include="../Generic/WalkView/walk-view-keys.xml">
 			<!--map keys for Boost Control Cutout -->
 			<key n="2">
 				<name>Ctrl-B</name>
@@ -350,7 +379,9 @@ $Id$
 				<binding>
 					<command>nasal</command>
 					<script>
+						if (!walkview.side_step(1.0)) {
 						spitfire.openDoor(0.015);
+						}
 					</script>
 				</binding>
 			</key>
@@ -360,7 +391,9 @@ $Id$
 				<binding>
 					<command>nasal</command>
 					<script>
+						if (!walkview.side_step(0.5)) {
 						spitfire.openDoor(0);
+						}
 					</script>
 				</binding>
 			</key>
@@ -686,5 +719,11 @@ $Id$
 		<oxygen>
 			<file>Aircraft/Generic/Oxygen/oxygen.nas</file>
 		</oxygen>
+		<walkview>
+			<file>Aircraft/Generic/WalkView/walkview.nas</file>
+		</walkview>
+		<walkviews>
+			<file>Aircraft/Spitfire/Models/spitfire-walk-views.nas</file>
+		</walkviews>
 	</nasal>
 </PropertyList>
