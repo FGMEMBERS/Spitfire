@@ -58,6 +58,28 @@
 			<z>0</z>
 		</axis>
 	</animation>
+	
+	<animation>
+		<type>material</type>
+		<object-name>Body</object-name>
+		<condition>
+				<equals>
+					<property>sim/aircraft</property>
+					<value>spitfireVb</value>
+				</equals>
+		</condition>
+		<diffuse>
+			<red>1.0</red>
+			<green>1.0</green>
+			<blue>0.0</blue>
+		</diffuse>
+		<ambient>
+			<red>1.0</red>
+			<green>1.0</green>
+			<blue>0.0</blue>
+		</ambient>
+		<shininess>100</shininess>
+	</animation>
 
 	<animation>
 		<type>material</type>

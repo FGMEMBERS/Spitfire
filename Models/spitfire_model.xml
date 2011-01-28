@@ -129,6 +129,16 @@
 		</offsets>
 	</model>
 	<model>
+		<path>Aircraft/Spitfire/Models/rad-temp.xml</path>
+		<!--3.26664	0.104085	-0.341567
+	3.26664	0.104085	-0.341567-->
+		<offsets>
+			<x-m>3.265</x-m>
+			<y-m>0.3415679</y-m>
+			<z-m>0.104085</z-m>
+		</offsets>
+	</model>
+	<model>
 		<path>Aircraft/Spitfire/Models/fuel-pressure.xml</path>
 		<!--3.26677	0.185946	-0.193828
 		3.26677	0.185946	-0.193828-->
@@ -140,12 +150,10 @@
 	</model>
 	<model>
 		<path>Aircraft/Spitfire/Models/fuel.xml</path>
-		<!--3.26664	0.033435	-0.29171
-		3.26664	0.033435	-0.29171-->
 		<offsets>
 			<x-m>3.265</x-m>
-			<y-m>0.29171</y-m>
-			<z-m>0.033435</z-m>
+			<y-m>0.304738</y-m>
+			<z-m>0.0177704</z-m>
 		</offsets>
 	</model>
 	<model>
@@ -227,11 +235,13 @@
 	<model>
 		<path>Aircraft/Spitfire/Models/triple.xml</path>
 		<!--3.26664	0.033435	0.29171
-		3.26664	0.033435	0.29171-->
+		3.26664	0.033435	0.29171
+		3.26664	0.0177704	0.278682
+		3.26664	0.0177704	0.278682-->
 		<offsets>
 			<x-m>3.265</x-m>
 			<y-m>-0.29171</y-m>
-			<z-m>0.035</z-m>
+			<z-m>0.0177704</z-m>
 		</offsets>
 	</model>
 	<model>

@@ -127,6 +127,28 @@
 		</offsets>
 	</model>
 	<model>
+		<path>Aircraft/Spitfire/Models/rad-temp.xml</path>
+		<!--3.26664	0.104085	-0.341567
+	3.26664	0.104085	-0.341567-->
+		<offsets>
+			<x-m>3.265</x-m>
+			<y-m>0.3415679</y-m>
+			<z-m>0.104085</z-m>
+		</offsets>
+	</model>
+	3.26664	0.104085	-0.267929
+	3.26664	0.104085	-0.267929
+	<model>
+		<path>Aircraft/Spitfire/Models/oil-temp.xml</path>
+		<!--	3.26664	0.104085	-0.267929
+	3.26664	0.104085	-0.267929-->
+		<offsets>
+			<x-m>3.265</x-m>
+			<y-m>0.267929</y-m>
+			<z-m>0.104085</z-m>
+		</offsets>
+	</model>
+	<model>
 		<path>Aircraft/Spitfire/Models/rpm.xml</path>
 		<!--3.26664	0.262941	-0.22179
 		3.26664	0.262941	-0.22179

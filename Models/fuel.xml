@@ -36,17 +36,19 @@
 			</entry>
 			<entry>
 				<ind>24.01</ind>
-				<dep>45</dep>
+				<dep>35</dep>
 			</entry>
 			<entry>
 				<ind>48.03</ind>
-				<dep>90</dep>
+				<dep>70</dep>
 			</entry>
 		</interpolation>
+		<!--0.00162015	0.0165651	-2.91038e-011
+		0.00162015	0.0165651	-2.91038e-011-->
 		<center>
 			<x-m>0</x-m>
 			<y-m>0</y-m>
-			<z-m>0.02</z-m>
+			<z-m>0.0165651</z-m>
 		</center>
 		<axis>
 			<x>1</x>
