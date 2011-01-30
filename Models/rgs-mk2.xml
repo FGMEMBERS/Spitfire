@@ -4,11 +4,6 @@
 	<path>rgs.ac</path>
 
 	<animation>
-		<type>select</type>
-		<object-name>mk1</object-name>
-	</animation>
-
-	<animation>
 		<type>material</type>
 		<object-name>disk</object-name>
 		<transparency>
@@ -26,7 +21,7 @@
 
 	<animation>
 		<type>material</type>
-		<object-name>mount-back</object-name>
+		<object-name>support-back</object-name>
 		<object-name>clamp</object-name>
 		<object-name>lug-rear</object-name>
 		<object-name>lug-front</object-name>
@@ -45,6 +40,13 @@
 			</not>
 		</condition>
 	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>mk1</object-name>
+		<object-name>mount-back</object-name>
+	</animation>
+	
 	<animation>
 		<type>blend</type>
 		<object-name>glass-rect</object-name>

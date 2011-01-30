@@ -12119,7 +12119,7 @@ name "back"
 loc -0.00715108 -0.099451 -0.0161411
 kids 4
 OBJECT poly
-name "mount-back"
+name "support-back"
 loc 0.00994274 0.000886455 0.0161411
 texture "spitfire-tx-00.rgb"
 crease 61.000000
