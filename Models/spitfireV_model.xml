@@ -1,26 +1,8 @@
 <?xml version="1.0"?>
-<!-- Spitfire IIa by Vivian Meazza -->
+<!-- Spitfire Vb by Vivian Meazza -->
 <PropertyList>
 	<path>spitfireVb.ac</path>
-	<!-- Front hotspots -->
-	<!--<panel>
-		<path>Aircraft/Spitfire/Models/panel-hotspots.xml</path>
-		<bottom-left>
-			<x-m>3.265</x-m>
-			<y-m>-0.40</y-m>
-			<z-m>-0.10</z-m>
-		</bottom-left>
-		<bottom-right>
-			<x-m>3.265</x-m>
-			<y-m> 0.40</y-m>
-			<z-m>-0.10</z-m>
-		</bottom-right>
-		<top-left>
-			<x-m>3.265</x-m>
-			<y-m>-0.40</y-m>
-			<z-m> 0.70</z-m>
-		</top-left>
-	</panel>-->
+
 	<!-- ************* panel models ************* -->
 	<!-- blind flying instruments -->
 	<model>
@@ -136,8 +118,6 @@
 			<z-m>0.104085</z-m>
 		</offsets>
 	</model>
-	3.26664	0.104085	-0.267929
-	3.26664	0.104085	-0.267929
 	<model>
 		<path>Aircraft/Spitfire/Models/oil-temp.xml</path>
 		<!--	3.26664	0.104085	-0.267929
@@ -372,12 +352,12 @@
 		</offsets>
 	</model>
 	<model>
-		<path>Aircraft/Spitfire/Models/rgs.xml</path>
+		<path>Aircraft/Spitfire/Models/rgs-mk2.xml</path>
 		<name>Gunsight</name>
 		<offsets>
 			<x-m>3.38</x-m>
 			<y-m>-0.0</y-m>
-			<z-m>0.528</z-m>
+			<z-m>0.520</z-m>
 		</offsets>
 	</model>
 	<model>
@@ -706,7 +686,7 @@
 			<z2-m>-0.71</z2-m>
 		</axis>
 	</animation>
-	<animation>arrest
+	<animation>
 		<type>rotate</type>
 		<object-name>Flap-Outer-R-Inner</object-name>
 		<property>surface-positions/flap-pos-norm</property>
@@ -935,7 +915,7 @@
 			<property>gear/gear[1]/wow</property>
 		</condition>
 	</animation>
-	
+
 	<animation>
 		<type>rotate</type>
 		<object-name>Door-L</object-name>
@@ -1083,7 +1063,7 @@
 			<z2-m>-1.6796</z2-m>
 		</axis>
 	</animation>
-	
+
 	<!-- tail wheel castering -->
 	<animation>
 		<type>rotate</type>
@@ -1888,7 +1868,7 @@
 			</equals>
 		</condition>
 	</animation>
-	
+
 	<!-- *** LoD for the whole model *** -->
 	<animation>
 		<type>range</type>

@@ -13,12 +13,19 @@
 	</animation>
 
 	<animation>
+		<type>select</type>
+		<object-name>mk2</object-name>
+	</animation>
+
+
+	<animation>
 		<type>material</type>
 		<object-name>mount-back</object-name>
 		<object-name>clamp</object-name>
 	<object-name>lug-rear</object-name>
 	<object-name>lug-front</object-name>
-		<or>
+		<condition>
+			<or>
 			<equals>
 				<property>sim/aircraft</property>
 				<value>seafireIIIc</value>
@@ -28,6 +35,7 @@
 				<value>spitfireVc</value>
 			</equals>
 		</or>
+		</condition>
 		<texture>seafire-tx-00.png</texture>
 	</animation>
 
