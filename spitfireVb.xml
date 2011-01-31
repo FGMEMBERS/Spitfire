@@ -105,7 +105,7 @@ flap drag not available
 		<flap1 start="0.437"
 					 end="0.90"
 					 lift="1.25"
-					 drag="1.35"/>
+					 drag="1.45"/>
 		<spoiler start="0.00"
 						 end="1"
 						 lift="0.01"

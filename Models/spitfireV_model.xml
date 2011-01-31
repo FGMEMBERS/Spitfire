@@ -605,28 +605,58 @@
 		<type>rotate</type>
 		<object-name>Aileron-L</object-name>
 		<property>surface-positions/left-aileron-pos-norm</property>
-		<factor>-30</factor>
+		<!--<factor>-30</factor>-->
+		<interpolation>
+			<entry>
+				<ind>-1</ind>
+				<dep>20</dep>
+			</entry>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>-20</dep>
+			</entry>
+		</interpolation>
 		<axis>
-			<x1-m>3.49</x1-m>
-			<y1-m>-3.24</y1-m>
-			<z1-m>-0.54</z1-m>
-			<x2-m>3.27</x2-m>
-			<y2-m>-4.46</y2-m>
-			<z2-m>-0.39</z2-m>
+			<x1-m>3.56804</x1-m>
+			<y1-m>-3.23929</y1-m>
+			<z1-m>-0.50524</z1-m>
+			<x2-m>3.29558</x2-m>
+			<y2-m>-4.46982</y2-m>
+			<z2-m>-0.369232</z2-m>
 		</axis>
 	</animation>
 	<animation>
 		<type>rotate</type>
 		<object-name>Aileron-R</object-name>
 		<property>surface-positions/right-aileron-pos-norm</property>
-		<factor>30</factor>
+		<!--<factor>30</factor>
+		3.56804	-0.50524	-3.23929
+3.29558	-0.369232	-4.46982-->
+		<interpolation>
+			<entry>
+				<ind>-1</ind>
+				<dep>-20</dep>
+			</entry>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>20</dep>
+			</entry>
+		</interpolation>
 		<axis>
-			<x1-m>3.49</x1-m>
-			<y1-m>3.24</y1-m>
-			<z1-m>-0.54</z1-m>
-			<x2-m>3.27</x2-m>
-			<y2-m>4.46</y2-m>
-			<z2-m>-0.39</z2-m>
+			<x1-m>3.56804</x1-m>
+			<y1-m>3.23929</y1-m>
+			<z1-m>-0.50524</z1-m>
+			<x2-m>3.29558</x2-m>
+			<y2-m>4.46982</y2-m>
+			<z2-m>-0.369232</z2-m>
 		</axis>
 	</animation>
 	<!-- flaps -->
