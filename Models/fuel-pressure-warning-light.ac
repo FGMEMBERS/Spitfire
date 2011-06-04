@@ -8,7 +8,7 @@ kids 5
 OBJECT poly
 name "light"
 loc 0.00350368 0.00170221 0.000750595
-texture "D:/Git_New/fgdata/Aircraft/Buccaneer/Instruments/indicator_red.png"
+texture "/Aircraft/Buccaneer/Instruments/indicator_red.png"
 crease 45.000000
 numvert 18
 0 0.000734638 0.00548219
@@ -304,7 +304,7 @@ kids 0
 OBJECT poly
 name "body"
 loc -0.0163204 0.00201082 0.000886675
-texture "D:/Git_New/fgdata/Aircraft/Buccaneer/Instruments/indicator_red.png"
+texture "/Aircraft/Buccaneer/Instruments/indicator_red.png"
 crease 45.000000
 numvert 119
 0.0195617 -0.00201083 -0.000947024

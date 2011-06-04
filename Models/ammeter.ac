@@ -5,7 +5,7 @@ kids 6
 OBJECT poly
 name "bezel"
 loc 0.00254972 0 0
-texture "D:/Git_New/fgdata/Aircraft/spitfireIX/Models/Instruments/oil_temp_black.png"
+texture "/Aircraft/spitfireIX/Models/Instruments/oil_temp_black.png"
 crease 45.000000
 numvert 150
 0.0016533 0.0241142 -0.00512563
@@ -1003,7 +1003,7 @@ kids 0
 OBJECT poly
 name "plate"
 loc 0 -0.00234167 -0.0119269
-texture "D:/Git_New/fgdata/Aircraft/spitfireIX/Models/Instruments/oil_temp_black.png"
+texture "/Aircraft/spitfireIX/Models/Instruments/oil_temp_black.png"
 crease 61.000000
 numvert 16
 0 -0.0254348 -0.0135942
@@ -1090,7 +1090,7 @@ kids 0
 OBJECT poly
 name "face"
 loc 0.000880775 -2.86682e-010 -6.75524e-010
-texture "D:/Git_New/fgdata/Aircraft/spitfireIX/Models/Instruments/ammeter.png"
+texture "/Aircraft/spitfireIX/Models/Instruments/ammeter.png"
 crease 45.000000
 numvert 17
 -5.82077e-011 -6.66134e-016 0.0262566
@@ -1211,7 +1211,7 @@ kids 0
 OBJECT poly
 name "cover"
 loc 0.000880775 0 0
-texture "D:/Git_New/fgdata/Aircraft/spitfireIX/Models/Instruments/oil_temp_black.png"
+texture "/Aircraft/spitfireIX/Models/Instruments/oil_temp_black.png"
 crease 45.000000
 numvert 20
 0.00302453 -0.00945959 -0.021712
@@ -1312,7 +1312,7 @@ kids 0
 OBJECT poly
 name "needle"
 loc 0.00229331 -0.01344 0
-texture "D:/Git_New/fgdata/Aircraft/spitfireIX/Models/Instruments/oil_temp_black.png"
+texture "/Aircraft/spitfireIX/Models/Instruments/oil_temp_black.png"
 crease 45.000000
 numvert 7
 0 0.0272606 -0.000677969
@@ -1336,7 +1336,7 @@ refs 7
 kids 0
 OBJECT poly
 name "screws"
-texture "D:/Git_New/fgdata/Aircraft/spitfireIX/Models/Instruments/slot_screw_med_flat.png"
+texture "/Aircraft/spitfireIX/Models/Instruments/slot_screw_med_flat.png"
 crease 45.000000
 numvert 48
 0.000768868 -0.0232932 -0.0276659
