@@ -20,7 +20,7 @@ registerTimer = func {
 
 spitfireIIa = 0;
 
-type = getprop("sim/aircraft");
+var type = getprop("sim/aircraft");
 
 if (type == "spitfireIIa") {spitfireIIa = 1;}
 
@@ -932,117 +932,207 @@ setprop("sim/ai/engines/engine/smoking", smoking);
 
 } # end function
 
+# ================================== Ammo State ============================================
+
+var ammo = func {
+    var trigger = getprop("/controls/armament/trigger");
+    print ("trigger ",trigger);
+
+    if (!trigger)
+        return;
+
+    count[0] = countNode.getValue();
+    count[1] = count_1_Node.getValue();
+    count[2] = count_2_Node.getValue();
+    count[3] = count_3_Node.getValue();
+    count[4] = count_4_Node.getValue();
+    count[5] = count_5_Node.getValue();
+
+#     var wt_lbs = rnd_wt_lbs * grp;
+    var wt_lbs = 0;
+
+
+    for(var i = 0; i < 6; i += 1){
+
+        if (i < 2 and (type == "spitfireVb" or type == "seafireIIIc") ){
+            wt_lbs = rnd_wt_lbs;
+        } else {
+            wt_lbs =  rnd_wt_303_lbs;
+        }
+
+        ammo_wt[i]= getprop("/yasim/weights/ammo-lb[" ~ i ~ "]");
+        ammo_wt[i] = count[i] * wt_lbs;
+
+        if (ammo_wt[i] < 0.)ammo_wt[i] = 0;
+
+        setprop("/yasim/weights/ammo-lb[" ~ i ~ "]",  ammo_wt[i]);
+        print (" ammo count[", i,"] ", count[i], " ",  ammo_wt[i]);
+    }# end for
+
+        settimer(ammo, 0);
+
+} # end func ammo
+
 #========================= Initialize ===============================
+#
+# Make sure all needed properties are present and accounted 
+# for, and that they have sane default values.
 
-var initialize = func {
-
-    print( "Initializing Spitfire utilities ..." );
 
 
-    setprop("sim/model/position/latitude-deg", getprop("position/latitude-deg"));
-    setprop("sim/model/position/longitude-deg", getprop("position/longitude-deg"));
-    setprop("sim/model/position/altitude-ft", getprop("position/altitude-ft"));
-    setprop("controls/gear/gear-lever", 0);
-    setprop("controls/gear/oil-flow", 0);
+var countNode    = props.globals.getNode("ai/submodels/submodel[1]/count", 1);
+var count_1_Node = props.globals.getNode("ai/submodels/submodel[3]/count", 1);
+var count_2_Node = props.globals.getNode("ai/submodels/submodel[5]/count", 1);
+var count_3_Node = props.globals.getNode("ai/submodels/submodel[7]/count", 1);
+var count_4_Node = props.globals.getNode("ai/submodels/submodel[9]/count", 1);
+var count_5_Node = props.globals.getNode("ai/submodels/submodel[11]/count", 1);
 
-    rain();
-    tyresmoke();
-    aircraft.steering.init();
 
+# =============== Variables ================
+
+    var rnd_wt_lbs     = 0.286600941; #20mm cannon
+        var rnd_wt_303_lbs = 0.068272184; #.303 MG
+
+        var ammo_wt=[0,0,0,0,0,0];
+    var count  =[0,0,0,0,0,0];
+
+    var initialize = func {
+
+        print( "Initializing Spitfire utilities ..." );
+
+
+        setprop("sim/model/position/latitude-deg", getprop("position/latitude-deg"));
+        setprop("sim/model/position/longitude-deg", getprop("position/longitude-deg"));
+        setprop("sim/model/position/altitude-ft", getprop("position/altitude-ft"));
+        setprop("controls/gear/gear-lever", 0);
+        setprop("controls/gear/oil-flow", 0);
+
+
+
+        rain();
+        tyresmoke();
+        aircraft.steering.init();
+#        ammo();
 
 # ============ listeners ==========================
 
-    setlistener( "controls/lighting/nav-lights", func {
-        var nav_lights_node = props.globals.getNode("controls/lighting/nav-lights", 1);
-        var generic_node = props.globals.getNode("sim/multiplay/generic/int[0]", 1);
-        generic_node.setIntValue(nav_lights_node.getValue());
+        setlistener( "controls/lighting/nav-lights", func {
+            var nav_lights_node = props.globals.getNode("controls/lighting/nav-lights", 1);
+            var generic_node = props.globals.getNode("sim/multiplay/generic/int[0]", 1);
+            generic_node.setIntValue(nav_lights_node.getValue());
 #        print("nav_lights ", nav_lights_node.getValue(), "generic_node ", generic_node.getValue());
-    }
-    ); 
-
-    setlistener("gear/gear[0]/position-norm", func {
-        var gear = getprop("gear/gear[0]/position-norm");
-
-        if (gear == 1 ){
-            run_tyresmoke0 = 1;
-        }else{
-            run_tyresmoke0 = 0;
         }
+        ); 
 
-    },
-        1,
-        0);
+        setlistener("gear/gear[0]/position-norm", func {
+            var gear = getprop("gear/gear[0]/position-norm");
 
-    setlistener("gear/gear[1]/position-norm", func {
-        var gear = getprop("gear/gear[1]/position-norm");
+            if (gear == 1 ){
+                run_tyresmoke0 = 1;
+            }else{
+                run_tyresmoke0 = 0;
+            }
 
-        if (gear == 1 ){
-            run_tyresmoke1 = 1;
-        }else{
-            run_tyresmoke1 = 0;
-        }
+        },
+            1,
+            0);
 
-    },
-        1,
-        0);
+        setlistener("gear/gear[1]/position-norm", func {
+            var gear = getprop("gear/gear[1]/position-norm");
 
-    setlistener("gear/gear[2]/position-norm", func {
-        var gear = getprop("gear/gear[2]/position-norm");
+            if (gear == 1 ){
+                run_tyresmoke1 = 1;
+            }else{
+                run_tyresmoke1 = 0;
+            }
 
-        if (gear == 1 ){
-            run_tyresmoke2 = 1;
-        }else{
-            run_tyresmoke2 = 0;
-        }
+        },
+            1,
+            0);
 
-    },
-        1,
-        0);
+        setlistener("gear/gear[2]/position-norm", func {
+            var gear = getprop("gear/gear[2]/position-norm");
 
-    setlistener("controls/gear/gear-down", func (n){
-        var gear_control = n.getValue();
+            if (gear == 1 ){
+                run_tyresmoke2 = 1;
+            }else{
+                run_tyresmoke2 = 0;
+            }
 
-        if (gear_control == 0) {
-            gear_lever = -1;
-        } else {
-            gear_lever = 1;
-        }
+        },
+            1,
+            0);
 
-        run_gear();
+        setlistener("controls/gear/gear-down", func (n){
+            var gear_control = n.getValue();
 
-    },
-        0,
-        0);
+            if (gear_control == 0) {
+                gear_lever = -1;
+            } else {
+                gear_lever = 1;
+            }
 
-    setlistener("gear/canopy/position-norm", func (n){
-        var canopy_pos = n.getValue();
-        var canopy_slide = getprop("controls/flight/canopy-slide");
+            run_gear();
 
-        if (canopy_pos == 0 or canopy_pos == 1) {
-            setprop("/controls/flight/canopy-lever", 0);
-        } elsif (canopy_slide == 0){
-            setprop("/controls/flight/canopy-lever", -1);
-        } else {
-            setprop("/controls/flight/canopy-lever", 1);
-        }
+        },
+            0,
+            0);
+
+        setlistener("gear/canopy/position-norm", func (n){
+            var canopy_pos = n.getValue();
+            var canopy_slide = getprop("controls/flight/canopy-slide");
+
+            if (canopy_pos == 0 or canopy_pos == 1) {
+                setprop("/controls/flight/canopy-lever", 0);
+            } elsif (canopy_slide == 0){
+                setprop("/controls/flight/canopy-lever", -1);
+            } else {
+                setprop("/controls/flight/canopy-lever", 1);
+            }
 
 #        print ("controls/flight/canopy-lever ", getprop("/controls/flight/canopy-lever"));
 #        print ("controls/flight/canopy-slide ", getprop("/controls/flight/canopy-slide"));
 #        print ("gear/canopy/position-norm ", getprop("/gear/canopy/position-norm"));
-    },
-        0,
-        0);
+        },
+            0,
+            0);
 
-    setlistener( "engines/engine/cranking", func {updateSmoking()},
-        0,
-        0);
+        setlistener( "engines/engine/cranking", func {updateSmoking()},
+            0,
+            0);
 
-    setlistener( "engines/engine/running", func {updateSmoking()},
-        0,
-        0);
+        setlistener( "engines/engine/running", func {updateSmoking()},
+            0,
+            0);
 
-} #end init
+        setlistener("/controls/armament/trigger", func {ammo()},
+            1,
+            0); # end listener
 
-setlistener("sim/signals/fdm-initialized", initialize);
+
+# set it all running on the next update cycle
+            settimer(update, 0);
+
+        print(" ... done");
+
+
+    } #end func init
+
+# ==== this is the Main Loop which keeps everything updated ========================
+
+        var update = func {
+#    updateBoostControl();
+#    rain();
+#    tyresmoke();
+#            ammo();
+#    updatePilotG();
+#    updateHobbs();
+#    headShake();
+
+            settimer(update, 0); 
+
+    }# end func update (main loop) 
+
+        setlistener("sim/signals/fdm-initialized", initialize);
 
 # end 

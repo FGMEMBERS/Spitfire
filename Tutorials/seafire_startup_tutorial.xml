@@ -1,6 +1,6 @@
 <PropertyList>
 	<name>Engine Start</name>
-	<description>This tutorial teaches the Seafire IIIc engine start procedure</description>
+	<description>This tutorial teaches the Spitfire V/Seafire IIIc engine start procedure</description>
 
 	<init>
 		<set>
@@ -80,18 +80,30 @@
 		<error>
 			<message>Ensure the throttle is 1/3 open{|.}</message>
 			<condition>
+				<or>
 				<less-than>
 					<property>/controls/engines/engine[0]/throttle</property>
-					<value>0.3</value>
+					<value>0.2</value>
 				</less-than>
+					<greater-than>
+					<property>/controls/engines/engine[0]/throttle</property>
+					<value>0.4</value>
+				</greater-than>
+				</or>
 			</condition>
 		</error>
 		<exit>
 			<condition>
-				<greater-than>
+				<and>
+				<greater-than-equals>
 					<property>/controls/engines/engine[0]/throttle</property>
-					<value>0.3</value>
-				</greater-than>
+					<value>0.2</value>
+				</greater-than-equals>
+				<less-than-equals>
+					<property>/controls/engines/engine[0]/throttle</property>
+					<value>0.4</value>
+				</less-than-equals>
+				</and>
 			</condition>
 		</exit>
 	</step>

@@ -508,7 +508,15 @@ Weight of contents calculated using 100 octane AVGAS density of 695 kg/m3 @ 15de
 					 z="-0.15"
 					 mass="87.5"/>
 
-	<!-- armament -->
+	<!-- armament -->	
+	<ballast x="-2.39"
+					 y="2.17"
+					 z="-0.60"
+					 mass="184"/>
+	<ballast x="-2.39"
+					 y="-2.17"
+					 z="-0.60"
+					 mass="184"/>
 	<ballast x="-2.70"
 					 y="3.10"
 					 z="-0.48"
@@ -525,14 +533,7 @@ Weight of contents calculated using 100 octane AVGAS density of 695 kg/m3 @ 15de
 					 y="-3.80"
 					 z="-0.57"
 					 mass="60"/>
-	<ballast x="-2.39"
-					 y="2.17"
-					 z="-0.60"
-					 mass="184"/>
-	<ballast x="-2.39"
-					 y="-2.17"
-					 z="-0.60"
-					 mass="184"/>
+
 	<!--Oil Cooler-->
 	<ballast x="-3.0"
 					 y="2.07"
@@ -543,4 +544,31 @@ Weight of contents calculated using 100 octane AVGAS density of 695 kg/m3 @ 15de
 					y="0"
 					z="-0.2"
 					mass-prop="/yasim/spitfire/pilot-lb"/>
+	<!-- armament -->
+	<weight x="-2.39"
+					y="2.17"
+					z="-0.60"
+					mass-prop="/yasim/weights/ammo-lb[0]"/>
+	<weight x="-2.39"
+					y="-2.17"
+					z="-0.60"
+					mass-prop="/yasim/weights/ammo-lb[1]"/>
+	<weight x="-2.70"
+					y="3.10"
+					z="-0.48"
+					mass-prop="/yasim/weights/ammo-lb[2]"/>
+	<weight x="-2.70"
+					y="-3.10"
+					z="-0.48"
+					mass-prop="/yasim/weights/ammo-lb[3]"/>
+	<weight x="-2.75"
+					y="3.80"
+					z="-0.57"
+					mass-prop="/yasim/weights/ammo-lb[4]"/>
+	<weight x="-2.75"
+					y="-3.80"
+					z="-0.57"
+					mass-prop="/yasim/weights/ammo-lb[5]"/>
+
+
 </airplane>

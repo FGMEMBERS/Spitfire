@@ -11,14 +11,16 @@
 			<repeatable>false</repeatable>
 			<binding>
 				<command>property-adjust</command>
-				<property>controls/switches/gun-sight-dimmer</property>
-				<step>-0.1</step>
+				<!--<property>controls/switches/gun-sight-dimmer</property>-->
+				<property>sim/hud/color/brightness</property>
+				<step>0.1</step>
 				<min>0</min>
 				<max>1</max>
 				<wrap>0</wrap>
 			</binding>
 		</action>
 	</animation>
+	
 	<animation>
 		<type>pick</type>
 		<visible>false</visible>
@@ -28,18 +30,21 @@
 			<repeatable>false</repeatable>
 			<binding>
 				<command>property-adjust</command>
-				<property>/controls/switches/gun-sight-dimmer</property>
-				<step>0.1</step>
+				<!--<property>/controls/switches/gun-sight-dimmer</property>-->
+				<property>sim/hud/color/brightness</property>
+				<step>-0.1</step>
 				<min>0</min>
 				<max>1</max>
 				<wrap>0</wrap>
 			</binding>
 		</action>
 	</animation>
+	
 	<animation>
 		<type>rotate</type>
 		<object-name>Knob</object-name>
-		<property>controls/switches/gun-sight-dimmer</property>
+		<!--<property>controls/switches/gun-sight-dimmer</property>-->
+		<property>sim/hud/color/brightness</property>
 		<interpolation>
 			<entry>
 				<ind>0</ind>
