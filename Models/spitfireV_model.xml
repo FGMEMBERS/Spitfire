@@ -309,8 +309,8 @@
 			<roll-deg>-25</roll-deg>
 			<yaw-deg>25</yaw-deg>
 		</offsets>
-		
 	</model>
+
 	<model>
 		<path>Aircraft/Spitfire/Models/throttle.xml</path>
 		<offsets>
