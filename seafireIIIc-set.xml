@@ -96,11 +96,17 @@ $Id$
 	<surface-positions>
 		<wing-fold-pos-norm type="double">1</wing-fold-pos-norm>
 	</surface-positions>
-	
+
 	<sim include="seafire-help.xml">
 		<description>Supermarine Seafire MkIIIc</description>
 		<author>Vivian Meazza</author>
-		<status>early-production</status>
+		<status type="string">production</status>
+		<rating>
+			<FDM type="int">5</FDM>
+			<systems type="int">4</systems>
+			<cockpit type="int">4</cockpit>
+			<model type="int">4</model>
+		</rating>
 		<flight-model>yasim</flight-model>
 		<aero>seafireIIIc</aero>
 		<fuel-fraction>1</fuel-fraction>
@@ -127,8 +133,19 @@ $Id$
 			<visibility>false</visibility>
 		</panel>
 		<hud>
-			<path>Huds/Default/default.xml</path>
-			<visibility>false</visibility>
+			<path n="1">Aircraft/Spitfire/Systems/spitfire-sight.xml</path>
+			<visibility n="1">true</visibility>
+			<font>
+				<size type="float">10.0</size>
+			</font>
+			<palette>
+				<color n="0">
+					<!-- day -->
+					<red type="float">1.0</red>
+					<green type="float">0.4</green>
+					<blue type="float">0.0</blue>
+				</color>
+			</palette>
 		</hud>
 		<model>
 			<path>Aircraft/Spitfire/Models/seafire_model.xml</path>
@@ -144,10 +161,10 @@ $Id$
 				<x-offset-m archive="y"
 										type="double">0.0</x-offset-m>
 				<y-offset-m archive="y"
-										type="double">0.5265</y-offset-m>
+										type="double">0.518089</y-offset-m>
 				<z-offset-m archive="y"
-										type="double">3.88</z-offset-m>
-				<pitch-offset-deg>-12.5</pitch-offset-deg>
+										type="double">3.87547</z-offset-m>
+				<pitch-offset-deg>-10.0</pitch-offset-deg>
 				<limits>
 					<enabled type="bool">true</enabled>
 					<left>
@@ -231,6 +248,13 @@ $Id$
 							<property>sim/model/spitfire/show-pilot</property>
 						</binding>
 					</item>
+					<item n="1">
+						<label>Radio</label>
+						<binding>
+							<command>nasal</command>
+							<script>TR1133.radio_dlg.open()</script>
+						</binding>
+					</item>
 				</menu>
 			</default>
 		</menubar>
@@ -285,6 +309,25 @@ $Id$
 							 alias="/engines/engine/rad-flap-norm"/>
 			</generic>
 		</multiplay>
+
+		<aim>
+			<active type="bool">false</active>
+			<tachy type="bool">true</tachy>
+			<align type="bool">false</align>
+			<radius type="float">1</radius>
+			<speed-fps type="float">2755.9</speed-fps>
+			<range-yds type="float">550</range-yds>
+			<arc>
+				<start-deg type="float">10</start-deg>
+				<stop-deg type="float">270</stop-deg>
+			</arc>
+			<offsets>
+				<x type="float">0</x>
+				<y type="float">0</y>
+			</offsets>
+			<compression-factor type ="float">2</compression-factor>
+		</aim>
+
 	</sim>
 
 	<!-- ================ map keyboard ================ -->
@@ -645,15 +688,14 @@ $Id$
 					<value type="double">1.0</value>
 				</binding>
 			</key>
-			<!--        <key n="111"> 
-          <name>o</name>
-          <desc>Hook Up.</desc>
-          <binding> 
-            <command>property-assign</command>
-            <property>controls/gear/tailhook</property>
-            <value type="double">0.0</value>
-          </binding>
-        </key> -->
+			<key n="268">
+				<name>F12</name>
+				<desc>Open Dialog TR1133</desc>
+				<binding>
+					<command>nasal</command>
+					<script>TR1133.radio_dlg.open()</script>
+				</binding>
+			</key>
 		</keyboard>
 	</input>
 	<!-- instruments -->
@@ -666,13 +708,24 @@ $Id$
 	<yasim>
 		<weights>
 			<pilot-lb type="double">200</pilot-lb>
-			<round-lb type="double">0.33</round-lb>
+			<ammo-lb n="0"
+							 type="double">34.39211292</ammo-lb>
+			<ammo-lb n="1"
+							 type="double">34.39211292</ammo-lb>
+			<ammo-lb n="2"
+							 type="double">20.481655</ammo-lb>
+			<ammo-lb n="3"
+							 type="double">20.481655</ammo-lb>
+			<ammo-lb n="4"
+							 type="double">20.481655</ammo-lb>
+			<ammo-lb n="5"
+							 type="double">20.481655</ammo-lb>
 		</weights>
 	</yasim>
 	<!-- nasal stuff -->
 	<nasal>
 		<spitfire>
-			<file>Aircraft/Spitfire/Models/spitfire.nas</file>
+			<file>Aircraft/Spitfire/Nasal/spitfire.nas</file>
 		</spitfire>
 		<spitfire-fuel>
 			<module>fuel</module>
@@ -684,5 +737,8 @@ $Id$
 		<oxygen>
 			<file>Aircraft/Generic/Oxygen/oxygen.nas</file>
 		</oxygen>
+		<TR1133>
+			<file>Aircraft/Instruments-3d/TR1133/Nasal/TR1133.nas</file>
+		</TR1133>
 	</nasal>
 </PropertyList>

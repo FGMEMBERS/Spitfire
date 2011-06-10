@@ -41,6 +41,38 @@ Aug 2004 Vivian Meazza, vivian.meazza at lineone.net
 			<path>Aircraft/Generic/Panels/generic-vfr-panel.xml</path>
 			<visibility>false</visibility>
 		</panel>
+		<hud>
+			<path n="1">Aircraft/Spitfire/Systems/spitfire-sight.xml</path>
+			<visibility n="1">true</visibility>
+			<font>
+				<size type="float">10.0</size>
+			</font>
+			<palette>
+				<color n="0">
+					<!-- day -->
+					<red type="float">1.0</red>
+					<green type="float">0.4</green>
+					<blue type="float">0.0</blue>
+				</color>
+			</palette>
+		</hud>
+		<aim>
+			<active type="bool">false</active>
+			<tachy type="bool">true</tachy>
+			<align type="bool">false</align>
+			<radius type="float">1</radius>
+			<speed-fps type="float">2755.9</speed-fps>
+			<range-yds type="float">550</range-yds>
+			<arc>
+				<start-deg type="float">10</start-deg>
+				<stop-deg type="float">270</stop-deg>
+			</arc>
+			<offsets>
+				<x type="float">0</x>
+				<y type="float">0</y>
+			</offsets>
+			<compression-factor type ="float">2</compression-factor>
+		</aim>
 		<model>
 			<path>Aircraft/Spitfire/Models/spitfire_model.xml</path>
 		</model>
@@ -170,6 +202,13 @@ Aug 2004 Vivian Meazza, vivian.meazza at lineone.net
 						<binding>
 							<command>property-toggle</command>
 							<property>sim/model/spitfire/show-pilot</property>
+						</binding>
+					</item>
+					<item n="1">
+						<label>Radio</label>
+						<binding>
+							<command>nasal</command>
+							<script>TR1133.radio_dlg.open()</script>
 						</binding>
 					</item>
 				</menu>
@@ -623,7 +662,7 @@ Aug 2004 Vivian Meazza, vivian.meazza at lineone.net
 	<!-- nasal stuff -->
 	<nasal>
 		<spitfire>
-			<file>Aircraft/Spitfire/Models/spitfire.nas</file>
+			<file>Aircraft/Spitfire/Nasal/spitfire.nas</file>
 		</spitfire>
 		<spitfire-fuel>
 			<module>fuel</module>
@@ -641,7 +680,11 @@ Aug 2004 Vivian Meazza, vivian.meazza at lineone.net
 		<oxygen>
 			<file>Aircraft/Generic/Oxygen/oxygen.nas</file>
 		</oxygen>
+		<TR1133>
+			<file>Aircraft/Instruments-3d/TR1133/Nasal/TR1133.nas</file>
+		</TR1133>
 	</nasal>
+	
 	<ai>
 		<submodels>
 			<trigger type="bool">false</trigger>

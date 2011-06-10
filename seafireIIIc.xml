@@ -8,7 +8,7 @@ YASim aerodynamic model for a Seafire IIIc
 
 Author: Vivian Meazza
 
-Version 1.1 
+Version 1.2 
 
 Use latest YASim engine config
 
@@ -37,6 +37,18 @@ The reference datum for measurements is the nose.
 										 value="1"/>
 		<solve-weight idx="0"
 									weight="200"/>
+		<solve-weight idx="1"
+									weight="34.39211292"/>
+		<solve-weight idx="2"
+									weight="34.39211292"/>
+		<solve-weight idx="3"
+									weight="20.481655"/>
+		<solve-weight idx="4"
+									weight="20.481655"/>
+		<solve-weight idx="5"
+									weight="20.481655"/>
+		<solve-weight idx="6"
+									weight="20.481655"/>
 	</approach>
 	<!-- Cruise configuration -->
 	<cruise speed="304"
@@ -56,6 +68,18 @@ The reference datum for measurements is the nose.
 										 value="0"/>
 		<solve-weight idx="0"
 									weight="200"/>
+		<solve-weight idx="1"
+									weight="34.39211292"/>
+		<solve-weight idx="2"
+									weight="34.39211292"/>
+		<solve-weight idx="3"
+									weight="20.481655"/>
+		<solve-weight idx="4"
+									weight="20.481655"/>
+		<solve-weight idx="5"
+									weight="20.481655"/>
+		<solve-weight idx="6"
+									weight="20.481655"/>
 	</cruise>
 	<!-- pilot's eyepoint -->
 	<cockpit x="-3.86"
@@ -507,30 +531,31 @@ Weight of contents calculated using 100 octane AVGAS density of 695 kg/m3 @ 15de
 					 mass="87.5"/>
 
 	<!-- armament -->
-	<ballast x="-2.70"
-					 y="3.10"
-					 z="-0.48"
-					 mass="52"/>
-	<ballast x="-2.70"
-					 y="-3.10"
-					 z="-0.48"
-					 mass="52"/>
-	<ballast x="-2.75"
-					 y="3.80"
-					 z="-0.57"
-					 mass="52"/>
-	<ballast x="-2.75"
-					 y="-3.80"
-					 z="-0.57"
-					 mass="52"/>
 	<ballast x="-2.40"
 					 y="2.17"
 					 z="-0.60"
-					 mass="222"/>
+					 mass="110"/>
 	<ballast x="-2.40"
 					 y="-2.17"
 					 z="-0.60"
-					 mass="222"/>
+					 mass="110"/>
+	<ballast x="-2.70"
+					 y="3.10"
+					 z="-0.48"
+					 mass="22"/>
+	<ballast x="-2.70"
+					 y="-3.10"
+					 z="-0.48"
+					 mass="22"/>
+	<ballast x="-2.75"
+					 y="3.80"
+					 z="-0.57"
+					 mass="22"/>
+	<ballast x="-2.75"
+					 y="-3.80"
+					 z="-0.57"
+					 mass="22"/>
+
 	<!--Oil Cooler-->
 	<ballast x="-3.1"
 					 y="2.07"
@@ -541,4 +566,30 @@ Weight of contents calculated using 100 octane AVGAS density of 695 kg/m3 @ 15de
 					y="0"
 					z="-0.2"
 					mass-prop="/yasim/spitfire/pilot-lb"/>
+	<!-- ammunition -->
+	<weight x="-2.39"
+					y="2.17"
+					z="-0.60"
+					mass-prop="/yasim/weights/ammo-lb[0]"/>
+	<weight x="-2.39"
+					y="-2.17"
+					z="-0.60"
+					mass-prop="/yasim/weights/ammo-lb[1]"/>
+	<weight x="-2.70"
+					y="3.10"
+					z="-0.48"
+					mass-prop="/yasim/weights/ammo-lb[2]"/>
+	<weight x="-2.70"
+					y="-3.10"
+					z="-0.48"
+					mass-prop="/yasim/weights/ammo-lb[3]"/>
+	<weight x="-2.75"
+					y="3.80"
+					z="-0.57"
+					mass-prop="/yasim/weights/ammo-lb[4]"/>
+	<weight x="-2.75"
+					y="-3.80"
+					z="-0.57"
+					mass-prop="/yasim/weights/ammo-lb[5]"/>
+
 </airplane>
