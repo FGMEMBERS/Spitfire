@@ -2,25 +2,7 @@
 <!-- Spitfire IIa by Vivisn Meazza -->
 <PropertyList>
 	<path>spitfireIIa.ac</path>
-	<!-- Front hotspots -->
-	<!--<panel>
-		<path>Aircraft/Spitfire/Models/panel-hotspots.xml</path>
-		<bottom-left>
-			<x-m>3.265</x-m>
-			<y-m>-0.40</y-m>
-			<z-m>-0.10</z-m>
-		</bottom-left>
-		<bottom-right>
-			<x-m>3.265</x-m>
-			<y-m> 0.40</y-m>
-			<z-m>-0.10</z-m>
-		</bottom-right>
-		<top-left>
-			<x-m>3.265</x-m>
-			<y-m>-0.40</y-m>
-			<z-m> 0.70</z-m>
-		</top-left>
-	</panel>-->
+	
 	<!-- ************* panel models ************* -->
 	<!-- blind flying instruments -->
 	<model>
@@ -307,6 +289,18 @@
 	</model>
 
 	<!-- non-panel models -->
+	<model>
+		<path>Aircraft/Instruments-3d/TR1133/TR1133.xml</path>
+		<offsets>
+			<x-m>3.40</x-m>
+			<y-m>-0.34</y-m>
+			<z-m>0.175</z-m>
+			<pitch-deg>90</pitch-deg>
+			<roll-deg>-25</roll-deg>
+			<yaw-deg>25</yaw-deg>
+		</offsets>
+	</model>
+
 	<model>
 		<path>Aircraft/Spitfire/Models/throttle.xml</path>
 		<offsets>
