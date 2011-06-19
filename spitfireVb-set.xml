@@ -277,13 +277,6 @@ $Id$
 							<property>sim/model/spitfire/show-pilot</property>
 						</binding>
 					</item>
-					<item n="1">
-						<label>Radio</label>
-						<binding>
-							<command>nasal</command>
-							<script>TR1133.radio_dlg.open()</script>
-						</binding>
-					</item>
 				</menu>
 			</default>
 		</menubar>
