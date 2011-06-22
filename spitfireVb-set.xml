@@ -722,9 +722,9 @@ $Id$
 		<walkviews>
 			<file>Aircraft/Spitfire/Models/spitfire-walk-views.nas</file>
 		</walkviews>
-		<TR1133>
-			<file>Aircraft/Instruments-3d/TR1133/Nasal/TR1133.nas</file>
-		</TR1133>
+		<SCR_522C>
+			<file>Aircraft/Instruments-3d/SCR-522C/Nasal/SCR-522C.nas</file>
+		</SCR_522C>
 		<spitfire>
 			<file>Aircraft/Spitfire/Nasal/spitfire.nas</file>
 		</spitfire>

@@ -17,6 +17,14 @@
 				<max>1</max>
 				<wrap>0</wrap>
 			</binding>
+			<binding>
+				<command>property-adjust</command>
+				<property>/controls/lighting/cabin-norm</property>
+				<step>0.3</step>
+				<min>0</min>
+				<max>3</max>
+				<wrap>0</wrap>
+			</binding>
 		</action>
 	</animation>
 	<animation>
@@ -32,6 +40,14 @@
 				<step>-0.1</step>
 				<min>0</min>
 				<max>1</max>
+				<wrap>0</wrap>
+			</binding>
+			<binding>
+				<command>property-adjust</command>
+				<property>/controls/lighting/cabin-norm</property>
+				<step>-0.3</step>
+				<min>0</min>
+				<max>3</max>
 				<wrap>0</wrap>
 			</binding>
 		</action>

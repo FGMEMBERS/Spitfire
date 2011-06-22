@@ -300,7 +300,7 @@
 
 	<!-- non-panel models -->
 	<model>
-		<path>Aircraft/Instruments-3d/TR1133/TR1133.xml</path>
+		<path>Aircraft/Instruments-3d/SCR-522C/BC-602-A.xml</path>
 		<offsets>
 			<x-m>3.40</x-m>
 			<y-m>-0.34</y-m>
