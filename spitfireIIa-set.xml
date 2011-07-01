@@ -680,9 +680,9 @@ Aug 2004 Vivian Meazza, vivian.meazza at lineone.net
 		<oxygen>
 			<file>Aircraft/Generic/Oxygen/oxygen.nas</file>
 		</oxygen>
-		<TR1133>
-			<file>Aircraft/Instruments-3d/TR1133/Nasal/TR1133.nas</file>
-		</TR1133>
+		<SCR_522C>
+			<file>Aircraft/Instruments-3d/SCR-522C/Nasal/SCR-522C.nas</file>
+		</SCR_522C>
 	</nasal>
 	
 	<ai>

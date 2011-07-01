@@ -688,14 +688,6 @@ $Id$
 					<value type="double">1.0</value>
 				</binding>
 			</key>
-			<key n="268">
-				<name>F12</name>
-				<desc>Open Dialog TR1133</desc>
-				<binding>
-					<command>nasal</command>
-					<script>TR1133.radio_dlg.open()</script>
-				</binding>
-			</key>
 		</keyboard>
 	</input>
 	<!-- instruments -->
@@ -737,8 +729,8 @@ $Id$
 		<oxygen>
 			<file>Aircraft/Generic/Oxygen/oxygen.nas</file>
 		</oxygen>
-		<TR1133>
-			<file>Aircraft/Instruments-3d/TR1133/Nasal/TR1133.nas</file>
-		</TR1133>
+		<SCR_522C>
+			<file>Aircraft/Instruments-3d/SCR-522C/Nasal/SCR-522C.nas</file>
+		</SCR_522C>
 	</nasal>
 </PropertyList>
