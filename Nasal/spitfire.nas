@@ -1,6 +1,6 @@
 # $Id: spitfire.nas,v 1.16 2009/01/07 17:49:48 vmmeazza Exp $
 
-# =============================== timer stuff ===========================================
+# =============================== DEFINITIONS ===========================================
 
 # set the update period
 
@@ -14,7 +14,12 @@ registerTimer = func {
 
 } # end function 
 
-# =========================== end timer stuff ===========================================
+#does what it says on the tin
+var clamp = func(v, min, max) { v < min ? min : v > max ? max : v }
+
+#conversion hours to sec
+var hr2sec = 3600;
+# =========================== end  DEFINITIONS ===========================================
 
 #========================= Initialize ===============================
 #
@@ -29,6 +34,15 @@ var count_2_Node = props.globals.getNode("ai/submodels/submodel[5]/count", 1);
 var count_3_Node = props.globals.getNode("ai/submodels/submodel[7]/count", 1);
 var count_4_Node = props.globals.getNode("ai/submodels/submodel[9]/count", 1);
 var count_5_Node = props.globals.getNode("ai/submodels/submodel[11]/count", 1);
+
+var hobbs_engine = aircraft.timer.new("sim/time/hobbs/engine[0]", 60, 0);
+var engine_running_Node = props.globals.initNode("engines/engine[0]/running", 1, "BOOL");
+
+var hobbs_airframe = aircraft.timer.new("sim/time/hobbs/airframe[0]", 900, 1);
+var flying_Node = props.globals.initNode("gear/gear/wow", 1, "BOOL");
+
+props.globals.initNode("/sim/rendering/dirt-factor[2]", 0.0, "DOUBLE");
+props.globals.initNode("/sim/rendering/dirt-factor[3]", 0.0, "DOUBLE");
 
 
 # =============== Variables ================
@@ -56,10 +70,24 @@ var initialize = func {
     
     type = getprop("sim/aircraft");
 
+# =============== initialize ==========================
+
+    controls.fullBrakeTime = 0;
     rain();
     tyresmoke();
     aircraft.steering.init();
 #        ammo();
+
+# initialise Hobbs meter
+    hobbs_engine.reset();
+
+
+# ======== set the aircraft type =================
+
+        if (type == "spitfireIIa") {spitfireIIa = 1;}
+
+        print ("type: " , type );
+
 
 # ============ listeners ==========================
 
@@ -156,15 +184,6 @@ var initialize = func {
         1,
         0); # end listener
 
-# =============== initialize ==========================
-
-    controls.fullBrakeTime = 0; 
-
-# ======== set the aircraft type =================
-
-        if (type == "spitfireIIa") {spitfireIIa = 1;}
-
-        print ("type: " , type );
 
 # set it all running on the next update cycle
         settimer(update, 0);
@@ -182,8 +201,20 @@ var update = func {
 #    tyresmoke();
 
 #    updatePilotG();
-#    updateHobbs();
+    updateHobbs();
 #    headShake();
+
+    var hobbs = getprop("sim/time/hobbs/engine[0]");
+    var dirt_factor = clamp(hobbs*0.9/(0.5 * hr2sec), 0.0, 0.9);
+    setprop("/sim/rendering/dirt-factor", dirt_factor);
+
+    hobbs = getprop("sim/time/hobbs/airframe[0]");
+    dirt_factor = clamp(hobbs*0.75/(2.0 * hr2sec), 0.0, 0.75);
+    setprop("/sim/rendering/dirt-factor[1]", dirt_factor);
+
+    hobbs = getprop("sim/time/hobbs/airframe[0]");
+    dirt_factor = clamp(-0.3 - hobbs*0.3/(2.0 * hr2sec), -0.6, -0.3);
+    setprop("/sim/rendering/refl-correction", dirt_factor);
 
     settimer(update, 0); 
 
@@ -948,13 +979,9 @@ aircraft.steering.init();
 
 # ==================================  Engine Hobbs Meter ================================
 
-var hobbs_engine = aircraft.timer.new("sim/time/hobbs/engine[0]", 60, 0);
-var engine_running_Node = props.globals.initNode("engines/engine[0]/running", 1, "BOOL");
-
-hobbs_engine.reset();
-
-var updateHobbs = func{
+ var updateHobbs = func{
     var running = engine_running_Node.getValue();
+    var flying = !getprop("gear/gear[1]/wow");
 
     if(running){
         hobbs_engine.start();
@@ -962,10 +989,13 @@ var updateHobbs = func{
         hobbs_engine.stop();
     }
 
-    settimer(updateHobbs,0)
-}
+    if(flying){
+        hobbs_airframe.start();
+    } else {
+        hobbs_airframe.stop();
+    }
 
-updateHobbs();
+ } # end func updateHobbs
 
 # ==================================  Tyresmoke /Spray ================================
 var run_tyresmoke0 = 0;
@@ -1102,6 +1132,14 @@ var ammo = func {
     if (!trigger)
         return;
 
+    var dirt = getprop("/sim/rendering/dirt-factor[2]");
+
+	if(dirt == 0.0){
+		dirt= 1.0;
+		setprop("/sim/rendering/dirt-factor[2]", dirt);
+		}
+
+
     count[0] = countNode.getValue();
     count[1] = count_1_Node.getValue();
     count[2] = count_2_Node.getValue();
@@ -1126,8 +1164,13 @@ var ammo = func {
 
         if (ammo_wt[i] < 0.)ammo_wt[i] = 0;
 
-        setprop("/yasim/weights/ammo-lb[" ~ i ~ "]",  ammo_wt[i]);
-        print (" ammo count[", i,"] ", count[i], " ",  ammo_wt[i]);
+		if (i == 5){
+			dirt = clamp((1 * (1 - count[i]/300)) * 2, 0.0, 0.75);
+			setprop("/sim/rendering/dirt-factor[3]", dirt);
+			}
+
+        setprop("/yasim/weights/ammo-lb[" ~ i ~ "]", ammo_wt[i]);
+        print (" ammo count[", i,"] ", count[i], " ", ammo_wt[i], " ", getprop("/sim/rendering/dirt-factor[3]"));
     }# end for
 
         settimer(ammo, 0);

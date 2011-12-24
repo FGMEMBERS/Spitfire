@@ -156,7 +156,10 @@ $Id$
 			<camera-group>
 				<znear type="double">0.1</znear>
 			</camera-group>
+			<refl-correction type="float">-0.25</refl-correction>
+			<ambient-correction type="float">0.2</ambient-correction>
 		</rendering>
+
 		<view n="0">
 			<internal archive="y">true</internal>
 			<config>
@@ -275,6 +278,15 @@ $Id$
 						<binding>
 							<command>property-toggle</command>
 							<property>sim/model/spitfire/show-pilot</property>
+						</binding>
+					</item>
+					<item>
+						<label>Reset Airframe Hobbs Meter</label>
+						<binding>
+							<command>nasal</command>
+							<script>
+								spitfire.hobbs_airframe.reset();
+							</script>
 						</binding>
 					</item>
 				</menu>

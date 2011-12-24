@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!-- Spitfire Vb by Vivian Meazza -->
 <PropertyList>
-	<path>spitfireVb.ac</path>
+	<path>spitfireVb-ver3.ac</path>
 
 	<!-- ************* panel models ************* -->
 	<!-- blind flying instruments -->
@@ -1732,6 +1732,152 @@
 		</emission>
 	</animation>
 
+	<!-- ========== Effects ========= -->
+	<effect>
+		<inherits-from>Effects/spitfirereflect-uber</inherits-from>
+		<parameters>
+			<dirt-enabled type="int">1</dirt-enabled>
+		</parameters>
+		<object-name>Hull</object-name>
+		<object-name>Hull-Aft</object-name>
+		<object-name>Cover-Upper-Tank</object-name>
+		<object-name>Cover-Engine-T</object-name>
+		<object-name>Cover-Engine-Side-R</object-name>
+		<object-name>Cover-Engine-Side-L</object-name>
+		<object-name>Intake</object-name>
+		<object-name>Scoop</object-name>
+		<object-name>Fillet-Port</object-name>
+		<object-name>Fillet-Stbd</object-name>
+		<object-name>Tail</object-name>
+		<object-name>Door-OS</object-name>
+	</effect>
+
+	<effect>
+		<inherits-from>Effects/spitfirereflect-uber-1</inherits-from>
+		<parameters>
+			<dirt-enabled type="int">1</dirt-enabled>
+		</parameters>
+		<object-name>Stub-Wing-T-Stbd</object-name>
+		<object-name>Stub-Wing-T-Port</object-name>
+		<object-name>Wing-T-Outer-L</object-name>
+		<object-name>Wing-T-Outer-R</object-name>
+		<object-name>Wing-T-Port</object-name>
+		<object-name>Wing-T-Stbd</object-name>
+		<object-name>Wing-Tip-T-L</object-name>
+		<object-name>Wing-Tip-T-R</object-name>
+		<object-name>Cannon-Blister-P</object-name>
+		<object-name>Cannon-Blister-S</object-name>
+		<object-name>Wheel-Blister-Port</object-name>
+		<object-name>Wheel-Blister-Stbd</object-name>
+		<object-name>Fairing-T-Port</object-name>
+		<object-name>Fairing-T-Stbd</object-name>
+		<object-name>Tailplane-T-Port</object-name>
+		<object-name>Tailplane-T-Stbd</object-name>
+		<object-name>Pitot</object-name>
+	</effect>
+
+	<effect>
+		<inherits-from>Effects/spitfirereflect-uber-2</inherits-from>
+		<parameters>
+			<texture n="4">
+				<!--<image>Aircraft/Generic/Effects/ReflectMaps/reflectmap.png</image>-->
+				<image>Aircraft/Spitfire/Models/spitfireV-map-01.png</image>
+				<filter>linear-mipmap-linear</filter>
+				<wrap-s>clamp</wrap-s>
+				<wrap-t>clamp</wrap-t>
+				<internal-format>normalized</internal-format>
+			</texture>
+			<dirt-enabled type="int">1</dirt-enabled>
+		</parameters>
+		<object-name>Cover-Lower-F</object-name>
+		<object-name>Cover-Lower-M</object-name>
+		<object-name>Cover-Lower-A</object-name>
+		<object-name>Fairing</object-name>
+		<object-name>Stub-Wing-B-Port</object-name>
+		<object-name>Stub-Wing-B-Stbd</object-name>
+		<object-name>Wing-B-Port</object-name>
+		<object-name>Wing-B-Stbd</object-name>
+		<object-name>Door-OS-Port</object-name>
+		<object-name>Door-OS-Stbd</object-name>
+		<object-name>Duct</object-name>
+		<object-name>Fairing-Oil-Cooler</object-name>
+		<object-name>Cannon-Blister-Lower</object-name>
+		<object-name>Wing-B-Outer-L</object-name>
+		<object-name>Wing-B-Outer-R</object-name>
+		<object-name>Wing-Tip-B-L</object-name>
+		<object-name>Wing-Tip-B-R</object-name>
+		<object-name>Flap-Outer-B-Port</object-name>
+		<object-name>Flap-Outer-B-Stbd</object-name>
+		<object-name>Flap-Centre-B-Port</object-name>
+		<object-name>Flap-Centre-B-Stbd</object-name>
+		<object-name>Flap-Inner-B-Port</object-name>
+		<object-name>Flap-Inner-B-Stbd</object-name>
+		<object-name>Flap</object-name>
+		<object-name>Tailplane-B-Port</object-name>
+		<object-name>Tailplane-B-Stbd</object-name>
+		<object-name>Fairing-B-Port</object-name>
+		<object-name>Fairing-B-Stbd</object-name>
+	</effect>
+
+	<effect>
+		<inherits-from>Effects/spitfirereflect-uber</inherits-from>
+		<parameters>
+			<dirt-enabled type="int">0</dirt-enabled>
+		</parameters>
+		<object-name>Antenna-VHF</object-name>
+		<object-name>Frame-Main</object-name>
+		<object-name>Frame</object-name>
+		<object-name>Mirror-Housing</object-name>
+		<object-name>Arm</object-name>
+		<object-name>Plate</object-name>
+		<object-name>Frame-FP</object-name>
+		<object-name>Frame-Front</object-name>
+
+	</effect>
+
+	<!--<object-name>Aileron-Stbd</object-name>
+		<object-name>Aileron-Stbd-Tab</object-name>
+		<object-name>Aileron-Port</object-name>
+		<object-name>Aileron-Port-Tab</object-name>
+		<object-name>Doors</object-name>-->
+
+	<!--<object-name>Tailplane-Port</object-name>
+		<object-name>Tailplane-Stbd</object-name>
+		<object-name>Rim-Port</object-name>
+		<object-name>Spokes-Port</object-name>
+		<object-name>Hub-Port</object-name>
+		<object-name>Rim-Stbd</object-name>
+		<object-name>Spokes-Stbd</object-name>
+		<object-name>Hub-Stbd</object-name>
+		<object-name>Flap-Outer-Port</object-name>
+		<object-name>Flap-Outer-Stbd</object-name>
+		<object-name>Flap-Inner-Port</object-name>
+		<object-name>Flap-Inner-Stbd</object-name>
+		<object-name>Canopy-Main-Frame</object-name>
+		<object-name>Frame-Front</object-name>
+		<object-name>Door-Tailwheel-Port</object-name>
+		<object-name>Door-Tailwheel-Stbd</object-name>
+		<object-name>Antenna-Whip-VHF</object-name>
+		<object-name>Antenna-Whip-IFF</object-name>
+		<object-name>Cannon-Blister-Port-Outer</object-name>
+		<object-name>Cannon-Blister-Port-Inner</object-name>
+		<object-name>Cannon-Blister-Stbd-Outer</object-name>
+		<object-name>Cannon-Blister-Stbd-Inner</object-name>
+		<object-name>Pitot</object-name>
+		<object-name>Armour-Head</object-name>-->
+	<!--<object-name>Spinner</object-name>-->
+
+
+
+	<effect>
+		<inherits-from>Effects/spitfireglass-uber</inherits-from>
+		<object-name>Canopy-Main</object-name>
+		<object-name>Canopy-FP</object-name>
+		<object-name>Canopy-F</object-name>
+		<object-name>Canopy-Rear</object-name>
+		<object-name>Armour-Panel</object-name>
+	</effect>
+
 	<!-- ========== Dirt textures ========= -->
 
 	<animation>
@@ -1896,6 +2042,7 @@
 		</transparency>
 		<!--<threshold>0.001</threshold>-->
 	</animation>
+
 
 	<!--Hide Construction Stuff-->
 	<animation>
