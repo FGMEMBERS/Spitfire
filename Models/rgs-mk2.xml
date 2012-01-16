@@ -72,7 +72,12 @@
 		</condition>
 	</animation>
 
-	<animation>
+  <animation>
+    <type>select</type>
+    <object-name>disk</object-name>
+  </animation>
+
+  <animation>
 		<type>material</type>
 		<object-name>front</object-name>
 		<condition>

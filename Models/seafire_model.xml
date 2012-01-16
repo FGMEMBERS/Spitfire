@@ -1084,7 +1084,7 @@
 		</axis>
 	</animation>
 	<!-- compression -->
-	<animation>
+	<!--<animation>
 		<type>translate</type>
 		<object-name>Leg-Lower-Assembly-L</object-name>
 		<object-name>Chocks-Left</object-name>
@@ -1095,8 +1095,8 @@
 			<y>0.075</y>
 			<z>1</z>
 		</axis>
-	</animation>
-	<animation>
+	</animation>-->
+	<!--<animation>
 		<type>translate</type>
 		<object-name>Leg-Lower-Assembly-R</object-name>
 		<object-name>Chocks-Right</object-name>
@@ -1121,7 +1121,7 @@
 			<y2-m>-1.18265</y2-m>
 			<z2-m>-1.6796</z2-m>
 		</axis>
-	</animation>
+	</animation>-->
 
 	<!-- tail wheel castering -->
 	<animation>
@@ -1588,6 +1588,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>Wing-R-Outer</object-name>
+    <object-name>Stbd-Light</object-name>
 		<property>surface-positions/wing-fold-pos-norm</property>
 		<interpolation>
 			<entry>
@@ -1638,6 +1639,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>Wing-L-Outer</object-name>
+    v<object-name>Port-Light</object-name>
 		<property>surface-positions/wing-fold-pos-norm</property>
 		<interpolation>
 			<entry>

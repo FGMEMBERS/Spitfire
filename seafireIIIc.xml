@@ -156,7 +156,7 @@ flap drag not available
 		<control-output control="SPOILER"
 										prop="/surface-positions/wing-fold-pos-norm"/>
 		<control-speed  control="SPOILER"
-										transition-time="5"/>
+										transition-time="45"/>
 	</wing>
 	<!-- tailplane -->
 	<hstab
