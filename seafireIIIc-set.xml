@@ -150,11 +150,14 @@ $Id$
 		<model>
 			<path>Aircraft/Spitfire/Models/seafire_model.xml</path>
 		</model>
-		<rendering>
-			<camera-group>
-				<znear type="double">0.1</znear>
-			</camera-group>
-		</rendering>
+    <rendering>
+      <camera-group>
+        <znear type="double">0.1</znear>
+      </camera-group>
+      <refl-correction type="float">-0.25</refl-correction>
+      <ambient-correction type="float">0.2</ambient-correction>
+    </rendering>
+    
 		<view n="0">
 			<internal archive="y">true</internal>
 			<config>
@@ -255,6 +258,15 @@ $Id$
 							<script>TR1133.radio_dlg.open()</script>
 						</binding>
 					</item>
+          <item>
+            <label>Reset Airframe Hobbs Meter</label>
+            <binding>
+              <command>nasal</command>
+              <script>
+                spitfire.hobbs_airframe.reset();
+              </script>
+            </binding>
+          </item>
 				</menu>
 			</default>
 		</menubar>

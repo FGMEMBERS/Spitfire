@@ -35,14 +35,28 @@ var count_3_Node = props.globals.getNode("ai/submodels/submodel[7]/count", 1);
 var count_4_Node = props.globals.getNode("ai/submodels/submodel[9]/count", 1);
 var count_5_Node = props.globals.getNode("ai/submodels/submodel[11]/count", 1);
 
-var hobbs_engine = aircraft.timer.new("sim/time/hobbs/engine[0]", 60, 0);
-var engine_running_Node = props.globals.initNode("engines/engine[0]/running", 1, "BOOL");
-
-var hobbs_airframe = aircraft.timer.new("sim/time/hobbs/airframe[0]", 900, 1);
-var flying_Node = props.globals.initNode("gear/gear/wow", 1, "BOOL");
-
 props.globals.initNode("/sim/rendering/dirt-factor[2]", 0.0, "DOUBLE");
 props.globals.initNode("/sim/rendering/dirt-factor[3]", 0.0, "DOUBLE");
+
+var type = getprop("sim/aircraft");
+
+var hobbs_engine = aircraft.timer.new("sim/time/hobbs/engine[0]", 60, 0);
+var hobbs_airframe = aircraft.timer.new("sim/time/hobbs/" ~ type ~ "/airframe[0]", 900, 1);	
+
+#if (type == "spitfireVb")
+#	{
+#		print ("type: " , type );
+#		var hobbs_airframe = aircraft.timer.new("sim/time/hobbs/spitfireVb/airframe[0]", 900, 1);
+#	}
+
+#if (type == "spitfireIIIc")
+#	{
+#		print ("type: " , type );
+#		var hobbs_airframe = aircraft.timer.new("sim/time/hobbs/seafireIIIc/airframe[0]", 900, 1);
+#	}
+
+var engine_running_Node = props.globals.initNode("engines/engine[0]/running", 1, "BOOL");
+var flying_Node = props.globals.initNode("gear/gear/wow", 1, "BOOL");
 
 
 # =============== Variables ================
@@ -55,7 +69,7 @@ var count   = [0,0,0,0,0,0];
 
 var spitfireIIa = 0;
 
-var type = "";
+#var type = "";
 
 var initialize = func {
 
@@ -68,7 +82,6 @@ var initialize = func {
     setprop("controls/gear/gear-lever", 0);
     setprop("controls/gear/oil-flow", 0);
     
-    type = getprop("sim/aircraft");
 
 # =============== initialize ==========================
 
@@ -208,12 +221,12 @@ var update = func {
     var dirt_factor = clamp(hobbs*0.9/(0.5 * hr2sec), 0.0, 0.9);
     setprop("/sim/rendering/dirt-factor", dirt_factor);
 
-    hobbs = getprop("sim/time/hobbs/airframe[0]");
-    dirt_factor = clamp(hobbs*0.75/(2.0 * hr2sec), 0.0, 0.75);
+    hobbs = getprop("sim/time/hobbs/" ~ type ~ "/airframe[0]");
+    dirt_factor = clamp(hobbs*0.75/(1.0 * hr2sec), 0.0, 0.75);
     setprop("/sim/rendering/dirt-factor[1]", dirt_factor);
 
-    hobbs = getprop("sim/time/hobbs/airframe[0]");
-    dirt_factor = clamp(-0.3 - hobbs*0.3/(2.0 * hr2sec), -0.6, -0.3);
+    hobbs = getprop("sim/time/hobbs/" ~ type ~ "/airframe[0]");
+    dirt_factor = clamp(-0.3 - hobbs*0.3/(1.0 * hr2sec), -0.6, -0.3);
     setprop("/sim/rendering/refl-correction", dirt_factor);
 
     settimer(update, 0); 

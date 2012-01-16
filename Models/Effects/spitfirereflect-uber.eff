@@ -28,7 +28,9 @@
 
 		<dirt-enabled type="int">0</dirt-enabled>
 		<dirt-multi type="int">1</dirt-multi>
+    <!--<dirt-color type="vec3d" n="0">1.0 1.0 1.0</dirt-color>-->
 		<dirt-color type="vec3d" n="0">0.08 0.06 0.06</dirt-color>
+    <!--<dirt-factor n="0" type="float">1.0-->
 		<dirt-factor n="0">
 			<use>/sim/rendering/dirt-factor</use>
 		</dirt-factor>

@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!-- Spitfire Vb by Vivian Meazza -->
 <PropertyList>
-	<path>spitfireVb.ac</path>
+	<path>spitfireVb-ver3.ac</path>
 
 	<!-- ************* panel models ************* -->
 	<!-- blind flying instruments -->
@@ -728,7 +728,24 @@
 			<z2-m>-0.71</z2-m>
 		</axis>
 	</animation>
-	<animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>Cover-Flap-Actuator-Port</object-name>
+    <property>surface-positions/flap-pos-norm</property>
+    <factor>-86</factor>
+    <!--3.80577	-0.607692	1.91364
+    3.96433	-0.638594	1.91933-->
+    <axis>
+      <x1-m>3.80577</x1-m>
+      <y1-m>-1.91364</y1-m>
+      <z1-m>-0.607692</z1-m>
+      <x2-m>3.96433</x2-m>
+      <y2-m>-1.91933</y2-m>
+      <z2-m>-0.638594</z2-m>
+    </axis>
+  </animation>
+  <animation>
 		<type>rotate</type>
 		<object-name>Flap-Outer-R-Inner</object-name>
 		<property>surface-positions/flap-pos-norm</property>
