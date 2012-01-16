@@ -183,7 +183,7 @@ flap drag not available
 		<control-output control="FLAP0"
 										prop="/surface-positions/elevator-pos-norm"/>
 		<control-speed control="FLAP0"
-									 transition-time="1"/>
+									 transition-time="1.5"/>
 	</hstab>
 	<!-- tail -->
 	<vstab x="-8.52"
@@ -289,10 +289,10 @@ flap drag not available
 					 drag="1.6"/>
 		<control-input axis="/controls/engines/engine/cowl-flaps-norm"
 									 control="FLAP0"
-									 src0="0"
-									 src1="1"
+									 src0="0.0"
+									 src1="1.0"
 									 dst0="0.0"
-									 dst1="0.25"/>
+									 dst1="0.3"/>
 		<control-output control="FLAP0"
 										prop="/engines/engine/cowl-flaps-norm"/>
 		<control-speed control="FLAP0"

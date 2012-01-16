@@ -222,7 +222,7 @@ var initDoubleProp = func {
     var val = arg[2];
 
     if(node.getNode(prop) != nil) {
-        val = num(node.getNode(prop).getValue());
+        val = num(node.getnode(prop).getValue()) or 0 ;
     }
 
     node.getNode(prop, 1).setDoubleValue(val);

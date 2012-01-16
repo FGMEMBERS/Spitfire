@@ -21,12 +21,12 @@ $Id$
 			<tank n="0">
 				<name type="string">Upper</name>
 				<level-gal_us>57</level-gal_us>
-				<selected type="bool">1</selected>
+				<selected type="bool">0</selected>
 			</tank>
 			<tank n="1">
 				<name type="string">Lower</name>
 				<level-gal_us>44</level-gal_us>
-				<selected type="bool">1</selected>
+				<selected type="bool">0</selected>
 			</tank>
 		</fuel>
 		<oxygen>
@@ -58,8 +58,8 @@ $Id$
           </coffman-starter>-->
 				<cutoff-pull-norm type="double">0</cutoff-pull-norm>
 				<fuel-cock>
-					<lever-norm type="double">1</lever-norm>
-					<lever-norm type="double">1</lever-norm>
+					<lever-norm type="double">0</lever-norm>
+					<lever-norm type="double">0</lever-norm>
 				</fuel-cock>
 				<mixture-lever type="double">1</mixture-lever>
 				<primer type = "int">0</primer>
