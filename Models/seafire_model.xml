@@ -452,7 +452,7 @@
 		<object-name>Oil-Cooler</object-name>
 		<object-name>Radiator</object-name>
 		<object-name>Carburettor-Air-Intake</object-name>
-		<object-name>Tail-Light</object-name>
+		<!--<object-name>Tail-Light</object-name>-->
 		<condition>
 			<not>
 				<equals>
@@ -479,8 +479,8 @@
 		<object-name>Stbd-Nav-Lt-Cover</object-name>
 		<object-name>Tail-Lt-Cover</object-name>
 		<object-name>PropellerDisk</object-name>
-		<object-name>Dirt-Oil</object-name>
-		<object-name>Dirt-Exhaust</object-name>
+		<!--<object-name>Dirt-Oil</object-name>
+		<object-name>Dirt-Exhaust</object-name>-->
 		<!--<object-name>Canopy</object-name>-->
 		<!--<condition>
 			<greater-than-equals>
@@ -805,12 +805,10 @@
 	<!-- rudder -->
 	<animation>
 		<type>rotate</type>
-		<object-name>Rudder</object-name>
-		<object-name>Tail-Lt-Fairing</object-name>
-		<object-name>Tail-Lt-Cover</object-name>
+		<object-name>Rudder-Assmbly</object-name>
 		<object-name>Tail-Light</object-name>
 		<property>surface-positions/rudder-pos-norm</property>
-		<factor>-15</factor>
+		<factor>-30</factor>
 		<axis>
 			<x1-m>8.51</x1-m>
 			<y1-m>0.00</y1-m>
@@ -820,6 +818,7 @@
 			<z2-m>-0.29</z2-m>
 		</axis>
 	</animation>
+  
 	<!-- ***** Propeller ***** -->
 	<animation>
 		<type>select</type>
@@ -1688,7 +1687,7 @@
 		</axis>
 	</animation>
 	<!--   ======================== Arrester Hook stuff ================= -->
-	<!--<animation>
+	<animation>
 		<type>rotate</type>
 		<object-name>Arrester-Hook</object-name>
 		<property>gear/tailhook/position-norm</property>
@@ -1712,8 +1711,9 @@
 			<y>1</y>
 			<z>0</z>
 		</axis>
-	</animation>-->
-	<!--<animation>
+	</animation>
+  
+	<animation>
 		<type>rotate</type>
 		<object-name>Arrester-Hook</object-name>
 		<property>gear/gear[4]/compression-norm</property>
@@ -1737,7 +1737,7 @@
 			<y>-1</y>
 			<z>0</z>
 		</axis>
-	</animation>-->
+	</animation>
 
 	<!-- Panel background lighting -->
 	<animation>
