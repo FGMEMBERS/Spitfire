@@ -1139,7 +1139,8 @@
 			<z>1</z>
 		</axis>
 	</animation>
-	<animation>
+  
+	<animation> 
 		<type>spin</type>
 		<object-name>Wheel-L</object-name>
 		<property>gear/gear[0]/rollspeed-ms</property>
