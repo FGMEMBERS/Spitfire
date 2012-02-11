@@ -222,11 +222,11 @@ var update = func {
     setprop("/sim/rendering/dirt-factor", dirt_factor);
 
     hobbs = getprop("sim/time/hobbs/" ~ type ~ "/airframe[0]");
-    dirt_factor = clamp(hobbs*0.75/(1.0 * hr2sec), 0.0, 0.75);
+    dirt_factor = clamp(hobbs*0.75/(1.0 * hr2sec), 0.0, 0.6);
     setprop("/sim/rendering/dirt-factor[1]", dirt_factor);
 
     hobbs = getprop("sim/time/hobbs/" ~ type ~ "/airframe[0]");
-    dirt_factor = clamp(-0.3 - hobbs*0.3/(1.0 * hr2sec), -0.6, -0.3);
+    dirt_factor = clamp(-0.3 - hobbs*0.3/(1.0 * hr2sec), -0.8, -0.3);
     setprop("/sim/rendering/refl-correction", dirt_factor);
 
     settimer(update, 0); 
@@ -240,7 +240,7 @@ BOOST_CONTROL_AUTHORITY = 0.99; # How much can it move the throttle?
 BOOST_CONTROL_LIMIT_RATED = 9;        # Rated Maximum MP  (psi gauge) (1 hr)
 BOOST_CONTROL_LIMIT_COMBAT = 12.5;    # Combat limit (5 mins)
 
-if (type == "seafireIIIc") {BOOST_CONTROL_LIMIT_COMBAT = 16;}  
+if (type == "seafireIIIc") {BOOST_CONTROL_LIMIT_COMBAT = 16.4;}  
 
 boost_control = props.globals.getNode("/controls/engines/engine/boost-control", 1);
 boost_pressure = props.globals.getNode("/engines/engine/boost-gauge-inhg", 1);
