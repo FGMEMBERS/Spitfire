@@ -37,27 +37,15 @@ var count_5_Node = props.globals.getNode("ai/submodels/submodel[11]/count", 1);
 
 props.globals.initNode("/sim/rendering/dirt-factor[2]", 0.0, "DOUBLE");
 props.globals.initNode("/sim/rendering/dirt-factor[3]", 0.0, "DOUBLE");
+props.globals.initNode("/controls/flight/buffet", 0.0, "DOUBLE");
+props.globals.initNode("/surface-positions/flap-pos-norm", 0.0, "DOUBLE");
 
 var type = getprop("sim/aircraft");
 
 var hobbs_engine = aircraft.timer.new("sim/time/hobbs/engine[0]", 60, 0);
 var hobbs_airframe = aircraft.timer.new("sim/time/hobbs/" ~ type ~ "/airframe[0]", 900, 1);	
-
-#if (type == "spitfireVb")
-#	{
-#		print ("type: " , type );
-#		var hobbs_airframe = aircraft.timer.new("sim/time/hobbs/spitfireVb/airframe[0]", 900, 1);
-#	}
-
-#if (type == "spitfireIIIc")
-#	{
-#		print ("type: " , type );
-#		var hobbs_airframe = aircraft.timer.new("sim/time/hobbs/seafireIIIc/airframe[0]", 900, 1);
-#	}
-
 var engine_running_Node = props.globals.initNode("engines/engine[0]/running", 1, "BOOL");
 var flying_Node = props.globals.initNode("gear/gear/wow", 1, "BOOL");
-
 
 # =============== Variables ================
 
@@ -93,6 +81,7 @@ var initialize = func {
 
 # initialise Hobbs meter
     hobbs_engine.reset();
+	updateBuffet(); 
 
 
 # ======== set the aircraft type =================
@@ -197,7 +186,6 @@ var initialize = func {
         1,
         0); # end listener
 
-
 # set it all running on the next update cycle
         settimer(update, 0);
 
@@ -229,9 +217,39 @@ var update = func {
     dirt_factor = clamp(-0.3 - hobbs*0.3/(1.0 * hr2sec), -0.8, -0.3);
     setprop("/sim/rendering/refl-correction", dirt_factor);
 
-    settimer(update, 0); 
+	}# end func update (main loop) 
 
-}# end func update (main loop) 
+
+# ========================== Buffet stuff======================================
+
+	updateBuffet = func {
+		
+		var alpha = getprop("/orientation/alpha-deg");
+		var flap = getprop("/surface-positions/flap-pos-norm");
+		var speed = getprop("/velocities/airspeed-kt");
+		var buffet = 0;
+		var factor = 0;
+
+		if (alpha <= 14.0 and flap < 0.9 ){
+			buffet = 0;	
+#print ("flap up");
+		} elsif (alpha <= 9.0 and flap >= 0.9 ){
+			buffet = 0;
+#print ("flap down");
+		} elsif (speed <= 35.0){
+			buffet = 0;
+#print ("speed");
+		} else {
+#			print ("buffet");
+			factor = clamp(alpha * 0.05, 0.5, 1.0);
+            buffet = (-factor + 2.0 * factor * rand());
+		}
+
+		interpolate("/controls/flight/buffet", buffet, 0.125);
+		settimer(updateBuffet, 0.125);
+
+}# end func updateBuffet 
+
 
 # ========================== Boost Controller stuff======================================
 
@@ -240,7 +258,7 @@ BOOST_CONTROL_AUTHORITY = 0.99; # How much can it move the throttle?
 BOOST_CONTROL_LIMIT_RATED = 9;        # Rated Maximum MP  (psi gauge) (1 hr)
 BOOST_CONTROL_LIMIT_COMBAT = 12.5;    # Combat limit (5 mins)
 
-if (type == "seafireIIIc") {BOOST_CONTROL_LIMIT_COMBAT = 16.4;}  
+if (type == "seafireIIIc") {BOOST_CONTROL_LIMIT_COMBAT = 16.0;}  
 
 boost_control = props.globals.getNode("/controls/engines/engine/boost-control", 1);
 boost_pressure = props.globals.getNode("/engines/engine/boost-gauge-inhg", 1);
@@ -434,58 +452,58 @@ primerMixture = func{
 
 # ============================= magneto stuff ===========================================
 
-setMagnetos = func{     # set the magneto value according to the switch positions
+	setMagnetos = func{     # set the magneto value according to the switch positions
 
-right = getprop("controls/engines/engine/mag-switch-right");
+	right = getprop("controls/engines/engine/mag-switch-right");
 left = getprop("controls/engines/engine/mag-switch-left");
 if (left and right){                                 # both
-setprop("controls/engines/engine/magnetos",3); 
+	setprop("controls/engines/engine/magnetos",3); 
 }
 elsif (left and !right) {                         # left
-setprop("controls/engines/engine/magnetos",1)
+	setprop("controls/engines/engine/magnetos",1)
 }
 elsif (!left and right) {                         # right
-setprop("controls/engines/engine/magnetos",2)
+	setprop("controls/engines/engine/magnetos",2)
 }
 else{    
-    setprop("controls/engines/engine/magnetos",0); # none
+	setprop("controls/engines/engine/magnetos",0); # none
 }
 
 } # end function
 
-setleftMagswitch = func{
+	setleftMagswitch = func{
 
-    left = arg[0];
-    setprop("controls/engines/engine/mag-switch-left",left);
-    spitfire.setMagnetos();
-
-} # end function
-
-
-setrightMagswitch = func{
-
-    right = arg[0];
-    setprop("controls/engines/engine/mag-switch-right",right);
-    spitfire.setMagnetos();
+		left = arg[0];
+		setprop("controls/engines/engine/mag-switch-left",left);
+		spitfire.setMagnetos();
 
 } # end function
 
 
-toggleleftMagswitch = func{
+	setrightMagswitch = func{
 
-    left = getprop("controls/engines/engine/mag-switch-left");
-    left = !left;
-    setprop("controls/engines/engine/mag-switch-left",left);
-    spitfire.setMagnetos();
+		right = arg[0];
+		setprop("controls/engines/engine/mag-switch-right",right);
+		spitfire.setMagnetos();
 
 } # end function
 
-togglerightMagswitch = func{
 
-    right = getprop("controls/engines/engine/mag-switch-right");
-    right = !right;
-    setprop("controls/engines/engine/mag-switch-right",right);
-    spitfire.setMagnetos();
+	toggleleftMagswitch = func{
+
+		left = getprop("controls/engines/engine/mag-switch-left");
+		left = !left;
+		setprop("controls/engines/engine/mag-switch-left",left);
+		spitfire.setMagnetos();
+
+} # end function
+
+	togglerightMagswitch = func{
+
+		right = getprop("controls/engines/engine/mag-switch-right");
+		right = !right;
+		setprop("controls/engines/engine/mag-switch-right",right);
+		spitfire.setMagnetos();
 
 } # end function
 
@@ -648,7 +666,7 @@ flapLever = func{                         #sets the flap lever up or down
 
 down = arg[0];
 
-setprop("controls/flight/flaps-lever",down);
+setprop("controls/flight/flaps-lever", down);
 if (down) {registerTimer(flapBlowin)}                        # run the timer
 
 } # end function 
@@ -664,7 +682,7 @@ flapBlowin = func{
             return registerTimer(flapBlowin);                        # run the timer                
     }
     elsif (lever and airspeed >= 105 and airspeed <= 115) {
-        flap = -0.08*airspeed + 9.4;
+        flap = -0.08 * airspeed + 9.4;
 #print("flap: " , flap);
         setprop("controls/flight/flaps", flap);            # flap partially blown in     
             return registerTimer(flapBlowin);                    # run the timer                        
@@ -973,10 +991,11 @@ headShake = func {
 #	last_zDivergence = zDivergence_damp;
 
 #print (sprintf("z-G=%0.5f, z total=%0.5f, z div damped=%0.5f",zAccel, zDivergence_total,zDivergence_damp));
-
+		var buffet = getprop("controls/flight/buffet") * 0.002;
         setprop("/sim/current-view/z-offset-m", xConfig + xDivergence_damp );
         setprop("/sim/current-view/x-offset-m", yConfig + yDivergence_damp );
-        setprop("/sim/current-view/y-offset-m", zConfig + zDivergence_damp + seat_vertical_adjust );
+        setprop("/sim/current-view/y-offset-m", zConfig + zDivergence_damp + seat_vertical_adjust 
+		+ buffet);
     }
     settimer(headShake,0 );
 

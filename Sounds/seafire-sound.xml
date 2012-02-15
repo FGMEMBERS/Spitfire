@@ -458,5 +458,64 @@
 			</volume>
 		</guns>
 
-	</fx>
+    <!-- PRE-STALL BUFFETING -->
+    <pre-stall-L>
+      <name>pre-stall_L</name>
+      <mode>looped</mode>
+      <path>Aircraft/Spitfire/Sounds/stall-a.wav</path>
+      <condition>
+          <greater-than>
+            <property>controls/flight/buffet</property>
+            <value>0.0</value>
+          </greater-than>
+        <property>/sim/current-view/internal</property>
+      </condition>
+      <volume>
+        <property>velocities/airspeed-kt</property>
+        <factor>0.1</factor>
+      </volume>
+      <pitch>
+        <property>orientation/alpha-deg</property>
+        <factor>0.015</factor>
+        <max>0.15</max>
+      </pitch>
+      <position>
+        <x-m> 2.573</x-m>
+        <y-m>-2.000</y-m>
+        <z-m>-0.200</z-m>
+      </position>
+      <reference-dist>2.5</reference-dist>
+      <max-dist>50</max-dist>
+    </pre-stall-L>
+
+    <pre-stall-R>
+      <name>pre-stall_R</name>
+      <mode>looped</mode>
+      <path>Aircraft/Spitfire/Sounds/stall-a.wav</path>
+      <condition>
+        <greater-than>
+          <property>controls/flight/buffet</property>
+          <value>0.0</value>
+        </greater-than>
+        <property>/sim/current-view/internal</property>
+      </condition>
+      <volume>
+        <property>velocities/airspeed-kt</property>
+        <factor>0.1</factor>
+      </volume>
+      <pitch>
+        <property>orientation/alpha-deg</property>
+        <factor>0.015</factor>
+        <max>0.15</max>
+      </pitch>
+      <position>
+        <x-m> 2.573</x-m>
+        <y-m> 2.000</y-m>
+        <z-m>-0.200</z-m>
+      </position>
+      <reference-dist>2.5</reference-dist>
+      <max-dist>50</max-dist>
+    </pre-stall-R>
+
+  </fx>
 </PropertyList>

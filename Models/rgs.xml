@@ -39,6 +39,7 @@
 		<object-name>glass</object-name>
 		<offset>0.75</offset>
 	</animation>
+  
 	<animation>
 		<type>select</type>
 		<object-name>disk</object-name>
