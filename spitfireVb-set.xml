@@ -289,6 +289,32 @@ $Id$
 							</script>
 						</binding>
 					</item>
+					<item>
+						<label>Chocks Away</label>
+						<binding>
+							<command>property-assign</command>
+							<property>controls/gear/chock-left</property>
+							<value>0</value>
+						</binding>
+						<binding>
+						<command>property-assign</command>
+						<property>controls/gear/chock-right</property>
+						<value>0</value>
+					</binding>
+					</item>
+					<item>
+						<label>Chocks</label>
+						<binding>
+							<command>property-assign</command>
+							<property>controls/gear/chock-left</property>
+							<value>1</value>
+						</binding>
+						<binding>
+							<command>property-assign</command>
+							<property>controls/gear/chock-right</property>
+							<value>1</value>
+						</binding>
+					</item>
 				</menu>
 			</default>
 		</menubar>
@@ -636,7 +662,7 @@ $Id$
 				<binding>
 					<command>nasal</command>
 					<script>
-						spitfire.toggleCock(0);
+						fuel.toggleCock(1);
 					</script>
 				</binding>
 			</key>
@@ -646,7 +672,7 @@ $Id$
 				<binding>
 					<command>nasal</command>
 					<script>
-						spitfire.toggleCock(1);
+						fuel.toggleCock(0);
 					</script>
 				</binding>
 			</key>
@@ -657,14 +683,14 @@ $Id$
 				<binding>
 					<command>nasal</command>
 					<script>
-						spitfire.pumpPrimer(1);
+						fuel.pumpPrimer(1);
 					</script>
 				</binding>
 				<mod-up>
 					<binding>
 						<command>nasal</command>
 						<script>
-							spitfire.pumpPrimer(0);
+							fuel.pumpPrimer(0);
 						</script>
 					</binding>
 				</mod-up>
@@ -720,7 +746,7 @@ $Id$
 	<nasal>
 		<spitfire-fuel>
 			<module>fuel</module>
-			<file>Aircraft/Spitfire/Models/fuel-cocks.nas</file>
+			<file>Aircraft/Spitfire/Systems/fuel.nas</file>
 		</spitfire-fuel>
 		<recoil>
 			<file>Aircraft/Spitfire/Models/recoil.nas</file>
