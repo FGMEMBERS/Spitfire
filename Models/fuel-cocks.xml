@@ -12,15 +12,15 @@
 			<binding>
 				<command>nasal</command>
 				<script>
-					spitfire.openCock(1,1);
+					fuel.openCock(1,1);
 				</script>
 			</binding>
-      <binding>
-        <command>property-interpolate</command>
-        <property>controls/engines/engine/fuel-cock/lever-norm[1]</property>
-        <property>consumables/fuel/tank[1]/selected</property>
-        <time>2.0</time>
-      </binding>
+			<binding>
+				<command>property-interpolate</command>
+				<property>controls/engines/engine/fuel-cock/lever-norm[1]</property>
+				<property>consumables/fuel/tank[1]/selected</property>
+				<time>2.0</time>
+			</binding>
 		</action>
 	</animation>
 	<animation>
@@ -33,16 +33,16 @@
 			<binding>
 				<command>nasal</command>
 				<script>
-					spitfire.openCock(1,0);
+					fuel.openCock(1,0);
 				</script>
 			</binding>
-      <binding>
-        <command>property-interpolate</command>
-        <property>controls/engines/engine/fuel-cock/lever-norm[1]</property>
-        <property>consumables/fuel/tank[1]/selected</property>
-        <time>2.0</time>
-      </binding>
-    </action>
+			<binding>
+				<command>property-interpolate</command>
+				<property>controls/engines/engine/fuel-cock/lever-norm[1]</property>
+				<property>consumables/fuel/tank[1]/selected</property>
+				<time>2.0</time>
+			</binding>
+		</action>
 	</animation>
 
 	<animation>
@@ -55,15 +55,15 @@
 			<binding>
 				<command>nasal</command>
 				<script>
-					spitfire.openCock(0,1);
+					fuel.openCock(0,1);
 				</script>
 			</binding>
-      <binding>
-        <command>property-interpolate</command>
-        <property>controls/engines/engine/fuel-cock/lever-norm[0]</property>
-        <property>consumables/fuel/tank[0]/selected</property>
-        <time>2.0</time>
-      </binding>
+			<binding>
+				<command>property-interpolate</command>
+				<property>controls/engines/engine/fuel-cock/lever-norm[0]</property>
+				<property>consumables/fuel/tank[0]/selected</property>
+				<time>2.0</time>
+			</binding>
 		</action>
 	</animation>
 	<animation>
@@ -76,15 +76,15 @@
 			<binding>
 				<command>nasal</command>
 				<script>
-					spitfire.openCock(0,0);
+					fuel.openCock(0,0);
 				</script>
 			</binding>
-      <binding>
-        <command>property-interpolate</command>
-        <property>controls/engines/engine/fuel-cock/lever-norm[0]</property>
-        <property>consumables/fuel/tank[0]/selected</property>
-        <time>2.0</time>
-      </binding>
+			<binding>
+				<command>property-interpolate</command>
+				<property>controls/engines/engine/fuel-cock/lever-norm[0]</property>
+				<property>consumables/fuel/tank[0]/selected</property>
+				<time>2.0</time>
+			</binding>
 		</action>
 	</animation>
 
@@ -92,16 +92,16 @@
 		<type>rotate</type>
 		<object-name>lever-upper</object-name>
 		<!--<property>consumables/fuel/tank[0]/selected</property>-->
-    <property>controls/engines/engine/fuel-cock/lever-norm[0]</property>
+		<property>controls/engines/engine/fuel-cock/lever-norm[0]</property>
 		<interpolation>
 			<entry>
 				<ind>0.0</ind>
 				<dep>-30</dep>
 			</entry>
-      <entry>
-        <ind>0.5</ind>
-        <dep>0</dep>
-      </entry>
+			<entry>
+				<ind>0.5</ind>
+				<dep>0</dep>
+			</entry>
 			<entry>
 				<ind>1.0</ind>
 				<dep>30</dep>
@@ -122,16 +122,16 @@
 		<type>rotate</type>
 		<object-name>lever-lower</object-name>
 		<!--<property>consumables/fuel/tank[1]/selected</property>-->
-    <property>controls/engines/engine/fuel-cock/lever-norm[1]</property>
-    <interpolation>
+		<property>controls/engines/engine/fuel-cock/lever-norm[1]</property>
+		<interpolation>
 			<entry>
 				<ind>0.0</ind>
 				<dep>-30</dep>
 			</entry>
-      <entry>
-        <ind>0.5</ind>
-        <dep>0</dep>
-      </entry>
+			<entry>
+				<ind>0.5</ind>
+				<dep>0</dep>
+			</entry>
 			<entry>
 				<ind>1.0</ind>
 				<dep>30</dep>
