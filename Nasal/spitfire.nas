@@ -76,7 +76,7 @@ var initialize = func {
     controls.fullBrakeTime = 0;
     rain();
     tyresmoke();
-    aircraft.steering.init();
+#    aircraft.steering.init();
 #        ammo();
 
 # initialise Hobbs meter
@@ -511,8 +511,8 @@ flapLever = func{                         #sets the flap lever up or down
 
 down = arg[0];
 
-setprop("controls/flight/flaps-lever", down);
-if (down) {registerTimer(flapBlowin)}                        # run the timer
+interpolate("controls/flight/flaps-lever", down, 1.0 );
+#if (down) {registerTimer(flapBlowin)}                        # run the timer
 
 } # end function 
 
@@ -852,7 +852,7 @@ headShake();
 
 # ================================== Steering ==========================================
 
-aircraft.steering.init();
+#aircraft.steering.init();
 
 # ==================================  Engine Hobbs Meter ================================
 
