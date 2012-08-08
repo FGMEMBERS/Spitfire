@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <PropertyList>
-	
+
 	<path>rgs.ac</path>
-	
-	<animation>
+
+	<!--<animation>
 		<type>select</type>
 		<object-name>disk</object-name>
-	</animation>
+	</animation>-->
 
 	<animation>
 		<type>material</type>
@@ -51,13 +51,13 @@
 		<object-name>mk1</object-name>
 		<object-name>mount-back</object-name>
 	</animation>
-	
+
 	<animation>
 		<type>blend</type>
 		<object-name>glass-rect</object-name>
 		<offset>0.75</offset>
 	</animation>
-	
+
 	<animation>
 		<type>select</type>
 		<object-name>disk</object-name>
@@ -72,12 +72,12 @@
 		</condition>
 	</animation>
 
-  <!--<animation>
-    <type>select</type>
-    <object-name>disk</object-name>
-  </animation>-->
+	<animation>
+		<type>select</type>
+		<object-name>disk</object-name>
+	</animation>
 
-  <animation>
+	<animation>
 		<type>material</type>
 		<object-name>front</object-name>
 		<condition>
