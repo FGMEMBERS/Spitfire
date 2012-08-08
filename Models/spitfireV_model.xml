@@ -467,9 +467,7 @@
 	<animation>
 		<!--<type>select</type>-->
 		<object-name>Hull</object-name>
-		<object-name>Port-Light</object-name>
-		<object-name>Stbd-Light</object-name>
-		<object-name>Gunsight</object-name>
+
 		<object-name>Altimeter</object-name>
 		<object-name>Attitude</object-name>
 		<object-name>Gear-Indicator</object-name>
@@ -479,8 +477,8 @@
 		<object-name>Stbd-Nav-Lt-Cover</object-name>
 		<object-name>Tail-Lt-Cover</object-name>
 		<object-name>PropellerDisk</object-name>
-		<object-name>Dirt-Oil</object-name>
-		<object-name>Dirt-Exhaust</object-name>
+		<!--<object-name>Dirt-Oil</object-name>
+		<object-name>Dirt-Exhaust</object-name>-->
 		<!--<object-name>Canopy</object-name>-->
 		<!--<condition>
 			<greater-than-equals>
@@ -489,6 +487,17 @@
 			</greater-than-equals>
 		</condition>-->
 	</animation>
+
+	<effect>
+		<inherits-from>Effects/model-transparent</inherits-from>
+		<object-name>Port-Light</object-name>
+		<object-name>Stbd-Light</object-name>
+		<object-name>Port-Nav-Lt-Cover</object-name>
+		<object-name>Stbd-Nav-Lt-Cover</object-name>
+		<object-name>Tail-Lt-Cover</object-name>
+		<object-name>PropellerDisk</object-name>
+	</effect>
+
 
 	<animation>
 		<type>shader</type>
@@ -566,6 +575,13 @@
 			</less-than-equals>
 		</condition>
 	</animation>
+
+	<effect>
+		<inherits-from>Effects/model-transparent</inherits-from>
+		<object-name>Canopy-Main</object-name>
+		<object-name>Canopy-Rear</object-name>
+		<object-name>Armour-Panel</object-name>
+	</effect>
 
 	<!-- **************************** Pilot ******************************* -->
 
@@ -728,14 +744,16 @@
 			<z2-m>-0.71</z2-m>
 		</axis>
 	</animation>
-  
-  <animation>
+
+	<!--<animation>
     <type>rotate</type>
     <object-name>Cover-Flap-Actuator-Port</object-name>
     <property>surface-positions/flap-pos-norm</property>
     <factor>-86</factor>
-    <!--3.80577	-0.607692	1.91364
+    -->
+	<!--3.80577	-0.607692	1.91364
     3.96433	-0.638594	1.91933-->
+	<!--
     <axis>
       <x1-m>3.80577</x1-m>
       <y1-m>-1.91364</y1-m>
@@ -744,8 +762,9 @@
       <y2-m>-1.91933</y2-m>
       <z2-m>-0.638594</z2-m>
     </axis>
-  </animation>
-  <animation>
+  </animation>-->
+
+	<animation>
 		<type>rotate</type>
 		<object-name>Flap-Outer-R-Inner</object-name>
 		<property>surface-positions/flap-pos-norm</property>
@@ -1897,7 +1916,7 @@
 
 	<!-- ========== Dirt textures ========= -->
 
-	<animation>
+	<!--<animation>
 		<type>material</type>
 		<object-name>Dirt-Exhaust</object-name>
 		<nopreview/>
@@ -1908,10 +1927,12 @@
 			<max>0.7</max>
 			<min>0.0075</min>
 		</transparency>
-		<!--<threshold>0.001</threshold>-->
-	</animation>
+		-->
+	<!--<threshold>0.001</threshold>-->
+	<!--
+	</animation>-->
 
-	<animation>
+	<!--<animation>
 		<type>material</type>
 		<object-name>Dirt-Oil</object-name>
 		<nopreview/>
@@ -1922,8 +1943,10 @@
 			<max>0.9</max>
 			<min>0.0075</min>
 		</transparency>
-		<!--<threshold>0.001</threshold>-->
-	</animation>
+		-->
+	<!--<threshold>0.001</threshold>-->
+	<!--
+	</animation>-->
 
 	<!-- ============= Rain Animations ============= -->
 

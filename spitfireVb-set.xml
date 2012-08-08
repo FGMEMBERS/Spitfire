@@ -69,7 +69,7 @@ $Id$
 			</engine>
 		</engines>
 		<gear>
-			<brake-parking>1</brake-parking>
+			<brake-parking>0</brake-parking>
 			<tailwheel-lock>false</tailwheel-lock>
 			<antiskid>0</antiskid>
 			<canopy>
@@ -754,6 +754,9 @@ $Id$
 		<oxygen>
 			<file>Aircraft/Generic/Oxygen/oxygen.nas</file>
 		</oxygen>
+		<pneumatic>
+			<file>Aircraft/Spitfire/Systems/pneumatic.nas</file>
+		</pneumatic>
 		<walkview>
 			<file>Aircraft/Generic/WalkView/walkview.nas</file>
 		</walkview>
