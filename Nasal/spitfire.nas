@@ -182,7 +182,7 @@ var initialize = func {
         0,
         0);
 
-    setlistener("/controls/armament/trigger", func {ammo()},
+    setlistener("/systems/pneumatic/outputs/trigger-gun", func {ammo()},
         1,
         0); # end listener
 
@@ -1003,8 +1003,7 @@ setprop("sim/ai/engines/engine/smoking", smoking);
 # ================================== Ammo State ============================================
 
 var ammo = func {
-    var trigger = getprop("/controls/armament/trigger");
-    print ("trigger ",trigger);
+    var trigger = getprop("/systems/pneumatic/outputs/trigger-gun");
 
     if (!trigger)
         return;
@@ -1047,7 +1046,7 @@ var ammo = func {
 			}
 
         setprop("/yasim/weights/ammo-lb[" ~ i ~ "]", ammo_wt[i]);
-        print (" ammo count[", i,"] ", count[i], " ", ammo_wt[i], " ", getprop("/sim/rendering/dirt-factor[3]"));
+#        print (" ammo count[", i,"] ", count[i], " ", ammo_wt[i], " ", getprop("/sim/rendering/dirt-factor[3]"));
     }# end for
 
         settimer(ammo, 0);

@@ -214,7 +214,7 @@ flap drag not available
 		<control-input axis="/systems/pneumatic/outputs/flaps"
 									 control="FLAP0"/>
 		<control-output control="FLAP0"
-										prop="/surface-positions/flap-pos-norm"/>
+										prop="/surface-positions/flap-pos-norm[1]"/>
 		<control-speed control="FLAP0"
 									 transition-time="10"/>
 	</vstab>
@@ -240,7 +240,7 @@ flap drag not available
 		<control-input axis="/systems/pneumatic/outputs/flaps"
 									 control="FLAP0"/>
 		<control-output control="FLAP0"
-										prop="/surface-positions/flap-pos-norm"/>
+										prop="/surface-positions/flap-pos-norm[2]"/>
 		<control-speed control="FLAP0"
 									 transition-time="10"/>
 	</vstab>

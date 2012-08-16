@@ -73,6 +73,8 @@ var tank_1 = nil;
 
 var IAS_N = props.globals.getNode("/velocities/airspeed-kt", 1);
 
+var lowpass = aircraft.lowpass.new(1.5);
+
 var initialize = func {
 
 print( "Initializing Pneumatic System ..." );
@@ -189,7 +191,7 @@ controls.applyParkingBrake = func(v) {
 
 ###
 # actuators ("name", "input property", "output property", "position property",
-# status, min, max, initial state)
+# status, capacity, min, max, initial state)
 #
 	actuator = Actuator.new("brake",
 					"systems/pneumatic/proportionators/brakes/pressure-out-psi",
@@ -276,17 +278,17 @@ controls.applyParkingBrake = func(v) {
 					"systems/pneumatic/outputs/flaps",
 					"surface-positions/flap-pos-norm",
 					1,
-					0.005,
+					0.1,
 					0,
-					1,
+					200,
 					0);
 
 	actuator_9 = Actuator.new("flap-1",
 					"systems/pneumatic/valves/flaps/pressure-out-psi",
 					"systems/pneumatic/outputs/flaps[1]",
-					"surface-positions/flap-pos-norm",
+					"surface-positions/flap-pos-norm[1]",
 					1,
-					0.005,
+					0.1,
 					0,
 					1,
 					0);
@@ -534,18 +536,19 @@ Actuator = {
 
 		var input = source - back_pressure;
 
-		if (input > MIN_PRESSURE and serviceable)
+		if (input >= MIN_PRESSURE and serviceable)
 			{
-			output = (input)/ me.max;
-#			output = (source - back_pressure)/ me.max;
-#			print(me.name," max output ", output);
-			output = math.max(output, state);
-#			print(me.name," output max ", output);
+			output = (input)/me.max;
+			}
+		elsif (input < MIN_PRESSURE and input > 50 and serviceable)
+			{
+			output = state;
+#			print (me.name," no movement ", input, " out ", output);
 			}
 		else
 			{
 			output = 0;
-#			print (me.name," no movement ", input, " out ", output);
+#			print (me.name," close ", input, " out ", output);
 			}
 
 #		print (me.name, " output ", output, " source ", source, " state ", state);
@@ -569,10 +572,12 @@ Actuator = {
 	# An arbitrary function which provides a non-linear relationship between
 	# back pressure,  airspeed and flap extension
 	# y = 4E-05x2 - 0.4495x + 0.4504
+	# y = 4E-06x2 - 0.0449x + 0.045
 
-	var back_pressure = 0.00004 * (airspeed * airspeed * state) * (airspeed * airspeed * state)
-		- 0.4495 * (airspeed * airspeed * state) + 0.4504;
+	var back_pressure = 0.000004 * (airspeed * airspeed * state) * (airspeed * airspeed * state)
+		- 0.0449 * (airspeed * airspeed * state) + 0.045;
 	back_pressure = math.max(back_pressure, 0);
+	back_pressure = lowpass.filter(back_pressure);
  
 #	print (me.name, " back_pressure ", back_pressure, " airspeed ", airspeed, " state " , state);
 		
