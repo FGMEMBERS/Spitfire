@@ -691,7 +691,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>Flap-Inner-L</object-name>
-		<property>surface-positions/flap-pos-norm</property>
+		<property>surface-positions/flap-pos-norm[1]</property>
 		<factor>-86</factor>
 		<axis>
 			<x1-m>4.04</x1-m>
@@ -705,7 +705,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>Flap-Inner-R</object-name>
-		<property>surface-positions/flap-pos-norm</property>
+		<property>surface-positions/flap-pos-norm[2]</property>
 		<factor>86</factor>
 		<axis>
 			<x1-m>4.04</x1-m>
