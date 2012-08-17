@@ -496,6 +496,7 @@
 		<object-name>Stbd-Nav-Lt-Cover</object-name>
 		<object-name>Tail-Lt-Cover</object-name>
 		<object-name>PropellerDisk</object-name>
+		<object-name>Antenna-IFF</object-name>
 	</effect>
 
 
@@ -1780,6 +1781,8 @@
 		<object-name>Cover-Engine-T</object-name>
 		<object-name>Cover-Engine-Side-R</object-name>
 		<object-name>Cover-Engine-Side-L</object-name>
+		<object-name>Cover-Engine-T-blister</object-name>
+		<object-name>Cover-Engine-T-Scoop</object-name>
 		<object-name>Intake</object-name>
 		<object-name>Scoop</object-name>
 		<object-name>Fillet-Port</object-name>
