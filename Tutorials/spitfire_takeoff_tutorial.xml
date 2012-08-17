@@ -47,10 +47,10 @@
 		</set>
 		<set>
 			<property>/controls/engines/engine/throttle</property>
-			<value>0.2</value>
+			<value>0.3</value>
 		</set>
 		<set>
-			<property>/controls/engines/engine/primer</property>
+			<property>/engines/engine/primer</property>
 			<value>5</value>
 		</set>
 		<set>
@@ -735,7 +735,7 @@
 	</step>
 
 	<step>
-		<message>Check Mixture lever is set to rich (fully back) using m</message>
+		<message>Check Mixture lever is set to RICH (fully back) using m</message>
 		<view>
 			<heading-offset-deg>39.8</heading-offset-deg>
 			<pitch-offset-deg>-43.4</pitch-offset-deg>
@@ -912,18 +912,28 @@
 			Release the parking brake using Shift B
 		</message>
 		<error>
-			<message>Release the parking brake using Shift B</message>
+			<message>Release the parking brake using Shift B !</message>
 			<condition>
-				<equals>
-					<property>/controls/gear/brake-parking</property>
-					<value>1</value>
-				</equals>
+				<or>
+				<greater-than>
+					<property>/systems/pneumatic/outputs/brake</property>
+					<value>0</value>
+				</greater-than>
+				<greater-than>
+					<property>/systems/pneumatic/outputs/brake[1]</property>
+					<value>0</value>
+				</greater-than>
+				</or>
 			</condition>
 		</error>
 		<exit>
 			<condition>
 				<equals>
-					<property>/controls/gear/brake-parking</property>
+					<property>/systems/pneumatic/outputs/brake</property>
+					<value>0</value>
+				</equals>
+				<equals>
+					<property>/systems/pneumatic/outputs/brake[1]</property>
 					<value>0</value>
 				</equals>
 			</condition>
@@ -938,10 +948,16 @@
 		<error>
 			<message>RELEASE PARKING BRAKE using Shift B</message>
 			<condition>
-				<equals>
-					<property>/controls/gear/brake-parking</property>
-					<value>1</value>
-				</equals>
+				<and>
+				<greater-than>
+					<property>/systems/pneumatic/outputs/brake</property>
+					<value>0</value>
+				</greater-than>
+					<greater-than>
+					<property>/systems/pneumatic/outputs/brake[1]</property>
+					<value>0</value>
+				</greater-than>
+				</and>
 			</condition>
 		</error>
 		<error>
