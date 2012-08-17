@@ -2,51 +2,38 @@
 <!-- turn and slip indicator -->
 <PropertyList>
 	<path>triple.ac</path>
-
 	<animation>
 		<type>rotate</type>
 		<object-name>Supply-Needle1</object-name>
-		<property>engines/engine/rpm</property>
+		<property>systems/pneumatic/relief-valves/pressure-reducing/pressure-in-psi</property>
 		<interpolation>
 			<entry>
 				<ind>0</ind>
-				<dep>-40</dep>
+				<dep>-90</dep>
 			</entry>
 			<entry>
-				<ind>250</ind>
+				<ind>100</ind>
+				<dep>-60</dep>
+			</entry>
+			<entry>
+				<ind>200</ind>
 				<dep>-30</dep>
 			</entry>
 			<entry>
-				<ind>500</ind>
-				<dep>-20</dep>
-			</entry>
-			<entry>
-				<ind>750</ind>
-				<dep>-10</dep>
-			</entry>
-			<entry>
-				<ind>1000</ind>
+				<ind>300</ind>
 				<dep>0</dep>
 			</entry>
 			<entry>
-				<ind>1500</ind>
-				<dep>5</dep>
+				<ind>400</ind>
+				<dep>30</dep>
 			</entry>
 			<entry>
-				<ind>2000</ind>
-				<dep>10</dep>
+				<ind>500</ind>
+				<dep>60</dep>
 			</entry>
 			<entry>
-				<ind>3000</ind>
-				<dep>10</dep>
-			</entry>
-			<entry>
-				<ind>4000</ind>
-				<dep>10</dep>
-			</entry>
-			<entry>
-				<ind>5000</ind>
-				<dep>10</dep>
+				<ind>600</ind>
+				<dep>90</dep>
 			</entry>
 		</interpolation>
 		<axis>
@@ -58,19 +45,19 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>L-Brake-Needle2</object-name>
-		<property>controls/gear/brake-left</property>
+		<property>systems/pneumatic/proportionators/brakes/pressure-out-psi</property>
 		<interpolation>
 			<entry>
 				<ind>0</ind>
-				<dep>-75</dep>
+				<dep>-80</dep>
 			</entry>
 			<entry>
-				<ind>0.5</ind>
+				<ind>100</ind>
 				<dep>0</dep>
 			</entry>
 			<entry>
-				<ind>1</ind>
-				<dep>75</dep>
+				<ind>200</ind>
+				<dep>80</dep>
 			</entry>
 		</interpolation>
 		<center>
@@ -87,19 +74,19 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>R-Brake-Needle3</object-name>
-		<property>controls/gear/brake-right</property>
+		<property>systems/pneumatic/proportionators/brakes/pressure-out-psi[1]</property>
 		<interpolation>
 			<entry>
 				<ind>0</ind>
-				<dep>-75</dep>
+				<dep>-80</dep>
 			</entry>
 			<entry>
-				<ind>0.5</ind>
+				<ind>100</ind>
 				<dep>0</dep>
 			</entry>
 			<entry>
-				<ind>1</ind>
-				<dep>75</dep>
+				<ind>200</ind>
+				<dep>80</dep>
 			</entry>
 		</interpolation>
 		<center>
@@ -121,6 +108,9 @@
 				<property>/controls/lighting/panel-norm</property>
 				<value>0</value>
 			</greater-than>
+			<not>
+				<property>/sim/rendering/rembrandt/enabled</property>
+			</not>
 		</condition>
 		<emission>
 			<factor-prop>/controls/lighting/panel-norm</factor-prop>
@@ -129,7 +119,7 @@
 			<blue>0.25</blue>
 		</emission>
 	</animation>
-
+	
 	<!-- *** LoD *** -->
 	<animation>
 		<type>range</type>
@@ -137,3 +127,4 @@
 		<max-m>5</max-m>
 	</animation>
 </PropertyList>
+
