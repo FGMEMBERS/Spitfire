@@ -69,6 +69,7 @@ $Id$
 			</engine>
 		</engines>
 		<gear>
+			<gear-down type="bool">true</gear-down>
 			<brake-parking>0</brake-parking>
 			<tailwheel-lock>false</tailwheel-lock>
 			<antiskid>0</antiskid>
@@ -94,10 +95,44 @@ $Id$
 		<lighting>
 			<nav-lights>false</nav-lights>
 		</lighting>
+		<hydraulic>
+			<lever type="double">1</lever>
+			<lever type="double">1</lever>
+			<wheels type="double">1</wheels>
+			<system>
+				<engine-pump type="bool">true</engine-pump>
+			</system>
+		</hydraulic>
+		<pneumatic>
+			<lever type="double">0</lever>
+			<lever type="double">0</lever>
+			<lever type="double">0</lever>
+			<system>
+				<engine-pump type="bool">true</engine-pump>
+			</system>
+		</pneumatic>
 	</controls>
+	<gear>
+		<gear n="0"
+					type="double">1</gear>
+		<gear n="1"
+					type="double">1</gear>
+		<gear n="2"
+					type="double">1</gear>
+	</gear>
 	<surface-positions>
-		<wing-fold-pos-norm type="double">0</wing-fold-pos-norm>
+		<wing-fold-pos-norm type="double">1</wing-fold-pos-norm>
 	</surface-positions>
+	<systems>
+		<hydraulic>
+			<outputs>
+				<gear n="0"
+							type="double">1</gear>
+				<gear n="1"
+							type="double">1</gear>
+			</outputs>
+		</hydraulic>
+	</systems>
 
 	<sim include="seafire-help.xml">
 		<description>Supermarine Spitfire MkVb</description>
@@ -105,7 +140,7 @@ $Id$
 		<status>production</status>
 		<rating>
 			<FDM type="int">4</FDM>
-			<systems type="int">4</systems>
+			<systems type="int">5</systems>
 			<cockpit type="int">4</cockpit>
 			<model type="int">5</model>
 		</rating>
@@ -757,6 +792,9 @@ $Id$
 		<pneumatic>
 			<file>Aircraft/Spitfire/Systems/pneumatic.nas</file>
 		</pneumatic>
+		<hydraulic>
+			<file>Aircraft/Spitfire/Systems/hydraulic.nas</file>
+		</hydraulic>
 		<walkview>
 			<file>Aircraft/Generic/WalkView/walkview.nas</file>
 		</walkview>
