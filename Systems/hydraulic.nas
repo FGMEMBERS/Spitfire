@@ -72,7 +72,7 @@ props.globals.initNode("/systems/hydraulic/outputs/gear[1]", 1, "DOUBLE");
 controls.gearDown = func(x) { if (x) 
 	{ 
 	setprop("/controls/hydraulic/lever", x);
-	print("controls.gear ",getprop("/controls/hydraulic/lever"));
+#	print("controls.gear ",getprop("/controls/hydraulic/lever"));
 	} 
 	}
 
