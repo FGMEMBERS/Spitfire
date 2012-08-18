@@ -2,7 +2,7 @@
 <!-- Spitfire IIa by Vivisn Meazza -->
 <PropertyList>
 	<path>spitfireIIa.ac</path>
-	
+
 	<!-- ************* panel models ************* -->
 	<!-- blind flying instruments -->
 	<model>
@@ -483,6 +483,20 @@
         </greater-than-equals>
       </condition>-->
 	</animation>
+
+	<effect>
+		<inherits-from>Effects/model-transparent</inherits-from>
+		<object-name>Port-Light</object-name>
+		<object-name>Stbd-Light</object-name>
+		<object-name>Port-Nav-Lt-Cover</object-name>
+		<object-name>Stbd-Nav-Lt-Cover</object-name>
+		<object-name>Tail-Lt-Cover</object-name>
+		<object-name>PropellerDisk</object-name>
+		<object-name>Antenna-IFF</object-name>
+		<object-name>Dirt-Oil</object-name>
+		<object-name>Dirt-Exhaust</object-name>
+	</effect>
+
 	<animation>
 		<type>select</type>
 		<object-name>Canopy-Rear-Rain</object-name>
@@ -1257,7 +1271,7 @@
 			<z2-m>0.635517</z2-m>
 		</axis>
 	</animation>
-	
+
 	<animation>
 		<type>rotate</type>
 		<object-name>Locking-Pawl-Rear</object-name>
