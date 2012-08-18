@@ -13,7 +13,8 @@ $Id$
 <PropertyList>
 	<engines>
 		<engine>
-			<rpm type="double">10</rpm>
+			<rpm type="double">600</rpm>
+			<primer type = "int">0</primer>
 		</engine>
 	</engines>
 	<consumables>
@@ -51,14 +52,14 @@ $Id$
 					<lever-norm type="double">1</lever-norm>
 				</fuel-cock>
 				<mixture-lever type="double">1</mixture-lever>
-				<primer type = "int">0</primer>
 				<primer-pump type = "bool">0</primer-pump>
 				<boost type= "double">1</boost>
 				<boost-control-cutout type= "bool">0</boost-control-cutout>
 			</engine>
 		</engines>
 		<gear>
-			<brake-parking>1</brake-parking>
+			<gear-down type="bool">true</gear-down>
+			<brake-parking>0</brake-parking>
 			<tailwheel-lock>false</tailwheel-lock>
 			<antiskid>0</antiskid>
 			<canopy>
@@ -81,10 +82,42 @@ $Id$
 		<lighting>
 			<nav-lights>false</nav-lights>
 		</lighting>
+		<hydraulic>
+			<lever type="double">1</lever>
+			<lever type="double">1</lever>
+			<wheels type="double">1</wheels>
+			<system>
+				<engine-pump type="bool">true</engine-pump>
+			</system>
+		</hydraulic>
+		<pneumatic>
+			<lever type="double">0</lever>
+			<lever type="double">0</lever>
+			<lever type="double">0</lever>
+			<system>
+				<engine-pump type="bool">true</engine-pump>
+			</system>
+		</pneumatic>
 	</controls>
+	<gear>
+		<gear n="0"
+					type="double">1</gear>
+		<gear n="1"
+					type="double">1</gear>
+	</gear>
 	<surface-positions>
 		<wing-fold-pos-norm type="double">1</wing-fold-pos-norm>
 	</surface-positions>
+	<systems>
+		<hydraulic>
+			<outputs>
+				<gear n="0"
+							type="double">1</gear>
+				<gear n="1"
+							type="double">1</gear>
+			</outputs>
+		</hydraulic>
+	</systems>
 
 	<sim include="seafire-help.xml">
 		<description>Supermarine Seafire MkIIIc</description>
@@ -364,7 +397,7 @@ $Id$
 				</binding>
 			</key>
 			<!--map keys for  starter -->
-			<key n="32">
+			<!--<key n="32">
 				<name>space bar</name>
 				<desc>Coffman Starter.</desc>
 				<binding>
@@ -381,7 +414,7 @@ $Id$
 						</script>
 					</binding>
 				</mod-up>
-			</key>
+			</key>-->
 			<!-- map keys for rudder trim -->
 			<key n="60">
 				<name>&lt;</name>
@@ -646,14 +679,14 @@ $Id$
 				<binding>
 					<command>nasal</command>
 					<script>
-						spitfire.pumpPrimer(1);
+						fuel.pumpPrimer(1);
 					</script>
 				</binding>
 				<mod-up>
 					<binding>
 						<command>nasal</command>
 						<script>
-							spitfire.pumpPrimer(0);
+							fuel.pumpPrimer(0);
 						</script>
 					</binding>
 				</mod-up>
@@ -734,22 +767,5 @@ $Id$
 		</weights>
 	</yasim>
 	<!-- nasal stuff -->
-	<nasal>
-		<spitfire>
-			<file>Aircraft/Spitfire/Nasal/spitfire.nas</file>
-		</spitfire>
-		<spitfire-fuel>
-			<module>fuel</module>
-			<file>Aircraft/Spitfire/Models/fuel-cocks.nas</file>
-		</spitfire-fuel>
-		<recoil>
-			<file>Aircraft/Spitfire/Models/recoil.nas</file>
-		</recoil>
-		<oxygen>
-			<file>Aircraft/Generic/Oxygen/oxygen.nas</file>
-		</oxygen>
-		<SCR_522C>
-			<file>Aircraft/Instruments-3d/SCR-522C/Nasal/SCR-522C.nas</file>
-		</SCR_522C>
-	</nasal>
+	<nasal include="spitfire-nasal.xml"/>
 </PropertyList>
