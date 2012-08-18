@@ -577,12 +577,12 @@
 		</condition>
 	</animation>
 
-	<effect>
+	<!--<effect>
 		<inherits-from>Effects/model-transparent</inherits-from>
 		<object-name>Canopy-Main</object-name>
 		<object-name>Canopy-Rear</object-name>
 		<object-name>Armour-Panel</object-name>
-	</effect>
+	</effect>-->
 
 	<!-- **************************** Pilot ******************************* -->
 
@@ -1783,6 +1783,7 @@
 		<object-name>Cover-Engine-Side-L</object-name>
 		<object-name>Cover-Engine-T-blister</object-name>
 		<object-name>Cover-Engine-T-Scoop</object-name>
+		<object-name>Cover-Engine-T-blister-small</object-name>
 		<object-name>Intake</object-name>
 		<object-name>Scoop</object-name>
 		<object-name>Fillet-Port</object-name>
@@ -1871,8 +1872,7 @@
 		<object-name>Plate</object-name>
 		<object-name>Frame-FP</object-name>
 		<object-name>Frame-Front</object-name>
-
-	</effect>
+ 	</effect>
 
 	<!--<object-name>Aileron-Stbd</object-name>
 		<object-name>Aileron-Stbd-Tab</object-name>
@@ -1915,6 +1915,7 @@
 		<object-name>Canopy-F</object-name>
 		<object-name>Canopy-Rear</object-name>
 		<object-name>Armour-Panel</object-name>
+		<object-name>Mirror</object-name>
 	</effect>
 
 	<!-- ========== Dirt textures ========= -->
