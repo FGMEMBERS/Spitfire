@@ -14,6 +14,7 @@ $Id$
 	<engines>
 		<engine>
 			<rpm type="double">600</rpm>
+			<primer type = "int">0</primer>
 		</engine>
 	</engines>
 	<consumables>
@@ -62,7 +63,6 @@ $Id$
 					<lever-norm type="double">1</lever-norm>
 				</fuel-cock>
 				<mixture-lever type="double">1</mixture-lever>
-				<primer type = "int">0</primer>
 				<primer-pump type = "bool">0</primer-pump>
 				<boost type= "double">1</boost>
 				<boost-control-cutout type= "bool">0</boost-control-cutout>
@@ -96,8 +96,8 @@ $Id$
 			<nav-lights>false</nav-lights>
 		</lighting>
 		<hydraulic>
-			<lever type="double">1</lever>
-			<lever type="double">1</lever>
+			<lever n="0" type="double">1</lever>
+			<lever n="1" type="double">1</lever>
 			<wheels type="double">1</wheels>
 			<system>
 				<engine-pump type="bool">true</engine-pump>
@@ -116,8 +116,6 @@ $Id$
 		<gear n="0"
 					type="double">1</gear>
 		<gear n="1"
-					type="double">1</gear>
-		<gear n="2"
 					type="double">1</gear>
 	</gear>
 	<surface-positions>
@@ -778,34 +776,6 @@ $Id$
 		</weights>
 	</yasim>
 	<!-- nasal stuff -->
-	<nasal>
-		<spitfire-fuel>
-			<module>fuel</module>
-			<file>Aircraft/Spitfire/Systems/fuel.nas</file>
-		</spitfire-fuel>
-		<recoil>
-			<file>Aircraft/Spitfire/Models/recoil.nas</file>
-		</recoil>
-		<oxygen>
-			<file>Aircraft/Generic/Oxygen/oxygen.nas</file>
-		</oxygen>
-		<pneumatic>
-			<file>Aircraft/Spitfire/Systems/pneumatic.nas</file>
-		</pneumatic>
-		<hydraulic>
-			<file>Aircraft/Spitfire/Systems/hydraulic.nas</file>
-		</hydraulic>
-		<walkview>
-			<file>Aircraft/Generic/WalkView/walkview.nas</file>
-		</walkview>
-		<walkviews>
-			<file>Aircraft/Spitfire/Models/spitfire-walk-views.nas</file>
-		</walkviews>
-		<SCR_522C>
-			<file>Aircraft/Instruments-3d/SCR-522C/Nasal/SCR-522C.nas</file>
-		</SCR_522C>
-		<spitfire>
-			<file>Aircraft/Spitfire/Nasal/spitfire.nas</file>
-		</spitfire>
-	</nasal>
+	<nasal include="spitfire-nasal.xml"/>
+
 </PropertyList>
