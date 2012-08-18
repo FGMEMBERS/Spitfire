@@ -1,0 +1,33 @@
+﻿<?xml version="1.0"?>
+<PropertyList>
+
+		<spitfire-fuel>
+			<module>fuel</module>
+			<file>Aircraft/Spitfire/Systems/fuel.nas</file>
+		</spitfire-fuel>
+		<recoil>
+			<file>Aircraft/Spitfire/Models/recoil.nas</file>
+		</recoil>
+		<oxygen>
+			<file>Aircraft/Generic/Oxygen/oxygen.nas</file>
+		</oxygen>
+		<pneumatic>
+			<file>Aircraft/Spitfire/Systems/pneumatic.nas</file>
+		</pneumatic>
+		<hydraulic>
+			<file>Aircraft/Spitfire/Systems/hydraulic.nas</file>
+		</hydraulic>
+		<walkview>
+			<file>Aircraft/Generic/WalkView/walkview.nas</file>
+		</walkview>
+		<walkviews>
+			<file>Aircraft/Spitfire/Models/spitfire-walk-views.nas</file>
+		</walkviews>
+		<SCR_522C>
+			<file>Aircraft/Instruments-3d/SCR-522C/Nasal/SCR-522C.nas</file>
+		</SCR_522C>
+		<spitfire>
+			<file>Aircraft/Spitfire/Nasal/spitfire.nas</file>
+		</spitfire>
+
+</PropertyList>
