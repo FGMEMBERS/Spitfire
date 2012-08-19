@@ -3,6 +3,12 @@
 <PropertyList>
 	<path>puff-impact-browning.ac</path>
 
+	<effect>
+		<inherits-from>Effects/model-transparent</inherits-from>
+		<object-name>puff-b</object-name>
+		<object-name>disk-b</object-name>
+	</effect>
+
   <animation>
     <enable-hot type="bool">false</enable-hot>
   </animation>

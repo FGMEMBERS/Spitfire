@@ -197,13 +197,12 @@ var initialize = func {
 # ==== this is the Main Loop which keeps everything updated ========================
 
 var update = func {
-#    updateBoostControl();
-#    rain();
-#    tyresmoke();
-
-#    updatePilotG();
+    updateBoostControl();
+    rain();
+    tyresmoke();
+    updatePilotG();
     updateHobbs();
-#    headShake();
+    headShake();
 
     var hobbs = getprop("sim/time/hobbs/engine[0]");
     var dirt_factor = clamp(hobbs*0.9/(0.5 * hr2sec), 0.0, 0.9);
@@ -216,6 +215,8 @@ var update = func {
     hobbs = getprop("sim/time/hobbs/" ~ type ~ "/airframe[0]");
     dirt_factor = clamp(-0.3 - hobbs*0.3/(1.0 * hr2sec), -0.8, -0.3);
     setprop("/sim/rendering/refl-correction", dirt_factor);
+
+	registerTimer(update, 0);
 
 	}# end func update (main loop) 
 
@@ -325,7 +326,7 @@ updateBoostControl = func {
             boost_pressure_psi.setDoubleValue(mp);
         boost_control.setDoubleValue(damp);
         boost_control_cutout.setBoolValue(cutout);
-        settimer(updateBoostControl, 0.0);
+#        settimer(updateBoostControl, 0.0);
 }
 
 updateBoostControl();
@@ -709,7 +710,7 @@ updatePilotG = func {
 
 # print(sprintf("pilot_g_damped in=%0.5f, out=%0.5f", g, g_damp));
 
-    settimer(updatePilotG, 0.1);
+#    settimer(updatePilotG, 0.1);
 
 } #end updatePilotG()
 
@@ -928,7 +929,7 @@ headShake = func {
         setprop("/sim/current-view/y-offset-m", zConfig + zDivergence_damp + seat_vertical_adjust 
 		+ buffet);
     }
-    settimer(headShake,0 );
+#    settimer(headShake,0 );
 
 }
 
@@ -986,7 +987,7 @@ var tyresmoke = func {
     if (run_tyresmoke2)
         tyresmoke_2.update();
 
-    settimer(tyresmoke, 0);
+#    settimer(tyresmoke, 0);
 }# end tyresmoke
 
 
@@ -1004,7 +1005,7 @@ var rain = func {
         setprop("sim/model/rain/flow-threshold-kt", 15);
     }
 
-    settimer(rain, 0);
+#    settimer(rain, 0);
 }
 
 #============================ Gear ===================================

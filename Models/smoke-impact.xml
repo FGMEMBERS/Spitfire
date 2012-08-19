@@ -3,6 +3,12 @@
 <PropertyList>
 	<path>puff-impact.ac</path>
 
+	<effect>
+		<inherits-from>Effects/model-transparent</inherits-from>
+		<object-name>puff</object-name>
+		<object-name>disk</object-name>
+	</effect>
+
   <animation>
     <enable-hot type="bool">false</enable-hot>
   </animation>
