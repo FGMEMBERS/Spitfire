@@ -332,7 +332,93 @@ updateBoostControl();
 
 # =================================== end Boost Controller f ============================
 
+# ========================= Coffman starter stuff =======================================
 
+
+nowN       = props.globals.getNode("/sim/time/elapsed-sec", 1);
+starterN   = props.globals.getNode("controls/engines/engine/starter", 1);
+primerN    = props.globals.getNode("engines/engine/primer", 1);
+cartridgeN = props.globals.getNode("controls/engines/engine/coffman-starter/index");
+LastStartTime = 0;
+LastCartridge = -1;
+Start = 0;		# stopCof needs this, too
+
+
+indexCof = func{
+	pull=arg[0];
+	if(pull) {
+#        i = getprop("controls/engines/engine/coffman-starter/index");
+		i = cartridgeN.getValue();
+		i = i - 1;
+		if (i == -1) {
+			i = 5;
+		}
+		setprop("controls/engines/engine/coffman-starter/index",i);
+		setprop("controls/engines/engine/coffman-starter/index-pull-norm",1)
+	}else{
+		setprop("controls/engines/engine/coffman-starter/index-pull-norm",0)
+	}
+
+} # end function
+
+
+startCof = func{
+	Start = arg[0];
+	max_run = 5.5;
+
+	if (Start) {
+		LastStartTime = nowN.getValue();
+		if (!starterN.getValue()) { 			# not started yet: do it now
+			setprop("controls/engines/engine/coffman-starter/starter-push-norm", 1);
+
+		ready = !spitfire.spitfireIIa;		# seafires are always ready
+
+			if (!ready) {						# must be a spitfire
+				LastCartridge = cartridgeN.getValue();
+
+		j = "controls/engines/engine/coffman-starter/cartridge[" ~ LastCartridge ~ "]";
+
+		if (ready = getprop(j)) {
+			setprop(j, 0);
+#					print("max run: " , max_run);
+			settimer(func {             # nameless out-of-gas watcher
+				starterN.setValue(0);
+			primerN.setValue(0);
+#			print ("starter stopping, out of gas!"); 
+				}, max_run)};
+				}
+
+			if (ready) {
+				fuel.primerMixture(primerN.getValue());
+				starterN.setValue(1);
+#				print ("starter running!");
+				}
+			}
+		} else{
+			settimer(stopCof, 0.2);
+		}
+} # end function
+
+
+stopCof = func {
+
+	min_run = 4.5;
+
+	if (!Start and starterN.getValue()) {
+		if (nowN.getValue() - LastStartTime < min_run) {
+			starterN.setValue(1);
+			settimer(stopCof, 0.2);			# too soon; let's try again later
+#			print ("too soon! min run: " , min_run);
+		} else {
+			primerN.setValue(0);
+			starterN.setValue(0);
+			setprop("controls/engines/engine/coffman-starter/starter-push-norm", 0);
+#			print ("starter stopping!");
+		}
+	}
+} # end function
+
+# ======================= end Coffman starter stuff =====================================
 # ============================= magneto stuff ===========================================
 
 	setMagnetos = func{     # set the magneto value according to the switch positions

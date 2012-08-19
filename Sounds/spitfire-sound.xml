@@ -5,7 +5,7 @@
 		<!-- ========= Engine ============ -->
 		<cartridge>
 			<name>cartstart</name>
-			<path>Aircraft/Spitfire/Sounds/starter-cart.wav</path>
+			<path>Aircraft/Spitfire/Sounds/starter-cart-long.wav</path>
 			<condition>
 				<and>
 					<property>/engines/engine/cranking</property>
