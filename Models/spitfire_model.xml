@@ -1758,14 +1758,25 @@
 		<!--<threshold>0.001</threshold>-->
 	</animation>
 
-	<animation>
+	<!--<animation>
 		<type>shader</type>
 		<shader>chrome</shader>
 		<texture>Aircraft/Generic/Effects/glass_shader.png</texture>
 		<object-name>Canopy-Main</object-name>
 		<object-name>Canopy-Rear</object-name>
 		<object-name>Canopy-F</object-name>
-	</animation>
+	</animation>-->
+
+	<effect>
+		<inherits-from>Effects/spitfireglass-uber</inherits-from>
+		<object-name>Canopy-Main</object-name>
+		<object-name>Canopy-F</object-name>
+<!--		<object-name>Canopy-FP</object-name>-->
+		<object-name>Canopy-Rear</object-name>
+		<!--<object-name>Armour-Panel</object-name>-->
+		<object-name>Mirror</object-name>
+	</effect>
+
 
 	<animation>
 		<nopreview/>

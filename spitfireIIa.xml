@@ -97,7 +97,7 @@ flap drag not available
 					 end="0.90"
 					 lift="1.25"
 					 drag="1.30"/>
-		<control-input axis="/controls/flight/flaps"
+		<control-input axis="/systems/pneumatic/outputs/flaps"
 									 control="FLAP0"/>
 		<control-output control="FLAP0"
 										prop="/surface-positions/flap-pos-norm"/>
@@ -193,7 +193,7 @@ flap drag not available
 					 end="1"
 					 lift="1.4"
 					 drag="1.6"/>
-		<control-input axis="/controls/flight/flaps"
+		<control-input axis="/systems/pneumatic/outputs/flaps"
 									 control="FLAP0"/>
 		<control-output control="FLAP0"
 										prop="/surface-positions/flap-pos-norm"/>
@@ -219,7 +219,7 @@ flap drag not available
 					 end="1"
 					 lift="1.4"
 					 drag="1.6"/>
-		<control-input axis="/controls/flight/flaps"
+		<control-input axis="/systems/pneumatic/outputs/flaps"
 									 control="FLAP0"/>
 		<control-output control="FLAP0"
 										prop="/surface-positions/flap-pos-norm"/>
@@ -350,7 +350,7 @@ flap drag not available
 		upz="0.95"
 		spring="0.5"
 		damp="2.0">
-		<control-input axis="/controls/gear/brake-left"
+		<control-input axis="/systems/pneumatic/outputs/brake"
 									 control="BRAKE"
 									 transition-time="1"
 									 src0="0"
@@ -359,11 +359,11 @@ flap drag not available
 									 dst1="0.85"/>
 		<control-speed control="BRAKE"
 									 transition-time="1"/>
-		<control-input axis="/controls/gear/brake-parking"
-									 control="BRAKE"/>
+		<!--<control-input axis="/controls/gear/brake-parking"
+									 control="BRAKE"/>-->
 		<control-input axis="/controls/gear/chock-left"
 									 control="BRAKE" />
-		<control-input axis="/controls/gear/gear-down"
+		<control-input axis="/systems/hydraulic/outputs/gear"
 									 control="EXTEND"/>
 		<control-speed control="EXTEND"
 									 transition-time="9"/>
@@ -383,7 +383,7 @@ flap drag not available
 		spring="0.5"
 		damp="2.0"
 >
-		<control-input axis="/controls/gear/brake-right"
+		<control-input axis="/systems/pneumatic/outputs/brake[1]"
 									 control="BRAKE"
 									 transition-time="1"
 									 src0="0"
@@ -392,11 +392,11 @@ flap drag not available
 									 dst1="0.85"/>
 		<control-speed control="BRAKE"
 									 transition-time="1"/>
-		<control-input axis="/controls/gear/brake-parking"
-									 control="BRAKE"/>
+		<!--<control-input axis="/controls/gear/brake-parking"
+									 control="BRAKE"/>-->
 		<control-input axis="/controls/gear/chock-right"
 									 control="BRAKE"/>
-		<control-input axis="/controls/gear/gear-down"
+		<control-input axis="/systems/hydraulic/outputs/gear[1]"
 									 control="EXTEND"/>
 		<control-speed control="EXTEND"
 									 transition-time="7"/>

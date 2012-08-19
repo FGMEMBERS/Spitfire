@@ -204,11 +204,39 @@ Aug 2004 Vivian Meazza, vivian.meazza at lineone.net
 							<property>sim/model/spitfire/show-pilot</property>
 						</binding>
 					</item>
-					<item n="1">
-						<label>Radio</label>
+					<!--<item>
+						<label>Reset Airframe Hobbs Meter</label>
 						<binding>
 							<command>nasal</command>
-							<script>TR1133.radio_dlg.open()</script>
+							<script>
+								spitfire.hobbs_airframe.reset();
+							</script>
+						</binding>
+					</item>-->
+					<item>
+						<label>Chocks Away</label>
+						<binding>
+							<command>property-assign</command>
+							<property>controls/gear/chock-left</property>
+							<value>0</value>
+						</binding>
+						<binding>
+							<command>property-assign</command>
+							<property>controls/gear/chock-right</property>
+							<value>0</value>
+						</binding>
+					</item>
+					<item>
+						<label>Chocks</label>
+						<binding>
+							<command>property-assign</command>
+							<property>controls/gear/chock-left</property>
+							<value>1</value>
+						</binding>
+						<binding>
+							<command>property-assign</command>
+							<property>controls/gear/chock-right</property>
+							<value>1</value>
 						</binding>
 					</item>
 				</menu>
@@ -248,6 +276,26 @@ Aug 2004 Vivian Meazza, vivian.meazza at lineone.net
 			</tank>
 		</oxygen>
 	</consumables>
+	<gear>
+		<gear n="0"
+					type="double">1</gear>
+		<gear n="1"
+					type="double">1</gear>
+	</gear>
+	<surface-positions>
+		<wing-fold-pos-norm type="double">1</wing-fold-pos-norm>
+	</surface-positions>
+	<systems>
+		<hydraulic>
+			<outputs>
+				<gear n="0"
+							type="double">1</gear>
+				<gear n="1"
+							type="double">1</gear>
+			</outputs>
+		</hydraulic>
+	</systems>
+	
 	<!-- set up control properties for YASim... -->
 	<controls>
 		<engines>
@@ -280,7 +328,8 @@ Aug 2004 Vivian Meazza, vivian.meazza at lineone.net
 			</engine>
 		</engines>
 		<gear>
-			<brake-parking>1</brake-parking>
+			<gear-down type="bool">true</gear-down>
+			<brake-parking>0</brake-parking>
 			<tailwheel-lock>false</tailwheel-lock>
 			<antiskid>0</antiskid>
 			<canopy>
@@ -304,6 +353,22 @@ Aug 2004 Vivian Meazza, vivian.meazza at lineone.net
 		<lighting>
 			<nav-lights>false</nav-lights>
 		</lighting>
+		<hydraulic>
+			<lever type="double">1</lever>
+			<lever type="double">1</lever>
+			<wheels type="double">1</wheels>
+			<system>
+				<engine-pump type="bool">true</engine-pump>
+			</system>
+		</hydraulic>
+		<pneumatic>
+			<lever type="double">0</lever>
+			<lever type="double">0</lever>
+			<lever type="double">0</lever>
+			<system>
+				<engine-pump type="bool">true</engine-pump>
+			</system>
+		</pneumatic>
 	</controls>
 	<!-- ================ map keyboard ================ -->
 	<input>
@@ -611,14 +676,14 @@ Aug 2004 Vivian Meazza, vivian.meazza at lineone.net
 				<binding>
 					<command>nasal</command>
 					<script>
-						spitfire.pumpPrimer(1);
+						fuel.pumpPrimer(1);
 					</script>
 				</binding>
 				<mod-up>
 					<binding>
 						<command>nasal</command>
 						<script>
-							spitfire.pumpPrimer(0);
+							fuel.pumpPrimer(0);
 						</script>
 					</binding>
 				</mod-up>
@@ -660,8 +725,8 @@ Aug 2004 Vivian Meazza, vivian.meazza at lineone.net
 		</weights>
 	</yasim>
 	<!-- nasal stuff -->
-	<nasal>
-		<spitfire>
+	<nasal include="spitfire-nasal.xml"/>
+		<!--<spitfire>
 			<file>Aircraft/Spitfire/Nasal/spitfire.nas</file>
 		</spitfire>
 		<spitfire-fuel>
@@ -683,7 +748,7 @@ Aug 2004 Vivian Meazza, vivian.meazza at lineone.net
 		<SCR_522C>
 			<file>Aircraft/Instruments-3d/SCR-522C/Nasal/SCR-522C.nas</file>
 		</SCR_522C>
-	</nasal>
+	</nasal>-->
 	
 	<ai>
 		<submodels>
