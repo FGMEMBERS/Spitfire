@@ -7,7 +7,7 @@ kids 3
 OBJECT poly
 name "cylinder"
 loc 0 -1.02446e-009 -1.49943e-008
-texture "spitfire-tx-00.rgb"
+texture "spitfireV-tx-00.png"
 crease 61.000000
 numvert 144
 -0.0508013 -0.0136122 -0.00902975
@@ -1731,7 +1731,7 @@ kids 0
 OBJECT poly
 name "backing-plate"
 loc 0 0 0.0147787
-texture "spitfire-tx-00.rgb"
+texture "spitfireV-tx-00.png"
 crease 61.000000
 numvert 4
 -0.0922941 -0.0784625 0
