@@ -5067,7 +5067,7 @@ loc 0.00345277 -0.0166172 0
 kids 0
 OBJECT poly
 name "bracket-support"
-texture "spitfire-tx-00.rgb"
+texture "spitfire-tx-00.png"
 crease 61.000000
 numvert 68
 0.0611619 -0.0101898 0.03349
