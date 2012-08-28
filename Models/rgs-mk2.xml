@@ -3,10 +3,11 @@
 
 	<path>rgs.ac</path>
 
-	<!--<animation>
-		<type>select</type>
-		<object-name>disk</object-name>
-	</animation>-->
+	<effect>
+		<inherits-from>Effects/model-transparent</inherits-from>
+		<object-name>glass-rect</object-name>
+		<object-name>glass-round</object-name>
+	</effect>
 
 	<animation>
 		<type>material</type>
