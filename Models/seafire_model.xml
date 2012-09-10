@@ -2020,17 +2020,24 @@
 		<object-name>Armour-Head</object-name>-->
 	<!--<object-name>Spinner</object-name>-->
 
-
-
 	<effect>
 		<inherits-from>Effects/spitfireglass-uber</inherits-from>
 		<object-name>Canopy-Main</object-name>
 		<object-name>Canopy-FP</object-name>
 		<object-name>Canopy-F</object-name>
 		<object-name>Canopy-Rear</object-name>
-		<object-name>Mirror</object-name>
 				<!--<object-name>Armour-Panel</object-name>-->
 	</effect>
+
+	<effect>
+		<inherits-from>Effects/spitfiremirror-uber</inherits-from>
+		<object-name>Mirror</object-name>
+	</effect>
+
+	<animation>
+		<type>noshadow</type>
+		<object-name>Mirror</object-name>
+	</animation>
 
 	<!-- ========== Dirt textures ========= -->
 

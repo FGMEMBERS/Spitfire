@@ -1791,8 +1791,17 @@
 		<object-name>Canopy-FP</object-name>
 		<object-name>Canopy-Rear</object-name>
 		<object-name>Panel</object-name>
+	</effect>
+
+	<effect>
+		<inherits-from>Effects/spitfiremirror-uber</inherits-from>
 		<object-name>Mirror</object-name>
 	</effect>
+
+	<animation>
+		<type>noshadow</type>
+		<object-name>Mirror</object-name>
+	</animation>
 
 	<effect>
 		<inherits-from>Effects/spitfireglass-uber</inherits-from>

@@ -10,7 +10,7 @@
 		<normalmap-dds type="int">0</normalmap-dds>
 		<normalmap-tiling type="float">30.0</normalmap-tiling>
 		<texture n="2">
-			<image>/Aircraft/seahawk/Models/Effects/plexi_1.png</image>
+			<image>/Aircraft/Spitfire/Models/Effects/plexi_1.png</image>
 			<wrap-s>repeat</wrap-s>
 			<wrap-t>repeat</wrap-t>
 		</texture>
@@ -28,8 +28,12 @@
 
 		<rendering-hint>transparent</rendering-hint>
 		<transparent>true</transparent>
-		<render-bin>
+		<!--<render-bin>
 			<bin-number>10</bin-number>
+			<bin-name>DepthSortedBin</bin-name>
+		</render-bin>-->
+		<render-bin>
+			<bin-number>111</bin-number>
 			<bin-name>DepthSortedBin</bin-name>
 		</render-bin>
 	</parameters>
