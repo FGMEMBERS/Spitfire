@@ -1814,6 +1814,8 @@
 		<object-name>Tailplane-T-Port</object-name>
 		<object-name>Tailplane-T-Stbd</object-name>
 		<object-name>Pitot</object-name>
+		<object-name>Aileron-R</object-name>
+		<object-name>Aileron-L</object-name>
 	</effect>
 
 	<effect>
@@ -1872,9 +1874,17 @@
 		<object-name>Plate</object-name>
 		<object-name>Frame-FP</object-name>
 		<object-name>Frame-Front</object-name>
- 	</effect>
-
-	<!--<object-name>Aileron-Stbd</object-name>
+		<object-name>Mirror-Back</object-name>
+	</effect>
+	
+<!--	<effect>
+		<inherits-from>Effects/spitfirereflect-uber</inherits-from>
+		<parameters>
+			<dirt-enabled type="int">0</dirt-enabled>
+		</parameters>
+		<object-name>Aileron-Stbd</object-name>
+	</effect>
+	<object-name>Aileron-Stbd</object-name>
 		<object-name>Aileron-Stbd-Tab</object-name>
 		<object-name>Aileron-Port</object-name>
 		<object-name>Aileron-Port-Tab</object-name>
@@ -1912,11 +1922,27 @@
 		<inherits-from>Effects/spitfireglass-uber</inherits-from>
 		<object-name>Canopy-Main</object-name>
 		<object-name>Canopy-FP</object-name>
-		<object-name>Canopy-F</object-name>
+		<object-name>Canopy-F-Stbd</object-name>
+		<object-name>Canopy-F-Port</object-name>
 		<object-name>Canopy-Rear</object-name>
 		<object-name>Armour-Panel</object-name>
+	</effect>
+
+	<effect>
+		<inherits-from>Effects/spitfiremirror-uber</inherits-from>
 		<object-name>Mirror</object-name>
 	</effect>
+
+	<animation>
+		<type>noshadow</type>
+		<object-name>Mirror</object-name>
+	</animation>
+
+	<!--<effect>
+		<inherits-from>Effects/model-transparent</inherits-from>
+		<object-name>Canopy-F-Stbd</object-name>
+		<object-name>Canopy-F-Port</object-name>
+	</effect>-->
 
 	<!-- ========== Dirt textures ========= -->
 
