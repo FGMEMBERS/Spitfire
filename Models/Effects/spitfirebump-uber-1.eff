@@ -22,8 +22,21 @@
     <tangent type="int">6</tangent>
     <binormal type="int">7</binormal>
   </generate>
-
-  <technique n="9">
+  <technique n="4">
+	  <pass>
+		  <program>
+			  <attribute>
+				  <name>tangent</name>
+				  <index>6</index>
+			  </attribute>
+			  <attribute>
+				  <name>binormal</name>
+				  <index>7</index>
+			  </attribute>
+		  </program>
+	  </pass>
+  </technique>
+  <technique n="8">
     <pass>
       <program>
         <attribute>
@@ -37,7 +50,7 @@
       </program>
     </pass>
   </technique>
-  <technique n="8">
+  <technique n="9">
     <pass>
       <program>
         <attribute>
