@@ -1,6 +1,6 @@
 ###############################################################################
 ##
-## Walk view configuration for Sopwith Camel for FlightGear
+## Walk view configuration for Spitfire for FlightGear
 ##
 ##  Copyright (C) 2010  Vivian Meazza
 ##  This file is licensed under the GPL license v2 or later.

@@ -4,7 +4,6 @@ var trigger_node = props.globals.getNode("/ai/submodels/trigger", 1);
 var recoil_node = props.globals.getNode("/sim/ai/recoil", 1);
 var runout_node = props.globals.getNode("/sim/ai/runout", 1);
 var count_node = props.globals.getNode("/ai/submodels/submodel/count", 1, 1);
-var view = 0;
 
 var recoil_norm = 0;
 var runout_norm = 1;
@@ -13,7 +12,7 @@ var count = 0;
 updateRecoil = func {
 	count = count_node.getValue();
 #	print ("count", count);
-    if (trigger_node.getValue()and count != 0) {
+    if (trigger_node.getValue() and count != 0) {
         recoil_norm =!recoil_norm;
         runout_norm =!runout_norm;
         recoil_node.setDoubleValue(recoil_norm);

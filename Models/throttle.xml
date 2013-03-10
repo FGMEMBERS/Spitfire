@@ -1,97 +1,224 @@
 <?xml version="1.0"?>
 <PropertyList>
 
- <path>throttle.ac</path>
+  <path>throttle.ac</path>
 
- <animation>
-  <type>rotate</type>
-  <object-name>Throttle</object-name>
-  <property>controls/engines/engine[0]/throttle</property>
-  <interpolation>
-   <entry>
-    <ind>0.0</ind>
-    <dep>-30</dep>
-   </entry>
-   <entry>
-    <ind>1.0</ind>
-    <dep>30</dep>
-   </entry>
-  </interpolation>
-  <axis>
-   <x>0</x>
-   <y>-1</y>
-   <z>0</z>
-  </axis>
- </animation>
+  <!-- Throttle -->
+  <animation>
+    <type>slider</type>
+    <object-name>Throttle</object-name>
+    <visible>true</visible>
 
- 
+    <drag-direction>vertical</drag-direction>
+    <!-- no translation, we handle that seperately -->
 
- <animation>
-  <type>rotate</type>
-  <object-name>Prop</object-name>
-  <property>controls/engines/engine[0]/propeller-pitch</property>
-  <interpolation>
-   <entry>
-    <ind>0.0</ind>
-    <dep>-30</dep>
-   </entry>
-   <entry>
-    <ind>1.0</ind>
-    <dep>30</dep>
-   </entry>
-  </interpolation>
-  <axis>
-   <x>0</x>
-   <y>-1</y>
-   <z>0</z>
-  </axis>
- </animation>
+    <action>
+      <binding>
+        <command>property-adjust</command>
+        <property>controls/engines/engine/throttle</property>
+        <factor>0.05</factor>
+        <min>0</min>
+        <max>1</max>
+        <wrap>0</wrap>
+      </binding>
+    </action>
 
- <animation>
-  <type>rotate</type>
-  <object-name>Mixture</object-name>
-  <property>controls/engines/engine[0]/mixture-lever</property>
-  <interpolation>
-   <entry>
-    <ind>0.8</ind>
-    <dep>-10</dep>
-   </entry>
-   <entry>
-    <ind>1.0</ind>
-    <dep>30</dep>
-   </entry>
-  </interpolation>
-  <axis>
-   <x>0</x>
-   <y>1</y>
-   <z>0</z>
-  </axis>
- </animation>
- 
- <animation>
-  <type>rotate</type>
-  <object-name>Lever-Cutout</object-name>
-  <property>controls/engines/engine[0]/boost-control-cutout</property>
-  <interpolation>
-   <entry>
-    <ind>0.0</ind>
-    <dep>0</dep>
-   </entry>
-   <entry>
-    <ind>1.0</ind>
-    <dep>60</dep>
-   </entry>
-  </interpolation>
-  <axis>
-  <x1-m>-0.0647557</x1-m>
-  <y1-m>0.0224134</y1-m>
-  <z1-m>0.0593518</z1-m>
-  <x2-m>-0.0647557</x2-m>
-  <y2-m>0.0106476</y2-m>
-  <z2-m>0.0593518</z2-m>
-  </axis>
-  
- </animation>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <label>Throttle: %3d%%</label>
+        <tooltip-id>throttle</tooltip-id>
+        <mapping>percent</mapping>
+        <property>controls/engines/engine[0]/throttle</property>
+      </binding>
+    </hovered>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Throttle</object-name>
+    <property>controls/engines/engine[0]/throttle</property>
+    <interpolation>
+      <entry>
+        <ind>0.0</ind>
+        <dep>-30</dep>
+      </entry>
+      <entry>
+        <ind>1.0</ind>
+        <dep>30</dep>
+      </entry>
+    </interpolation>
+    <axis>
+      <x>0</x>
+      <y>-1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <!-- Prop -->
+  <animation>
+    <type>slider</type>
+    <object-name>Prop</object-name>
+    <visible>true</visible>
+
+    <drag-direction>vertical</drag-direction>
+    <!-- no translation, we handle that seperately -->
+
+    <action>
+      <binding>
+        <command>property-adjust</command>
+        <property>controls/engines/engine[0]/propeller-pitch</property>
+        <factor>0.05</factor>
+        <min>0</min>
+        <max>1</max>
+        <wrap>0</wrap>
+      </binding>
+    </action>
+
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <label>Prop Control: %3d%%</label>
+        <tooltip-id>prop</tooltip-id>
+        <mapping>percent</mapping>
+        <property>controls/engines/engine[0]/propeller-pitch</property>
+      </binding>
+
+    </hovered>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Prop</object-name>
+    <property>controls/engines/engine[0]/propeller-pitch</property>
+    <interpolation>
+      <entry>
+        <ind>0.0</ind>
+        <dep>-30</dep>
+      </entry>
+      <entry>
+        <ind>1.0</ind>
+        <dep>30</dep>
+      </entry>
+    </interpolation>
+    <axis>
+      <x>0</x>
+      <y>-1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <!-- Mixture -->
+  <animation>
+    <type>slider</type>
+    <object-name>Mixture</object-name>
+    <visible>true</visible>
+
+    <drag-direction>vertical</drag-direction>
+    <!-- no translation, we handle that seperately -->
+
+    <action>
+      <binding>
+        <command>property-adjust</command>
+        <!--  <command>property-assign</command>-->
+        <property>controls/engines/engine/mixture-lever</property>
+        <factor>-1</factor>
+        <min>0.8</min>
+        <max>1.0</max>
+        <wrap>0</wrap>
+      </binding>
+    </action>
+
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <label>Mixture: %3d%%</label>
+        <tooltip-id>mixture</tooltip-id>
+        <mapping>percent</mapping>
+        <property>controls/engines/engine[0]/mixture-lever</property>
+      </binding>
+    </hovered>
+
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Mixture</object-name>
+    <property>controls/engines/engine[0]/mixture-lever</property>
+    <interpolation>
+      <entry>
+        <ind>0.8</ind>
+        <dep>-10</dep>
+      </entry>
+      <entry>
+        <ind>1.0</ind>
+        <dep>30</dep>
+      </entry>
+    </interpolation>
+    <axis>
+      <x>0</x>
+      <y>1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <!-- Cut-out -->
+  <animation>
+    <type>slider</type>
+    <object-name>Lever-Cutout</object-name>
+    <visible>true</visible>
+
+    <drag-direction>vertical</drag-direction>
+    <!-- no translation, we handle that seperately -->
+
+    <action>
+      <binding>
+        <command>property-adjust</command>
+        <!--  <command>property-assign</command>-->
+        <property>controls/engines/engine[0]/boost-control-cutout</property>
+        <factor>1</factor>
+        <min>0.0</min>
+        <max>1.0</max>
+        <wrap>0</wrap>
+      </binding>
+    </action>
+
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <label>Boost Controller Cutout: %s</label>
+        <tooltip-id>cutout</tooltip-id>
+        <mapping>on-off</mapping>
+        <property>controls/engines/engine[0]/boost-control-cutout</property>
+      </binding>
+    </hovered>
+
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Lever-Cutout</object-name>
+    <property>controls/engines/engine[0]/boost-control-cutout</property>
+    <interpolation>
+      <entry>
+        <ind>0.0</ind>
+        <dep>0</dep>
+      </entry>
+      <entry>
+        <ind>1.0</ind>
+        <dep>60</dep>
+      </entry>
+    </interpolation>
+    <axis>
+      <x1-m>-0.0647557</x1-m>
+      <y1-m>0.0224134</y1-m>
+      <z1-m>0.0593518</z1-m>
+      <x2-m>-0.0647557</x2-m>
+      <y2-m>0.0106476</y2-m>
+      <z2-m>0.0593518</z2-m>
+    </axis>
+
+  </animation>
 
 </PropertyList>
 

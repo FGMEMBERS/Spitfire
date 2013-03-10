@@ -207,13 +207,13 @@ $Id$
 					<enabled type="bool">true</enabled>
 					<left>
 						<heading-max-deg type="double">145</heading-max-deg>
-						<x-offset-max-m type="double">0.16</x-offset-max-m>
-						<x-offset-threshold-deg type="double">65</x-offset-threshold-deg>
+						<x-offset-max-m type="double">0.175</x-offset-max-m>
+						<x-offset-threshold-deg type="double">45</x-offset-threshold-deg>
 					</left>
 					<right>
 						<heading-max-deg type="double">145</heading-max-deg>
-						<x-offset-max-m type="double">0.16</x-offset-max-m>
-						<x-offset-threshold-deg type="double">65</x-offset-threshold-deg>
+						<x-offset-max-m type="double">0.175</x-offset-max-m>
+						<x-offset-threshold-deg type="double">45</x-offset-threshold-deg>
 					</right>
 				</limits>
 			</config>
