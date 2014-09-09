@@ -1,0 +1,151 @@
+<?xml version="1.0"?>
+<PropertyList>
+	<path>control-stick.ac</path>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>Control-Stick</object-name>
+		<property>/controls/flight/elevator</property>
+		<interpolation>
+			<entry>
+				<ind>-1.0</ind>
+				<dep>-7.5</dep>
+			</entry>
+			<entry>
+				<ind>0.0</ind>
+				<dep>-2.5</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep>2.5</dep>
+			</entry>
+		</interpolation>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>Elevator-Push-Pull</object-name>
+		<property>/controls/flight/elevator</property>
+		<interpolation>
+			<entry>
+				<ind>-1.0</ind>
+				<dep>-12.5</dep>
+			</entry>
+			<entry>
+				<ind>0.0</ind>
+				<dep>-7.5</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep>-2.5</dep>
+			</entry>
+		</interpolation>
+		
+		<!--0.0185868	0.249654	-0.00937882
+		0.0185868	0.249654	0.00937882-->
+		<center>
+			<x-m>0.0185868</x-m>
+			<y-m>0</y-m>
+			<z-m>0.249654</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>Handle</object-name>
+		<property>/controls/flight/aileron</property>
+		<interpolation>
+			<entry>
+				<ind>-1.0</ind>
+				<dep>-40</dep>
+			</entry>
+			<entry>
+				<ind>0.0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep>40</dep>
+			</entry>
+		</interpolation>
+		<center>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>0.64</z-m>
+		</center>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+
+	<animation>
+		<type>rotate</type>
+		<object-name>Pulley-Aileron</object-name>
+		<property>/controls/flight/aileron</property>
+		<interpolation>
+			<entry>
+				<ind>-1.0</ind>
+				<dep>-40</dep>
+			</entry>
+			<entry>
+				<ind>0.0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep>40</dep>
+			</entry>
+		</interpolation>
+		<!--		0.0393841	0.0813271	-7.45058e-009
+		-0.00895799	0.0898511	-7.45058e-009-->
+		<axis>
+			<x1-m>0.0393841</x1-m>
+			<y1-m>0</y1-m>
+			<z1-m>0.0813271</z1-m>
+			<x2-m>-0.00895799</x2-m>
+			<y2-m>0</y2-m>
+			<z2-m>0.0898511</z2-m>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>Cable-Stbd</object-name>
+		<object-name>Cable-Port</object-name>
+		<property>/controls/flight/aileron</property>
+		<factor>5</factor>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>Cable-Stbd-Lower</object-name>
+		<object-name>Cable-Port-Lower</object-name>
+		<property>/controls/flight/aileron</property>
+		<factor>-5</factor>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+
+</PropertyList>

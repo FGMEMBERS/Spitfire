@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+	<path>uc-control.ac</path>
+
+	<animation>
+		<type>pick</type>
+		<visible>false</visible>
+		<object-name>pick-up</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>nasal</command>
+				<script>controls.gearDown(-1)</script>
+			</binding>
+		</action>
+	</animation>
+
+	<animation>
+		<type>pick</type>
+		<visible>false</visible>
+		<object-name>pick-down</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>nasal</command>
+				<script>controls.gearDown(1)</script>
+			</binding>
+		</action>
+	</animation>
+
+	<animation>
+		<type>pick</type>
+		<visible>false</visible>
+		<object-name>pick-idle</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>nasal</command>
+				<script>controls.gearDown(0)</script>
+			</binding>
+		</action>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>lever-assmbly</object-name>
+		<property>/controls/gear/gear-lever</property>
+		<interpolation>
+			<entry>
+				<ind>-1</ind>
+				<dep>65</dep>
+			</entry>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>-65</dep>
+			</entry>
+		</interpolation>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>indicator-group</object-name>
+		<property>controls/gear/oil-flow</property>
+		<interpolation>
+			<entry>
+				<ind>-1</ind>
+				<dep>-10</dep>
+			</entry>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>10</dep>
+			</entry>
+		</interpolation>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+
+
+</PropertyList>
+
+

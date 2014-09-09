@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PropertyList>
+	<name>spitfiremirror-uber</name>
+	<inherits-from>Effects/spitfirereflect-uber</inherits-from>
+
+	<parameters>
+		<reflection-fresnel type="float">0.0</reflection-fresnel>
+		<reflection-rainbow type="float">0.0</reflection-rainbow>
+		<reflection-noise type="float">0.0</reflection-noise>
+		<ambient-correction>0.3</ambient-correction>
+		<reflection-correction>1.0</reflection-correction>
+	</parameters>
+
+</PropertyList>

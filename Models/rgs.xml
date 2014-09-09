@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<PropertyList>
+	<path>rgs.ac</path>
+
+	<effect>
+		<inherits-from>Effects/model-transparent</inherits-from>
+		<object-name>glass-rect</object-name>
+		<object-name>glass-round</object-name>
+	</effect>
+	
+	<animation>
+		<type>material</type>
+		<object-name>disk</object-name>
+		<transparency>
+			<alpha-prop>controls/switches/gun-sight-dimmer</alpha-prop>
+			<factor>-1</factor>
+			<offset>1</offset>
+		</transparency>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>mk2</object-name>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>back</object-name>
+		<condition>
+			<not>
+				<equals>
+					<property>/sim/current-view/view-number</property>
+					<value>0</value>
+				</equals>
+			</not>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>blend</type>
+		<object-name>glass-round</object-name>
+		<offset>0.75</offset>
+	</animation>
+  
+	<animation>
+		<type>select</type>
+		<object-name>disk</object-name>
+		<condition>
+			<and>
+				<equals>
+					<property>/sim/current-view/view-number</property>
+					<value>0</value>
+				</equals>
+				<property>/controls/switches/gun-sight-main</property>
+			</and>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>material</type>
+		<object-name>front</object-name>
+		<condition>
+			<greater-than>
+				<property>/controls/lighting/panel-norm</property>
+				<value>0</value>
+			</greater-than>
+		</condition>
+		<emission>
+			<factor-prop>/controls/lighting/panel-norm</factor-prop>
+			<red>0.75</red>
+			<green>0.25</green>
+			<blue>0.25</blue>
+		</emission>
+	</animation>
+
+</PropertyList>

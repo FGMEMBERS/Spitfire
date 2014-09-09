@@ -1,0 +1,1291 @@
+<PropertyList>
+	<name>Takeoff</name>
+	<description>
+
+		This tutorial will teach you how to take-off, and climb at the optimum speed of 185 mph. You will level off at 10000ft to complete the tutorial.
+	</description>
+	<audio-dir>Aircraft/spitfire/tutorial</audio-dir>
+	<timeofday>noon</timeofday>
+	<!--<presets>
+    <airport-id>KSFO</airport-id>
+    <on-ground>1</on-ground>
+    <runway>28R</runway>
+    <altitude-ft>-9999</altitude-ft>
+    <latitude-deg>-9999</latitude-deg>
+    <longitude-deg>-9999</longitude-deg>
+    <heading-deg>2800</heading-deg>
+    <airspeed-kt>0</airspeed-kt>
+    <glideslope-deg>0</glideslope-deg>
+    <offset-azimuth-deg>0</offset-azimuth-deg>
+    <offset-distance-nm>0</offset-distance-nm>
+  </presets>-->
+
+	<init>
+		<set>
+			<property>/sim/current-view/view-number</property>
+			<value>0</value>
+		</set>
+		<set>
+			<property>/controls/gear/brake-parking</property>
+			<value>1</value>
+		</set>
+		<set>
+			<property>/controls/flight/flaps</property>
+			<value>0.0</value>
+		</set>
+		<set>
+			<property>/controls/engines/engine/mag-switch-left/</property>
+			<value>1</value>
+		</set>
+		<set>
+			<property>/controls/engines/engine/mag-switch-right/</property>
+			<value>1</value>
+		</set>
+		<set>
+			<property>/controls/engines/engine/magnetos</property>
+			<value>3</value>
+		</set>
+		<set>
+			<property>/controls/engines/engine/throttle</property>
+			<value>0.3</value>
+		</set>
+		<set>
+			<property>/engines/engine/primer</property>
+			<value>5</value>
+		</set>
+		<set>
+			<property>/controls/engines/engine/starter</property>
+			<value>true</value>
+		</set>
+		<set>
+			<property>controls/engines/engine[0]/propeller-pitch</property>
+			<value>1</value>
+		</set>
+		<set>
+			<property>/environment/weather-scenario</property>
+			<value>Fair weather</value>
+		</set>
+		<set>
+			<property>/controls/flight/door-position-norm</property>
+			<value>0.0</value>
+		</set>
+		<set>
+			<property>controls/engines/engine/cowl-flaps-norm</property>
+			<value>1.0</value>
+		</set>
+	</init>
+
+	<step>
+		<message>
+			At the start of the take-off roll, you will control the direction of the aircraft using the
+			diffential brake steering and rudder. As the aircraft accelerates, you will use the ailerons and elevator
+			to control the direction and attitude of the aircraft.
+		</message>
+		<set>
+			<property>/controls/engines/engine/starter</property>
+			<value>false</value>
+		</set>
+		<set>
+			<property>/controls/engines/engine/throttle</property>
+			<value>0.2</value>
+		</set>
+	</step>
+
+	<step>
+		<message>
+			The differential brakes are controlled using the keys ','and '.' .
+			The rudder is controlled using 0/Enter on the numeric keypad, or by using the mouse
+			in "yoke" mode with the left mouse button held down.
+			To switch the mouse to yoke mode, press the right mouse button until it displays as a + sign.
+		</message>
+	</step>
+
+	<step>
+		<message>
+			The Spitfire is easier to control using joystick or yoke.
+			Almost all the following keyboard instructions can be carried out by means of the mouse, however
+			you will probably find the keyboard easier.
+		</message>
+	</step>
+
+	<step>
+		<message>
+			TESTING ENGINE AND INSTALLATIONS
+		</message>
+		<set>
+			<property>/controls/engines/engine/starter</property>
+			<value>false</value>
+		</set>
+		<set>
+			<property>/controls/engines/engine/throttle</property>
+			<value>0.0</value>
+		</set>
+	</step>
+
+	<step>
+		<message>Check Radiator Flap lever is set to Open (fully forward) using H</message>
+		<view>
+			<heading-offset-deg>11.4</heading-offset-deg>
+			<pitch-offset-deg>-39.3</pitch-offset-deg>
+			<roll-offset-deg>0.0</roll-offset-deg>
+			<x-offset-m>0.0</x-offset-m>
+			<y-offset-m>0.5</y-offset-m>
+			<z-offset-m>3.9</z-offset-m>
+			<field-of-view>55.0</field-of-view>
+		</view>
+		<marker>
+			<x-m>3.5000</x-m>
+			<y-m>-0.2058</y-m>
+			<z-m>-0.0322</z-m>
+			<scale>1.0000</scale>
+		</marker>
+		<error>
+			<message>Check Radiator Flap lever set to Open (fully forward) using H</message>
+			<condition>
+				<not>
+					<equals>
+						<property>controls/engines/engine/cowl-flaps-norm</property>
+						<value>1</value>
+					</equals>
+				</not>
+			</condition>
+		</error>
+		<exit>
+			<condition>
+				<equals>
+					<property>controls/engines/engine/cowl-flaps-norm</property>
+					<value>1</value>
+				</equals>
+			</condition>
+		</exit>
+	</step>
+
+	<step>
+		<message>Check the operation of the RPM lever by setting to min (fully back) using N</message>
+		<set>
+			<property>/controls/engines/engine/throttle</property>
+			<value>0.20</value>
+		</set>
+		<view>
+			<heading-offset-deg>22.5</heading-offset-deg>
+			<pitch-offset-deg>-32.9</pitch-offset-deg>
+			<roll-offset-deg>0.0</roll-offset-deg>
+			<x-offset-m>0.0</x-offset-m>
+			<y-offset-m>0.5</y-offset-m>
+			<z-offset-m>3.9</z-offset-m>
+			<field-of-view>55.0</field-of-view>
+		</view>
+		<marker>
+			<x-m>3.5000</x-m>
+			<y-m>-0.2653</y-m>
+			<z-m>0.1083</z-m>
+			<scale>1.0000</scale>
+		</marker>
+		<error>
+			<message>Check RPM lever is set to min (fully back)</message>
+			<condition>
+				<not>
+					<equals>
+						<property>/controls/engines/engine[0]/propeller-pitch</property>
+						<value>0</value>
+					</equals>
+				</not>
+			</condition>
+		</error>
+		<exit>
+			<condition>
+				<equals>
+					<property>/controls/engines/engine[0]/propeller-pitch</property>
+					<value>0</value>
+				</equals>
+			</condition>
+		</exit>
+	</step>
+
+	<step>
+		<view>
+			<heading-offset-deg>22.5</heading-offset-deg>
+			<pitch-offset-deg>-32.9</pitch-offset-deg>
+			<roll-offset-deg>0.0</roll-offset-deg>
+			<x-offset-m>0.0</x-offset-m>
+			<y-offset-m>0.5</y-offset-m>
+			<z-offset-m>3.9</z-offset-m>
+			<field-of-view>55.0</field-of-view>
+		</view>
+		<marker>
+			<x-m>3.5000</x-m>
+			<y-m>-0.2653</y-m>
+			<z-m>0.1083</z-m>
+			<scale>1.0000</scale>
+		</marker>
+		<message>Check the operation of the RPM lever by setting to max (fully forward) using n</message>
+		<error>
+			<message>Check RPM lever is set to max (fully forward)</message>
+			<condition>
+				<not>
+					<equals>
+						<property>controls/engines/engine[0]/propeller-pitch</property>
+						<value>1</value>
+					</equals>
+				</not>
+			</condition>
+		</error>
+		<exit>
+			<condition>
+				<equals>
+					<property>controls/engines/engine[0]/propeller-pitch</property>
+					<value>1</value>
+				</equals>
+			</condition>
+		</exit>
+	</step>
+
+	<step>
+		<message>Check the brake pressure is at least 120 psi</message>
+		<view>
+			<heading-offset-deg>19.2</heading-offset-deg>
+			<pitch-offset-deg>-41.0</pitch-offset-deg>
+			<roll-offset-deg>0.0</roll-offset-deg>
+			<x-offset-m>0.0</x-offset-m>
+			<y-offset-m>0.5</y-offset-m>
+			<z-offset-m>3.9</z-offset-m>
+			<field-of-view>30.0</field-of-view>
+		</view>
+		<marker>
+			<x-m>3.3000</x-m>
+			<y-m>-0.2769</y-m>
+			<z-m>0.0479</z-m>
+			<scale>3.0000</scale>
+		</marker>
+		<error>
+			<message>Check the brake pressure is at least 120 psi</message>
+			<condition>
+				<less-than-equals>
+					<property>engines/engine/rpm</property>
+					<value>750</value>
+				</less-than-equals>
+			</condition>
+		</error>
+		<condition>
+			<greater-than>
+				<property>engines/engine/rpm</property>
+				<value>750</value>
+			</greater-than>
+		</condition>
+	</step>
+
+	<step>
+		<message>Check Pneumatic System by setting Flap lever to DOWN by using ]</message>
+		<view>
+			<heading-offset-deg>18.0</heading-offset-deg>
+			<pitch-offset-deg>-17.3</pitch-offset-deg>
+			<roll-offset-deg>0.0</roll-offset-deg>
+			<x-offset-m>0.0</x-offset-m>
+			<y-offset-m>0.5</y-offset-m>
+			<z-offset-m>3.9</z-offset-m>
+			<field-of-view>55.0</field-of-view>
+		</view>
+		<marker>
+			<x-m>3.3000</x-m>
+			<y-m>-0.1959</y-m>
+			<z-m>0.3421</z-m>
+			<scale>2.0579</scale>
+		</marker>
+		<error>
+			<message>Check Flap lever set to DOWN using ]</message>
+			<condition>
+				<not>
+					<equals>
+						<property>controls/flight/flaps-lever</property>
+						<value>1</value>
+					</equals>
+				</not>
+			</condition>
+		</error>
+		<exit>
+			<condition>
+				<equals>
+					<property>controls/flight/flaps-lever</property>
+					<value>1</value>
+				</equals>
+			</condition>
+		</exit>
+	</step>
+
+	<step>
+		<message>Check Pneumatic System by setting Flap lever to UP by using [</message>
+		<view>
+			<heading-offset-deg>18.0</heading-offset-deg>
+			<pitch-offset-deg>-17.3</pitch-offset-deg>
+			<roll-offset-deg>0.0</roll-offset-deg>
+			<x-offset-m>0.0</x-offset-m>
+			<y-offset-m>0.5</y-offset-m>
+			<z-offset-m>3.9</z-offset-m>
+			<field-of-view>55.0</field-of-view>
+		</view>
+		<marker>
+			<x-m>3.3000</x-m>
+			<y-m>-0.1959</y-m>
+			<z-m>0.3421</z-m>
+			<scale>2.0579</scale>
+		</marker>
+		<error>
+			<message>Check Flap lever set to UP using [</message>
+			<condition>
+				<not>
+					<equals>
+						<property>controls/flight/flaps-lever</property>
+						<value>0</value>
+					</equals>
+				</not>
+			</condition>
+		</error>
+		<exit>
+			<condition>
+				<equals>
+					<property>controls/flight/flaps-lever</property>
+					<value>0</value>
+				</equals>
+			</condition>
+		</exit>
+	</step>
+
+
+	<step>
+		<message>Set the Altimeter to zero (ground level) using the knob</message>
+		<view>
+			<heading-offset-deg>6.1</heading-offset-deg>
+			<pitch-offset-deg>-34.6</pitch-offset-deg>
+			<roll-offset-deg>0.0</roll-offset-deg>
+			<x-offset-m>0.0</x-offset-m>
+			<y-offset-m>0.5</y-offset-m>
+			<z-offset-m>3.9</z-offset-m>
+			<field-of-view>50.4</field-of-view>
+		</view>
+		<marker>
+			<x-m>3.5000</x-m>
+			<y-m>-0.0645</y-m>
+			<z-m>0.2463</z-m>
+			<scale>0.5</scale>
+		</marker>
+		<error>
+			<message>Set the altimeter to zero (ground level) using the knob</message>
+			<condition>
+				<or>
+					<less-than>
+						<property>/instrumentation/altimeter/indicated-altitude-ft</property>
+						<value>-2.5</value>
+					</less-than>
+					<greater-than>
+						<property>/instrumentation/altimeter/indicated-altitude-ft</property>
+						<value>2.5</value>
+					</greater-than>
+				</or>
+			</condition>
+		</error>
+		<exit>
+			<condition>
+				<and>
+					<greater-than-equals>
+						<property>/instrumentation/altimeter/indicated-altitude-ft</property>
+						<value>-2.5</value>
+					</greater-than-equals>
+					<less-than-equals>
+						<property>/instrumentation/altimeter/indicated-altitude-ft</property>
+						<value>2.5</value>
+					</less-than-equals>
+				</and>
+			</condition>
+		</exit>
+	</step>
+
+	<step>
+		<message>Set DG to the Magnetic Heading using the knob</message>
+		<view>
+			<heading-offset-deg>6.1</heading-offset-deg>
+			<pitch-offset-deg>-34.6</pitch-offset-deg>
+			<roll-offset-deg>0.0</roll-offset-deg>
+			<x-offset-m>0.0</x-offset-m>
+			<y-offset-m>0.5</y-offset-m>
+			<z-offset-m>3.9</z-offset-m>
+			<field-of-view>50.4</field-of-view>
+		</view>
+		<marker>
+			<x-m>3.3000</x-m>
+			<y-m>0.0000</y-m>
+			<z-m>0.0868</z-m>
+			<scale>1.0000</scale>
+		</marker>
+	</step>
+
+	<step>
+		<message>Check both fuel cock levers set to ON (fully up)</message>
+		<view>
+			<heading-offset-deg>357.3</heading-offset-deg>
+			<pitch-offset-deg>-42.8</pitch-offset-deg>
+			<roll-offset-deg>0.0</roll-offset-deg>
+			<x-offset-m>0.0</x-offset-m>
+			<y-offset-m>0.5</y-offset-m>
+			<z-offset-m>3.9</z-offset-m>
+			<field-of-view>55.0</field-of-view>
+		</view>
+		<marker>
+			<x-m>3.3000</x-m>
+			<y-m>0.0860</y-m>
+			<z-m>-0.0653</z-m>
+			<scale>2.0579</scale>
+		</marker>
+		<error>
+			<message>Check both fuel cock levers set to ON (fully up)</message>
+			<condition>
+				<or>
+					<not>
+						<equals>
+							<property>consumables/fuel/tank[0]/selected</property>
+							<value>1</value>
+						</equals>
+					</not>
+					<not>
+						<equals>
+							<property>consumables/fuel/tank[1]/selected</property>
+							<value>1</value>
+						</equals>
+					</not>
+				</or>
+			</condition>
+		</error>
+		<exit>
+			<condition>
+				<and>
+					<equals>
+						<property>consumables/fuel/tank[0]/selected</property>
+						<value>1</value>
+					</equals>
+					<equals>
+						<property>consumables/fuel/tank[1]/selected</property>
+						<value>1</value>
+					</equals>
+				</and>
+			</condition>
+		</exit>
+	</step>
+
+	<step>
+		<message>Check Fuel Level by pressing the button</message>
+		<view>
+			<heading-offset-deg>338.5</heading-offset-deg>
+			<pitch-offset-deg>-33.2</pitch-offset-deg>
+			<roll-offset-deg>0.0</roll-offset-deg>
+			<x-offset-m>0.0</x-offset-m>
+			<y-offset-m>0.5</y-offset-m>
+			<z-offset-m>3.9</z-offset-m>
+			<field-of-view>55.0</field-of-view>
+		</view>
+		<marker>
+			<x-m>3.5000</x-m>
+			<y-m>0.1504</y-m>
+			<z-m>0.2050</z-m>
+			<scale>0.5000</scale>
+		</marker>
+		<error>
+			<message>Check Fuel Level by pressing the button</message>
+			<condition>
+				<not>
+					<equals>
+						<property>/controls/switches/fuel-gauge</property>
+						<value>0</value>
+					</equals>
+				</not>
+			</condition>
+		</error>
+		<exit>
+			<condition>
+				<equals>
+					<property>/controls/switches/fuel-gauge</property>
+					<value>0</value>
+				</equals>
+			</condition>
+		</exit>
+	</step>
+
+	<step>
+		<message>Check the hood is locked in the open position using F</message>
+		<view>
+			<heading-offset-deg>144.9</heading-offset-deg>
+			<pitch-offset-deg>9.7</pitch-offset-deg>
+			<roll-offset-deg>0.0</roll-offset-deg>
+			<x-offset-m>0.0</x-offset-m>
+			<y-offset-m>0.5</y-offset-m>
+			<z-offset-m>3.9</z-offset-m>
+			<field-of-view>55.0</field-of-view>
+		</view>
+		<marker>
+			<x-m>4.1000</x-m>
+			<y-m>-0.0364</y-m>
+			<z-m>0.6124</z-m>
+			<scale>1.0000</scale>
+		</marker>
+		<error>
+			<message>Check the hood is locked in the open position using F</message>
+			<condition>
+				<not>
+					<equals>
+						<property>/controls/flight/canopy-lever</property>
+						<value>0.0</value>
+					</equals>
+				</not>
+			</condition>
+		</error>
+		<exit>
+			<condition>
+				<equals>
+					<property>/controls/flight/canopy-lever</property>
+					<value>0.00</value>
+				</equals>
+			</condition>
+		</exit>
+	</step>
+
+	<step>
+		<message>Check the door is locked in the "half cock" open position using D</message>
+		<set>
+			<property>/controls/engines/engine/throttle</property>
+			<value>0.00</value>
+		</set>
+		<view>
+			<heading-offset-deg>80.8</heading-offset-deg>
+			<pitch-offset-deg>-53.1</pitch-offset-deg>
+			<roll-offset-deg>0.0</roll-offset-deg>
+			<x-offset-m>0.0</x-offset-m>
+			<y-offset-m>0.5</y-offset-m>
+			<z-offset-m>3.9</z-offset-m>
+			<field-of-view>55.0</field-of-view>
+		</view>
+		<marker>
+			<x-m>3.8000</x-m>
+			<y-m>-0.3050</y-m>
+			<z-m>0.2967</z-m>
+			<scale>1.0000</scale>
+		</marker>
+		<error>
+			<message>Check the door is locked in the "half cock" open position using D</message>
+			<condition>
+				<not>
+					<equals>
+						<property>/controls/flight/door-position-norm</property>
+						<value>0.015</value>
+					</equals>
+				</not>
+			</condition>
+		</error>
+		<exit>
+			<condition>
+				<equals>
+					<property>/controls/flight/door-position-norm</property>
+					<value>0.015</value>
+				</equals>
+			</condition>
+		</exit>
+	</step>
+
+	<step>
+		<message>Pick the right chock to remove it</message>
+		<set>
+			<property>/controls/engines/engine/throttle</property>
+			<value>0.00</value>
+		</set>
+		<set>
+			<property>/sim/current-view/view-number</property>
+			<value>8</value>
+		</set>
+		<view>
+			<heading-offset-deg>180.0</heading-offset-deg>
+			<pitch-offset-deg>0.0</pitch-offset-deg>
+			<roll-offset-deg>0.0</roll-offset-deg>
+			<x-offset-m>0.0</x-offset-m>
+			<y-offset-m>0.1</y-offset-m>
+			<z-offset-m>-10.0</z-offset-m>
+			<field-of-view>60.0</field-of-view>
+		</view>
+		<marker>
+			<x-m>1.8000</x-m>
+			<y-m>0.9380</y-m>
+			<z-m>-1.8884</z-m>
+			<scale>10.0</scale>
+		</marker>
+		<error>
+			<message>Pick the right chock to remove it</message>
+			<condition>
+				<equals>
+					<property>controls/gear/chock-right</property>
+					<value>1</value>
+				</equals>
+			</condition>
+		</error>
+		<exit>
+			<condition>
+				<equals>
+					<property>controls/gear/chock-right</property>
+					<value>0</value>
+				</equals>
+			</condition>
+		</exit>
+	</step>
+
+	<step>
+		<message>Pick the left chock to remove it</message>
+		<set>
+			<property>/controls/engines/engine/throttle</property>
+			<value>0.00</value>
+		</set>
+		<marker>
+			<x-m>1.6000</x-m>
+			<y-m>-0.3000</y-m>
+			<z-m>-1.9000</z-m>
+			<scale>10.0000</scale>
+		</marker>
+		<error>
+			<message>Pick the left chock to remove it</message>
+			<condition>
+				<equals>
+					<property>controls/gear/chock-left</property>
+					<value>1</value>
+				</equals>
+			</condition>
+		</error>
+		<exit>
+			<condition>
+				<equals>
+					<property>controls/gear/chock-left</property>
+					<value>0</value>
+				</equals>
+			</condition>
+		</exit>
+	</step>
+
+	<step>
+		<message>FINAL PREPARATIONS FOR TAKEOFF - DRILL OF VITAL ACTIONS</message>
+		<set>
+			<property>/sim/current-view/view-number</property>
+			<value>0</value>
+		</set>
+		<view>
+			<heading-offset-deg>0.0</heading-offset-deg>
+			<pitch-offset-deg>-9.5</pitch-offset-deg>
+			<roll-offset-deg>0.0</roll-offset-deg>
+			<x-offset-m>0.0</x-offset-m>
+			<y-offset-m>0.5</y-offset-m>
+			<z-offset-m>3.9</z-offset-m>
+			<field-of-view>55.0</field-of-view>
+		</view>
+	</step>
+
+	<step>
+		<message>Some of these may have already been done, but must be checked before every takeoff.</message>
+	</step>
+
+	<step>
+		<message>Aide Memoire: TMP and Flaps.</message>
+	</step>
+
+	<step>
+		<message>Set Elevator Trim tab to 1 division Nose Down using Home</message>
+		<view>
+			<heading-offset-deg>18.2</heading-offset-deg>
+			<pitch-offset-deg>-34.1</pitch-offset-deg>
+			<roll-offset-deg>0.0</roll-offset-deg>
+			<x-offset-m>-0.0</x-offset-m>
+			<y-offset-m>0.5</y-offset-m>
+			<z-offset-m>3.9</z-offset-m>
+			<field-of-view>34.2</field-of-view>
+		</view>
+		<marker>
+			<x-m>3.3000</x-m>
+			<y-m>-0.1893</y-m>
+			<z-m>0.1066</z-m>
+			<scale>1.4</scale>
+		</marker>
+		<error>
+			<message>Set Elevator Trim tab to 1 division Nose Down</message>
+			<condition>
+				<or>
+					<less-than>
+						<property>/controls/flight/elevator-trim</property>
+						<value>0.055</value>
+					</less-than>
+					<greater-than>
+						<property>/controls/flight/elevator-trim</property>
+						<value>0.075</value>
+					</greater-than>
+				</or>
+			</condition>
+		</error>
+		<exit>
+			<condition>
+				<greater-than-equals>
+					<property>/controls/flight/elevator-trim</property>
+					<value>0.055</value>
+				</greater-than-equals>
+				<less-than-equals>
+					<property>/controls/flight/elevator-trim</property>
+					<value>0.075</value>
+				</less-than-equals>
+			</condition>
+		</exit>
+	</step>
+
+	<step>
+		<message>Check Mixture lever is set to RICH (fully back) using m</message>
+		<view>
+			<heading-offset-deg>39.8</heading-offset-deg>
+			<pitch-offset-deg>-43.4</pitch-offset-deg>
+			<roll-offset-deg>0.0</roll-offset-deg>
+			<x-offset-m>0.0</x-offset-m>
+			<y-offset-m>0.5</y-offset-m>
+			<z-offset-m>3.9</z-offset-m>
+			<field-of-view>55.0</field-of-view>
+		</view>
+		<marker>
+			<x-m>3.55</x-m>
+			<y-m>-0.3744</y-m>
+			<z-m>0.0405</z-m>
+			<scale>1.0</scale>
+		</marker>
+		<error>
+			<message>Check Mixture lever is set to RICH (fully back)</message>
+			<condition>
+				<equals>
+					<property>controls/engines/engine[0]/mixture-lever</property>
+					<value>0</value>
+				</equals>
+			</condition>
+		</error>
+		<exit>
+			<condition>
+				<equals>
+					<property>controls/engines/engine[0]/mixture-lever</property>
+					<value>1</value>
+				</equals>
+			</condition>
+		</exit>
+	</step>
+
+	<step>
+		<message>Check RPM lever is set to MAX (fully forward) using n</message>
+		<set>
+			<property>/sim/current-view/view-number</property>
+			<value>0</value>
+		</set>
+		<view>
+			<heading-offset-deg>22.5</heading-offset-deg>
+			<pitch-offset-deg>-32.9</pitch-offset-deg>
+			<roll-offset-deg>0.0</roll-offset-deg>
+			<x-offset-m>0.0</x-offset-m>
+			<y-offset-m>0.5</y-offset-m>
+			<z-offset-m>3.9</z-offset-m>
+			<field-of-view>55.0</field-of-view>
+		</view>
+		<marker>
+			<x-m>3.5000</x-m>
+			<y-m>-0.2653</y-m>
+			<z-m>0.1083</z-m>
+			<scale>1.0000</scale>
+		</marker>
+		<error>
+			<message>Check RPM lever is set to MAX (fully forward)</message>
+			<condition>
+				<not>
+					<equals>
+						<property>controls/engines/engine[0]/propeller-pitch</property>
+						<value>1</value>
+					</equals>
+				</not>
+			</condition>
+		</error>
+		<exit>
+			<condition>
+				<equals>
+					<property>controls/engines/engine[0]/propeller-pitch</property>
+					<value>1</value>
+				</equals>
+			</condition>
+		</exit>
+	</step>
+
+	<step>
+		<message>Check Flap lever set to UP using [</message>
+		<view>
+			<heading-offset-deg>18.0</heading-offset-deg>
+			<pitch-offset-deg>-17.3</pitch-offset-deg>
+			<roll-offset-deg>0.0</roll-offset-deg>
+			<x-offset-m>0.0</x-offset-m>
+			<y-offset-m>0.5</y-offset-m>
+			<z-offset-m>3.9</z-offset-m>
+			<field-of-view>55.0</field-of-view>
+		</view>
+		<marker>
+			<x-m>3.3000</x-m>
+			<y-m>-0.1959</y-m>
+			<z-m>0.3421</z-m>
+			<scale>2.0579</scale>
+		</marker>
+		<error>
+			<message>Check Flap lever set to UP using [</message>
+			<condition>
+				<not>
+					<equals>
+						<property>controls/flight/flaps-lever</property>
+						<value>0</value>
+					</equals>
+				</not>
+			</condition>
+		</error>
+		<exit>
+			<condition>
+				<equals>
+					<property>controls/flight/flaps-lever</property>
+					<value>0</value>
+				</equals>
+			</condition>
+		</exit>
+	</step>
+
+	<step>
+		<message>Check Radiator Flap lever set to Open using H</message>
+		<view>
+			<heading-offset-deg>25.7</heading-offset-deg>
+			<pitch-offset-deg>-50.6</pitch-offset-deg>
+			<roll-offset-deg>0.0</roll-offset-deg>
+			<x-offset-m>0.0</x-offset-m>
+			<y-offset-m>0.5</y-offset-m>
+			<z-offset-m>3.9</z-offset-m>
+			<field-of-view>55.0</field-of-view>
+		</view>
+		<marker>
+			<x-m>3.6000</x-m>
+			<y-m>-0.2157</y-m>
+			<z-m>0.0066</z-m>
+			<scale>1.5289</scale>
+		</marker>
+		<error>
+			<message>Check Radiator Flap lever set to Open (fully forward)using H</message>
+			<condition>
+				<not>
+					<equals>
+						<property>controls/engines/engine/cowl-flaps-norm</property>
+						<value>1</value>
+					</equals>
+				</not>
+			</condition>
+		</error>
+		<exit>
+			<condition>
+				<equals>
+					<property>controls/engines/engine/cowl-flaps-norm</property>
+					<value>1</value>
+				</equals>
+			</condition>
+		</exit>
+	</step>
+
+	<step>
+		<message>
+			TAKEOFF
+		</message>
+		<view>
+			<heading-offset-deg>0.0</heading-offset-deg>
+			<pitch-offset-deg>-9.5</pitch-offset-deg>
+			<roll-offset-deg>0.0</roll-offset-deg>
+			<x-offset-m>0.0</x-offset-m>
+			<y-offset-m>0.5</y-offset-m>
+			<z-offset-m>3.9</z-offset-m>
+			<field-of-view>55.0</field-of-view>
+		</view>
+
+		<message>
+			The takeoff run is only about 150 yards, and the time is less than 9 seconds.
+		</message>
+	</step>
+
+	<step>
+		<message>
+			Release the parking brake using Shift B
+		</message>
+		<error>
+			<message>Release the parking brake using Shift B !</message>
+			<condition>
+				<or>
+				<greater-than>
+					<property>/systems/pneumatic/outputs/brake</property>
+					<value>0</value>
+				</greater-than>
+				<greater-than>
+					<property>/systems/pneumatic/outputs/brake[1]</property>
+					<value>0</value>
+				</greater-than>
+				</or>
+			</condition>
+		</error>
+		<exit>
+			<condition>
+				<equals>
+					<property>/systems/pneumatic/outputs/brake</property>
+					<value>0</value>
+				</equals>
+				<equals>
+					<property>/systems/pneumatic/outputs/brake[1]</property>
+					<value>0</value>
+				</equals>
+			</condition>
+		</exit>
+	</step>
+
+	<step>
+		<message>
+			Smoothly apply full power using PgUp, controlling the direction using the diffential brakes
+			and rudder.
+		</message>
+		<error>
+			<message>RELEASE PARKING BRAKE using Shift B</message>
+			<condition>
+				<and>
+				<greater-than>
+					<property>/systems/pneumatic/outputs/brake</property>
+					<value>0</value>
+				</greater-than>
+					<greater-than>
+					<property>/systems/pneumatic/outputs/brake[1]</property>
+					<value>0</value>
+				</greater-than>
+				</and>
+			</condition>
+		</error>
+		<error>
+			<message>Incease throttle to take-off power. Boost should not exceed 9.0 psi</message>
+			<condition>
+				<less-than>
+					<property>/controls/engines/engine/throttle</property>
+					<value>0.5</value>
+				</less-than>
+			</condition>
+		</error>
+		<exit>
+			<condition>
+				<greater-than>
+					<property>/velocities/airspeed-kt</property>
+					<value>5.0</value>
+				</greater-than>
+			</condition>
+		</exit>
+	</step>
+
+	<step>
+		<message>
+			Watch out for the swing to the left as the tail comes up. Correct quickly using coarse right rudder.
+			Stay on the center-line of the runway using the rudder. Steer using the mouse with the left button held down, or using 0/Enter on the numeric keypad
+		</message>
+		<exit>
+			<condition>
+				<greater-than>
+					<property>/velocities/airspeed-kt</property>
+					<value>45.0</value>
+				</greater-than>
+			</condition>
+		</exit>
+	</step>
+
+	<step>
+		<message>Let the aircraft lift off at about 85 mph and climb straight out on runway heading.</message>
+		<error>
+			<message>Gently raise the nose, by pressing the down key on the keypad, or moving the mouse back slightly.</message>
+			<condition>
+				<equals>
+					<property>/gear/gear[0]/wow</property>
+					<value>1</value>
+				</equals>
+			</condition>
+		</error>
+		<exit>
+			<condition>
+				<not>
+					<property>/gear/gear[0]/wow</property>
+					<value>1</value>
+				</not>
+			</condition>
+		</exit>
+	</step>
+
+	<step>
+		<message>ACTIONS AFTER TAKEOFF</message>
+	</step>
+
+	<step>
+		<message>As soon as the aircraft is FINALLY off the ground, raise the undercarriage using g.</message>
+		<error>
+			<condition>
+				<equals>
+					<property>/gear/gear/position-norm</property>
+					<value>1</value>
+				</equals>
+			</condition>
+		</error>
+		<exit>
+			<condition>
+				<not>
+					<equals>
+						<property>/gear/gear/position-norm</property>
+						<value>1</value>
+					</equals>
+				</not>
+			</condition>
+		</exit>
+	</step>
+
+	<step>
+		<message>
+			Keep the nose down until 140 mph is attained then raise the nose to start climbing at
+			185 mph
+		</message>
+		<error>
+			<message>
+				Keep the nose down. Do not start climbing.
+			</message>
+			<condition>
+				<less-than>
+					<property>instrumentation/airspeed-indicator/indicated-speed-kt</property>
+					<value>121.5</value>
+				</less-than>
+			</condition>
+		</error>
+		<exit>
+			<message>
+				Raise the nose. Climb at 185 mph
+			</message>
+			<condition>
+				<greater-than-equals>
+					<property>instrumentation/airspeed-indicator/indicated-speed-kt</property>
+					<value>121.5</value>
+				</greater-than-equals>
+			</condition>
+		</exit>
+	</step>
+
+	<step>
+		<message>
+			Adjust the RPM to 2850 rpm using N/n. Raise/Lower the nose to maintain 185mph
+		</message>
+		<error>
+			<message>
+				Lower the nose.
+			</message>
+			<condition>
+				<less-than-equals>
+					<property>instrumentation/airspeed-indicator/indicated-speed-kt</property>
+					<value>145</value>
+				</less-than-equals>
+			</condition>
+		</error>
+		<error>
+			<message>
+				Lower the nose slightly.
+			</message>
+			<condition>
+				<less-than>
+					<property>instrumentation/airspeed-indicator/indicated-speed-kt</property>
+					<value>155</value>
+				</less-than>
+			</condition>
+		</error>
+		<error>
+			<message>
+				Raise the nose slightly.
+			</message>
+			<condition>
+				<greater-than-than>
+					<property>instrumentation/airspeed-indicator/indicated-speed-kt</property>
+					<value>165</value>
+				</greater-than-than>
+			</condition>
+		</error>
+		<error>
+			<message>
+				Raise the nose.
+			</message>
+			<condition>
+				<greater-than-equals>
+					<property>instrumentation/airspeed-indicator/indicated-speed-kt</property>
+					<value>175</value>
+				</greater-than-equals>
+			</condition>
+		</error>
+		<error>
+			<message>
+				Decrease rpm using N.
+			</message>
+			<condition>
+				<greater-than-equals>
+					<property>engines/engine/rpm</property>
+					<value>2900</value>
+				</greater-than-equals>
+			</condition>
+		</error>
+		<error>
+			<message>
+				Increase rpm using n.
+			</message>
+			<condition>
+				<less-than-equals>
+					<property>engines/engine/rpm</property>
+					<value>2800</value>
+				</less-than-equals>
+			</condition>
+		</error>
+		<error>
+			<message>
+				Close the door, close the hood, shut the radiator flap using d,f, and h
+			</message>
+			<condition>
+				<or>
+					<not>
+						<equals>
+							<property>/controls/flight/door-position-norm</property>
+							<value>0</value>
+						</equals>
+					</not>
+					<not>
+						<equals>
+							<property>/controls/engines/engine/cowl-flaps-norm</property>
+							<value>0</value>
+						</equals>
+					</not>
+					<not>
+						<equals>
+							<property>/gear/canopy/position-norm</property>
+							<value>0</value>
+						</equals>
+					</not>
+				</or>
+			</condition>
+		</error>
+		<exit>
+			<condition>
+				<and>
+					<equals>
+						<property>/controls/flight/door-position-norm</property>
+						<value>0</value>
+					</equals>
+					<equals>
+						<property>/controls/engines/engine/cowl-flaps-norm</property>
+						<value>0</value>
+					</equals>
+					<equals>
+						<property>/gear/canopy/position-norm</property>
+						<value>0</value>
+					</equals>
+				</and>
+			</condition>
+		</exit>
+	</step>
+
+	<step>
+		<message>
+			Continue to climb. You can adjust pitch and roll with the elevator and rudder trims using Home/End 
+			and shift, or shift . (Yes, rudder trim affects roll).
+		</message>
+		<error>
+			<message>
+				Passing 4000 ft adjust the Oxygen Regulator to 15000 ft using the key.
+			</message>
+			<condition>
+				<and>
+				<less-than>
+					<property>/controls/oxygen/altitude-norm</property>
+					<value>0.37</value>
+				</less-than>
+					<greater-than>
+						<property>instrumentation/altimeter/indicated-altitude-ft</property>
+						<value>4000</value>
+					</greater-than>
+				</and>
+			</condition>
+		</error>
+		<error>
+			<message>
+				Lower the nose.
+			</message>
+			<condition>
+				<less-than-equals>
+					<property>instrumentation/airspeed-indicator/indicated-speed-kt</property>
+					<value>145</value>
+				</less-than-equals>
+			</condition>
+		</error>
+		<error>
+			<message>
+				Lower the nose slightly.
+			</message>
+			<condition>
+				<less-than>
+					<property>instrumentation/airspeed-indicator/indicated-speed-kt</property>
+					<value>155</value>
+				</less-than>
+			</condition>
+		</error>
+		<error>
+			<message>
+				Raise the nose slightly.
+			</message>
+			<condition>
+				<greater-than-than>
+					<property>instrumentation/airspeed-indicator/indicated-speed-kt</property>
+					<value>165</value>
+				</greater-than-than>
+			</condition>
+		</error>
+		<error>
+			<message>
+				Raise the nose.
+			</message>
+			<condition>
+				<greater-than-equals>
+					<property>instrumentation/airspeed-indicator/indicated-speed-kt</property>
+					<value>175</value>
+				</greater-than-equals>
+			</condition>
+		</error>
+		<error>
+			<message>
+				Decrease rpm using N.
+			</message>
+			<condition>
+				<greater-than-equals>
+					<property>engines/engine/rpm</property>
+					<value>2900</value>
+				</greater-than-equals>
+			</condition>
+		</error>
+		<error>
+			<message>
+				Increase rpm using n.
+			</message>
+			<condition>
+				<less-than-equals>
+					<property>engines/engine/rpm</property>
+					<value>2800</value>
+				</less-than-equals>
+			</condition>
+		</error>
+		<exit>
+			<condition>
+				<greater-than-equals>
+					<property>instrumentation/altimeter/indicated-altitude-ft</property>
+					<value>10000</value>
+				</greater-than-equals>
+			</condition>
+		</exit>
+	</step>
+
+	<end>
+		<message>Congratulations, you've successfully taken off. Now try landing!</message>
+	</end>
+</PropertyList>

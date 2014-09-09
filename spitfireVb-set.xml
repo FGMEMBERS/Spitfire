@@ -1,0 +1,781 @@
+<?xml version="1.0"?>
+<!--
+************************************************************************
+Spitfire Vb simulation config. This files ties together all the components
+used by FGFS to represent the aircraft. Components include the flight data 
+model, instrument panel, sound, electrical and external 3D model.
+
+Copyright Feb 2011 Vivian Meazza, vivian.meazza at lineone.net
+
+$Id$
+************************************************************************
+-->
+<PropertyList>
+	<engines>
+		<engine>
+			<rpm type="double">600</rpm>
+			<primer type = "int">0</primer>
+		</engine>
+	</engines>
+	<consumables>
+		<fuel>
+			<tank n="0">
+				<name type="string">Upper</name>
+				<level-gal_us>57</level-gal_us>
+				<selected type="bool">1</selected>
+			</tank>
+			<tank n="1">
+				<name type="string">Lower</name>
+				<level-gal_us>44</level-gal_us>
+				<selected type="bool">1</selected>
+			</tank>
+		</fuel>
+		<oxygen>
+			<tank n="0">
+				<name type="string">1</name>
+				<capacity-cu-ft type="double">0.4</capacity-cu-ft>
+				<level-cu-ft type="double">54</level-cu-ft>
+				<selected type="bool">1</selected>
+			</tank>
+		</oxygen>
+	</consumables>
+	<!-- set up control properties for YASim... -->
+	<controls>
+		<engines>
+			<engine n="0">
+				<mag-switch-left type="bool">0</mag-switch-left>
+				<mag-switch-right type="bool">0</mag-switch-right>
+				<magnetos>0</magnetos>
+				<!--<coffman-starter> 
+            <cartridge type="bool">1</cartridge>
+            <cartridge type="bool">1</cartridge>
+            <cartridge type="bool">1</cartridge>
+            <cartridge type="bool">1</cartridge>
+            <cartridge type="bool">1</cartridge>
+            <cartridge type="bool">1</cartridge>
+            <index type="double">5</index>
+            <index-pull-norm type="double">0</index-pull-norm>
+            <starter-push-norm type="double">0</starter-push-norm>
+          </coffman-starter>-->
+				<cutoff-pull-norm type="double">0</cutoff-pull-norm>
+				<fuel-cock>
+					<lever-norm type="double">1</lever-norm>
+					<lever-norm type="double">1</lever-norm>
+				</fuel-cock>
+				<mixture-lever type="double">1</mixture-lever>
+				<primer-pump type = "bool">0</primer-pump>
+				<boost type= "double">1</boost>
+				<boost-control-cutout type= "bool">0</boost-control-cutout>
+			</engine>
+		</engines>
+		<gear>
+			<gear-down type="bool">true</gear-down>
+			<brake-parking>0</brake-parking>
+			<tailwheel-lock>false</tailwheel-lock>
+			<antiskid>0</antiskid>
+			<canopy>
+				<position-norm type="double">1</position-norm>
+			</canopy>
+			<chock-left type="bool">1</chock-left>
+			<chock-right type="bool">1</chock-right>
+		</gear>
+		<flight>
+			<flaps-alternate-extension type="double">1</flaps-alternate-extension>
+			<flaps-lever type="double">0</flaps-lever>
+			<elevator-trim>-0.055000</elevator-trim>
+			<door-position-norm type="double">1</door-position-norm>
+			<wing-fold>0</wing-fold>
+			<canopy-slide type="bool">1</canopy-slide>
+		</flight>
+		<switches>
+			<fuel-gauge>0</fuel-gauge>
+			<gun-sight-main>0</gun-sight-main>
+			<gun-sight-dimmer>0</gun-sight-dimmer>
+		</switches>
+		<lighting>
+			<nav-lights>false</nav-lights>
+		</lighting>
+		<hydraulic>
+			<lever n="0" type="double">1</lever>
+			<lever n="1" type="double">1</lever>
+			<wheels type="double">1</wheels>
+			<system>
+				<engine-pump type="bool">true</engine-pump>
+			</system>
+		</hydraulic>
+		<pneumatic>
+			<lever type="double">0</lever>
+			<lever type="double">0</lever>
+			<lever type="double">0</lever>
+			<system>
+				<engine-pump type="bool">true</engine-pump>
+			</system>
+		</pneumatic>
+	</controls>
+	<gear>
+		<gear n="0"
+					type="double">1</gear>
+		<gear n="1"
+					type="double">1</gear>
+	</gear>
+	<surface-positions>
+		<wing-fold-pos-norm type="double">1</wing-fold-pos-norm>
+	</surface-positions>
+	<systems>
+		<hydraulic>
+			<outputs>
+				<gear n="0"
+							type="double">1</gear>
+				<gear n="1"
+							type="double">1</gear>
+			</outputs>
+		</hydraulic>
+	</systems>
+
+	<sim include="seafire-help.xml">
+		<description>Supermarine Spitfire MkVb</description>
+		<author>Vivian Meazza</author>
+		<status>production</status>
+		<rating>
+			<FDM type="int">4</FDM>
+			<systems type="int">5</systems>
+			<cockpit type="int">4</cockpit>
+			<model type="int">5</model>
+		</rating>
+		<flight-model>yasim</flight-model>
+		<aero>spitfireVb</aero>
+		<fuel-fraction>1</fuel-fraction>
+		<systems>
+			<electrical>
+				<path>Aircraft/Spitfire/Systems/electrical.xml</path>
+			</electrical>
+		</systems>
+		<instrumentation>
+			<path>Aircraft/Spitfire/Systems/instrumentation.xml</path>
+		</instrumentation>
+		<submodels>
+			<serviceable type="bool">true</serviceable>
+			<path>Aircraft/Spitfire/Models/spitfireV-submodels.xml</path>
+		</submodels>
+		<virtual-cockpit archive="y">true</virtual-cockpit>
+		<allow-toggle-cockpit archive="y">true</allow-toggle-cockpit>
+		<sound>
+			<audible>true</audible>
+			<path>Aircraft/Spitfire/Sounds/spitfire-sound.xml</path>
+		</sound>
+		<panel>
+			<path>Aircraft/Generic/Panels/generic-vfr-panel.xml</path>
+			<visibility>false</visibility>
+		</panel>
+		<hud>
+			<path n="1">Aircraft/Spitfire/Systems/spitfire-sight.xml</path>
+			<visibility n="1">true</visibility>
+			<font>
+				<size type="float">10.0</size>
+			</font>
+			<palette>
+				<color n="0">
+					<!-- day -->
+					<red type="float">1.0</red>
+					<green type="float">0.4</green>
+					<blue type="float">0.0</blue>
+				</color>
+			</palette>
+		</hud>
+		<model>
+			<path>Aircraft/Spitfire/Models/spitfireV_model.xml</path>
+		</model>
+		<rendering>
+			<camera-group>
+				<znear type="double">0.1</znear>
+			</camera-group>
+			<refl-correction type="float">-0.25</refl-correction>
+			<ambient-correction type="float">0.2</ambient-correction>
+		</rendering>
+
+		<view n="0">
+			<internal archive="y">true</internal>
+			<config>
+				<x-offset-m archive="y"
+										type="double">0.0</x-offset-m>
+				<y-offset-m archive="y"
+										type="double">0.52</y-offset-m>
+				<z-offset-m archive="y"
+										type="double">3.88</z-offset-m>
+				<pitch-offset-deg>-12.5</pitch-offset-deg>
+				<limits>
+					<enabled type="bool">true</enabled>
+					<left>
+						<heading-max-deg type="double">145</heading-max-deg>
+						<x-offset-max-m type="double">0.175</x-offset-max-m>
+						<x-offset-threshold-deg type="double">45</x-offset-threshold-deg>
+					</left>
+					<right>
+						<heading-max-deg type="double">145</heading-max-deg>
+						<x-offset-max-m type="double">0.175</x-offset-max-m>
+						<x-offset-threshold-deg type="double">45</x-offset-threshold-deg>
+					</right>
+				</limits>
+			</config>
+		</view>
+		<view n="1">
+			<config>
+				<target-z-offset-m archive="y"
+													 type="double">2.75</target-z-offset-m>
+			</config>
+		</view>
+		<view n="2">
+			<config>
+				<target-z-offset-m archive="y"
+													 type="double">2.75</target-z-offset-m>
+			</config>
+		</view>
+		<view n="3">
+			<config>
+				<target-z-offset-m archive="y"
+													 type="double">2.75</target-z-offset-m>
+			</config>
+		</view>
+		<view n="4">
+			<config>
+				<target-z-offset-m archive="y"
+													 type="double">2.75</target-z-offset-m>
+			</config>
+		</view>
+		<view n="5">
+			<config>
+				<target-z-offset-m archive="y"
+													 type="double">2.75</target-z-offset-m>
+			</config>
+		</view>
+		<view n="6">
+			<config>
+				<target-z-offset-m archive="y"
+													 type="double">2.75</target-z-offset-m>
+			</config>
+		</view>
+		<view n="105">
+			<name>Ground Crew View</name>
+			<type>lookfrom</type>
+			<config>
+				<internal type="bool">false</internal>
+				<from-model type="bool">false</from-model>
+				<!--<from-model-idx type="int">0</from-model-idx>-->
+				<eye-lat-deg-path>/sim/model/position/latitude-deg</eye-lat-deg-path>
+				<eye-lon-deg-path>/sim/model/position/longitude-deg</eye-lon-deg-path>
+				<eye-alt-ft-path>/sim/model/position/altitude-ft</eye-alt-ft-path>
+				<eye-roll-deg-path>/sim/tower/roll-deg</eye-roll-deg-path>
+				<eye-pitch-deg-path>/sim/tower/pitch-deg</eye-pitch-deg-path>
+				<eye-heading-deg-path>/sim/tower/heading-deg</eye-heading-deg-path>
+				<at-model type="bool">false</at-model>
+				<at-model-idx type="int">0</at-model-idx>
+				<ground-level-nearplane-m type="double">0.1f</ground-level-nearplane-m>
+
+				<!-- back -->
+				<heading-offset-deg>180</heading-offset-deg>
+				<x-offset-m>0</x-offset-m>
+				<!-- right -->
+				<y-offset-m>-0.0</y-offset-m>
+				<!-- up -->
+				<z-offset-m>-10.0</z-offset-m>
+				<!-- back -->
+				<pitch-offset-deg>0</pitch-offset-deg>
+				<default-field-of-view-deg>60</default-field-of-view-deg>
+			</config>
+		</view>
+		<flaps>
+			<setting>0.00</setting>
+			<setting>1.00</setting>
+		</flaps>
+		<cowl-flaps>
+			<setting>0.00</setting>
+			<setting>0.25</setting>
+			<setting>0.5</setting>
+			<setting>0.75</setting>
+			<setting>1.00</setting>
+		</cowl-flaps>
+		<alarms>
+			<gear-warn type="double">0</gear-warn>
+		</alarms>
+		<tutorials>
+			<tutorial include="Tutorials/seafire_startup_tutorial.xml"/>
+			<tutorial include="Tutorials/spitfire_takeoff_tutorial.xml"/>
+		</tutorials>
+		<menubar>
+			<default>
+				<menu n="10">
+					<label>Spitfire</label>
+					<enabled type="bool">true</enabled>
+					<item>
+						<label>Toggle pilot model</label>
+						<binding>
+							<command>property-toggle</command>
+							<property>sim/model/spitfire/show-pilot</property>
+						</binding>
+					</item>
+					<item>
+						<label>Reset Airframe Hobbs Meter</label>
+						<binding>
+							<command>nasal</command>
+							<script>
+								spitfire.hobbs_airframe.reset();
+							</script>
+						</binding>
+					</item>
+					<item>
+						<label>Chocks Away</label>
+						<binding>
+							<command>property-assign</command>
+							<property>controls/gear/chock-left</property>
+							<value>0</value>
+						</binding>
+						<binding>
+						<command>property-assign</command>
+						<property>controls/gear/chock-right</property>
+						<value>0</value>
+					</binding>
+					</item>
+					<item>
+						<label>Chocks</label>
+						<binding>
+							<command>property-assign</command>
+							<property>controls/gear/chock-left</property>
+							<value>1</value>
+						</binding>
+						<binding>
+							<command>property-assign</command>
+							<property>controls/gear/chock-right</property>
+							<value>1</value>
+						</binding>
+					</item>
+				</menu>
+			</default>
+		</menubar>
+		<spitfire>
+			<show-pilot archive="y"
+									type="bool">true</show-pilot>
+		</spitfire>
+
+		<multiplay>
+			<generic>
+				<string n="0"
+								alias="/sim/submodels/path"/>
+				<int n="0"
+						 alias="/engines/engine[0]/running"/>
+				<int n="1"
+						 alias="/gear/gear[0]/tyre-smoke"/>
+				<int n="2"
+						 alias="/gear/gear[1]/tyre-smoke"/>
+				<int n="3"
+						 alias="/gear/gear[2]/tyre-smoke"/>
+				<int n="4"
+						 alias="/controls/lighting/nav-lights"/>
+				<int n="5"
+						 alias="/controls/armament/trigger"/>
+				<int n="6"
+						 alias="/controls/lighting/landing-light"/>
+				<float n="0"
+							 alias="/gear/gear[0]/sprayspeed-ms"/>
+				<float n="1"
+							 alias="/gear/gear[1]/sprayspeed-ms"/>
+				<float n="2"
+							 alias="/gear/gear[2]/sprayspeed-ms"/>
+				<float n="3"
+							 alias="/gear/gear[0]/spray-density"/>
+				<float n="4"
+							 alias="/gear/gear[1]/spray-density"/>
+				<float n="5"
+							 alias="/gear/gear[2]/spray-density"/>
+				<float n="6"
+							 alias="/position/altitude-agl-ft"/>
+				<float n="7"
+							 alias="/gear/gear/caster-angle-deg"/>
+				<float n="8"
+							 alias="/controls/engines/engine[0]/throttle"/>
+				<float n="9"
+							 alias="/gear/canopy/position-norm"/>
+				<float n="10"
+							 alias="/controls/flight/door-position-norm"/>
+				<float n="11"
+							 alias="/sim/time/hobbs/engine[0]"/>
+				<float n="12"
+							 alias="/engines/engine/rad-flap-norm"/>
+			</generic>
+		</multiplay>
+
+		<aim>
+			<active type="bool">false</active>
+			<tachy type="bool">true</tachy>
+			<align type="bool">false</align>
+			<radius type="float">1</radius>
+			<speed-fps type="float">2755.9</speed-fps>
+			<range-yds type="float">550</range-yds>
+			<arc>
+				<start-deg type="float">10</start-deg>
+				<stop-deg type="float">270</stop-deg>
+			</arc>
+			<offsets>
+				<x type="float">0</x>
+				<y type="float">0</y>
+			</offsets>
+			<compression-factor type ="float">2</compression-factor>
+		</aim>
+
+	</sim>
+
+	<!-- ================ map keyboard ================ -->
+	<input>
+		<keyboard include="../Generic/WalkView/walk-view-keys.xml">
+			<!--map keys for Boost Control Cutout -->
+			<key n="2">
+				<name>Ctrl-B</name>
+				<desc>Toggle engine boost control cutout.</desc>
+				<binding>
+					<command>nasal</command>
+					<script>
+						spitfire.toggleCutout();
+					</script>
+				</binding>
+			</key>
+			<!--map keys for  starter -->
+			<!--<key n="32">
+				<name>space bar</name>
+				<desc>Coffman Starter.</desc>
+				<binding>
+					<command>nasal</command>
+					<script>
+						spitfire.startCof(1);
+					</script>
+				</binding>
+				<mod-up>
+					<binding>
+						<command>nasal</command>
+						<script>
+							spitfire.startCof(0);
+						</script>
+					</binding>
+				</mod-up>
+			</key>-->
+			<!-- map keys for rudder trim -->
+			<key n="60">
+				<name>&lt;</name>
+				<desc>Rudder Trim Left</desc>
+				<binding>
+					<command>property-adjust</command>
+					<property>/controls/flight/rudder-trim</property>
+					<min type="double">-1.0</min>
+					<step type="double">-0.001</step>
+				</binding>
+			</key>
+			<key n="62">
+				<name>&gt;</name>
+				<desc>Rudder Trim Right</desc>
+				<binding>
+					<command>property-adjust</command>
+					<property>/controls/flight/rudder-trim</property>
+					<max type="double">1.0</max>
+					<step type="double">0.001</step>
+				</binding>
+			</key>
+			<!--map keys for door open -->
+			<key n="68">
+				<name>D</name>
+				<desc>Door Fold Down.</desc>
+				<binding>
+					<command>nasal</command>
+					<script>
+						if (!walkview.side_step(1.0)) {
+						spitfire.openDoor(0.015);
+						}
+					</script>
+				</binding>
+			</key>
+			<key n="100">
+				<name>d</name>
+				<desc>Door Fold Up.</desc>
+				<binding>
+					<command>nasal</command>
+					<script>
+						if (!walkview.side_step(0.5)) {
+						spitfire.openDoor(0);
+						}
+					</script>
+				</binding>
+			</key>
+			<key n="4">
+				<name>CTRL D</name>
+				<desc>Door Fold Toggle.</desc>
+				<binding>
+					<command>nasal</command>
+					<script>
+						spitfire.toggleDoor();
+					</script>
+				</binding>
+			</key>
+			<key n="12">
+				<name>Ctrl-L</name>
+				<desc>Toggle Tailwheel Lock.</desc>
+				<binding>
+					<command>property-toggle</command>
+					<property>controls/gear/tailwheel-lock</property>
+				</binding>
+			</key>
+			<!--     map keys for canopy control -->
+			<key n="70">
+				<name>F</name>
+				<desc>Close Canopy.</desc>
+				<binding>
+					<command>nasal</command>
+					<script>
+						spitfire.openCanopy(1);
+					</script>
+				</binding>
+			</key>
+			<key n="102">
+				<name>f</name>
+				<desc>Close Canopy.</desc>
+				<binding>
+					<command>nasal</command>
+					<script>
+						spitfire.openCanopy(0);
+					</script>
+				</binding>
+			</key>
+			<!-- map keys for radiator flap -->
+			<key n="72">
+				<name>H</name>
+				<desc>Radiator Flap down.</desc>
+				<binding>
+					<command>nasal</command>
+					<script>controls.stepProps("/controls/engines/engine/cowl-flaps-norm","/sim/cowl-flaps",1);</script>
+				</binding>
+			</key>
+			<key n="104">
+				<name>h</name>
+				<desc>Radiator Flap Up.</desc>
+				<binding>
+					<command>nasal</command>
+					<script>controls.stepProps("/controls/engines/engine/cowl-flaps-norm","/sim/cowl-flaps",-1);</script>
+				</binding>
+			</key>
+			<!-- map keys for Cancel Gear Warning  -->
+			<key n="107">
+				<name>k</name>
+				<desc>Gear Warn Toggle.</desc>
+				<binding>
+					<command>nasal</command>
+					<script>
+						spitfire.toggleGearWarn();
+					</script>
+				</binding>
+			</key>
+			<key n="75">
+				<name>K</name>
+				<desc>Gear Warn Toggle.</desc>
+				<binding>
+					<command>nasal</command>
+					<script>
+						spitfire.toggleGearWarn();
+					</script>
+				</binding>
+			</key>
+			<!-- map keys for Mixture Control -->
+			<key n="77">
+				<name>M</name>
+				<desc>Mixture Weak.</desc>
+				<binding>
+					<command>property-assign</command>
+					<property>/controls/engines/engine/mixture-lever</property>
+					<value type="double">0.8</value>
+				</binding>
+			</key>
+			<key n="109">
+				<name>m</name>
+				<desc>Mixture Rich.</desc>
+				<binding>
+					<command>property-assign</command>
+					<property>/controls/engines/engine/mixture-lever</property>
+					<value type="double">1.0</value>
+				</binding>
+			</key>
+			<!-- map keys for seat vertical adjust -->
+			<key n="21">
+				<name>CTRL-U</name>
+				<desc>Seat Default.</desc>
+				<binding>
+					<command>property-assign</command>
+					<property>/controls/seat/vertical-adjust</property>
+					<value type="double">0</value>
+				</binding>
+				<binding>
+					<condition>
+						<equals>
+							<property>sim/current-view/view-number</property>
+							<value>0</value>
+						</equals>
+					</condition>
+					<command>property-assign</command>
+					<property>sim/current-view/y-offset-m</property>
+					<value type="double">0.53</value>
+				</binding>
+			</key>
+			<key n="85">
+				<name>U</name>
+				<desc>Seat Down.</desc>
+				<binding>
+					<command>property-adjust</command>
+					<property>/controls/seat/vertical-adjust</property>
+					<step type="double">-0.01</step>
+					<min type="double">-0.05</min>
+					<max type="double">0.05</max>
+				</binding>
+				<binding>
+					<condition>
+						<equals>
+							<property>sim/current-view/view-number</property>
+							<value>0</value>
+						</equals>
+					</condition>
+					<command>property-adjust</command>
+					<property>sim/current-view/y-offset-m</property>
+					<step type="double">-0.01</step>
+					<min type="double">0.48</min>
+					<max type="double">0.58</max>
+				</binding>
+			</key>
+			<key n="117">
+				<name>u</name>
+				<desc>Seat Up.</desc>
+				<binding>
+					<command>property-adjust</command>
+					<property>controls/seat/vertical-adjust</property>
+					<step type="double">0.01</step>
+					<min type="double">-0.05</min>
+					<max type="double">0.05</max>
+				</binding>
+				<binding>
+					<condition>
+						<equals>
+							<property>sim/current-view/view-number</property>
+							<value>0</value>
+						</equals>
+					</condition>
+					<command>property-adjust</command>
+					<property>sim/current-view/y-offset-m</property>
+					<step type="double">0.01</step>
+					<min type="double">0.48</min>
+					<max type="double">0.58</max>
+				</binding>
+			</key>
+			<!-- map keys for mag switches  -->
+			<key n="123">
+				<name>{</name>
+				<desc>Mag Switch Left Toggle.</desc>
+				<binding>
+					<command>nasal</command>
+					<script>
+						spitfire.toggleleftMagswitch();
+					</script>
+				</binding>
+			</key>
+			<key n="125">
+				<name>}</name>
+				<desc>Mag Switch Right Toggle.</desc>
+				<binding>
+					<command>nasal</command>
+					<script>
+						spitfire.togglerightMagswitch();
+					</script>
+				</binding>
+			</key>
+			<!-- map keys for fuel cocks  -->
+			<key n="40">
+				<name>(</name>
+				<desc>Fuel Cock Left Toggle.</desc>
+				<binding>
+					<command>nasal</command>
+					<script>
+						fuel.toggleCock(1);
+					</script>
+				</binding>
+			</key>
+			<key n="41">
+				<name>)</name>
+				<desc>Fuel Cock Right Toggle.</desc>
+				<binding>
+					<command>nasal</command>
+					<script>
+						fuel.toggleCock(0);
+					</script>
+				</binding>
+			</key>
+			<!-- map keys for priming pump -->
+			<key n="73">
+				<name>I</name>
+				<desc>Operate Priming Pump.</desc>
+				<binding>
+					<command>nasal</command>
+					<script>
+						fuel.pumpPrimer(1);
+					</script>
+				</binding>
+				<mod-up>
+					<binding>
+						<command>nasal</command>
+						<script>
+							fuel.pumpPrimer(0);
+						</script>
+					</binding>
+				</mod-up>
+			</key>
+			<!-- map keys for flaps -->
+			<key n="91">
+				<name>[</name>
+				<desc>Flap Lever up.</desc>
+				<binding>
+					<command>nasal</command>
+					<script>
+						spitfire.flapLever(0);
+					</script>
+				</binding>
+			</key>
+			<key n="93">
+				<name>]</name>
+				<desc>Flap Lever down.</desc>
+				<binding>
+					<command>nasal</command>
+					<script>
+						spitfire.flapLever(1);
+					</script>
+				</binding>
+			</key>
+		</keyboard>
+	</input>
+	<!-- instruments -->
+	<instrumentation>
+		<fuel>
+			<serviceable type="bool">1</serviceable>
+		</fuel>
+	</instrumentation>
+	<!-- weights -->
+	<yasim>
+		<weights>
+			<pilot-lb type="double">200</pilot-lb>
+			<ammo-lb n="0"
+							 type="double">17.1960</ammo-lb>
+			<ammo-lb n="1"
+							 type="double">17.1960</ammo-lb>
+			<ammo-lb n="2"
+							 type="double">20.481655</ammo-lb>
+			<ammo-lb n="3"
+							 type="double">20.481655</ammo-lb>
+			<ammo-lb n="4"
+							 type="double">20.481655</ammo-lb>
+			<ammo-lb n="5"
+							 type="double">20.481655</ammo-lb>
+		</weights>
+	</yasim>
+	<!-- nasal stuff -->
+	<nasal include="spitfire-nasal.xml"/>
+
+</PropertyList>

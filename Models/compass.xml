@@ -1,0 +1,132 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+	<path>compass.ac</path>
+
+	<animation>
+		<type>pick</type>
+		<object-name>pick-left</object-name>
+		<visible>false</visible>
+		<action>
+			<button>0</button>
+			<repeatable>true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>/instrumentation/heading-indicator-dg/align-deg</property>
+				<step>-0.1</step>
+				<min>0.0</min>
+				<max>359.0</max>
+				<wrap>true</wrap>
+			</binding>
+			<button>1</button>
+			<repeatable>true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>/instrumentation/heading-indicator-dg/align-deg</property>
+				<step>-1.0</step>
+				<min>0.0</min>
+				<max>359.0</max>
+				<wrap>true</wrap>
+			</binding>
+		</action>
+	</animation>
+
+	<animation>
+		<type>pick</type>
+		<object-name>pick-right</object-name>
+		<visible>false</visible>
+		<action>
+			<button>0</button>
+			<repeatable>true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>/instrumentation/heading-indicator-dg/align-deg</property>
+				<step>0.1</step>
+				<min>0.0</min>
+				<max>359.0</max>
+				<wrap>true</wrap>
+			</binding>
+			<button>1</button>
+			<repeatable>true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>/instrumentation/heading-indicator-dg/align-deg</property>
+				<step>1.0</step>
+				<min>0.0</min>
+				<max>359.0</max>
+				<wrap>true</wrap>
+			</binding>
+		</action>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>knob</object-name>
+		<property>/instrumentation/heading-indicator-dg/align-deg</property>
+		<!--<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>360</ind>
+				<dep>360</dep>
+			</entry>
+		</interpolation>-->
+		<factor>2</factor>
+		<center>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>-0.0547652</z-m>
+		</center>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>Compass</object-name>
+		<property>instrumentation/heading-indicator-dg/indicated-heading-deg</property>
+		<center>
+			<x-m>-0.02</x-m>
+			<y-m>0</y-m>
+			<z-m>0</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>material</type>
+		<condition>
+			<greater-than>
+				<property>/controls/lighting/panel-norm</property>
+				<value>0</value>
+			</greater-than>
+		</condition>
+		<emission>
+			<factor-prop>/controls/lighting/panel-norm</factor-prop>
+			<red>0.75</red>
+			<green>0.25</green>
+			<blue>0.25</blue>
+		</emission>
+	</animation>
+
+	<!-- *** LoD *** -->
+	<animation>
+		<type>range</type>
+		<min-m>0</min-m>
+		<max-m>5</max-m>
+	</animation>
+
+</PropertyList>
+
+
+
+
+
