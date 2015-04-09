@@ -425,7 +425,7 @@ $Id$
 
 	<!-- ================ map keyboard ================ -->
 	<input>
-		<keyboard include="../Generic/WalkView/walk-view-keys.xml">
+		<keyboard include="Aircraft/Generic/WalkView/walk-view-keys.xml">
 			<!--map keys for Boost Control Cutout -->
 			<key n="2">
 				<name>Ctrl-B</name>
