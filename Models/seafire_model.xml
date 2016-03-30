@@ -411,7 +411,7 @@
 
 	<!-- Tutorial -->
 	<model>
-		<path>Models/Aircraft/marker.xml</path>
+		<path>Aircraft/Generic/marker.xml</path>
 	</model>
 
 	<!-- hide all of the model not visible from the cockpit -->
