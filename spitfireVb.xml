@@ -426,23 +426,8 @@ gear-ratio = "0.477" moment = 37.15-->
 									 src0="0"
 									 src1="1"
 									 dst0="1"
-									 dst1="1"
+									 dst1="0"
 									 control="CASTERING"/>
-	</gear>
-	<!-- dummy Tail wheel - add a little friction to make it flyable!  -->
-	<gear x="-8.48"
-				y="0"
-				z="-0.66"
-				compression="0.15"
-				dfric="0.7"
-				sfric ="0.8">
-		<control-input axis="/controls/flight/elevator"
-									 control="BRAKE"
-									 transition-time="0"
-									 src0="-1"
-									 src1="0"
-									 dst0="1"
-									 dst1="0"/>
 	</gear>
 
 	<!-- Canopy -->
