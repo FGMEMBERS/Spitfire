@@ -142,6 +142,22 @@ $Id$
 			<cockpit type="int">4</cockpit>
 			<model type="int">5</model>
 		</rating>
+    		<tags>
+      			<tag>supermarine</tag>
+      			<tag>low-wing</tag>
+      			<tag>tail-dragger</tag>
+      			<tag>retractable-gear</tag>
+      			<tag>castering-wheel</tag>
+     	 		<tag>single-engine</tag>
+      			<tag>piston</tag>
+     			<tag>variable-pitch</tag>
+     			<tag>propeller</tag>
+      			<tag>fighter</tag>
+      			<tag>supercharger</tag>
+     			<tag>1940s</tag>
+     			<tag>ww2</tag>
+    		</tags>
+     
 		<flight-model>yasim</flight-model>
 		<aero>spitfireVb</aero>
 		<fuel-fraction>1</fuel-fraction>
