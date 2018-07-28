@@ -327,6 +327,7 @@ $Id$
 		</spitfire>
 
 		<multiplay>
+                	<fallback-model-index type="int">404</fallback-model-index>
 			<generic>
 				<string n="0"
 								alias="/sim/submodels/path"/>
