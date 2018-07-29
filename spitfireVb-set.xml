@@ -2,7 +2,7 @@
 <!--
 ************************************************************************
 Spitfire Vb simulation config. This files ties together all the components
-used by FGFS to represent the aircraft. Components include the flight data 
+used by FGFS to represent the aircraft. Components include the flight data
 model, instrument panel, sound, electrical and external 3D model.
 
 Copyright Feb 2011 Vivian Meazza, vivian.meazza at lineone.net
@@ -46,7 +46,7 @@ $Id$
 				<mag-switch-left type="bool">0</mag-switch-left>
 				<mag-switch-right type="bool">0</mag-switch-right>
 				<magnetos>0</magnetos>
-				<!--<coffman-starter> 
+				<!--<coffman-starter>
             <cartridge type="bool">1</cartridge>
             <cartridge type="bool">1</cartridge>
             <cartridge type="bool">1</cartridge>
@@ -157,7 +157,7 @@ $Id$
      			<tag>1940s</tag>
      			<tag>ww2</tag>
     		</tags>
-     
+
 		<flight-model>yasim</flight-model>
 		<aero>spitfireVb</aero>
 		<fuel-fraction>1</fuel-fraction>
@@ -200,6 +200,7 @@ $Id$
 		</hud>
 		<model>
 			<path>Aircraft/Spitfire/Models/spitfireV_model.xml</path>
+			<fallback-model-index type="int">404</fallback-model-index>
 		</model>
 		<rendering>
 			<camera-group>
@@ -373,7 +374,6 @@ $Id$
 		</spitfire>
 
 		<multiplay>
-                	<fallback-model-index type="int">404</fallback-model-index>
 			<generic>
 				<string n="0"
 								alias="/sim/submodels/path"/>
