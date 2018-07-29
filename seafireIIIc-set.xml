@@ -190,6 +190,7 @@ $Id$
 		</hud>
 		<model>
 			<path>Aircraft/Spitfire/Models/seafire_model.xml</path>
+			<fallback-model-index>404</fallback-model-index>
 		</model>
     <rendering>
       <camera-group>
