@@ -146,7 +146,7 @@ $Id$
       			<tag>tail-hook</tag>
       			<tag>wing-fold</tag>
     		</tags>
-     
+
 		<flight-model>yasim</flight-model>
 		<aero>seafireIIIc</aero>
 		<variant-of>spitfireVb</variant-of> <!-- making the mark Vb the default -->
@@ -190,6 +190,7 @@ $Id$
 		</hud>
 		<model>
 			<path>Aircraft/Spitfire/Models/seafire_model.xml</path>
+			<fallback-model-index type="int">404</fallback-model-index>
 		</model>
     <rendering>
       <camera-group>

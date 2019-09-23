@@ -36,6 +36,9 @@ Aug 2004 Vivian Meazza, vivian.meazza at lineone.net
     		</tags>
      
 		<variant-of>spitfireVb</variant-of> <!-- making the mark Vb the default -->
+                <multiplay>
+                	<fallback-model-index type="int">404</fallback-model-index>
+                </multiplay>
 
 		<flight-model>yasim</flight-model>
 		<aero>spitfireIIa</aero>
@@ -267,8 +270,7 @@ Aug 2004 Vivian Meazza, vivian.meazza at lineone.net
 			</default>
 		</menubar>
 		<spitfire>
-			<show-pilot archive="y"
-									type="bool">true</show-pilot>
+			<show-pilot archive="y" type="bool">true</show-pilot>
 		</spitfire>
 	</sim>
 	<engines>
